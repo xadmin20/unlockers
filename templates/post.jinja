@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>{{ get_script_pattern(request, 'head', 'top') }}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale= 1.0, width= device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="format-detection" content="telephone=no">{{ get_jinja_seo_data(seo) }}
+    <link rel="stylesheet" href="{{ static( 'js/vendor.js.css' ) }}">
+    <link rel="stylesheet" href="{{ static( 'css/style.css' ) }}">
+    <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}{{ config.FAVICON }}">
+  </head>
+  <body class="body">
+    <div id="app">
+      <modals-container></modals-container>
+      <notifications position="top center" :duration="5000"></notifications>
+                              <header class="header">
+                                                  <div class="ug-container ug-container ug-container--variant_common">
+                                                                      <div class="ug-row ug-row--apearance_spaced ug-row--space_xs ug-row--align_center ug-row--justify_between">
+                                                                                          <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow-sm">
+                                                                                                              <div class="header__logo">{% set index_url = url("index") %}{% if index_url == request.path %} 
+                                                                                                                                              <div class="logo"><img class="logo__image" src="{{ MEDIA_URL }}{{ config.LOGO }}" alt="logo" title="logo"/>
+                                                                                                                                              </div>{% else %}<a class="logo" href="{{ url( 'index' ) }}"><img class="logo__image" src="{{ MEDIA_URL }}{{ config.LOGO }}" alt="logo" title="logo"/></a> {% endif %}
+                                                                                                              </div>
+                                                                                          </div>
+                                                                                          <div class="ug-cell ug-cols ug-cols--auto ug-cols--narrow-sm u-display u-display--hidden u-display--block-sm">
+                                                                                                              <p class="text text--color_black"><a class="link link--color_black" href="{{ url( 'blog' ) }}">{% trans %}Blog / News{% endtrans %}</a>
+                                                                                                              </p>
+                                                                                          </div>
+                                                                                          <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow u-display u-display--hidden u-display--block-xl">
+                                                                                                              <div class="ug-row ug-row--apearance_spaced ug-row--space_md ug-row--align_center">
+                                                                                                                                  <div class="ug-cell g-cols g-cols--init g-cols--narrow"><a class="header__item header__item--action" href="mailto:{{ config.EMAIL }}"><span class="header__icon ma ma--r_xs"><i class="icon icon--type_envelope"></i></span><span class="header__text">{{ config.EMAIL }}</span></a>
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ug-cell g-cols g-cols--init g-cols--narrow"><a class="header__item header__item--action" href="tel:{{ config.PHONE|replace(' ', '') }}"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_phone"></i></span><span class="header__text">{{ config.PHONE }}</span></a>
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ug-cell g-cols g-cols--init g-cols--narrow"><a class="header__item header__item--action" href="#"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_emergency"></i></span><span class="header__text">{% trans %}Emergency line{% endtrans %}</span></a>
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ug-cell g-cols g-cols--init g-cols--narrow"><a class="header__item"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_marker"></i></span><span class="header__text">{{ config.ADDRESS }}</span></a>
+                                                                                                                                  </div>
+                                                                                                              </div>
+                                                                                          </div>
+                                                                                          <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow">
+                                                                                                              <div class="ug-row ug-row--apearance_spaced ug-row--space_sm ug-row--align_center">
+                                                                                                                                  <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow-sm">{% if user.is_authenticated %} {% if user.first_name %} <a class="personal-circle" aria-label="Link name" href="/cabinet/statistics/" target="_self" rel="noopener">
+                                                                                                                                                                                                            <p class="personal-circle__title link link--color_black">{{ user.first_name }}
+                                                                                                                                                                                                            </p><span class="personal-circle__circle">{{ user.first_name[0] }}</span></a>{% else %}<a class="personal-circle" aria-label="Link name" href="/cabinet/statistics/" target="_self" rel="noopener">
+                                                                                                                                                                                                            <p class="personal-circle__title link link--color_black">Cabinet
+                                                                                                                                                                                                            </p><span class="personal-circle__circle">C</span></a> {% endif %}{% else %}<a class="link link--color_black" aria-label="Link name" href="/auth/login/" target="_self" rel="noopener">Login</a> {% endif %}
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow-sm u-display u-display--block u-display--hidden-xl">
+                                                                                                                                    <menu-module>
+                                                                                                                                      <template v-slot:navigations="">
+                                                                                                                                                          <div class="menu__template">
+                                                                                                                                                                              <div class="ug-row ug-row--apearance_spaced ug-row--space_md ug-row--align_center">
+                                                                                                                                                                                                  <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-xl"><a class="header__item header__item--action" href="mailto:{{ config.EMAIL }}"><span class="header__icon ma ma--r_xs"><i class="icon icon--type_envelope"></i></span><span class="header__text">{{ config.EMAIL }}</span></a>
+                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                  <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-xl"><a class="header__item header__item--action" href="tel:{{ config.PHONE|replace(' ', '') }}"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_phone"></i></span><span class="header__text">{{ config.PHONE }}</span></a>
+                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                  <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-xl"><a class="header__item header__item--action" href="#"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_emergency"></i></span><span class="header__text">{% trans %}Emergency line{% endtrans %}</span></a>
+                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                  <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-xl"><a class="header__item"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_marker"></i></span><span class="header__text">{{ config.ADDRESS }}</span></a>
+                                                                                                                                                                                                  </div>
+                                                                                                                                                                              </div>
+                                                                                                                                                                              <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-sm">
+                                                                                                                                                                                                  <p class="text text--color_black"><a class="link link--color_black" href="{{ url( 'blog' ) }}">{% trans %}Blog / News{% endtrans %}</a>
+                                                                                                                                                                                                  </p>
+                                                                                                                                                                              </div>
+                                                                                                                                                          </div>
+                                                                                                                                      </template>
+                                                                                                                                    </menu-module>
+                                                                                                                                  </div>
+                                                                                                              </div>
+                                                                                          </div>
+                                                                      </div>
+                                                  </div>
+                              </header>{% macro breadcrumb(levels) %} 
+                  <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+                    <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">{% set len_levels = levels|length %}{% for href, name in levels %} {% set count = loop.index %}
+                                  <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{% if len_levels != count %} <a href="{{ href }}" aria-level="{{ count }}"><span itemprop="name">{{name }}</span></a>{% else %}<a class="is-passive" aria-level="{{ count }}"><span itemprop="name">{{name }}</span></a> {% endif %}{% if count < len_levels %} <i class="breadcrumb__symbol" aria-hidden="true">/</i> {% endif %}
+                                    <meta itemprop="position" content="{{ count }}">
+                                  </li> {% endfor %}
+                    </ul>
+                  </nav> {% endmacro %}
+                        <main class="main" role="main">
+                                            <section class="section section--offsetxs">
+                                                                <div class="ug-container ug-container--fit_xl">{% set breadcrumbs = ((url('index'), _('Home')), (url('blog'), _('Blog')), ('cols', post.title)) %}{{breadcrumb(breadcrumbs)}}
+                                                                </div>
+                                            </section>
+                                            <section class="section section--offsetxs">
+                                                                <div class="ug-container ug-container--fit_xl">
+                                                                                    <div class="ug-row ug-row--justify_center">
+                                                                                                        <div class="ug-cell ug-cols ug-cols--8-xl">
+                                                                                                                            <div class="blog-item">
+                                                                                                                                                      <div class="blog-item__header">
+                                                                                                                                                                                <div class="blog-item__offset blog-item__offset--full">
+                                                                                                                                                                                                          <div class="blog-item__title">
+                                                                                                                                                                                                                              <h1 class="caption caption--size_3">{{ post.title }}
+                                                                                                                                                                                                                              </h1>
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                          <div class="blog-item__header-row">
+                                                                                                                                                                                                                              <p class="text text--fw_bold text--color_black">{{ post.created_at.strftime('%-d %B %Y') }}
+                                                                                                                                                                                                                              </p>
+                                                                                                                                                                                                                              <div class="ug-row ug-row--align_center">
+                                                                                                                                                                                                                                                  <div class="ug-cell">
+                                                                                                                                                                                                                                                                      <p class="text text--color_black">{% trans %}share on social networks:{% endtrans %}
+                                                                                                                                                                                                                                                                      </p>
+                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                  <div class="ug-cell">{% set blogShared = {'description': post.short_description|striptags, 'title': post.title, 'url': request.build_absolute_uri() } %}
+                                                                                                                                                                                                                                                    <sharing :params="{{ blogShared }}"></sharing>
+                                                                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                </div>
+                                                                                                                                                      </div>
+                                                                                                                                                      <div class="blog-item__offset blog-item__offset--full">
+                                                                                                                                                                          <div class="template">{{ post.content|safe }}
+                                                                                                                                                                          </div>{% if post.video %} 
+                                                                                                                                                                    <ui-youtube-view url="{{ post.video }}">
+                                                                                                                                                                      <template #default="{ urlComputed }">
+                                                                                                                                                                                          <figure class="ds-aspect-ratio ds-aspect-ratio--appearance_cuted ds-aspect-ratio--appearance_filled ds-aspect-ratio--ratio_16x9-md ds-aspect-ratio--ratio_4x3">
+                                                                                                                                                                                                                    <iframe class="ds-aspect-ratio__body" :src="urlComputed" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen>
+                                                                                                                                                                                                                    </iframe>
+                                                                                                                                                                                          </figure>
+                                                                                                                                                                      </template>
+                                                                                                                                                                    </ui-youtube-view> {% endif %}
+                                                                                                                                                      </div>
+                                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="ug-cell ug-cols ug-cols--4-xl">
+                                                                                                                            <div class="title-wrapper title-wrapper--offset-md">
+                                                                                                                                                <p class="caption caption--color_black caption--size_5">{% trans %}Another news:{% endtrans %}
+                                                                                                                                                </p>
+                                                                                                                            </div>
+                                                                                                                            <div class="ug-row">{% for post in same %} 
+                                                                                                                                                            <div class="ug-cell ug-cols ug-cols--6-sm ug-cols--4-md ug-cols--12-xl">
+                                                                                                                                                                                <div class="service">
+                                                                                                                                                                                                          <div class="service__wrapper service__wrapper--offset_none">
+                                                                                                                                                                                                                                    <div class="service__offset">
+                                                                                                                                                                                                                                                              <div class="service__info">
+                                                                                                                                                                                                                                                                                        <div class="service__image-wrapper"><img class="service__image" src="{{ post.preview.url }}" alt="post" title="post"/>
+                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                        <div class="service__heading">
+                                                                                                                                                                                                                                                                                                                  <h3 class="service__title service__title--color_dark service__title--size_sm">{{ post.title|safe }}
+                                                                                                                                                                                                                                                                                                                  </h3>
+                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                        <div class="service__content">{{ post.short_description|safe }}
+                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <div class="service__footer">
+                                                                                                                                                                                                                                                              <div class="service__offset service__offset--full">
+                                                                                                                                                                                                                                                                                        <div class="service__footer-row">
+                                                                                                                                                                                                                                                                                                            <p class="text text--color_black">{{ post.created_at.strftime('%-d %B %Y') }}
+                                                                                                                                                                                                                                                                                                            </p><a class="service__link" href="{{ post.get_absolute_url() }}"><span class="ug-row ug-row--align_center"><span class="ug-cell">
+                                                                                                                                                                                                                                                                                                                                                                                          <p class="text text--fw_bold text--color_black">{% trans %}Read more{% endtrans %}
+                                                                                                                                                                                                                                                                                                                                                                                          </p></span><span class="ug-cell"><span class="arrow-wrapper"><span class="arrow-wrapper__item arrow-wrapper__item--mini arrow-wrapper__item--bg-common"><span class="arrow-wrapper__arrow"><i class="icon icon--type_prev"></i></span></span></span></span></span></a>
+                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                </div>
+                                                                                                                                                            </div> {% endfor %}
+                                                                                                                            </div>
+                                                                                                        </div>
+                                                                                    </div>
+                                                                </div>
+                                            </section>
+                        </main>
+                              <footer class="footer">
+                                                  <div class="ug-container ug-container ug-container--variant_common">
+                                                                                                <p class="footer__copyright">{% trans %}© Copyright 2020 - Anlocker Group Co. Inc. All Rights Reserved{% endtrans %}
+                                                                                                </p>
+                                                                                                <div class="footer__payment"><img class="footer__payment-image" src="{{ static( 'img/payment.png' ) }}" alt="" title=""/>
+                                                                                                </div>
+                                                                      </div>
+                                                  </div>
+                              </footer>
+    </div>
+    <script>window.isAuthenticated = "{% if user.is_authenticated %}true{% endif %}"
+      window.googleApiKey = "{{ get_google_api_key() }}"
+      window.prepayment = "{{ get_prepayment() }}"
+      window.django = {
+      catalog: {
+        }
+      }
+    </script>
+    <script>window.role = "{{ get_user_role(user) }}"</script>
+    <script type="text/javascript" src="{{ url( 'vuejs_translate:js-i18n' ) }}"></script>
+    <script src="{{ static( 'js/vendor.js' ) }}"></script>
+    <script src="{{ static( 'js/main.js' ) }}"></script>
+  </body>
+</html>

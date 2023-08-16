@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>{{ get_script_pattern(request, 'head', 'top') }}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale= 1.0, width= device-width, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="format-detection" content="telephone=no">{{ get_jinja_seo_data(seo) }}
+    <link rel="stylesheet" href="{{ static( 'js/vendor.js.css' ) }}">
+    <link rel="stylesheet" href="{{ static( 'css/style.css' ) }}">
+    <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}{{ config.FAVICON }}">
+  </head>
+  <body class="body">
+    <div id="app">
+      <modals-container></modals-container>
+      <notifications position="top center" :duration="5000"></notifications>
+                              <header class="header">
+                                                  <div class="ug-container ug-container ug-container--variant_common">
+                                                                      <div class="ug-row ug-row--apearance_spaced ug-row--space_xs ug-row--align_center ug-row--justify_between">
+                                                                                          <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow-sm">
+                                                                                                              <div class="header__logo">{% set index_url = url("index") %}{% if index_url == request.path %} 
+                                                                                                                                              <div class="logo"><img class="logo__image" src="{{ MEDIA_URL }}{{ config.LOGO }}" alt="logo" title="logo"/>
+                                                                                                                                              </div>{% else %}<a class="logo" href="{{ url( 'index' ) }}"><img class="logo__image" src="{{ MEDIA_URL }}{{ config.LOGO }}" alt="logo" title="logo"/></a> {% endif %}
+                                                                                                              </div>
+                                                                                          </div>
+                                                                                          <div class="ug-cell ug-cols ug-cols--auto ug-cols--narrow-sm u-display u-display--hidden u-display--block-sm">
+                                                                                                              <p class="text text--color_black"><a class="link link--color_black" href="{{ url( 'blog' ) }}">{% trans %}Blog / News{% endtrans %}</a>
+                                                                                                              </p>
+                                                                                          </div>
+                                                                                          <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow u-display u-display--hidden u-display--block-xl">
+                                                                                                              <div class="ug-row ug-row--apearance_spaced ug-row--space_md ug-row--align_center">
+                                                                                                                                  <div class="ug-cell g-cols g-cols--init g-cols--narrow"><a class="header__item header__item--action" href="mailto:{{ config.EMAIL }}"><span class="header__icon ma ma--r_xs"><i class="icon icon--type_envelope"></i></span><span class="header__text">{{ config.EMAIL }}</span></a>
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ug-cell g-cols g-cols--init g-cols--narrow"><a class="header__item header__item--action" href="tel:{{ config.PHONE|replace(' ', '') }}"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_phone"></i></span><span class="header__text">{{ config.PHONE }}</span></a>
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ug-cell g-cols g-cols--init g-cols--narrow"><a class="header__item header__item--action" href="#"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_emergency"></i></span><span class="header__text">{% trans %}Emergency line{% endtrans %}</span></a>
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ug-cell g-cols g-cols--init g-cols--narrow"><a class="header__item"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_marker"></i></span><span class="header__text">{{ config.ADDRESS }}</span></a>
+                                                                                                                                  </div>
+                                                                                                              </div>
+                                                                                          </div>
+                                                                                          <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow">
+                                                                                                              <div class="ug-row ug-row--apearance_spaced ug-row--space_sm ug-row--align_center">
+                                                                                                                                  <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow-sm">{% if user.is_authenticated %} {% if user.first_name %} <a class="personal-circle" aria-label="Link name" href="/cabinet/statistics/" target="_self" rel="noopener">
+                                                                                                                                                                                                            <p class="personal-circle__title link link--color_black">{{ user.first_name }}
+                                                                                                                                                                                                            </p><span class="personal-circle__circle">{{ user.first_name[0] }}</span></a>{% else %}<a class="personal-circle" aria-label="Link name" href="/cabinet/statistics/" target="_self" rel="noopener">
+                                                                                                                                                                                                            <p class="personal-circle__title link link--color_black">Cabinet
+                                                                                                                                                                                                            </p><span class="personal-circle__circle">C</span></a> {% endif %}{% else %}<a class="link link--color_black" aria-label="Link name" href="/auth/login/" target="_self" rel="noopener">Login</a> {% endif %}
+                                                                                                                                  </div>
+                                                                                                                                  <div class="ug-cell ug-cols ug-cols--init ug-cols--narrow-sm u-display u-display--block u-display--hidden-xl">
+                                                                                                                                    <menu-module>
+                                                                                                                                      <template v-slot:navigations="">
+                                                                                                                                                          <div class="menu__template">
+                                                                                                                                                                              <div class="ug-row ug-row--apearance_spaced ug-row--space_md ug-row--align_center">
+                                                                                                                                                                                                  <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-xl"><a class="header__item header__item--action" href="mailto:{{ config.EMAIL }}"><span class="header__icon ma ma--r_xs"><i class="icon icon--type_envelope"></i></span><span class="header__text">{{ config.EMAIL }}</span></a>
+                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                  <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-xl"><a class="header__item header__item--action" href="tel:{{ config.PHONE|replace(' ', '') }}"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_phone"></i></span><span class="header__text">{{ config.PHONE }}</span></a>
+                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                  <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-xl"><a class="header__item header__item--action" href="#"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_emergency"></i></span><span class="header__text">{% trans %}Emergency line{% endtrans %}</span></a>
+                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                  <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-xl"><a class="header__item"><span class="header__icon ma ma--r_xs ma--size_1"><i class="icon icon--type_marker"></i></span><span class="header__text">{{ config.ADDRESS }}</span></a>
+                                                                                                                                                                                                  </div>
+                                                                                                                                                                              </div>
+                                                                                                                                                                              <div class="ug-cell ug-cols ug-cols--12 u-display u-display--block u-display--hidden-sm">
+                                                                                                                                                                                                  <p class="text text--color_black"><a class="link link--color_black" href="{{ url( 'blog' ) }}">{% trans %}Blog / News{% endtrans %}</a>
+                                                                                                                                                                                                  </p>
+                                                                                                                                                                              </div>
+                                                                                                                                                          </div>
+                                                                                                                                      </template>
+                                                                                                                                    </menu-module>
+                                                                                                                                  </div>
+                                                                                                              </div>
+                                                                                          </div>
+                                                                      </div>
+                                                  </div>
+                              </header>
+                              <footer class="footer">
+                                                  <div class="ug-container ug-container ug-container--variant_common">
+                                                                                                <p class="footer__copyright">{% trans %}© Copyright 2020 - Anlocker Group Co. Inc. All Rights Reserved{% endtrans %}
+                                                                                                </p>
+                                                                                                <div class="footer__payment"><img class="footer__payment-image" src="{{ static( 'img/payment.png' ) }}" alt="" title=""/>
+                                                                                                </div>
+                                                                      </div>
+                                                  </div>
+                              </footer>
+    </div>
+    <script>window.isAuthenticated = "{% if user.is_authenticated %}true{% endif %}"
+      window.googleApiKey = "{{ get_google_api_key() }}"
+      window.prepayment = "{{ get_prepayment() }}"
+      window.django = {
+      catalog: {
+        }
+      }
+    </script>
+    <script>window.role = "{{ get_user_role(user) }}"</script>
+    <script type="text/javascript" src="{{ url( 'vuejs_translate:js-i18n' ) }}"></script>
+    <script src="{{ static( 'js/vendor.js' ) }}"></script>
+    <script src="{{ static( 'js/main.js' ) }}"></script>
+  </body>
+</html>
