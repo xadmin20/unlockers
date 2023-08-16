@@ -135,7 +135,7 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
                         else "http"
                     ),
                     current_site.domain,
-                    reverse("booking:unique_view", kwargs={"unique_path": unique_path})
+                    reverse("unique_path", kwargs={"unique_path": unique_path})
                 ),
                 "link_auto": "{}://{}{}".format(
                     (
@@ -144,9 +144,19 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
                         else "http"
                     ),
                     current_site.domain,
-                    admin_link_car,
+                    reverse("unique_path", kwargs={"unique_path": unique_path})
+                    # admin_link_car, # reverse("link_path", kwargs={"unique": unique_path})
                 )
             }
         )
         print(f"Contrib.py: {request.id} - {request.car_registration}")
+        print(f"Contrib.py: {request.id} - {request.car_registration}"
+              f" - {request.car.manufacturer if request.car else None}"
+              f" - {request.car.car_model if request.car else None}"
+              f" - {request.car_year}"
+              f" - {request.distance}"
+              f" - {request.service.title if request.service else None}"
+              f" - {request.price}"
+              f" - {request.post_code}"
+              f" - {unique_path}")
     return request

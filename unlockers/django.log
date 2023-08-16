@@ -2354,3 +2354,114 @@ INFO 2023-08-16 11:09:46,319 basehttp "POST /link/kTCaGNmpk7TN/ HTTP/1.1" 302 0
 INFO 2023-08-16 11:09:46,332 basehttp "GET /link/kTCaGNmpk7TN/ HTTP/1.1" 200 3452
 INFO 2023-08-16 11:09:46,369 basehttp "GET /link/kTCaGNmpk7TN/ HTTP/1.1" 200 3452
 INFO 2023-08-16 11:19:51,658 basehttp "GET /link/kTCaGNmpk7TN/ HTTP/1.1" 200 1019
+INFO 2023-08-16 11:47:54,430 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2023-08-16 11:47:54,454 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4181
+WARNING 2023-08-16 11:48:06,878 log Not Found: /api/
+WARNING 2023-08-16 11:48:06,878 basehttp "GET /api/ HTTP/1.1" 404 7288
+WARNING 2023-08-16 11:48:19,360 log Not Found: /api/v1/
+WARNING 2023-08-16 11:48:19,361 basehttp "GET /api/v1/ HTTP/1.1" 404 7352
+WARNING 2023-08-16 11:48:36,819 log Not Found: /api/v1/request/
+WARNING 2023-08-16 11:48:36,820 basehttp "GET /api/v1/request/ HTTP/1.1" 404 8663
+INFO 2023-08-16 11:48:45,429 basehttp "GET /api/v1/request/create HTTP/1.1" 301 0
+WARNING 2023-08-16 11:48:45,457 log Method Not Allowed: /api/v1/request/create/
+WARNING 2023-08-16 11:48:45,457 basehttp "GET /api/v1/request/create/ HTTP/1.1" 405 13261
+INFO 2023-08-16 11:48:45,519 basehttp - Broken pipe from ('127.0.0.1', 53419)
+INFO 2023-08-16 11:49:17,176 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 31970
+INFO 2023-08-16 11:49:17,196 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-16 11:49:17,276 basehttp "GET /static/admin/js/calendar.js?_=1692172157220 HTTP/1.1" 200 8466
+INFO 2023-08-16 11:49:17,277 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1692172157221 HTTP/1.1" 200 19319
+INFO 2023-08-16 11:49:17,377 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 31970
+ERROR 2023-08-16 11:49:21,781 log Internal Server Error: /api/v1/request/create/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\urls\base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+KeyError: 'booking'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "D:\projects\fl\unlockers\apps\request\rest\serializers.py", line 172, in create
+    request_object = create_request_for_unregistered_car(
+  File "D:\projects\fl\unlockers\apps\request\contrib.py", line 138, in create_request_for_unregistered_car
+    reverse("booking:unique_view", kwargs={"unique_path": unique_path})
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\urls\base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'booking' is not a registered namespace
+ERROR 2023-08-16 11:49:21,783 basehttp "POST /api/v1/request/create/ HTTP/1.1" 500 155350
+INFO 2023-08-16 11:49:40,657 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 32564
+INFO 2023-08-16 11:49:40,674 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-16 11:49:40,750 basehttp "GET /static/admin/js/calendar.js?_=1692172180681 HTTP/1.1" 200 8466
+INFO 2023-08-16 11:49:40,750 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 32564
+INFO 2023-08-16 11:49:40,750 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1692172180682 HTTP/1.1" 200 19319
+INFO 2023-08-16 11:49:46,112 basehttp "GET /admin/booking/order/2/change/ HTTP/1.1" 200 39597
+INFO 2023-08-16 11:49:46,129 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-16 11:49:46,201 basehttp "GET /admin/booking/order/2/change/ HTTP/1.1" 200 39597
+INFO 2023-08-16 11:51:43,582 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-16 11:51:44,642 autoreload Watching for file changes with StatReloader
+INFO 2023-08-16 11:52:08,140 autoreload Watching for file changes with StatReloader
+INFO 2023-08-16 11:52:49,670 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 13548
+INFO 2023-08-16 12:00:56,931 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-16 12:01:10,560 log Internal Server Error: /api/v1/request/create/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "D:\projects\fl\unlockers\apps\request\rest\serializers.py", line 172, in create
+    request_object = create_request_for_unregistered_car(
+  File "D:\projects\fl\unlockers\apps\request\contrib.py", line 147, in create_request_for_unregistered_car
+    reverse("unique_path", kwargs={"unique": unique_path})
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'unique_path' with keyword arguments '{'unique': 'sqpLx6idR26l'}' not found. 1 pattern(s) tried: ['link/(?P<unique_path>[^/]+)/\\Z']
+ERROR 2023-08-16 12:01:10,562 basehttp "POST /api/v1/request/create/ HTTP/1.1" 500 155900
+INFO 2023-08-16 12:03:15,670 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-16 12:03:25,328 log Method Not Allowed: /api/v1/request/create/
+WARNING 2023-08-16 12:03:25,328 basehttp "GET /api/v1/request/create/ HTTP/1.1" 405 13261
+INFO 2023-08-16 12:04:01,907 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 13548
