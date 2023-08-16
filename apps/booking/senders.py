@@ -1,20 +1,19 @@
-from pathlib import Path
-import requests
 import time
+from pathlib import Path
+from typing import *
 
+from constance import config
 from django.conf import settings
-from django.urls import reverse
 from django.contrib.sites.models import Site
 from django.template import Template as DjangoTemplate, Context
-from typing import *
+from django.urls import reverse
 from postie.shortcuts import send_mail
-from constance import config
 
-from markup.utils import crypt_str
-from apps.cars.contrib import get_car, Car as CarEntity
-from apps.sms.models import get_timeout_amount
 from apps.booking.const import ORDER_STATUS_WORK
+from apps.cars.contrib import get_car, Car as CarEntity
 from apps.sms.models import TEMPLATES, REQUEST, ORDER_PAYED, SmsTemplate, SmsMessage
+from apps.sms.models import get_timeout_amount
+from markup.utils import crypt_str
 
 
 class Sender:
@@ -42,14 +41,14 @@ class Sender:
         responsible_email, responsible_id = self.responsible
         link_confirm = self.__generate_link(reverse(
             "confirm_order", kwargs={
-                "uuid": crypt_str(self.order.uuid),
+                "unique_path_field": crypt_str(self.order.unique_path_field),
                 "empl_id": crypt_str(responsible_id),
                 "status": crypt_str(ORDER_STATUS_WORK.confirm)
             },
         ))
         link_refused = self.__generate_link(reverse(
             "confirm_order", kwargs={
-                "uuid": crypt_str(self.order.uuid),
+                "unique_path_field": crypt_str(self.order.unique_path_field),
                 "empl_id": crypt_str(responsible_id),
                 "status": crypt_str(ORDER_STATUS_WORK.refused)
             },
@@ -96,20 +95,20 @@ class Sender:
         responsible_email, responsible_id = self.responsible
         link_confirm = self.__generate_link(reverse(
             "confirm_order", kwargs={
-                 "uuid": crypt_str(self.order.uuid),
-                 "empl_id": crypt_str(responsible_id),
-                 "status": crypt_str(ORDER_STATUS_WORK.confirm)
-             },
+                "unique_path_field": crypt_str(self.order.unique_path_field),
+                "empl_id": crypt_str(responsible_id),
+                "status": crypt_str(ORDER_STATUS_WORK.confirm)
+            },
         ))
         link_refused = self.__generate_link(reverse(
             "confirm_order", kwargs={
-                 "uuid": crypt_str(self.order.uuid),
-                 "empl_id": crypt_str(responsible_id),
-                 "status": crypt_str(ORDER_STATUS_WORK.refused)
-             },
+                "unique_path_field": crypt_str(self.order.unique_path_field),
+                "empl_id": crypt_str(responsible_id),
+                "status": crypt_str(ORDER_STATUS_WORK.refused)
+            },
         ))
         print("Try to send message")
-        
+
         if self.order.partner and self.order.partner.email:
             responsible_email.append(self.order.partner.email)
         if config.ADMIN_EMAIL:
@@ -159,10 +158,11 @@ def _send_sms(phone: str, message: str) -> [int, str]:
     #     "input2": message,
     #     "input3": config.SMS_PASSWORD,
     # })
-    print(phone, message) # TODO: uncomment
+    print(phone, message)  # TODO: uncomment
 
     # return response.status_code, response.content # TODO: uncomment
     return 200, "response.content"
+
 
 def generate_message(context: Dict, template_name: TEMPLATES) -> [str, str, str]:
     template = SmsTemplate.objects.filter(template=template_name).first()

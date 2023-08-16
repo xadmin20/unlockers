@@ -1,10 +1,14 @@
 import random
 import string
 
+from constance import config
+from django.conf import settings
 from django.contrib.auth.models import User
+from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from model_utils.choices import Choices
+from postie.shortcuts import send_mail
 
 from apps.booking.const import ORDER_STATUS_WORK
 from .senders import Sender
@@ -108,14 +112,6 @@ class Order(models.Model):
         null=True,
         blank=True
     )
-    #####
-    # request = models.ForeignKey(
-    #     "request.Request",
-    #     verbose_name=_("Request"),
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     blank=True
-    # )
 
     created_at = models.DateTimeField(
         auto_now_add=True
@@ -156,13 +152,60 @@ class Order(models.Model):
         # Если путь еще не создан, то генерируем его
         if not self.unique_path_field:
             self.unique_path_field = self.generate_unique_path()
-        super().save(*args, **kwargs)
+        # super().save(*args, **kwargs)
+        is_new = self._state.adding
+        # Сначала сохраните объект (чтобы у нас были все обновленные данные)
+        super(Order, self).save(*args, **kwargs)
+        # Если это обновление, отправляем письмо
+        self.send_notification_email()
 
     def send_message(self):
         Sender(self).push()
 
     def send_message_admin(self):
         Sender(self).push_in_admin()
+
+    def send_notification_email(self):
+        # Ваш код функции send_mail ...
+        print("Try to send message")
+        recipients = []
+
+        # Если config.ADMIN_EMAIL это строка
+        if isinstance(config.ADMIN_EMAIL, str):
+            recipients.append(config.ADMIN_EMAIL)
+        # Если config.ADMIN_EMAIL это список
+        else:
+            recipients.extend(config.ADMIN_EMAIL)
+
+        if self.partner:
+            recipients.append(self.partner.email)
+        current_site = Site.objects.first()
+        try:
+            send_mail(
+
+                settings.POSTIE_TEMPLATE_CHOICES.created_request,
+                recipients,
+                {
+                    "id": str(self.id),
+                    "name": self.name,
+                    "contacts": self.phone,
+                    "email": self.partner.email if self.partner else None,
+                    "phone": self.phone,
+                    "car_registration": self.car_registration,
+                    "manufacture": self.car.manufacturer if self.car else None,
+                    "car_model": self.car.car_model if self.car else None,
+                    "car_year": self.car_year,
+                    "distance": self.distance,
+                    "service": self.service.title if self.service else None,
+                    "price": self.price,
+                    "post_code": self.post_code,
+                    "link": f"{current_site}/link/{self.unique_path_field}",
+                    "link_auto": f"{current_site}/link/{self.unique_path_field}"
+                }
+            )
+            print("Message sent successfully!")
+        except Exception as e:
+            print(f"Failed to send message: {e}")  # TODO: сделать отправку сообщения в СМС админу
 
 
 class Employee(models.Model):

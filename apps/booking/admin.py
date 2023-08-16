@@ -42,6 +42,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     @atomic()
     def save_model(self, request, obj, form, change):
+        amount = 0  # значение по умолчанию
         responsible_old = form.initial.get('responsible')
         responsible_new = form.cleaned_data.get('responsible')
         if responsible_old != (responsible_new.id if responsible_new else None):
@@ -74,9 +75,7 @@ class OrderAdmin(admin.ModelAdmin):
                             'type_transactions': TRANSACTIONS_STATUS.cancellation,
                             'order': obj
                         }
-
                         create_transaction(**data)
-
                     partner_new.partner.balance = F('balance') + amount
                     partner_new.partner.save()
                     partner_new.refresh_from_db()
@@ -137,7 +136,7 @@ class OrderAdmin(admin.ModelAdmin):
     def order_detail(self, obj):
         if not obj or not obj.is_paid():
             return "-"
-        link = f"/order/{obj.uuid}/detail/"
+        link = f"/link/{obj.unique_path_field}/"
         return mark_safe(f"<a href='{link}'>{link}</a>")
 
     order_detail.short_description = _("Order detail link")

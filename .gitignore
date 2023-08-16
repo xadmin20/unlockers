@@ -1,3 +1,6 @@
 /.env
 /env/
-/markup/templates/
+/templates/
+unlockers/settings.py
+
+
