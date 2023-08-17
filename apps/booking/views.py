@@ -11,7 +11,7 @@ from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from postie.shortcuts import send_mail
 
-from apps.booking.forms import OrderForm
+from apps.booking.forms import OrderForm, ClientOrderForm
 from apps.booking.models import Order
 from markup.utils import decrypt_str
 
@@ -79,7 +79,7 @@ class OrderDetailView(DetailView):
 
     def get_success_url(self):
         return self.request.path
-    
+
     def get_object(self, queryset=None):
         unique_link = self.kwargs.get('unique_path')
         return get_object_or_404(Order, unique_path_field=unique_link)
@@ -96,18 +96,19 @@ class OrderDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # Проверяем, является ли пользователь частью группы Custom или admin
         if self.request.user.groups.filter(name='Worker').exists() or self.request.user.is_staff:
             context['is_executive'] = True
+            form_class = OrderForm
         else:
             context['is_executive'] = False
-        # Если это POST-запрос и пользователь имеет право на редактирование
-        if self.request.method == "POST" and context['is_executive']:
-            form = OrderForm(self.request.POST, instance=self.object)
+            form_class = ClientOrderForm
+
+        if self.request.method == "POST" and (context['is_executive'] or not context['is_executive']):
+            form = form_class(self.request.POST, instance=self.object)
             if form.is_valid():
                 form.save()
-                # Здесь можно добавить сообщение или другую логику
         else:
-            form = OrderForm(instance=self.object)
+            form = form_class(instance=self.object)
+
         context['form'] = form
         return context

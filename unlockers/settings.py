@@ -54,12 +54,13 @@ INSTALLED_APPS = [
     'apps.proxy',
     'apps.cars',
     'apps.request',
-    'apps.booking',
+    'apps.booking.apps.BookingConfig',
     'apps.pages',
     'apps.blog',
     'apps.sms',
     'apps.partners',
-    'order'
+    'order',
+    'apps.worker',
 
 ]
 
@@ -140,7 +141,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'clinic',
+#         'USER': 'clinic_user_db',
+#         'PASSWORD': 'clinic_pass',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
@@ -323,7 +333,6 @@ POSTIE_TEMPLATE_CONTEXTS = {
         "address": _("Address"),
         "post_code": _("Post code"),
         "link": _("Link to request"),
-
         "link_confirm": _("Link for confirm order"),
         "link_refused": _("Link for refused order"),
     },

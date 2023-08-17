@@ -1,6 +1,6 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django.contrib.auth.models import User
 
 
 class Partner(models.Model):
@@ -32,7 +32,8 @@ class Partner(models.Model):
     change_email = models.EmailField(
         verbose_name=_("Change email"),
         blank=True,
-    )
+    ),
+    photo = models.ImageField(upload_to="photos/", blank=True)
 
     class Meta:
         verbose_name = _("Partner")

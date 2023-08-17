@@ -37,7 +37,7 @@ class Sender:
         )
 
     def push_in_admin(self):
-        """Send a message to the admin about the new order"""
+        """Отправка сообщения в админку"""
         responsible_email, responsible_id = self.responsible
         link_confirm = self.__generate_link(reverse(
             "confirm_order", kwargs={

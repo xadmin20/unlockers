@@ -2,7 +2,6 @@ import random
 import string
 
 from constance import config
-from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.db import models
@@ -152,12 +151,11 @@ class Order(models.Model):
         # Если путь еще не создан, то генерируем его
         if not self.unique_path_field:
             self.unique_path_field = self.generate_unique_path()
-        # super().save(*args, **kwargs)
         is_new = self._state.adding
         # Сначала сохраните объект (чтобы у нас были все обновленные данные)
         super(Order, self).save(*args, **kwargs)
         # Если это обновление, отправляем письмо
-        self.send_notification_email()
+        # self.send_notification_email()
 
     def send_message(self):
         Sender(self).push()
@@ -165,11 +163,10 @@ class Order(models.Model):
     def send_message_admin(self):
         Sender(self).push_in_admin()
 
-    def send_notification_email(self):
+    def send_notification_email(self, template_choice):
         # Ваш код функции send_mail ...
         print("Try to send message")
         recipients = []
-
         # Если config.ADMIN_EMAIL это строка
         if isinstance(config.ADMIN_EMAIL, str):
             recipients.append(config.ADMIN_EMAIL)
@@ -182,11 +179,11 @@ class Order(models.Model):
         current_site = Site.objects.first()
         try:
             send_mail(
-
-                settings.POSTIE_TEMPLATE_CHOICES.created_request,
+                template_choice,
                 recipients,
                 {
                     "id": str(self.id),
+                    "date_at": self.date_at.strftime("%d.%m.%Y %H:%M"),
                     "name": self.name,
                     "contacts": self.phone,
                     "email": self.partner.email if self.partner else None,
