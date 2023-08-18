@@ -2,6 +2,7 @@ import random
 import string
 
 from constance import config
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.db import models
@@ -10,12 +11,13 @@ from model_utils.choices import Choices
 from postie.shortcuts import send_mail
 
 from apps.booking.const import ORDER_STATUS_WORK
-from .senders import Sender
 
 PAYMENT_STATUSES = Choices(
     ("paid", _("Paid")),
     ("no_paid", _("Not paid")),
 )
+
+template_choice = ''
 
 
 class Order(models.Model):
@@ -140,6 +142,20 @@ class Order(models.Model):
             .exists()
         )
 
+    def has_confirm_work_changed(self):
+        """Проверка изменился ли статус заказа"""
+        if self.pk:
+            orig = Order.objects.get(pk=self.pk)
+            return orig.confirm_work != self.confirm_work
+        return False
+
+    def has_partner_changed(self):
+        """Проверка изменился ли партнер заказа"""
+        if self.pk:
+            orig = Order.objects.get(pk=self.pk)
+            return orig.partner_id != self.partner_id
+        return False
+
     def generate_unique_path(self):
         chars = string.ascii_letters + string.digits
         while True:
@@ -151,20 +167,36 @@ class Order(models.Model):
         # Если путь еще не создан, то генерируем его
         if not self.unique_path_field:
             self.unique_path_field = self.generate_unique_path()
+
         is_new = self._state.adding
-        # Сначала сохраните объект (чтобы у нас были все обновленные данные)
+        global template_choice
+        confirm_work_changed = self.has_confirm_work_changed()
+        partner_changed = self.has_partner_changed()
         super(Order, self).save(*args, **kwargs)
-        # Если это обновление, отправляем письмо
-        # self.send_notification_email()
 
-    def send_message(self):
-        Sender(self).push()
+        # Теперь, после сохранения, проверяем изменились ли наши интересующие поля:
+        if self.confirm_work == ORDER_STATUS_WORK.new:
+            template_choice = settings.POSTIE_TEMPLATE_CHOICES.created_request
+        else:
+            template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
 
-    def send_message_admin(self):
-        Sender(self).push_in_admin()
+        if confirm_work_changed:
+            print("Confirm work changed")
+            # self.send_notification_email_for_confirm_work()
 
-    def send_notification_email(self, template_choice):
-        # Ваш код функции send_mail ...
+        if partner_changed:
+            print("Partner changed")
+            template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
+            self.send_notification_email()
+
+    # def send_message(self):
+    #     Sender(self).push()
+    #
+    # def send_message_admin(self):
+    #     Sender(self).push_in_admin()
+
+    def send_notification_email(self):
+        # Функция отправки сообщения
         print("Try to send message")
         recipients = []
         # Если config.ADMIN_EMAIL это строка

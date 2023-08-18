@@ -1,21 +1,20 @@
+from django.db.models import F
 from django.utils.translation import pgettext_lazy
-
+from rest_framework import exceptions
+from rest_framework.exceptions import NotFound
 from rest_framework.generics import (
     CreateAPIView, UpdateAPIView, ListAPIView, RetrieveAPIView, GenericAPIView
 )
-from rest_framework import exceptions
-from rest_framework.exceptions import NotFound
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 
-from apps.booking.senders import order_after_pay_sms
 from apps.booking.models import Order, Employee, Transaction, PAYMENT_STATUSES
+from apps.partners.const import TRANSACTIONS_STATUS
+from apps.partners.models import Partner
+from apps.partners.transactions import create_transaction
 from apps.request.models import Request
 from apps.sms.models import is_phone_mechanic
-
 from markup.utils import get_session
-
-
 from .serializers import (
     OrderCreateSerializer,
     UserOrderCreateSerializer,
@@ -24,15 +23,11 @@ from .serializers import (
 
     TransCrtSerializer,
 )
-from django.db.models import F
-from apps.partners.transactions import create_transaction
-from apps.partners.const import TRANSACTIONS_STATUS
-from apps.partners.models import Partner
 
 
 class OrderCreateAPIView(CreateAPIView):
     serializer_class = OrderCreateSerializer
-    permission_classes = (IsAdminUser, )
+    permission_classes = (IsAdminUser,)
     queryset = Order.objects.all()
 
 
@@ -74,14 +69,14 @@ class OrderUserUpdateAPIView(UpdateAPIView):
             raise NotFound
 
         if order.is_paid():
-            raise exceptions.ValidationError({"detail":[pgettext_lazy("ValidationError", "allredy Pay")]})
+            raise exceptions.ValidationError({"detail": [pgettext_lazy("ValidationError", "allredy Pay")]})
 
         return order
 
 
 class EmployeeListAPIView(ListAPIView):
     serializer_class = EmployeeSerializer
-    permission_classes = (IsAuthenticated, )
+    permission_classes = (IsAuthenticated,)
     queryset = Employee.objects.all()
 
 
@@ -137,7 +132,7 @@ class TransUptAPIView(GenericAPIView):
                         user=user,
                         balance=balance,
                     )
-                
+
                 data = {
                     'partner': user,
                     'amount': order.prepayment,
@@ -157,3 +152,21 @@ class TransUptAPIView(GenericAPIView):
             #     order_after_pay_sms(transaction.order)
 
         return Response(data={"any": "result"})
+
+
+class IsCustomGroup(IsAuthenticated):
+    """ Проверка на группу Custom и на is_staff """
+
+    def has_permission(self, request, view):
+        return (super().has_permission(request, view) and
+                request.user.groups.filter(name='Custom').exists() and
+                request.user.is_staff)
+
+
+class OrderApiView(RetrieveAPIView):
+    """API для получения заказа по уникальному пути"""
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
+    lookup_url_kwarg = 'unique_path'
+    lookup_field = 'unique_path_field'
+    permission_classes = [IsCustomGroup]

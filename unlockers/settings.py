@@ -241,6 +241,7 @@ THUMBNAIL_HIGH_RESOLUTION = True
 
 CKEDITOR_CONFIGS = {
     'default': {
+        'allowedContent': True,  # Это позволит вставлять любой HTML-контент
         'toolbar': 'Custom',
         'toolbar_Custom': [
             [

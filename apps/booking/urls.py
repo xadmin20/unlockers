@@ -10,4 +10,6 @@ urlpatterns = [
         views.OrderConfirmTempaliteView.as_view(), name="confirm_order"
     ),
     path('link/<str:unique_path>/', OrderDetailView.as_view(), name='unique_path'),
+    path('order_yes/<int:order_id>/', views.confirm_order, name='confirm_order'),
+    path('order_no/<int:order_id>/', views.decline_order, name='decline_order'),
 ]

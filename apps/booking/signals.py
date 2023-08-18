@@ -1,3 +1,5 @@
+import traceback
+
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
@@ -11,15 +13,17 @@ print("Signal module imported!")
 @receiver(post_save, sender=Order)
 def post_save_order(sender, instance, created, **kwargs):
     print("post_save_order triggered!")
+    traceback.print_stack()
     if instance.pk:  # Это не новый объект, значит, это обновление
         old_instance = Order.objects.get(pk=instance.pk)
+        print("post_save_order old_instance: ", old_instance)
 
     if created:  # Если это новый объект
         instance.send_notification_email(template_choice=settings.POSTIE_TEMPLATE_CHOICES.created_request)
         print("post_save_order created!")
     else:  # Это обновление
         old_instance = Order.objects.get(pk=instance.pk)
-
+        print("post_save_order old_instance else: ", old_instance)
         # Проверяем, изменилось ли поле Partner
         if old_instance.partner != instance.partner:
             if instance.partner:

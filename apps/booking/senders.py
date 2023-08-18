@@ -5,6 +5,7 @@ from typing import *
 from constance import config
 from django.conf import settings
 from django.contrib.sites.models import Site
+from django.core.mail import send_mail as django_send_mail
 from django.template import Template as DjangoTemplate, Context
 from django.urls import reverse
 from postie.shortcuts import send_mail
@@ -235,3 +236,31 @@ def order_after_pay_sms(order):
         ))
     }
     send_sms(template=ORDER_PAYED, context=context, phone=order.request.phone)
+
+
+def send_notification_to_admin(order, action):
+    """Функция отправки уведомления админу подтверждение или отказ от заказа"""
+    try:
+        print("send_notification_to_admin", order, action)
+        if action == "confirmed":
+            subject = "Воркер подтвердил заказ"
+            message = (f"Воркер {order.partner} подтвердил заказ №{order.id}"
+                       f" на сумму {order.price} рублей. Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
+        elif action == "declined":
+            subject = "Воркер отказался от заказа"
+            message = (f"Воркер отказался от заказа №{order.id}. Назначьте другого исполнителя."
+                       f" Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
+        else:
+            return
+        django_send_mail(
+            subject=subject,
+            message=message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=config.ADMIN_EMAIL.split(","),
+        )
+        print("send_notification_to_admin", order, action, "success")
+
+    except Exception as e:
+        print(e)

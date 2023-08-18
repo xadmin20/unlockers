@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
@@ -14,6 +15,7 @@ from postie.shortcuts import send_mail
 from apps.booking.forms import OrderForm, ClientOrderForm
 from apps.booking.models import Order
 from markup.utils import decrypt_str
+from .senders import send_notification_to_admin
 
 
 def validate_uuid(uuid_str):
@@ -112,3 +114,26 @@ class OrderDetailView(DetailView):
 
         context['form'] = form
         return context
+
+
+def confirm_order(request, order_id):
+    """Подтверждение заказа"""
+    order = get_object_or_404(Order, pk=order_id)
+    # Согласие воркера на выполнение заказа
+    # здесь может быть ваш код для подтверждения
+    order.status = "confirmed"  # Например
+    order.save()
+    # Отправьте уведомление админу о согласии
+    send_notification_to_admin(order, action="confirmed")
+    return redirect('unique_path', unique_path=order.unique_path_field)
+
+
+def decline_order(request, order_id):
+    """Отказ воркера от выполнения заказа"""
+    order = get_object_or_404(Order, pk=order_id)
+    order.partner = None
+    order.save()
+    # Отправьте уведомление админу об отказе
+    send_notification_to_admin(order, action="declined")
+    # todo: отправить смс Админу
+    return redirect('unique_path', unique_path=order.unique_path_field)
