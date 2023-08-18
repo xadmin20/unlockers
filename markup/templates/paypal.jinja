@@ -1,0 +1,61 @@
+
+<div id="paypal-button-container"></div>
+<script src="https://www.paypal.com/sdk/js?client-id=EBWKjlELKMYqRNQ6sYvFo64FtaRLRR5BdHEESmha49TM&amp;currency=GBP"></script>
+<script>
+  script.
+    function getCookie(name) {
+      const matches = document.cookie.match(new RegExp(
+        `(?:^|; )${name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1')}=([^;]*)`
+      ))
+      return matches ? decodeURIComponent(matches[1]) : undefined
+    }
+    paypal.Buttons({
+      createOrder: function() {
+        //SetExpressCheckout URL
+        var SETEC_URL = '/api/v1/paypal_r/set_express_checkout/';
+        return fetch(SETEC_URL).then(function(res) {
+          return res.json();
+      }).then(function(data) {
+      console.log(data);
+      return JSON.parse(data).TOKEN;
+      });
+      },
+      onApprove: function(data) {
+        console.log('onApprove')
+        window.eventBus.$emit('paypal-loader', {
+          isLoading: true
+        })
+        //GetExpresCheckout/DoExpressCheckoutPayment URL
+        var EXECUTE_URL = '/api/v1/paypal_r/get_express_checkout/';
+        console.log(data);
+        return fetch(EXECUTE_URL, {
+          method: 'post',
+          headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRFToken': getCookie('csrftoken')
+          },
+          body: JSON.stringify({
+          paymentID: data.paymentID,
+            payerID: data.payerID,
+            orderID: data.orderID
+            })
+          }).then(res => {
+            window.eventBus.$emit('paypal-loader', {
+              isLoading: false
+            })
+            if (res.status === 200) {
+              window.location = '/order_complete/?message=Order successfully paid. A manager will contact you shortly.'
+            } else {
+              window.location = '/order_complete/?message=Payment for the order was unsuccessful. Do not worry, in the near future a manager will contact you and help to resolve all issues.'
+            }
+          })
+      },
+      onCancel: function(data, actions) {
+        console.log('user cancelled-', data);
+      },
+      onError: function(data, actions) {
+        console.log('error occured-s', data);
+      }
+      }).render('#paypal-button-container');
+</script>

@@ -1,0 +1,8 @@
+{% macro breadcrumb(levels) %} 
+<nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+  <ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">{% set len_levels = levels|length %}{% for href, name in levels %} {% set count = loop.index %}
+    <li class="breadcrumb__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">{% if len_levels != count %} <a href="{{ href }}" aria-level="{{ count }}"><span itemprop="name">{{name }}</span></a>{% else %}<a class="is-passive" aria-level="{{ count }}"><span itemprop="name">{{name }}</span></a> {% endif %}{% if count < len_levels %} <i class="breadcrumb__symbol" aria-hidden="true">/</i> {% endif %}
+      <meta itemprop="position" content="{{ count }}">
+    </li> {% endfor %}
+  </ul>
+</nav> {% endmacro %}
