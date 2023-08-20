@@ -1,4 +1,5 @@
-from app.celery import app
+from unlockers.celery import app
+
 from .contrib import proxy_getter
 from .models import Proxy
 

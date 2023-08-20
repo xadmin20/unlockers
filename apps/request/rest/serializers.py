@@ -1,26 +1,24 @@
-from django.utils.translation import gettext_lazy as _
-from django.conf import settings
-from django.urls import reverse
-from django.contrib.sites.models import Site
-
-from rest_framework import serializers
-from postie.shortcuts import send_mail
 from constance import config
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from postie.shortcuts import send_mail
+from rest_framework import serializers
 
-from markup.utils import create_session, get_session, drop_session
-
-from apps.request.models import Request, ServiceVariation, Quote
+from apps.cars.contrib import Car as CarEntity
+from apps.cars.contrib import CarParsingException
+from apps.cars.contrib import get_car
+from apps.cars.contrib import register_car
+from apps.request.contrib import DistanceGetterException
+from apps.request.contrib import calculate_distance_price
+from apps.request.contrib import calculate_price
+from apps.request.contrib import create_request_for_unregistered_car
+from apps.request.models import Quote
+from apps.request.models import Request
+from apps.request.models import ServiceVariation
 from apps.sms.models import is_phone_mechanic
-from apps.booking.senders import request_sms
-from apps.request.contrib import (
-    calculate_distance_price,
-    DistanceGetterException,
-    calculate_price,
-    create_request_for_unregistered_car,
-)
-from apps.cars.contrib import (
-    get_car, CarParsingException, Car as CarEntity, register_car
-)
+from markup.utils import create_session
 
 
 def validate_phone(phone):
@@ -29,7 +27,9 @@ def validate_phone(phone):
     raise serializers.ValidationError(_("Invalid phone format"))
 
 
-def add_quote(car_registration, service, post_code, price=None, car_model=None, manufacturer=None, phone=None, mailing=False):
+def add_quote(
+        car_registration, service, post_code, price=None, car_model=None, manufacturer=None, phone=None, mailing=False
+        ):
     quote = Quote.objects.create(
         car_registration=car_registration,
         service=service,
@@ -38,17 +38,18 @@ def add_quote(car_registration, service, post_code, price=None, car_model=None, 
         car_model=car_model,
         manufacturer=manufacturer,
         phone=phone,
-    )
+        )
     # Send admin mail notification
     # if not is_phone_mechanic() and phone:
     if phone and mailing:
-        base_link = "{}://{}".format((
+        base_link = "{}://{}".format(
+            (
                 'https'
                 if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
                 else "http"
             ),
             Site.objects.first().domain
-        )
+            )
         send_mail(
             settings.POSTIE_TEMPLATE_CHOICES.quote_created,
             config.ADMIN_EMAIL.split(","),
@@ -68,8 +69,8 @@ def add_quote(car_registration, service, post_code, price=None, car_model=None, 
                 "phone": phone,
                 "created_at": quote.created_at,
                 "id": quote.id,
-            }
-        )
+                }
+            )
     return quote
 
 
@@ -80,14 +81,14 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Request
         fields = (
-            "id", "car_registration", 
+            "id", "car_registration",
             "post_code", "service",
             "car_model", "manufacturer",
             "price", "phone"
-        )
+            )
         read_only_fields = (
             "id", "car_model", "manufacturer", "price"
-        )
+            )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -102,7 +103,7 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         _request = self.context["request"]
-        
+
         # Try to get car in register, if car not exists or something else raise validation error
         # If phone mechanic enable, create unregistered car request
         try:
@@ -115,16 +116,18 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
                 post_code=attrs.get("post_code"),
                 phone=attrs.get("phone"),
                 mailing=True,
-            )
+                )
             create_session(_request, 'id_quote', obj_quote.id, crypt=True)
 
             if is_phone_mechanic():
                 attrs["distance"] = self.distance
                 create_request_for_unregistered_car(_request, attrs)
 
-            raise serializers.ValidationError(_(
-                "Car is not found."
-            ))
+            raise serializers.ValidationError(
+                _(
+                    "Car is not found."
+                    )
+                )
 
         # Try to calculate distance and distance price
         # If raise exception create quote and raise validation error that postal code is invalid
@@ -139,12 +142,14 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
                 manufacturer=self.car_entity.manufacturer,
                 phone=attrs.get("phone"),
                 mailing=True,
-            )
+                )
             create_session(_request, 'id_quote', obj_quote.id, crypt=True)
 
-            raise serializers.ValidationError(_(
-                "Impossible to calculate distance. Invalid post code."
-            ))
+            raise serializers.ValidationError(
+                _(
+                    "Impossible to calculate distance. Invalid post code."
+                    )
+                )
         return attrs
 
     def create(self, validated_data):
@@ -167,11 +172,11 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
             car_year=car_year,
             distance=self.distance,
             distance_price=self.distance_price,
-        )
+            )
         is_phone = is_phone_mechanic()
         request_object = create_request_for_unregistered_car(
             self.context["request"], validated_data, is_notify=is_phone
-        )
+            )
         # Write in session
         request = self.context["request"]
         request.session["request"] = request_object.id
@@ -183,18 +188,18 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
             'post_code': validated_data["post_code"],
             'price': validated_data["price"],
             'phone': validated_data.get("phone")
-        }
+            }
         print(obj_quote_data)
         if self.car_entity:
             obj_quote_data['car_model'] = self.car_entity.car_model.split(' ', 1)[0]
             obj_quote_data['manufacturer'] = self.car_entity.manufacturer
-        
+
         obj_quote = add_quote(**obj_quote_data)
         create_session(request, 'id_quote', obj_quote.id, crypt=True)
-        
+
         # Send success sms
-        if is_phone:
-            request_sms(request_object)
+        # if is_phone:
+        #     request_sms(request_object) # TODO: раскомментировать в случае необходимости отправки смс
         return request_object
 
 
@@ -203,7 +208,7 @@ def form_link(_reverse, context):
         context.get("protocol"),
         context.get("domain"),
         _reverse
-    )
+        )
 
 
 class UnregisteredCarRequestSerializer(serializers.ModelSerializer):
@@ -212,10 +217,10 @@ class UnregisteredCarRequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Request
         fields = (
-            "car_registration", "post_code", 
-            "service", "name", "contacts", 
+            "car_registration", "post_code",
+            "service", "name", "contacts",
             "phone", "email", "car_model"
-        )
+            )
 
     def validate_phone(self, phone):
         return validate_phone(phone)
@@ -242,7 +247,7 @@ class RequestUpdateSerializer(serializers.ModelSerializer):
         model = Request
         fields = (
             "name", "contacts", "comment", "phone", "email"
-        )
+            )
 
     def update(self, instance, validated_data):
         request = super().update(instance, validated_data)
@@ -267,18 +272,18 @@ class RequestUpdateSerializer(serializers.ModelSerializer):
                 "post_code": request.post_code,
                 "link": "{}://{}{}".format(
                     (
-                        'https' 
-                        if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL") 
+                        'https'
+                        if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
                         else "http"
                     ),
                     current_site.domain,
                     reverse(
-                        "admin:request_request_change", 
+                        "admin:request_request_change",
                         kwargs={"object_id": request.id}
+                        ),
                     ),
-                ),
-            }
-        )
+                }
+            )
         return request
 
 

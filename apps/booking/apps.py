@@ -6,6 +6,5 @@ class BookingConfig(AppConfig):
 
     def ready(self):
         # Указание на ваш модуль как на комментарий
-        # module_name = "apps.booking.signals"
-        # importlib.import_module(module_name)
+        # print("BookingConfig ready")
         pass

@@ -1,3 +1,6 @@
+
+
+
 {% block content %}
 {% if is_executive %}
 <!-- Форма для исполнителей -->
@@ -20,7 +23,6 @@
 </form>
 
 <div class="order-detail">
-    <h2>Order Details for #{{ object.id }}</h2>
 
     <p><strong>Date:</strong> {{ object.date_at }}</p>
     <p><strong>Price:</strong> {{ object.price }}</p>
@@ -52,7 +54,12 @@
     <h3>Edit Order Detailsmakrup</h3>
     <!-- Тут можете добавить форму редактирования -->
     {% endif %}
+    {% if object.payment_status != 'PAID' %}
+<div class="payment-section">
+    <p>Сумма предоплаты: {{ prepayment_amount }}</p>
+    <button type="button" class="btn btn-primary" onclick="initiatePayment()">Оплатить</button>
 </div>
 {% endif %}
+</div></div>
+{% endif %}
 {% endblock %}
-

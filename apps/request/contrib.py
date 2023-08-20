@@ -10,8 +10,10 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from postie.shortcuts import send_mail
 
-from apps.request.models import Request, Quote
-from markup.utils import get_session, drop_session
+from apps.request.models import Quote
+from apps.request.models import Request
+from markup.utils import drop_session
+from markup.utils import get_session
 from .models import SERVICE_VARIATIONS
 
 
@@ -29,21 +31,27 @@ class DistanceGetterException(Exception):
 def calculate_distance_price(post_code):
     """Connect with google api, get distance, calculate price"""
     client = googlemaps.Client(key=config.GOOGLE_API_KEY)
-    response = client.distance_matrix(**{
-        'units': 'metric',
-        'mode': 'driving',
-        'origins': [config.DEFAULT_POST_CODE],
-        'destinations': [post_code],
-    })
+    response = client.distance_matrix(
+        **{
+            'units': 'metric',
+            'mode': 'driving',
+            'origins': [config.DEFAULT_POST_CODE],
+            'destinations': [post_code],
+            }
+        )
     if response.get('status', 'failed') != 'OK':
         raise DistanceGetterException(_('Invalid google distance matrix request.'))
 
     try:
-        distance = int(min([
-            Decimal(element.get('distance').get('value') / 1000) / Decimal(1.6)  # convert to miles
-            for row in response.get('rows')
-            for element in row.get('elements')
-        ]))
+        distance = int(
+            min(
+                [
+                    Decimal(element.get('distance').get('value') / 1000) / Decimal(1.6)  # convert to miles
+                    for row in response.get('rows')
+                    for element in row.get('elements')
+                    ]
+                )
+            )
     except Exception:
         raise DistanceGetterException(_('Invalid postal code.'))
 
@@ -54,7 +62,7 @@ def calculate_distance_price(post_code):
 
     first_price = (config.MAX_FIRST_PRICE_DISTANCE - config.MAX_FREE_DISTANCE) * config.FIRST_DISTANCE_PRICE
     second_price = (distance - config.MAX_FIRST_PRICE_DISTANCE) * config.SECOND_DISTANCE_PRICE
-    print(first_price, second_price, distance)
+    print(f"First: {first_price},  Second: {second_price}, Distance: {distance}")
     return distance, (first_price + second_price)
 
 
@@ -106,7 +114,7 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
             admin_link_car = reverse(
                 "admin:cars_car_change",
                 kwargs={"object_id": request.car.id}
-            )
+                )
         else:
             admin_link_car = reverse("admin:cars_car_changelist")
 
@@ -136,7 +144,7 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
                     ),
                     current_site.domain,
                     reverse("unique_path", kwargs={"unique_path": unique_path})
-                ),
+                    ),
                 "link_auto": "{}://{}{}".format(
                     (
                         'https'
@@ -146,17 +154,33 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
                     current_site.domain,
                     reverse("unique_path", kwargs={"unique_path": unique_path})
                     # admin_link_car, # reverse("link_path", kwargs={"unique": unique_path})
-                )
-            }
-        )
-        print(f"Contrib.py: {request.id} - {request.car_registration}")
-        print(f"Contrib.py: {request.id} - {request.car_registration}"
-              f" - {request.car.manufacturer if request.car else None}"
-              f" - {request.car.car_model if request.car else None}"
-              f" - {request.car_year}"
-              f" - {request.distance}"
-              f" - {request.service.title if request.service else None}"
-              f" - {request.price}"
-              f" - {request.post_code}"
-              f" - {unique_path}")
+                    )
+                }
+            )
+        print(
+            f"Contrib.py: {request.id} - {request.car_registration}"
+            f" - {request.car.manufacturer if request.car else None}"
+            f" - {request.car.car_model if request.car else None}"
+            f" - {request.car_year}"
+            f" - {request.distance}"
+            f" - {request.service.title if request.service else None}"
+            f" - {request.price}"
+            f" - {request.post_code}"
+            f" - {unique_path}"
+            )
+        # order = Order.objects.create( # TODO: Удалить после тестирования
+        #     unique_path_field=unique_path,
+        #     date_at=request.created_at,
+        #     price=request.price,
+        #     prepayment=0.00,
+        #     car_registration=request.car_registration,
+        #     car_year=request.car_year,
+        #     car=request.car,
+        #     service=request.service,
+        #     post_code=request.post_code,
+        #     phone=request.phone,
+        #     distance=request.distance
+        #     )
+        # order.save()
+
     return request

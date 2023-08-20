@@ -2,27 +2,31 @@ from django.db.models import F
 from django.utils.translation import pgettext_lazy
 from rest_framework import exceptions
 from rest_framework.exceptions import NotFound
-from rest_framework.generics import (
-    CreateAPIView, UpdateAPIView, ListAPIView, RetrieveAPIView, GenericAPIView
-)
-from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.generics import CreateAPIView
+from rest_framework.generics import GenericAPIView
+from rest_framework.generics import ListAPIView
+from rest_framework.generics import RetrieveAPIView
+from rest_framework.generics import UpdateAPIView
+from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from apps.booking.models import Order, Employee, Transaction, PAYMENT_STATUSES
+from apps.booking.models import Employee
+from apps.booking.models import Order
+from apps.booking.models import PAYMENT_STATUSES
+from apps.booking.models import Transaction
 from apps.partners.const import TRANSACTIONS_STATUS
 from apps.partners.models import Partner
 from apps.partners.transactions import create_transaction
 from apps.request.models import Request
 from apps.sms.models import is_phone_mechanic
 from markup.utils import get_session
-from .serializers import (
-    OrderCreateSerializer,
-    UserOrderCreateSerializer,
-    OrderUserUpdateSerializer,
-    EmployeeSerializer,
-
-    TransCrtSerializer,
-)
+from .serializers import EmployeeSerializer
+from .serializers import OrderCreateSerializer
+from .serializers import OrderSerializer
+from .serializers import OrderUserUpdateSerializer
+from .serializers import TransCrtSerializer
+from .serializers import UserOrderCreateSerializer
 
 
 class OrderCreateAPIView(CreateAPIView):
@@ -38,7 +42,7 @@ class UserOrderCreateAPIView(CreateAPIView):
     def get_serializer(self, *args, **kwargs):
         kwargs["request"] = _request = Request.objects.filter(
             id=self.kwargs.get("pk")
-        ).first()
+            ).first()
         if not _request or _request.status == Request._STATUSES.done:
             raise NotFound
         return super().get_serializer(*args, **kwargs)
@@ -95,11 +99,11 @@ class TransCrtAPIView(GenericAPIView):
         obj_transaction = Transaction.objects.create(
             ref=order_pp,
             order=order
-        )
+            )
 
         return Response(
             data={"any": "result"},
-        )
+            )
 
 
 class TransUptAPIView(GenericAPIView):
@@ -131,7 +135,7 @@ class TransUptAPIView(GenericAPIView):
                     Partner.objects.create(
                         user=user,
                         balance=balance,
-                    )
+                        )
 
                 data = {
                     'partner': user,
@@ -139,7 +143,7 @@ class TransUptAPIView(GenericAPIView):
                     'balance': balance,
                     'type_transactions': TRANSACTIONS_STATUS.income,
                     'order': order
-                }
+                    }
 
                 create_transaction(**data)
 
@@ -159,8 +163,7 @@ class IsCustomGroup(IsAuthenticated):
 
     def has_permission(self, request, view):
         return (super().has_permission(request, view) and
-                request.user.groups.filter(name='Custom').exists() and
-                request.user.is_staff)
+                (request.user.groups.filter(name='Custom').exists() or request.user.is_superuser))
 
 
 class OrderApiView(RetrieveAPIView):

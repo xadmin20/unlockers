@@ -11,11 +11,13 @@ from model_utils.choices import Choices
 from postie.shortcuts import send_mail
 
 from apps.booking.const import ORDER_STATUS_WORK
+from apps.booking.senders import Sender
 
 PAYMENT_STATUSES = Choices(
     ("paid", _("Paid")),
     ("no_paid", _("Not paid")),
-)
+    ("part payment", _("Part payment")),
+    )
 
 template_choice = ''
 
@@ -26,22 +28,22 @@ class Order(models.Model):
 
     date_at = models.DateTimeField(
         verbose_name=_("Date at")
-    )
+        )
     price = models.DecimalField(
         verbose_name=_("Price"),
         max_digits=10,
         decimal_places=2,
-    )
+        )
     prepayment = models.DecimalField(
         verbose_name=_("Prepayment"),
         max_digits=10,
         decimal_places=2,
-    )
+        )
     comment = models.TextField(
         verbose_name=_("Comment_"),
         null=True,
         blank=True,
-    )
+        )
     responsible = models.ForeignKey(
         "booking.Employee",
         verbose_name=_("Responsible"),
@@ -49,30 +51,30 @@ class Order(models.Model):
         related_name="order",
         null=True,
         blank=True,
-    )
+        )
     confirm_work = models.CharField(
         _("Confirm on work"), max_length=255,
         choices=ORDER_STATUS_WORK,
         default=ORDER_STATUS_WORK.new
-    )
+        )
     name = models.CharField(
         verbose_name=_("Full name"),
         max_length=255,
         null=True,
         blank=True
-    )
+        )
     car_registration = models.CharField(
         verbose_name=_('Car registration'),
         max_length=255,
         null=True,
         blank=True
-    )
+        )
     ######
     car_year = models.IntegerField(
         verbose_name=_('Car year'),
         null=True,
         blank=True
-    )
+        )
     car = models.ForeignKey(
         "cars.Car",
         verbose_name=_('Car'),
@@ -80,43 +82,43 @@ class Order(models.Model):
         related_name='order_car',
         null=True,
         blank=True
-    )
+        )
 
     service = models.ForeignKey(
         "request.ServiceVariation",
         verbose_name=_("Service"),
         on_delete=models.SET_NULL,
         null=True
-    )
+        )
     ######
     phone = models.CharField(
         verbose_name=_("Phone"),
         max_length=255,
         null=True,
         blank=True,
-    )
+        )
     address = models.CharField(
         verbose_name=_("Address"),
         max_length=255,
         null=True,
         blank=True,
-    )
+        )
     post_code = models.CharField(
         verbose_name=_('Post code'),
         max_length=255,
         null=True,
         blank=True
-    )
+        )
     #####
     distance = models.FloatField(
         verbose_name=_('Distance'),
         null=True,
         blank=True
-    )
+        )
 
     created_at = models.DateTimeField(
         auto_now_add=True
-    )
+        )
 
     partner = models.ForeignKey(
         User,
@@ -125,7 +127,7 @@ class Order(models.Model):
         verbose_name=_("Partner"),
         null=True,
         blank=True,
-    )
+        )
 
     class Meta:
         verbose_name = _("Order")
@@ -182,18 +184,19 @@ class Order(models.Model):
 
         if confirm_work_changed:
             print("Confirm work changed")
-            # self.send_notification_email_for_confirm_work()
+            template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
 
         if partner_changed:
             print("Partner changed")
             template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
-            self.send_notification_email()
 
-    # def send_message(self):
-    #     Sender(self).push()
-    #
-    # def send_message_admin(self):
-    #     Sender(self).push_in_admin()
+        self.send_notification_email()
+
+    def send_message(self):
+        Sender(self).push()
+
+    def send_message_admin(self):
+        Sender(self).push_in_admin()
 
     def send_notification_email(self):
         # Функция отправки сообщения
@@ -230,8 +233,8 @@ class Order(models.Model):
                     "post_code": self.post_code,
                     "link": f"{current_site}/link/{self.unique_path_field}",
                     "link_auto": f"{current_site}/link/{self.unique_path_field}"
-                }
-            )
+                    }
+                )
             print("Message sent successfully!")
         except Exception as e:
             print(f"Failed to send message: {e}")  # TODO: сделать отправку сообщения в СМС админу
@@ -241,16 +244,16 @@ class Employee(models.Model):
     name = models.CharField(
         verbose_name=_("Name"),
         max_length=255,
-    )
+        )
     email = models.CharField(
         verbose_name=_("Email"),
         max_length=255
-    )
+        )
 
     default = models.BooleanField(
         verbose_name=_("Default"),
         default=False,
-    )
+        )
 
     class Meta:
         verbose_name = _("Employee")
@@ -268,13 +271,13 @@ class Employee(models.Model):
 class OrderAttachments(models.Model):
     file = models.FileField(
         verbose_name=_("File"),
-    )
+        )
     order = models.ForeignKey(
         "booking.Order",
         verbose_name=_("Order"),
         on_delete=models.CASCADE,
         related_name="attachments"
-    )
+        )
 
     class Meta:
         verbose_name = _("Order attachment")
@@ -288,25 +291,25 @@ class Transaction(models.Model):
     ref = models.CharField(
         verbose_name=_("Paypal ref id"),
         max_length=255,
-    )
+        )
     status = models.CharField(
         verbose_name=_("Status"),
         choices=PAYMENT_STATUSES,
         default=PAYMENT_STATUSES.no_paid,
         max_length=255,
-    )
+        )
     order = models.ForeignKey(
         "booking.Order",
         verbose_name=_("Order"),
         on_delete=models.CASCADE,
         related_name="transactions"
-    )
+        )
     created_at = models.DateTimeField(
         auto_now_add=True
-    )
+        )
     updated_at = models.DateTimeField(
         auto_now=True
-    )
+        )
 
     class Meta:
         verbose_name = _("Transaction")

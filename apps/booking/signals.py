@@ -1,44 +1,49 @@
-import traceback
-
-from django.db.models.signals import post_save
+from django.db.models.signals import pre_save
+from django.dispatch import Signal
 from django.dispatch import receiver
 
 from apps.booking.const import ORDER_STATUS_WORK
 from apps.booking.models import Order
 from unlockers import settings
 
+# 1. Определение сигналов
+confirm_work_changed_signal = Signal()
+partner_changed_signal = Signal()
+
 print("Signal module imported!")
 
 
-@receiver(post_save, sender=Order)
-def post_save_order(sender, instance, created, **kwargs):
-    print("post_save_order triggered!")
-    traceback.print_stack()
-    if instance.pk:  # Это не новый объект, значит, это обновление
-        old_instance = Order.objects.get(pk=instance.pk)
-        print("post_save_order old_instance: ", old_instance)
+# 2. Создание обработчиков для сигналов
 
-    if created:  # Если это новый объект
-        instance.send_notification_email(template_choice=settings.POSTIE_TEMPLATE_CHOICES.created_request)
-        print("post_save_order created!")
-    else:  # Это обновление
-        old_instance = Order.objects.get(pk=instance.pk)
-        print("post_save_order old_instance else: ", old_instance)
-        # Проверяем, изменилось ли поле Partner
-        if old_instance.partner != instance.partner:
-            if instance.partner:
-                instance.send_notification_email(template_choice=settings.POSTIE_TEMPLATE_CHOICES.employee_order)
-                print("post_save_order employee_order!")
+@receiver(pre_save, sender=Order)
+def check_changes(sender, instance, **kwargs):
+    if instance.pk:
+        orig = Order.objects.get(pk=instance.pk)
 
-        # Проверяем, изменилось ли поле confirm_work
-        if old_instance.confirm_work != instance.confirm_work:
-            if instance.confirm_work == ORDER_STATUS_WORK.confirm:
-                instance.send_notification_email(template_choice=settings.POSTIE_TEMPLATE_CHOICES.confirm_order)
+        if orig.confirm_work != instance.confirm_work:
+            confirm_work_changed_signal.send(sender=sender, instance=instance)
 
-        # Добавьте здесь другие условия для проверки других полей и отправки соответствующих уведомлений.
+        if orig.partner_id != instance.partner_id:
+            partner_changed_signal.send(sender=sender, instance=instance)
 
-        # Например, если у вас есть поле `address` и вы хотите проверить его создание:
-        if not old_instance.address and instance.address:
-            instance.send_notification_email(template_choice=settings.POSTIE_TEMPLATE_CHOICES.quote_created)
 
-        # По аналогии можно добавить другие условия для других шаблонов.
+@receiver(confirm_work_changed_signal)
+def handle_confirm_work_change(sender, instance, **kwargs):
+    # Ваш код для обработки изменений confirm_work
+    if instance.confirm_work == ORDER_STATUS_WORK.new:
+        template_choice = settings.POSTIE_TEMPLATE_CHOICES.created_request
+    else:
+        template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
+
+    print("Confirm work changed")
+    # instance.send_notification_email_for_confirm_work()
+
+
+@receiver(partner_changed_signal)
+def handle_partner_change(sender, instance, **kwargs):
+    # Ваш код для обработки изменений partner
+    template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
+    instance.send_notification_email()
+    print("Partner changed")
+
+# В методе save теперь можно удалить проверки, так как они теперь обрабатываются
