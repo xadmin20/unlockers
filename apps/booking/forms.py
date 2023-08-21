@@ -16,11 +16,11 @@ class OrderForm(forms.ModelForm):
             'unique_path_field', 'date', 'time', 'price', 'prepayment', 'comment', 'responsible',
             'confirm_work', 'name', 'car_registration', 'car_year', 'car', 'service', 'phone',
             'address', 'post_code', 'distance', 'partner'
-        ]
+            ]
         widgets = {
             'comment': forms.Textarea(attrs={'rows': 3}),
             # ... Добавьте другие виджеты по мере необходимости
-        }
+            }
 
     def __init__(self, *args, **kwargs):
         super(OrderForm, self).__init__(*args, **kwargs)
@@ -37,10 +37,6 @@ class OrderForm(forms.ModelForm):
         if commit:
             instance.save()
         return instance
-
-
-from django import forms
-from .models import Order
 
 
 class ClientOrderForm(forms.ModelForm):
