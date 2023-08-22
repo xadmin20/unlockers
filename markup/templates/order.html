@@ -12,7 +12,7 @@
 </form>
 {% else %}
 <div class="order-detail">
-    <h2>Order Details for #{{ object.id }}</h2>
+    <h2>Order Details for #{{ object.id }} markup/t</h2>
     <!-- Форма для клиентов -->
     <form method="post">
     {% csrf_token %}
@@ -43,7 +43,7 @@
     <p><strong>Partner:</strong> {{ object.partner }}</p>
 
     <h3>Payment Status</h3>
-    {% if object.is_paid %}
+    {% if object.is_paid %}markup/templates/order.html
     <span class="paid-status">Paid</span>
     {% else %}
     <span class="not-paid-status">Not Paid</span>
@@ -57,9 +57,18 @@
     {% if object.payment_status != 'PAID' %}
 <div class="payment-section">
     <p>Сумма предоплаты: {{ prepayment_amount }}</p>
-    <button type="button" class="btn btn-primary" onclick="initiatePayment()">Оплатить</button>
+    <button type="button" class="btn btn-primary" onclick="initiatePayment('1qc7zgeB05v8')">Оплатить</button>
+
+
 </div>
 {% endif %}
 </div></div>
 {% endif %}
 {% endblock %}
+
+<script>
+    function initiatePayment(uniqueId) {
+    var url = 'http://127.0.0.1:8000/order/' + uniqueId + '/pay/';
+    window.location.href = url;
+}
+</script>
