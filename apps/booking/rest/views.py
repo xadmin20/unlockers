@@ -1,6 +1,7 @@
 from django.db.models import F
 from django.utils.translation import pgettext_lazy
 from rest_framework import exceptions
+from rest_framework import status
 from rest_framework.exceptions import NotFound
 from rest_framework.generics import CreateAPIView
 from rest_framework.generics import GenericAPIView
@@ -57,7 +58,7 @@ class OrderReceiveAPIView(RetrieveAPIView):
     serializer_class = OrderCreateSerializer
 
     def get_object(self):
-        order = Order.objects.filter(uuid=self.kwargs.get("uuid")).first()
+        order = Order.objects.filter(unique_path_field=self.kwargs.get("unique_path")).first()
         if not order:
             raise NotFound
         return order
@@ -68,7 +69,7 @@ class OrderUserUpdateAPIView(UpdateAPIView):
     queryset = Order.objects.all()
 
     def get_object(self):
-        order = Order.objects.filter(uuid=self.kwargs.get("uuid")).first()
+        order = Order.objects.filter(unique_path_field=self.kwargs.get("unique_path")).first()
         if not order:
             raise NotFound
 
@@ -93,9 +94,16 @@ class TransCrtAPIView(GenericAPIView):
         serializer.is_valid(raise_exception=True)
 
         order_pp = serializer.validated_data['id']
-        id_order = get_session(request, 'id_order', crypt=True)
+        print(order_pp)
+        id_order = get_session(request, 'id_order', crypt=True)  # TODO: Проверить работу сессии id_order
+        print(f"id_order: {id_order}")
         # drop_session(request, 'id_order')
-        order = Order.objects.get(pk=id_order)
+        try:
+            order = Order.objects.get(pk=order_pp)
+            print(order)
+        except Order.DoesNotExist:
+            # Обработайте ошибку, например, верните HTTP 404
+            return Response({"error": "Order not found"}, status=status.HTTP_404_NOT_FOUND)
         obj_transaction = Transaction.objects.create(
             ref=order_pp,
             order=order

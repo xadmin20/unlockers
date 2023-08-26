@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+
+  redis:
+    image: "redis:latest"
+
+  postgres:
+    image: postgres:15.4-alpine
+    environment:
+      POSTGRES_DB: unlockers
+      POSTGRES_USER: unlockers_user
+      POSTGRES_PASSWORD: unlockers_pass
+
+  web:
+    build:
+      context: ./unlockers
+      dockerfile: D:\projects\fl\unlockers\Dockerfile
+
+    command: gunicorn unlockers.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./unlockers:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+
+  celery:
+    build:
+      context: ./unlockers
+      dockerfile: D:\projects\fl\unlockers\Dockerfile
+    command: celery -A unlockers worker --loglevel=info
+    depends_on:
+      - redis
+      - postgres
+
+  flower:
+    image: mher/flower
+    command: flower --port=5555 --broker=redis://redis:6379/0
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis

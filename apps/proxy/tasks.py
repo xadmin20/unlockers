@@ -1,4 +1,4 @@
-from unlockers.celery import app
+from apps.booking.celery import app
 
 from .contrib import proxy_getter
 from .models import Proxy

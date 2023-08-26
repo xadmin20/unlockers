@@ -3,8 +3,8 @@ import logging
 import requests
 from django.core.mail import send_mail
 
+from apps.booking.celery import app
 from apps.sms.models import is_phone_mechanic
-from unlockers.celery import app
 from .models import Transaction
 from .senders import order_after_pay_sms
 

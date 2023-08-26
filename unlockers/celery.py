@@ -1,24 +1,25 @@
 import os
 
-from celery import Celery
+from celery import Celery, schedules
 
-# set the default Django settings module for the 'celery' program.
-# this is also used in manage.py
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'unlockers.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app.settings")
 
-app = Celery('unlockers')
-
-# Using a string here means the worker don't have to serialize
-# the configuration object to child processes.
-# - namespace='CELERY' means all celery-related configuration keys
-#   should have a `CELERY_` prefix.
-app.config_from_object('django.conf:settings', namespace='CELERY')
+app = Celery("app")
+app.config_from_object("django.conf:settings")
 
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks()
 
-# We used CELERY_BROKER_URL in settings.py instead of:
-# app.conf.broker_url = ''
-
-# We used CELERY_BEAT_SCHEDULER in settings.py instead of:
-# app.conf.beat_scheduler = ''django_celery_beat.schedulers.DatabaseScheduler'
+app.conf.beat_schedule = {
+    "update-proxies": {
+        "task": "apps.proxy.tasks.update_proxies",
+        "schedule": schedules.crontab(minute="*/30"),
+        # "schedule": schedules.crontab(minute=0, hour="*/1"),
+    },
+    "remove-proxies": {
+        "task": "apps.proxy.tasks.remove_proxies",
+        "schedule": schedules.crontab(hour="*/12"),
+        # "schedule": schedules.crontab(minute=0, hour="*/1"),
+    },
+}
+app.conf.timezone = "UTC"

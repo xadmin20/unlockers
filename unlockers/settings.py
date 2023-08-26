@@ -4,8 +4,10 @@ from pathlib import Path
 
 import jinja2
 from decouple import config
+from django.contrib import sessions
 from django.utils.translation import gettext_lazy as _
 from django_jinja.builtins import DEFAULT_EXTENSIONS
+from dotenv import load_dotenv
 
 from .constance import *
 
@@ -15,11 +17,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 BASE_ROOT = BASE_DIR.parent.parent
 
+load_dotenv()
+
+SECRET_KEY = os.getenv("SECRET_KEY")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^wza)-hfx%mnd))%#vcav#vomn-59ma_qvk8%^slg!eg__f^j!'
+# SECRET_KEY = 'django-insecure-^wza)-hfx%mnd))%#vcav#vomn-59ma_qvk8%^slg!eg__f^j!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -154,17 +159,25 @@ DATABASES = {
 #         'PORT': '5432',
 #     }
 # }
+REDIS_HOST = 'adminton.ru'  # todo изменить на продакт редис IP-адрес сервера с Redis
+REDIS_PORT = 6379  # Порт Redis, по умолчанию 6379
+REDIS_PASSWORD = 'valenok'  # Пароль для доступа к Redis
+REDIS_KEY_PREFIX = 'aiogrambot:currency'
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://adminton.ru:6379/2',  # Указана база данных 1, измените при необходимости
+        'LOCATION': f'redis://{REDIS_HOST}:{REDIS_PORT}/1',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            'PASSWORD': 'valenok',  # Ваш пароль от Redis
-            'KEY_PREFIX': 'aiogrambot:currency'  # Ваш префикс для ключей
+            'PASSWORD': REDIS_PASSWORD,
+            'KEY_PREFIX': REDIS_KEY_PREFIX,
             }
         }
     }
+
+# Если вы хотите использовать Redis для хранения сессий:
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_CACHE_ALIAS = 'default'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -402,52 +415,50 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'nickolayvan@gmail.com'
 EMAIL_HOST_PASSWORD = 'sjyrxlucgounjnma'
 APPEND_SLASH = True
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '{levelname} {asctime} {module} {message}',
-            'style': '{',
-            },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
-            },
-        },
-    'handlers': {
-        'console': {
-            'level': 'INFO',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose',
-            },
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(os.path.dirname(__file__), 'django.log'),
-            'formatter': 'verbose',
-            },
-        },
-    'loggers': {
-        'django': {
-            'handlers': ['console', 'file'],
-            'level': 'DEBUG',
-            'propagate': True,
-            },
-        },
-    }
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {message}',
+#             'style': '{',
+#             },
+#         'simple': {
+#             'format': '{levelname} {message}',
+#             'style': '{',
+#             },
+#         },
+#     'handlers': {
+#         'console': {
+#             'level': 'INFO',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'verbose',
+#             },
+#         'file': {
+#             'level': 'INFO',
+#             'class': 'logging.FileHandler',
+#             'filename': os.path.join(os.path.dirname(__file__), 'django.log'),
+#             'formatter': 'verbose',
+#             },
+#         },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console', 'file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#             },
+#         },
+#     }
 
-# CELERY_BROKER_URL = 'redis://:valenok@adminton.ru:6379/1'  # todo заменить на настоящий сервер
-CELERY_RESULT_BACKEND = "django-db"
+# Celery settings
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'UTC'
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
 CELERY_BEAT_SCHEDULE = {
     'check_sms_server': {
         'task': 'apps.booking.tasks.check_server_task',
         'schedule': timedelta(minutes=1),
         },
     }
-CELERY_BROKER_URL = config('CELERY_BROKER_REDIS_URL', default='redis://:valenok@adminton.ru:6379')
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'

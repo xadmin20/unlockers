@@ -1,7 +1,5 @@
-from typing import Optional
-import requests
-
 import googlemaps
+import requests
 from constance import config
 
 
@@ -13,7 +11,7 @@ def get_location():
         f'&key={config.GEO_API_KEY}'
         '&cmd=OBJECT_GET_LOCATIONS,"*"',
         verify=False
-    )
+        )
     try:
         content = response.json().get(config.GEO_ID)
         return content.get("lat"), content.get("lng")
@@ -29,13 +27,16 @@ def get_time_to(post_code):
         return
     lat, lng = location
     try:
-        response = client.distance_matrix(**{
-            'units': 'metric',
-            'mode': 'driving',
-            'origins': [{"lat": lat, "lng": lng}],
-            'destinations': [post_code],
-        })
+        response = client.distance_matrix(
+            **{
+                'units': 'metric',
+                'mode': 'driving',
+                'origins': [{"lat": lat, "lng": lng}],
+                'destinations': [post_code],
+                }
+            )
     except Exception:
+        print("Error while fetching distance matrix:", e)
         return
     if response.get('status', 'failed') != 'OK':
         return
@@ -44,6 +45,6 @@ def get_time_to(post_code):
         element.get('duration').get('value'): element.get("duration").get("text")
         for row in response.get('rows')
         for element in row.get('elements')
-    }
+        }
     min_duration = min(durations.keys())
     return round(min_duration / 60), durations.get(min_duration)

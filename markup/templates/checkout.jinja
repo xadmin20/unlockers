@@ -82,13 +82,13 @@
                                             </section>
                                             <section class="section section--offset_lg section--pt_none">
                                                                 <div class="ug-container ug-container--fit_xl">
-                                                                  <checkout uuid="{{ view.kwargs.uuid }}" terms-page-url="{{ config.TERMS_LINK }}" success-url="{{ url( 'paypal_confirm' ) }}" :object-data="{{ form }}"></checkout>
+                                                                  <checkout uuid="{{ view.kwargs.unique_path }}" terms-page-url="{{ config.TERMS_LINK }}" success-url="{{ url( 'paypal_confirm' ) }}" :object-data="{{ form }}"></checkout>
                                                                 </div>
                                             </section>
                         </main>
                               <footer class="footer">
                                                   <div class="ug-container ug-container ug-container--variant_common">
-                                                                                                <p class="footer__copyright">{% trans %}© Copyright 2020 - Anlocker Group Co. Inc. All Rights Reserved{% endtrans %}
+                                                                                                <p class="footer__copyright">{% trans %}© Copyright 2020 -11 Anlocker Group Co. Inc. All Rights Reserved{% endtrans %}
                                                                                                 </p>
                                                                                                 <div class="footer__payment"><img class="footer__payment-image" src="{{ static( 'img/payment.png' ) }}" alt="" title=""/>
                                                                                                 </div>

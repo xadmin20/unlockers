@@ -1,27 +1,30 @@
-from django.views.generic import DetailView, TemplateView
-from django.shortcuts import render
-from django.http import Http404
-from django.utils.timezone import datetime, timedelta
-from django.utils.translation import gettext_lazy as _
-
 from constance import config
+from django.http import Http404
+from django.shortcuts import render
+from django.utils.timezone import datetime
+from django.utils.timezone import timedelta
+from django.utils.translation import gettext_lazy as _
+from django.views.generic import DetailView
+from django.views.generic import TemplateView
 from seo.mixins.views import ModelInstanceViewSeoMixin
 
-from apps.booking.models import Order
-from apps.request.models import ServiceVariation, Request
-from apps.sms.models import is_phone_mechanic
 from apps.booking.location import get_time_to
-
-from .models import Typical, MainPage, Review
-
-from markup.utils import get_session, drop_session
+from apps.booking.models import Order
+from apps.request.models import Request
+from apps.request.models import ServiceVariation
+from apps.sms.models import is_phone_mechanic
+from markup.utils import drop_session
+from markup.utils import get_session
+from .models import MainPage
+from .models import Review
+from .models import Typical
 
 
 def not_found(request, *args, **kwargs):
     return render(
-        request, "404.jinja", 
+        request, "404.jinja",
         {'request': request, 'config': config}
-    )
+        )
 
 
 class IndexPageView(ModelInstanceViewSeoMixin, TemplateView):
@@ -45,8 +48,8 @@ class SuccessPaymentView(TemplateView):
 
     def get_context_data(self, **kwargs):
         kwargs["message"] = (
-            _("Success message") 
-            if self.is_valid_transaction 
+            _("Success message")
+            if self.is_valid_transaction
             else _("Something wrong while transaction approving.")
         )
         return super().get_context_data(**kwargs)
@@ -93,14 +96,17 @@ class UserOrderCreateView(DetailView):
 
 
 class OrderPayView(TemplateView):
+    """Страница оплаты заказа"""
     template_name = "checkout.jinja"
 
     def get_context_data(self, **kwargs):
-        uuid = self.kwargs.get("uuid")
-        order = Order.objects.filter(uuid=uuid).first()
-        if not order or order.created_at.replace(tzinfo=None) < (datetime.now() - timedelta(hours=2)):
-            raise Http404
-        kwargs["uuid"] = uuid
+        uuid = self.kwargs.get("unique_path")
+        order = Order.objects.filter(unique_path_field=uuid).first()
+        print("UUID:", uuid)
+        print("Order:", order)
+        # if not order or order.created_at.replace(tzinfo=None) < (datetime.now() - timedelta(hours=2)):
+        #     raise Http404
+        kwargs["unique_path"] = uuid
         kwargs["order"] = order
 
         kwargs["client-id"] = config.PAYPAL_CLIENT_ID
@@ -111,8 +117,8 @@ class OrderPayView(TemplateView):
             'phone': getattr(order, 'phone') or '',
             'address': getattr(order, 'address') or '',
             'post_code': getattr(order, 'post_code') or '',
-        }
-
+            }
+        print(kwargs)
         return super().get_context_data(**kwargs)
 
 
@@ -120,9 +126,10 @@ class OrderDetailView(TemplateView):
     template_name = "order_detail.jinja"
 
     def get_context_data(self, **kwargs):
-        uuid = self.kwargs.get("uuid")
-        order = Order.objects.filter(uuid=uuid).first()
+        uuid = self.kwargs.get("unique_path")
+        order = Order.objects.filter(unique_path_field=uuid).first()
         if not order:
+            print("Order not found")
             raise Http404
         kwargs["uuid"] = uuid
         kwargs["order"] = order
@@ -130,7 +137,8 @@ class OrderDetailView(TemplateView):
         order_native_date_at = order.date_at.replace(tzinfo=None)
         # if order_native_date_at <= valid_time:
         kwargs["arrival_duration_value"], kwargs["arrival_duration_text"] = get_time_to(
-            order.post_code or order.request.post_code) or (None, None)
+            order.post_code or order.request.post_code
+            ) or (None, None)
 
         # time_to_result = get_time_to(order.post_code or order.request.post_code)
         # if time_to_result:

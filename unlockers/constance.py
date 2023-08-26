@@ -2,23 +2,19 @@ from collections import OrderedDict
 from decimal import Decimal
 
 from django.utils.translation import gettext_lazy as _
-
-
 from model_utils.choices import Choices
 
 PROXY_TYPE_CHOICES = Choices(
     ("auto", "Auto"),
     ("manual", "Manual"),
-)
-
+    )
 
 CONSTANCE_ADDITIONAL_FIELDS = {
-    "decimal": ["django.forms.fields.DecimalField", dict(max_digits=19, decimal_places=2,)],
+    "decimal": ["django.forms.fields.DecimalField", dict(max_digits=19, decimal_places=2, )],
     "image_field": ["django.forms.ImageField", dict(required=True)],
     "file_field": ["django.forms.FileField", dict(required=True)],
     "choices_field": ["django.forms.ChoiceField", dict(choices=PROXY_TYPE_CHOICES._doubles)],
-}
-
+    }
 
 CONSTANCE_CONFIG = {
     "PHONE": ("07501793857", _("Phone"), str),
@@ -43,11 +39,11 @@ CONSTANCE_CONFIG = {
     "PAYPAL_SECRET": (
         "EO422dn3gQLgDbuwqTjzrFgFtaRLRR5BdHEESmha49TM",
         _("PayPal client secret"), str
-    ),
+        ),
     "PAYPAL_CLIENT_ID": (
         "EBWKjlELKMYqRNQ6sYvFo64FtaRLRR5BdHEESmha49TM",
         _("PayPal client id"), str
-    ),
+        ),
 
     "TERMS_LINK": ("/", _("Terms and conditions page link"), str),
     "SITE2": ("-", _("Site2"), str),
@@ -63,58 +59,58 @@ CONSTANCE_CONFIG = {
     'SCHEDULE_OFFICE': ('Head Office (09:00 - 21:00)', _('Head Office (09:00 - 21:00)')),
     'CONTACT_OFFICE': ('07440964553', _('07440964553')),
 
-}
+    }
 
-
-CONSTANCE_CONFIG_FIELDSETS = OrderedDict((
-    ("General", (
-        "PHONE",
-        "LOGO",
-        "ADDRESS",
-        "EMAIL",
-        "ADMIN_EMAIL",
-        "FAVICON",
-        "REVIEW_LINK",
-        "REVIEW_LOGO",
-    )),
-    ("Synchronization", (
-        "SITE",
-        "TERMS_LINK",
-        "SITE2",
-    )),
-    ("Settings", (
-        "DEFAULT_POST_CODE",
-        "PROXY_TYPE",
-        "MAX_FREE_DISTANCE",
-        "MAX_FIRST_PRICE_DISTANCE",
-        "FIRST_DISTANCE_PRICE",
-        "SECOND_DISTANCE_PRICE",
-        "GOOGLE_API_KEY",
-    )),
-    ("Sms settings", (
-        # "IS_PHONE_MECHANIC",
-        "PREPAYMENT",
-        "SMS_ROUTE",
-        "SMS_PASSWORD",
-    )),
-    ("PayPal", (
-        "PAYPAL_MODE",
-        "PAYPAL_SECRET",
-        "PAYPAL_CLIENT_ID",
-    )),
-    ("GEO settings", (
-        "GEO_API_KEY",
-        "GEO_ID",
-    )),
-    ("Cabinet info", (
-        "SCHEDULE_TECHNICIAN",
-        "NAME_TECHNICIAN",
-        "CONTACT_TECHNICIAN",
-        "SCHEDULE_OFFICE",
-        "CONTACT_OFFICE",
-    )),
-))
-
+CONSTANCE_CONFIG_FIELDSETS = OrderedDict(
+    (
+        ("General", (
+            "PHONE",
+            "LOGO",
+            "ADDRESS",
+            "EMAIL",
+            "ADMIN_EMAIL",
+            "FAVICON",
+            "REVIEW_LINK",
+            "REVIEW_LOGO",
+            )),
+        ("Synchronization", (
+            "SITE",
+            "TERMS_LINK",
+            "SITE2",
+            )),
+        ("Settings", (
+            "DEFAULT_POST_CODE",
+            "PROXY_TYPE",
+            "MAX_FREE_DISTANCE",
+            "MAX_FIRST_PRICE_DISTANCE",
+            "FIRST_DISTANCE_PRICE",
+            "SECOND_DISTANCE_PRICE",
+            "GOOGLE_API_KEY",
+            "PREPAYMENT",
+            )),
+        ("Sms settings", (
+            # "IS_PHONE_MECHANIC",
+            "SMS_ROUTE",
+            "SMS_PASSWORD",
+            )),
+        ("PayPal", (
+            "PAYPAL_MODE",
+            "PAYPAL_SECRET",
+            "PAYPAL_CLIENT_ID",
+            )),
+        ("GEO settings", (
+            "GEO_API_KEY",
+            "GEO_ID",
+            )),
+        ("Cabinet info", (
+            "SCHEDULE_TECHNICIAN",
+            "NAME_TECHNICIAN",
+            "CONTACT_TECHNICIAN",
+            "SCHEDULE_OFFICE",
+            "CONTACT_OFFICE",
+            )),
+        )
+    )
 
 CONSTANCE_DATABASE_CACHE_AUTOFILL_TIMEOUT = None
 CONSTANCE_REDIS_CONNECTION_CLASS = "django_redis.get_redis_connection"

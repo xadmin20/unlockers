@@ -2,7 +2,9 @@ from django.contrib.sites.models import Site
 from django.urls import reverse
 from rest_framework import serializers
 
-from apps.booking.models import Order, OrderAttachments, Employee
+from apps.booking.models import Employee
+from apps.booking.models import Order
+from apps.booking.models import OrderAttachments
 from apps.cars.models import Car
 from apps.request.models import ServiceVariation
 from markup.utils import create_session
@@ -23,22 +25,22 @@ class OrderCreateSerializer(serializers.ModelSerializer):
             "prepayment", "responsible",
             "comment", "link", "service",
             "service_detail"
-        )
+            )
 
     def get_service_detail(self, order):
         if service := order.service:
             return {
                 "title": service.title,
                 "description": service.description,
-            }
+                }
         return None
 
     def get_link(self, order):
         current_site = Site.objects.first()
         return "https://{}{}".format(
             current_site.domain,
-            reverse("order_pay", kwargs={"uuid": order.uuid})
-        )
+            reverse("order_pay", kwargs={"unique_path": order.unique_path_field})
+            )
 
     def create(self, validated_data):
         order = super().create(validated_data)
@@ -61,7 +63,7 @@ class UserOrderCreateSerializer(serializers.ModelSerializer):
         return "https://{}{}".format(
             current_site.domain,
             reverse("order_pay", kwargs={"uuid": order.uuid})
-        )
+            )
 
     def create(self, validated_data):
         validated_data["price"] = self.request.price
@@ -80,7 +82,7 @@ class OrderUserUpdateSerializer(serializers.ModelSerializer):
             "name", "car_registration",
             "phone", "address", "post_code",
             "approve_link", "attachments",
-        )
+            )
 
     def get_approve_link(self, order: Order):
         if hasattr(self, "_approve_link") and getattr(self, "_approve_link"):
@@ -94,7 +96,7 @@ class OrderUserUpdateSerializer(serializers.ModelSerializer):
             OrderAttachments.objects.create(
                 file=file,
                 order=instance,
-            )
+                )
         order = super().update(instance, validated_data)
 
         create_session(self.context["request"], 'id_order', order.id, crypt=True)
@@ -138,4 +140,4 @@ class OrderSerializer(serializers.ModelSerializer):
             'responsible', 'confirm_work', 'confirm_work_display', 'name',
             'car_registration', 'car_year', 'car', 'service', 'service_title',
             'phone', 'address', 'post_code', 'distance', 'created_at', 'partner_name'
-        ]
+            ]
