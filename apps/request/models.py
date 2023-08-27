@@ -30,6 +30,7 @@ SERVICE_VARIATIONS = Choices(
 class Request(models.Model):
     """Request model"""
     _STATUSES = STATUSES
+    unique_path_field = models.CharField(max_length=200, blank=True, null=True)
     car_registration = models.CharField(
         verbose_name=_('Car registration'),
         max_length=255
@@ -172,7 +173,7 @@ class Request(models.Model):
 
     @property
     def prepayment(self):
-        return config.PREPAYMENT * self.price / 100 if self.price else 0
+        return float(config.PREPAYMENT) * self.price / 100 if self.price else 0
 
 
 class ServiceVariation(models.Model):

@@ -24,24 +24,8 @@ from apps.sms.models import get_timeout_amount
 from markup.utils import crypt_str
 
 
-# def split_sms(content: str, limit=160) -> List[str]:
-#     words = content.split()
-#     messages = []
-#     current_message = ""
-#
-#     for word in words:
-#         if len(current_message) + len(word) + 1 > limit:
-#             messages.append(current_message.strip())
-#             current_message = ""
-#         current_message += f"{word} "
-#
-#     if current_message:
-#         messages.append(current_message.strip())
-#
-#     return messages
-
 def split_sms(content: str) -> List[str]:
-    max_length = 160  # Количество символов в одном сообщении
+    max_length = 150  # Количество символов в одном сообщении
     # Если сообщение короткое, возвращаем его как есть
     if len(content) <= max_length:
         return [content]
@@ -248,20 +232,28 @@ def send_sms(template: TEMPLATES, context: Dict, phone: str):
             msg.message2 = message_texts[1]
         if len(message_texts) > 2:
             msg.message3 = message_texts[2]
+
         print(f"send_sms: {phone} - {message_texts}")
+
         for message_text in message_texts:
             try:
-                print(message_text)
+                # Вывод сообщения перед его отправкой
+                print(f"Sending SMS: {message_text}")
                 time.sleep(get_timeout_amount())
+
+                # Раскомментируйте эту строку, чтобы фактически отправить SMS
                 status_code, msg.log = _send_sms(phone, message_text)
+
             except Exception as e:
                 print(e)
-                msg.log = msg.log or "" + f"\n{str(e)}"
+                msg.log = (msg.log or "") + f"\n{str(e)}"
                 status_code = None
+
             if status_code != 200:
                 all_valid = False
                 send_notification_to_admin(msg, "sms_error")
                 print("SMS ERROR")
+
             print(status_code)
 
         msg.is_success = all_valid

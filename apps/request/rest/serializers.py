@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from postie.shortcuts import send_mail
 from rest_framework import serializers
 
+from apps.booking.senders import request_sms
 from apps.cars.contrib import Car as CarEntity
 from apps.cars.contrib import CarParsingException
 from apps.cars.contrib import get_car
@@ -198,8 +199,13 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
         create_session(request, 'id_quote', obj_quote.id, crypt=True)
 
         # Send success sms
-        # if is_phone:
-        #     request_sms(request_object) # TODO: раскомментировать в случае необходимости отправки смс
+        if is_phone:
+            if request_object:
+                print('Request object:', request_object.__dict__)
+                request_sms(request_object)  # TODO: раскомментировать в случае необходимости отправки смс
+            else:
+                print('Request object is None.')
+
         return request_object
 
 

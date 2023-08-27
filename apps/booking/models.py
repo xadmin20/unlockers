@@ -175,7 +175,7 @@ class Order(models.Model):
         confirm_work_changed = self.has_confirm_work_changed()
         partner_changed = self.has_partner_changed()
         super(Order, self).save(*args, **kwargs)
-
+        # От
         # Теперь, после сохранения, проверяем изменились ли наши интересующие поля:
         if self.confirm_work == ORDER_STATUS_WORK.new:
             template_choice = settings.POSTIE_TEMPLATE_CHOICES.created_request
