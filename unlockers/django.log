@@ -1,0 +1,896 @@
+INFO 2023-08-28 13:15:35,137 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-28 13:16:06,456 log Method Not Allowed: /payments/create/
+WARNING 2023-08-28 13:16:06,457 basehttp "GET //payments/create/ HTTP/1.1" 405 10558
+INFO 2023-08-28 13:16:06,519 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2023-08-28 13:16:06,519 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2023-08-28 13:16:06,519 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2023-08-28 13:16:06,519 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2023-08-28 13:16:06,521 basehttp "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2023-08-28 13:16:06,523 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2023-08-28 13:16:06,525 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2023-08-28 13:16:06,526 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2023-08-28 13:16:06,526 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2023-08-28 13:16:06,526 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2023-08-28 13:16:06,530 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2023-08-28 13:37:21,163 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-28 13:37:24,459 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 13:37:29,834 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-28 13:37:31,046 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 13:37:45,710 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-28 13:37:46,882 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 13:38:12,362 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-28 13:38:13,488 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 13:39:41,689 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-28 13:39:42,842 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 13:41:37,223 autoreload D:\projects\fl\unlockers\apps\payments\urls.py changed, reloading.
+INFO 2023-08-28 13:41:38,443 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-28 13:41:41,692 log Not Found: /payment/gnqGhz8Nlrfo/pay/
+WARNING 2023-08-28 13:41:41,692 basehttp "GET /payment/gnqGhz8Nlrfo/pay/ HTTP/1.1" 404 7890
+WARNING 2023-08-28 13:41:47,729 log Not Found: /payment/gnqGhz8Nlrfo/
+WARNING 2023-08-28 13:41:47,729 basehttp "GET /payment/gnqGhz8Nlrfo/ HTTP/1.1" 404 7878
+INFO 2023-08-28 13:41:59,487 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-28 13:42:01,548 log Not Found: /payment/gnqGhz8Nlrfo/
+WARNING 2023-08-28 13:42:01,549 basehttp "GET /payment/gnqGhz8Nlrfo/ HTTP/1.1" 404 7878
+INFO 2023-08-28 13:42:16,476 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53144
+INFO 2023-08-28 13:42:16,617 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-28 13:42:16,718 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-28 13:42:16,807 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-28 13:42:16,867 basehttp "GET /static/admin/js/calendar.js?_=1693215736624 HTTP/1.1" 200 8466
+INFO 2023-08-28 13:42:16,873 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693215736625 HTTP/1.1" 200 19319
+INFO 2023-08-28 13:42:18,866 basehttp "GET /admin/booking/order/25/change/ HTTP/1.1" 200 43953
+INFO 2023-08-28 13:42:18,923 basehttp - Broken pipe from ('127.0.0.1', 53676)
+INFO 2023-08-28 13:42:18,999 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-28 13:42:28,808 log Not Found: /payment/NxEmAN9Wf7et/
+WARNING 2023-08-28 13:42:28,808 basehttp "GET /payment/NxEmAN9Wf7et/ HTTP/1.1" 404 7878
+INFO 2023-08-28 13:44:34,082 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-28 13:44:43,184 log Not Found: /paí/NxEmAN9Wf7et/
+WARNING 2023-08-28 13:44:43,184 basehttp "GET /pa%D0%BD/NxEmAN9Wf7et/ HTTP/1.1" 404 7873
+WARNING 2023-08-28 13:44:49,305 log Not Found: /pay/NxEmAN9Wf7et/
+WARNING 2023-08-28 13:44:49,305 basehttp "GET /pay/NxEmAN9Wf7et/ HTTP/1.1" 404 7866
+INFO 2023-08-28 13:45:46,226 basehttp "GET /payments/pay/NxEmAN9Wf7et/ HTTP/1.1" 200 345
+INFO 2023-08-28 13:47:21,591 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 13:47:25,153 basehttp "GET /payments/pay/NxEmAN9Wf7et/ HTTP/1.1" 302 0
+WARNING 2023-08-28 13:48:56,294 log Not Found: /payment/execute/
+WARNING 2023-08-28 13:48:56,295 basehttp "GET /payment/execute/?paymentId=PAYID-MTWG2NA1CX12079MP566270C&token=EC-2GL76042VF136723W&PayerID=H43XQUQD7DC5G HTTP/1.1" 404 7961
+INFO 2023-08-28 13:55:06,710 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 13:57:22,114 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 13:58:13,515 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-28 13:58:19,145 log Not Found: /payment/execute/
+WARNING 2023-08-28 13:58:19,145 basehttp "GET /payment/execute/?paymentId=PAYID-MTWG2NA1CX12079MP566270C&token=EC-2GL76042VF136723W&PayerID=H43XQUQD7DC5G HTTP/1.1" 404 7961
+WARNING 2023-08-28 13:58:42,352 log Not Found: /payment/NxEmAN9Wf7et/
+WARNING 2023-08-28 13:58:42,353 basehttp "GET /payment/NxEmAN9Wf7et/ HTTP/1.1" 404 7878
+INFO 2023-08-28 13:59:04,263 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-28 13:59:04,659 log Not Found: /payment/NxEmAN9Wf7et/
+WARNING 2023-08-28 13:59:04,659 basehttp "GET /payment/NxEmAN9Wf7et/ HTTP/1.1" 404 7878
+WARNING 2023-08-28 13:59:42,358 log Not Found: /paymentû/NxEmAN9Wf7et/
+WARNING 2023-08-28 13:59:42,358 basehttp "GET /payment%D1%8B/NxEmAN9Wf7et/ HTTP/1.1" 404 7888
+INFO 2023-08-28 13:59:51,281 basehttp "GET /payments/NxEmAN9Wf7et/ HTTP/1.1" 302 0
+WARNING 2023-08-28 14:00:26,004 log Not Found: /payment/execute/
+WARNING 2023-08-28 14:00:26,005 basehttp "GET /payment/execute/?paymentId=PAYID-MTWHAHY0R949488BS130954N&token=EC-8YE02762KD974625X&PayerID=H43XQUQD7DC5G HTTP/1.1" 404 7961
+WARNING 2023-08-28 14:00:32,878 log Method Not Allowed: /payments/execute/
+WARNING 2023-08-28 14:00:32,878 basehttp "GET /payments/execute/?paymentId=PAYID-MTWHAHY0R949488BS130954N&token=EC-8YE02762KD974625X&PayerID=H43XQUQD7DC5G HTTP/1.1" 405 10861
+INFO 2023-08-28 14:00:32,929 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2023-08-28 14:00:32,929 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2023-08-28 14:00:32,931 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2023-08-28 14:00:32,933 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2023-08-28 14:00:32,935 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2023-08-28 14:00:32,935 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2023-08-28 14:00:32,936 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2023-08-28 14:00:32,936 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2023-08-28 14:00:32,936 basehttp "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2023-08-28 14:00:32,936 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2023-08-28 14:00:32,945 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2023-08-28 14:01:28,159 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-28 14:01:29,245 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:01:35,075 basehttp "OPTIONS /payments/execute/?paymentId=PAYID-MTWHAHY0R949488BS130954N&token=EC-8YE02762KD974625X&PayerID=H43XQUQD7DC5G HTTP/1.1" 200 11136
+INFO 2023-08-28 14:09:22,551 autoreload D:\projects\fl\unlockers\apps\payments\models.py changed, reloading.
+INFO 2023-08-28 14:09:23,714 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:10:13,099 autoreload D:\projects\fl\unlockers\apps\payments\models.py changed, reloading.
+INFO 2023-08-28 14:10:14,209 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:18:13,605 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-28 14:18:36,439 log Not Found: /paymentsNxEmAN9Wf7et/
+WARNING 2023-08-28 14:18:36,439 basehttp "GET /paymentsNxEmAN9Wf7et/ HTTP/1.1" 404 7878
+INFO 2023-08-28 14:18:54,805 basehttp "GET /payments/NxEmAN9Wf7et/ HTTP/1.1" 302 0
+WARNING 2023-08-28 14:19:08,272 log Method Not Allowed: /payments/execute/
+WARNING 2023-08-28 14:19:08,272 basehttp "GET /payments/execute/?paymentId=PAYID-MTWHJFQ84T351379S319433T&token=EC-3CB909236J838131S&PayerID=H43XQUQD7DC5G HTTP/1.1" 405 10861
+INFO 2023-08-28 14:19:08,366 basehttp - Broken pipe from ('127.0.0.1', 65036)
+INFO 2023-08-28 14:23:34,577 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:23:47,817 basehttp "GET /payments/NxEmAN9Wf7et/ HTTP/1.1" 302 0
+ERROR 2023-08-28 14:23:56,817 log Internal Server Error: /payments/execute/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\fields\__init__.py", line 2053, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'NxEmAN9Wf7et'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\apps\payments\views.py", line 65, in get
+    return self.process_payment(payment_id, payer_id)
+  File "D:\projects\fl\unlockers\apps\payments\views.py", line 77, in process_payment
+    order = Order.objects.get(id=payment.transactions[0].item_list.items[0].sku)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 623, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1491, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1318, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\lookups.py", line 27, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\lookups.py", line 341, in get_prep_lookup
+    return super().get_prep_lookup()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\lookups.py", line 85, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\fields\__init__.py", line 2055, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'NxEmAN9Wf7et'.
+ERROR 2023-08-28 14:23:56,825 basehttp "GET /payments/execute/?paymentId=PAYID-MTWHLOY2GL841114C1282435&token=EC-40B89550P2681870J&PayerID=H43XQUQD7DC5G HTTP/1.1" 500 194192
+WARNING 2023-08-28 14:23:56,958 log Not Found: /favicon.ico
+INFO 2023-08-28 14:23:56,959 basehttp - Broken pipe from ('127.0.0.1', 65095)
+INFO 2023-08-28 14:24:53,759 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-28 14:24:54,999 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:27:13,753 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:27:29,506 basehttp "GET /payments/NxEmAN9Wf7et/ HTTP/1.1" 302 0
+ERROR 2023-08-28 14:27:44,763 log Internal Server Error: /payments/execute/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\apps\payments\views.py", line 66, in get
+    return self.process_payment(payment_id, payer_id)
+  File "D:\projects\fl\unlockers\apps\payments\views.py", line 81, in process_payment
+    total_paid = Payment.objects.filter(order_id=order).aggregate(Sum('amount'))['amount__sum'] or 0
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 592, in aggregate
+    return self.query.chain().get_aggregation(self.db, kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 398, in get_aggregation
+    aggregate = aggregate_expr.resolve_expression(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\aggregates.py", line 64, in resolve_expression
+    c = super().resolve_expression(query, allow_joins, reuse, summarize)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\expressions.py", line 942, in resolve_expression
+    c.source_expressions[pos] = arg.resolve_expression(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\expressions.py", line 822, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1976, in resolve_ref
+    join_info = self.setup_joins(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1823, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'amount' into field. Choices are: created_at, id, order_id, order_id_id, payer_id, payment_id, status
+ERROR 2023-08-28 14:27:44,766 basehttp "GET /payments/execute/?paymentId=PAYID-MTWHNGI3ET75075YA453050G&token=EC-2G1755866L805102L&PayerID=H43XQUQD7DC5G HTTP/1.1" 500 168605
+WARNING 2023-08-28 14:27:44,907 log Not Found: /favicon.ico
+INFO 2023-08-28 14:27:44,908 basehttp - Broken pipe from ('127.0.0.1', 65143)
+INFO 2023-08-28 14:32:31,553 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:32:48,768 basehttp "GET /payments/NxEmAN9Wf7et/ HTTP/1.1" 302 0
+ERROR 2023-08-28 14:33:00,530 log Internal Server Error: /payments/execute/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\apps\payments\views.py", line 66, in get
+    return self.process_payment(payment_id, payer_id)
+  File "D:\projects\fl\unlockers\apps\payments\views.py", line 84, in process_payment
+    new_total_paid = total_paid + payment.transactions[0].amount.total
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+ERROR 2023-08-28 14:33:00,532 basehttp "GET /payments/execute/?paymentId=PAYID-MTWHPWA55V6921684313261Y&token=EC-31L41254XD7021838&PayerID=H43XQUQD7DC5G HTTP/1.1" 500 128690
+WARNING 2023-08-28 14:33:00,646 log Not Found: /favicon.ico
+INFO 2023-08-28 14:33:00,647 basehttp - Broken pipe from ('127.0.0.1', 65221)
+INFO 2023-08-28 14:35:10,692 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:35:24,501 basehttp "GET /payments/NxEmAN9Wf7et/ HTTP/1.1" 302 0
+ERROR 2023-08-28 14:35:39,744 log Internal Server Error: /payments/execute/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\apps\payments\views.py", line 66, in get
+    return self.process_payment(payment_id, payer_id)
+  File "D:\projects\fl\unlockers\apps\payments\views.py", line 110, in process_payment
+    return Response({"status": "Payment executed successfully"}, status=status.HTTP_200_OK)
+AttributeError: 'str' object has no attribute 'HTTP_200_OK'
+ERROR 2023-08-28 14:35:39,746 basehttp "GET /payments/execute/?paymentId=PAYID-MTWHQ5A0PA57866G4822943L&token=EC-9J729868WJ5842939&PayerID=H43XQUQD7DC5G HTTP/1.1" 500 128970
+INFO 2023-08-28 14:38:08,064 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-28 14:38:09,326 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:39:02,514 autoreload Watching for file changes with StatReloader
+INFO 2023-08-28 14:39:33,561 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53146
+INFO 2023-08-28 14:39:33,696 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-28 14:39:33,823 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-28 14:39:33,937 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-28 14:39:33,992 basehttp "GET /static/admin/js/calendar.js?_=1693219173711 HTTP/1.1" 200 8466
+INFO 2023-08-28 14:39:33,993 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693219173712 HTTP/1.1" 200 19319
+INFO 2023-08-28 14:39:46,429 basehttp "GET /admin/booking/order/25/change/ HTTP/1.1" 200 43955
+INFO 2023-08-28 14:39:46,486 basehttp - Broken pipe from ('127.0.0.1', 50532)
+INFO 2023-08-28 14:39:46,567 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-28 14:44:46,052 basehttp "GET /payments/NxEmAN9Wf7et/ HTTP/1.1" 302 0
+INFO 2023-08-28 14:44:59,013 basehttp "GET /payments/execute/?paymentId=PAYID-MTWHVJI4NB90433N4381174C&token=EC-24M47479K90158711&PayerID=H43XQUQD7DC5G HTTP/1.1" 200 12480
+INFO 2023-08-28 14:44:59,137 basehttp - Broken pipe from ('127.0.0.1', 51005)
+ERROR 2023-08-28 19:17:50,990 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis TimeoutError: Timeout connecting to server
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_jinja\backend.py", line 289, in get_template
+    return Template(self.env.get_template(template_name), self)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "D:\projects\fl\unlockers\env\lib\site-packages\jinja2\loaders.py", line 132, in load
+    bucket = bcc.get_bucket(environment, name, filename, source)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\jinja2\bccache.py", line 178, in get_bucket
+    self.load_bytecode(bucket)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_jinja\cache.py", line 20, in load_bytecode
+    bytecode = self.backend.get(key)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\redis\commands\core.py", line 1816, in get
+    return self.execute_command("GET", name)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\redis\client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\redis\connection.py", line 1471, in get_connection
+    connection.connect()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\redis\connection.py", line 711, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+ERROR 2023-08-28 19:17:50,994 basehttp "GET / HTTP/1.1" 500 186284
+INFO 2023-08-29 07:57:46,742 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 07:58:17,096 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2023-08-29 07:58:17,136 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4181
+INFO 2023-08-29 07:58:17,167 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+WARNING 2023-08-29 07:58:17,239 log Not Found: /favicon.ico
+WARNING 2023-08-29 07:58:17,239 basehttp "GET /favicon.ico HTTP/1.1" 404 7848
+INFO 2023-08-29 07:58:54,227 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 04:03:51,090 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-29 04:04:14,729 log Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis TimeoutError: Timeout connecting to server
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_jinja\backend.py", line 289, in get_template
+    return Template(self.env.get_template(template_name), self)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "D:\projects\fl\unlockers\env\lib\site-packages\jinja2\loaders.py", line 132, in load
+    bucket = bcc.get_bucket(environment, name, filename, source)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\jinja2\bccache.py", line 178, in get_bucket
+    self.load_bytecode(bucket)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_jinja\cache.py", line 20, in load_bytecode
+    bytecode = self.backend.get(key)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\redis\commands\core.py", line 1816, in get
+    return self.execute_command("GET", name)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\redis\client.py", line 1266, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\redis\connection.py", line 1461, in get_connection
+    connection.connect()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\redis\connection.py", line 711, in connect
+    raise TimeoutError("Timeout connecting to server")
+redis.exceptions.TimeoutError: Timeout connecting to server
+ERROR 2023-08-29 04:04:14,733 basehttp "GET / HTTP/1.1" 500 185441
+INFO 2023-08-29 04:07:53,306 basehttp "GET / HTTP/1.1" 200 52413
+INFO 2023-08-29 04:07:53,352 basehttp "GET /media/person_6-min_EX3wzvD.jpg HTTP/1.1" 200 66011
+INFO 2023-08-29 04:07:53,352 basehttp - Broken pipe from ('127.0.0.1', 65415)
+INFO 2023-08-29 04:07:53,353 basehttp "GET /media/shot_down_a_plane_hit_by_a_rocket_in_space_near_Ma.jpg HTTP/1.1" 200 173440
+INFO 2023-08-29 04:07:53,377 basehttp "GET /static/fonts/svgfont.ttf HTTP/1.1" 200 7616
+INFO 2023-08-29 04:07:53,377 basehttp - Broken pipe from ('127.0.0.1', 65423)
+INFO 2023-08-29 04:07:53,378 basehttp - Broken pipe from ('127.0.0.1', 65425)
+INFO 2023-08-29 04:07:53,378 basehttp "GET /media/hero_bg_2_pIETLgt.jpg HTTP/1.1" 304 0
+INFO 2023-08-29 04:07:53,378 basehttp "GET /media/img_4.jpg HTTP/1.1" 200 32286
+INFO 2023-08-29 04:07:53,381 basehttp "GET /static/fonts/Montserrat-Regular.ttf HTTP/1.1" 200 245708
+INFO 2023-08-29 04:07:53,477 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+WARNING 2023-08-29 04:07:53,504 log Not Found: /media/-
+INFO 2023-08-29 04:07:53,505 basehttp - Broken pipe from ('127.0.0.1', 65424)
+INFO 2023-08-29 04:08:03,184 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:08:03,212 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4181
+WARNING 2023-08-29 04:08:03,299 log Not Found: /favicon.ico
+INFO 2023-08-29 04:08:03,299 basehttp - Broken pipe from ('127.0.0.1', 65421)
+INFO 2023-08-29 04:08:05,825 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:08:05,949 basehttp "GET /admin/ HTTP/1.1" 200 30045
+INFO 2023-08-29 04:08:06,004 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2023-08-29 04:08:06,004 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2023-08-29 04:08:57,451 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25189
+INFO 2023-08-29 04:08:57,506 basehttp "GET /static/parler/admin/parler_admin.css HTTP/1.1" 200 1473
+INFO 2023-08-29 04:08:57,507 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2023-08-29 04:08:57,583 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:08:57,604 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2023-08-29 04:09:03,285 basehttp "GET /admin/postie/template/3/change/ HTTP/1.1" 200 31566
+INFO 2023-08-29 04:09:03,337 basehttp "GET /static/ckeditor/ckeditor.css HTTP/1.1" 200 672
+INFO 2023-08-29 04:09:03,337 basehttp - Broken pipe from ('127.0.0.1', 65484)
+INFO 2023-08-29 04:09:03,337 basehttp "GET /static/ckeditor/ckeditor-init.js HTTP/1.1" 200 1526
+INFO 2023-08-29 04:09:03,338 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2023-08-29 04:09:03,349 basehttp - Broken pipe from ('127.0.0.1', 65485)
+INFO 2023-08-29 04:09:03,413 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:09:03,468 basehttp "GET /static/ckeditor/ckeditor/config.js?t=N5UC HTTP/1.1" 200 336
+INFO 2023-08-29 04:09:03,494 basehttp "GET /static/ckeditor/ckeditor/lang/en.js?t=N5UC HTTP/1.1" 200 18228
+INFO 2023-08-29 04:09:03,494 basehttp - Broken pipe from ('127.0.0.1', 65422)
+INFO 2023-08-29 04:09:03,509 basehttp - Broken pipe from ('127.0.0.1', 65426)
+INFO 2023-08-29 04:09:03,543 basehttp "GET /static/ckeditor/ckeditor/skins/moono-lisa/icons_hidpi.png?t=4a1fb11f44 HTTP/1.1" 200 38309
+INFO 2023-08-29 04:09:09,409 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25189
+INFO 2023-08-29 04:09:10,792 basehttp "GET /admin/postie/template/2/change/ HTTP/1.1" 200 31946
+INFO 2023-08-29 04:09:10,927 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:09:32,783 basehttp "GET /static/ckeditor/ckeditor/skins/moono-lisa/dialog.css?t=N5UC HTTP/1.1" 200 13634
+INFO 2023-08-29 04:09:32,783 basehttp "GET /static/ckeditor/ckeditor/plugins/image/dialogs/image.js?t=N5UC HTTP/1.1" 200 21529
+INFO 2023-08-29 04:09:32,804 basehttp "GET /static/ckeditor/ckeditor/skins/moono-lisa/images/hidpi/close.png HTTP/1.1" 200 1238
+INFO 2023-08-29 04:09:32,805 basehttp "GET /static/ckeditor/ckeditor/skins/moono-lisa/images/hidpi/lock.png HTTP/1.1" 200 1062
+INFO 2023-08-29 04:09:32,805 basehttp "GET /static/ckeditor/ckeditor/skins/moono-lisa/images/hidpi/refresh.png HTTP/1.1" 200 1623
+INFO 2023-08-29 04:10:22,523 basehttp "GET /admin/filer/folder/ HTTP/1.1" 200 35774
+INFO 2023-08-29 04:10:22,590 basehttp "GET /static/filer/js/libs/class.min.js HTTP/1.1" 200 1740
+INFO 2023-08-29 04:10:22,591 basehttp "GET /static/filer/js/libs/dropzone.min.js HTTP/1.1" 200 34316
+INFO 2023-08-29 04:10:22,592 basehttp "GET /static/filer/css/admin_filer.fa.icons.css HTTP/1.1" 200 25479
+INFO 2023-08-29 04:10:22,595 basehttp "GET /static/filer/css/admin_filer.css HTTP/1.1" 200 91187
+INFO 2023-08-29 04:10:22,595 basehttp "GET /static/filer/js/libs/mediator.min.js HTTP/1.1" 200 3782
+INFO 2023-08-29 04:10:22,596 basehttp "GET /static/filer/js/libs/jquery.cookie.min.js HTTP/1.1" 200 2717
+INFO 2023-08-29 04:10:22,598 basehttp "GET /static/filer/js/libs/fileuploader.min.js HTTP/1.1" 200 18574
+INFO 2023-08-29 04:10:22,600 basehttp "GET /static/filer/js/addons/popup_handling.js HTTP/1.1" 200 2657
+INFO 2023-08-29 04:10:22,600 basehttp "GET /static/filer/js/addons/dropdown-menu.js HTTP/1.1" 200 5788
+INFO 2023-08-29 04:10:22,601 basehttp "GET /static/filer/js/addons/table-dropzone.js HTTP/1.1" 200 10389
+INFO 2023-08-29 04:10:22,603 basehttp "GET /static/filer/js/addons/upload-button.js HTTP/1.1" 200 5416
+INFO 2023-08-29 04:10:22,604 basehttp "GET /static/filer/js/addons/tooltip.js HTTP/1.1" 200 558
+INFO 2023-08-29 04:10:22,604 basehttp "GET /static/filer/js/libs/jquery-ui.min.js HTTP/1.1" 200 255084
+INFO 2023-08-29 04:10:22,604 basehttp "GET /static/filer/js/addons/toggler.js HTTP/1.1" 200 2901
+INFO 2023-08-29 04:10:22,605 basehttp "GET /static/filer/js/base.js HTTP/1.1" 200 11090
+INFO 2023-08-29 04:10:22,657 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:10:22,662 basehttp "GET /static/filer/icons/folder-root.svg HTTP/1.1" 200 991
+INFO 2023-08-29 04:10:22,662 basehttp "GET /static/filer/icons/folder-dropdown.svg HTTP/1.1" 200 2758
+INFO 2023-08-29 04:10:22,662 basehttp "GET /static/filer/icons/folder.svg HTTP/1.1" 200 832
+INFO 2023-08-29 04:10:22,662 basehttp "GET /static/filer/icons/folder-unfiled.svg HTTP/1.1" 200 2529
+INFO 2023-08-29 04:10:22,688 basehttp "GET /static/filer/fonts/fontawesome-webfont.woff2?v=4.4.0 HTTP/1.1" 200 64464
+INFO 2023-08-29 04:10:28,586 basehttp "GET /admin/filer/folder/unfiled_images/ HTTP/1.1" 200 35368
+INFO 2023-08-29 04:10:28,716 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:11:02,753 basehttp "POST /admin/filer/clipboard/operations/upload/no_folder/?qqfile=icon_no.png HTTP/1.1" 200 328
+INFO 2023-08-29 04:11:02,866 basehttp "POST /admin/filer/clipboard/operations/upload/no_folder/?qqfile=icon_yes.png HTTP/1.1" 200 331
+INFO 2023-08-29 04:11:03,158 basehttp "GET /admin/filer/folder/unfiled_images/?order_by=-modified_at HTTP/1.1" 200 42981
+INFO 2023-08-29 04:11:03,292 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:11:03,476 basehttp "GET /admin/filer/image/icon/2/40 HTTP/1.1" 302 0
+INFO 2023-08-29 04:11:03,485 basehttp "GET /media/filer_public_thumbnails/filer_public/47/3b/473bdb36-0ea8-4a23-94d7-fc5c87fde5e3/icon_yes.png__40x40_crop_subsampling-2.png HTTP/1.1" 200 3232
+INFO 2023-08-29 04:11:03,912 basehttp "GET /admin/filer/image/icon/1/40 HTTP/1.1" 302 0
+INFO 2023-08-29 04:11:03,919 basehttp "GET /media/filer_public_thumbnails/filer_public/b0/4e/b04e1758-ac93-458a-8af7-f7a3b39bebaa/icon_no.png__40x40_crop_subsampling-2.png HTTP/1.1" 200 2772
+INFO 2023-08-29 04:11:10,442 basehttp "GET /filer/canonical/1693264262/2/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:11:10,449 basehttp "GET /media/filer_public/47/3b/473bdb36-0ea8-4a23-94d7-fc5c87fde5e3/icon_yes.png HTTP/1.1" 200 2681
+INFO 2023-08-29 04:11:21,227 basehttp "GET /admin/filer/image/2/change/ HTTP/1.1" 200 36711
+INFO 2023-08-29 04:11:21,283 basehttp "GET /static/admin/js/autocomplete.js HTTP/1.1" 200 1060
+INFO 2023-08-29 04:11:21,283 basehttp "GET /static/admin/js/vendor/select2/i18n/en.js HTTP/1.1" 200 844
+INFO 2023-08-29 04:11:21,284 basehttp "GET /static/admin/css/vendor/select2/select2.css HTTP/1.1" 200 17358
+INFO 2023-08-29 04:11:21,284 basehttp "GET /static/admin/css/autocomplete.css HTTP/1.1" 200 9114
+INFO 2023-08-29 04:11:21,286 basehttp "GET /static/filer/js/addons/focal-point.js HTTP/1.1" 200 4597
+INFO 2023-08-29 04:11:21,286 basehttp "GET /static/admin/js/vendor/select2/select2.full.js HTTP/1.1" 200 173566
+INFO 2023-08-29 04:11:21,364 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:11:21,366 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-08-29 04:11:21,366 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2023-08-29 04:11:21,423 basehttp "GET /media/filer_public_thumbnails/filer_public/47/3b/473bdb36-0ea8-4a23-94d7-fc5c87fde5e3/icon_yes.png__420x420_subsampling-2_upscale.png HTTP/1.1" 200 126648
+INFO 2023-08-29 04:11:35,597 basehttp "GET /admin/filer/folder/unfiled_images/?order_by=-modified_at HTTP/1.1" 200 43081
+INFO 2023-08-29 04:11:35,793 basehttp "GET /admin/filer/image/icon/2/40 HTTP/1.1" 302 0
+INFO 2023-08-29 04:11:38,305 basehttp "GET /admin/filer/image/2/change/ HTTP/1.1" 200 36711
+INFO 2023-08-29 04:11:38,437 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:11:38,463 basehttp "GET /media/filer_public_thumbnails/filer_public/47/3b/473bdb36-0ea8-4a23-94d7-fc5c87fde5e3/icon_yes.png__420x420_subsampling-2_upscale.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:11:52,138 basehttp "GET /admin/ HTTP/1.1" 200 30045
+INFO 2023-08-29 04:11:58,924 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25189
+INFO 2023-08-29 04:11:59,049 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:12:00,781 basehttp "GET /admin/postie/template/3/change/ HTTP/1.1" 200 31566
+INFO 2023-08-29 04:12:00,848 basehttp - Broken pipe from ('127.0.0.1', 65519)
+INFO 2023-08-29 04:12:00,917 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:12:04,078 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25189
+INFO 2023-08-29 04:12:05,184 basehttp "GET /admin/postie/template/2/change/ HTTP/1.1" 200 31946
+INFO 2023-08-29 04:12:05,314 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:12:25,767 basehttp "GET /media/filer_public/47/3b/473bdb36-0ea8-4a23-94d7-fc5c87fde5e3/icon_yes.png HTTP/1.1" 200 2681
+INFO 2023-08-29 04:12:38,264 basehttp "GET /admin/filer/folder/unfiled_images/?order_by=-modified_at HTTP/1.1" 200 43182
+INFO 2023-08-29 04:12:40,731 basehttp "GET /admin/filer/image/1/change/ HTTP/1.1" 200 36700
+INFO 2023-08-29 04:12:40,868 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:12:40,936 basehttp "GET /media/filer_public_thumbnails/filer_public/b0/4e/b04e1758-ac93-458a-8af7-f7a3b39bebaa/icon_no.png__420x420_subsampling-2_upscale.png HTTP/1.1" 200 98941
+INFO 2023-08-29 04:12:51,253 basehttp "GET /media/filer_public/b0/4e/b04e1758-ac93-458a-8af7-f7a3b39bebaa/icon_no.png HTTP/1.1" 200 2670
+INFO 2023-08-29 04:12:55,969 basehttp "GET /static/ckeditor/ckeditor/plugins/link/dialogs/link.js?t=N5UC HTTP/1.1" 200 13234
+INFO 2023-08-29 04:13:35,346 basehttp "POST /admin/postie/template/2/change/?language=en-us HTTP/1.1" 302 0
+INFO 2023-08-29 04:13:35,828 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25401
+INFO 2023-08-29 04:13:35,950 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:13:35,969 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2023-08-29 04:13:50,009 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53147
+INFO 2023-08-29 04:13:50,134 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:13:50,136 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2023-08-29 04:13:50,231 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:13:50,326 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:13:50,389 basehttp "GET /static/admin/js/calendar.js?_=1693268030142 HTTP/1.1" 200 8466
+INFO 2023-08-29 04:13:50,390 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693268030143 HTTP/1.1" 200 19319
+INFO 2023-08-29 04:13:50,416 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2023-08-29 04:13:54,784 basehttp "GET /admin/booking/order/29/change/ HTTP/1.1" 200 43953
+INFO 2023-08-29 04:13:54,910 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:13:54,974 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2023-08-29 04:14:09,122 basehttp "POST /admin/booking/order/29/change/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:14:09,277 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53347
+INFO 2023-08-29 04:14:09,400 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:14:09,500 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:14:09,591 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:14:09,649 basehttp "GET /static/admin/js/calendar.js?_=1693268049409 HTTP/1.1" 200 8466
+INFO 2023-08-29 04:14:09,649 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693268049410 HTTP/1.1" 200 19319
+WARNING 2023-08-29 04:14:18,209 log Not Found: /favicon.ico
+WARNING 2023-08-29 04:14:18,209 basehttp "GET /favicon.ico HTTP/1.1" 404 7848
+INFO 2023-08-29 04:14:18,254 basehttp "GET / HTTP/1.1" 200 52413
+INFO 2023-08-29 04:14:18,286 basehttp "GET /static/js/vendor.js.css HTTP/1.1" 200 46186
+INFO 2023-08-29 04:14:18,307 basehttp "GET /media/person_6-min_EX3wzvD.jpg HTTP/1.1" 200 66011
+INFO 2023-08-29 04:14:18,311 basehttp "GET /media/shot_down_a_plane_hit_by_a_rocket_in_space_near_Ma.jpg HTTP/1.1" 200 173440
+INFO 2023-08-29 04:14:18,325 basehttp "GET /static/img/payment.png HTTP/1.1" 200 13454
+INFO 2023-08-29 04:14:18,330 basehttp "GET /static/css/style.css HTTP/1.1" 200 444027
+INFO 2023-08-29 04:14:18,331 basehttp "GET /media/hero_bg_2.jpg HTTP/1.1" 200 444234
+INFO 2023-08-29 04:14:18,338 basehttp "GET /static/js/vendor.js HTTP/1.1" 200 1416215
+INFO 2023-08-29 04:14:18,339 basehttp "GET /static/js/main.js HTTP/1.1" 200 1463364
+INFO 2023-08-29 04:14:18,344 basehttp "GET /media/img_4.jpg HTTP/1.1" 200 32286
+INFO 2023-08-29 04:14:18,346 basehttp "GET /media/hero_bg_2_pIETLgt.jpg HTTP/1.1" 200 444234
+INFO 2023-08-29 04:14:18,376 basehttp "GET /static/fonts/svgfont.ttf HTTP/1.1" 200 7616
+INFO 2023-08-29 04:14:18,379 basehttp "GET /static/fonts/Montserrat-Regular.ttf HTTP/1.1" 200 245708
+INFO 2023-08-29 04:14:18,380 basehttp "GET /static/fonts/Montserrat-Bold.ttf HTTP/1.1" 200 244468
+INFO 2023-08-29 04:14:18,380 basehttp "GET /static/fonts/Montserrat-Medium.ttf HTTP/1.1" 200 243180
+INFO 2023-08-29 04:14:18,475 basehttp "GET /vuejs-translatei18n.js HTTP/1.1" 200 2419
+INFO 2023-08-29 04:14:18,581 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+WARNING 2023-08-29 04:14:18,634 log Not Found: /media/-
+WARNING 2023-08-29 04:14:18,635 basehttp "GET /media/- HTTP/1.1" 404 7108
+WARNING 2023-08-29 04:14:27,838 log Method Not Allowed: /payments/create/
+WARNING 2023-08-29 04:14:27,839 basehttp "GET //payments/create/ HTTP/1.1" 405 10558
+INFO 2023-08-29 04:14:27,916 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2023-08-29 04:14:27,916 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2023-08-29 04:14:27,917 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2023-08-29 04:14:27,917 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2023-08-29 04:14:27,920 basehttp "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2023-08-29 04:14:27,922 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2023-08-29 04:14:27,922 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2023-08-29 04:14:27,924 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2023-08-29 04:14:27,924 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2023-08-29 04:14:27,924 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2023-08-29 04:14:27,933 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+WARNING 2023-08-29 04:14:28,010 log Not Found: /favicon.ico
+WARNING 2023-08-29 04:14:28,010 basehttp "GET /favicon.ico HTTP/1.1" 404 7848
+INFO 2023-08-29 04:17:00,664 basehttp "GET /media/icon_no.png HTTP/1.1" 200 2670
+INFO 2023-08-29 04:17:16,074 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25189
+INFO 2023-08-29 04:17:16,201 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:17:17,621 basehttp "GET /admin/postie/template/2/change/ HTTP/1.1" 200 32315
+INFO 2023-08-29 04:17:17,745 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:17:17,891 basehttp "GET /media/filer_public/47/3b/473bdb36-0ea8-4a23-94d7-fc5c87fde5e3/icon_yes.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:17:17,892 basehttp "GET /media/filer_public/b0/4e/b04e1758-ac93-458a-8af7-f7a3b39bebaa/icon_no.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:17:37,790 basehttp "GET /media/icon_no.png HTTP/1.1" 200 2670
+INFO 2023-08-29 04:17:48,840 basehttp "GET /media/icon_no.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:18:04,391 basehttp "GET /media/icon_yes.png HTTP/1.1" 200 2681
+INFO 2023-08-29 04:18:04,503 basehttp "GET /media/icon_yes.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:18:23,368 basehttp "GET /media/icon_yes.png HTTP/1.1" 200 2681
+INFO 2023-08-29 04:18:27,040 basehttp "GET /media/icon_yes.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:18:38,113 basehttp "GET /media/icon_no.png HTTP/1.1" 200 2670
+INFO 2023-08-29 04:18:41,542 basehttp "GET /media/icon_no.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:18:44,962 basehttp "POST /admin/postie/template/2/change/?language=en-us HTTP/1.1" 302 0
+INFO 2023-08-29 04:18:45,317 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25401
+INFO 2023-08-29 04:18:45,441 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:18:50,885 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53151
+INFO 2023-08-29 04:18:51,006 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:18:51,108 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:18:51,198 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:18:51,253 basehttp "GET /static/admin/js/calendar.js?_=1693268331012 HTTP/1.1" 200 8466
+INFO 2023-08-29 04:18:51,253 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693268331013 HTTP/1.1" 200 19319
+INFO 2023-08-29 04:18:52,938 basehttp "GET /admin/booking/order/28/change/ HTTP/1.1" 200 43953
+INFO 2023-08-29 04:18:53,068 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:19:04,338 basehttp "POST /admin/booking/order/28/change/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:19:04,476 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53347
+INFO 2023-08-29 04:19:04,601 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:19:04,700 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:19:04,790 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:19:04,849 basehttp "GET /static/admin/js/calendar.js?_=1693268344608 HTTP/1.1" 200 8466
+INFO 2023-08-29 04:19:04,849 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693268344609 HTTP/1.1" 200 19319
+INFO 2023-08-29 04:19:35,045 basehttp "GET /admin/booking/order/27/change/ HTTP/1.1" 200 43953
+INFO 2023-08-29 04:19:35,173 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:19:45,834 basehttp "POST /admin/booking/order/27/change/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:19:45,991 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53347
+INFO 2023-08-29 04:19:46,110 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:19:46,208 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:19:46,300 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:19:46,353 basehttp "GET /static/admin/js/calendar.js?_=1693268386117 HTTP/1.1" 200 8466
+INFO 2023-08-29 04:19:46,353 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693268386118 HTTP/1.1" 200 19319
+INFO 2023-08-29 04:22:06,699 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25189
+INFO 2023-08-29 04:22:06,838 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:22:08,398 basehttp "GET /admin/postie/template/2/change/ HTTP/1.1" 200 32255
+INFO 2023-08-29 04:22:08,531 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:22:08,708 basehttp "GET /media/icon_no.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:22:08,709 basehttp "GET /media/icon_yes.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:22:27,529 basehttp "GET /media/icon_yes.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:22:34,763 basehttp "GET /admin/postie/template/2/change/media/icon_yes.png HTTP/1.1" 301 0
+INFO 2023-08-29 04:22:34,849 basehttp "GET /admin/postie/template/2/change/media/icon_yes.png/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:22:34,938 basehttp "GET /admin/postie/template/2/change/media/icon_yes.png/change/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:22:35,045 basehttp "GET /admin/ HTTP/1.1" 200 30231
+INFO 2023-08-29 04:22:46,333 basehttp "GET /media/icon_yes.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:24:54,018 basehttp "GET /media/icon_no.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:25:04,055 basehttp "GET /media/icon_yes.png HTTP/1.1" 304 0
+INFO 2023-08-29 04:25:18,496 basehttp "POST /admin/postie/template/2/change/?language=en-us HTTP/1.1" 302 0
+INFO 2023-08-29 04:25:18,996 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25401
+INFO 2023-08-29 04:25:19,120 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:25:21,252 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53151
+INFO 2023-08-29 04:25:21,380 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:25:21,479 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:25:21,567 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:25:21,620 basehttp "GET /static/admin/js/calendar.js?_=1693268721389 HTTP/1.1" 200 8466
+INFO 2023-08-29 04:25:21,621 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693268721390 HTTP/1.1" 200 19319
+INFO 2023-08-29 04:25:23,426 basehttp "GET /admin/booking/order/23/change/ HTTP/1.1" 200 43953
+INFO 2023-08-29 04:25:23,486 basehttp - Broken pipe from ('127.0.0.1', 58288)
+INFO 2023-08-29 04:25:23,561 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:25:31,486 basehttp "POST /admin/booking/order/23/change/ HTTP/1.1" 302 0
+INFO 2023-08-29 04:25:31,628 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53347
+INFO 2023-08-29 04:25:31,756 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:25:31,863 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:25:31,950 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 04:25:32,013 basehttp "GET /static/admin/js/calendar.js?_=1693268731763 HTTP/1.1" 200 8466
+INFO 2023-08-29 04:25:32,014 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693268731764 HTTP/1.1" 200 19319
+INFO 2023-08-29 08:26:24,901 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25189
+INFO 2023-08-29 08:26:25,040 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:26:27,100 basehttp "GET /admin/postie/template/2/change/ HTTP/1.1" 200 32331
+INFO 2023-08-29 08:26:27,227 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:10,681 basehttp "POST /admin/postie/template/2/change/?language=en-us HTTP/1.1" 302 0
+INFO 2023-08-29 08:27:11,023 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25401
+INFO 2023-08-29 08:27:11,152 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:12,819 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53151
+INFO 2023-08-29 08:27:12,958 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:13,055 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:13,143 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:13,204 basehttp "GET /static/admin/js/calendar.js?_=1693283232966 HTTP/1.1" 200 8466
+INFO 2023-08-29 08:27:13,204 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693283232967 HTTP/1.1" 200 19319
+INFO 2023-08-29 08:27:14,756 basehttp "GET /admin/booking/order/23/change/ HTTP/1.1" 200 43953
+INFO 2023-08-29 08:27:14,886 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:25,314 basehttp "POST /admin/booking/order/23/change/ HTTP/1.1" 302 0
+INFO 2023-08-29 08:27:25,446 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53351
+INFO 2023-08-29 08:27:25,577 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:25,674 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:25,762 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:27:25,821 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693283245585 HTTP/1.1" 200 19319
+INFO 2023-08-29 08:27:25,821 basehttp "GET /static/admin/js/calendar.js?_=1693283245584 HTTP/1.1" 200 8466
+INFO 2023-08-29 08:28:14,245 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25189
+INFO 2023-08-29 08:28:14,374 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:28:15,783 basehttp "GET /admin/postie/template/2/change/ HTTP/1.1" 200 32345
+INFO 2023-08-29 08:28:15,909 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 08:28:29,401 basehttp "POST /admin/postie/template/2/change/?language=en-us HTTP/1.1" 302 0
+INFO 2023-08-29 08:28:29,739 basehttp "GET /admin/postie/template/ HTTP/1.1" 200 25401
+INFO 2023-08-29 08:28:29,867 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:07:21,178 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 11:07:40,046 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 11:07:50,583 basehttp "GET / HTTP/1.1" 200 52947
+INFO 2023-08-29 11:07:50,636 basehttp - Broken pipe from ('127.0.0.1', 59105)
+INFO 2023-08-29 11:07:50,638 basehttp "GET /media/shot_down_a_plane_hit_by_a_rocket_in_space_near_Ma.jpg HTTP/1.1" 304 0
+INFO 2023-08-29 11:07:50,671 basehttp - Broken pipe from ('127.0.0.1', 59111)
+INFO 2023-08-29 11:07:50,671 basehttp - Broken pipe from ('127.0.0.1', 59112)
+INFO 2023-08-29 11:07:50,689 basehttp "GET / HTTP/1.1" 200 52947
+INFO 2023-08-29 11:07:50,863 basehttp "GET /api/v1/cabinet/profile-info/ HTTP/1.1" 200 105
+INFO 2023-08-29 11:07:50,909 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-29 11:07:51,175 basehttp "GET /api/v1/cabinet/profile-info/ HTTP/1.1" 200 105
+INFO 2023-08-29 11:07:51,209 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-29 11:07:58,646 basehttp "GET /admin/ HTTP/1.1" 200 30574
+INFO 2023-08-29 11:08:05,094 basehttp "GET /admin/payments/payment/ HTTP/1.1" 200 27335
+INFO 2023-08-29 11:08:05,234 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:08:05,254 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2023-08-29 11:08:14,173 basehttp "GET /admin/payments/payment/2/change/ HTTP/1.1" 200 27336
+INFO 2023-08-29 11:08:14,300 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:08:19,259 basehttp "GET /admin/payments/payment/ HTTP/1.1" 200 27335
+INFO 2023-08-29 11:08:21,898 basehttp "GET /admin/cars/car/ HTTP/1.1" 200 36815
+INFO 2023-08-29 11:08:22,026 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:08:22,027 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2023-08-29 11:09:41,947 basehttp "GET /admin/cars/car/1/change/ HTTP/1.1" 200 30834
+INFO 2023-08-29 11:09:42,093 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-08-29 11:10:16,435 log Internal Server Error: /admin/script_pattern/scriptblock/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: adminsortable2\script_pattern\scriptblock\change_list.html, adminsortable2\script_pattern\change_list.html, adminsortable2\change_list.html
+ERROR 2023-08-29 11:10:16,437 basehttp "GET /admin/script_pattern/scriptblock/ HTTP/1.1" 500 126651
+INFO 2023-08-29 11:10:26,789 basehttp "GET /admin/cars/car/1/change/ HTTP/1.1" 200 30834
+INFO 2023-08-29 11:10:58,550 basehttp "GET /admin/cars/car/ HTTP/1.1" 200 36815
+INFO 2023-08-29 11:11:12,162 basehttp "GET /admin/booking/transaction/ HTTP/1.1" 200 28017
+INFO 2023-08-29 11:11:12,298 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:11:16,856 basehttp "GET /admin/booking/transaction/5/change/ HTTP/1.1" 200 27912
+INFO 2023-08-29 11:11:16,988 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:11:21,175 basehttp "GET /admin/booking/transaction/ HTTP/1.1" 200 28017
+INFO 2023-08-29 11:11:23,723 basehttp "GET /admin/booking/employee/ HTTP/1.1" 200 24763
+INFO 2023-08-29 11:11:23,862 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:11:24,491 basehttp "GET /admin/booking/transaction/ HTTP/1.1" 200 28017
+INFO 2023-08-29 11:11:30,397 basehttp "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 23553
+INFO 2023-08-29 11:11:37,157 basehttp "GET /admin/authtoken/tokenproxy/add/ HTTP/1.1" 200 25396
+INFO 2023-08-29 11:11:37,282 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:11:43,166 basehttp "POST /admin/authtoken/tokenproxy/add/ HTTP/1.1" 302 0
+INFO 2023-08-29 11:11:43,279 basehttp "GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 24787
+INFO 2023-08-29 11:16:09,826 basehttp "GET /admin/blog/post/ HTTP/1.1" 200 23561
+INFO 2023-08-29 11:16:09,877 basehttp - Broken pipe from ('127.0.0.1', 59202)
+INFO 2023-08-29 11:16:09,957 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-29 11:16:09,986 log Not Found: /favicon.ico
+INFO 2023-08-29 11:16:09,986 basehttp - Broken pipe from ('127.0.0.1', 59203)
+INFO 2023-08-29 11:16:15,679 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53689
+INFO 2023-08-29 11:16:15,819 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:16:15,923 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:16:16,028 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:16:16,060 basehttp "GET /static/admin/js/calendar.js?_=1693293375826 HTTP/1.1" 200 8466
+INFO 2023-08-29 11:16:16,079 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693293375827 HTTP/1.1" 200 19319
+INFO 2023-08-29 11:16:29,852 basehttp "GET /admin/django_celery_results/groupresult/ HTTP/1.1" 200 24942
+INFO 2023-08-29 11:16:29,983 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:16:45,058 basehttp "GET /admin/filer/thumbnailoption/ HTTP/1.1" 200 23647
+INFO 2023-08-29 11:16:45,196 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:16:46,685 basehttp "GET /admin/django_celery_results/groupresult/ HTTP/1.1" 200 24942
+INFO 2023-08-29 11:16:56,456 basehttp "GET /admin/pages/review/ HTTP/1.1" 200 24011
+INFO 2023-08-29 11:16:56,588 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:16:59,281 basehttp "GET /admin/pages/review/add/ HTTP/1.1" 200 28733
+INFO 2023-08-29 11:16:59,339 basehttp - Broken pipe from ('127.0.0.1', 59201)
+INFO 2023-08-29 11:16:59,339 basehttp - Broken pipe from ('127.0.0.1', 59212)
+INFO 2023-08-29 11:16:59,424 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:17:40,819 basehttp "GET /admin/request/request/ HTTP/1.1" 200 59998
+INFO 2023-08-29 11:17:40,957 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:17:41,059 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:17:41,122 basehttp "GET /static/admin/js/calendar.js?_=1693293460964 HTTP/1.1" 200 8466
+INFO 2023-08-29 11:17:41,123 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693293460965 HTTP/1.1" 200 19319
+INFO 2023-08-29 11:26:28,653 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 53689
+INFO 2023-08-29 11:26:28,785 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:26:28,885 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:26:28,974 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-29 11:26:28,990 log Not Found: /favicon.ico
+INFO 2023-08-29 11:26:28,990 basehttp - Broken pipe from ('127.0.0.1', 59329)
+INFO 2023-08-29 11:26:29,036 basehttp "GET /static/admin/js/calendar.js?_=1693293988791 HTTP/1.1" 200 8466
+INFO 2023-08-29 11:26:29,036 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693293988792 HTTP/1.1" 200 19319
+INFO 2023-08-29 11:26:30,636 basehttp "GET /admin/booking/order/29/change/ HTTP/1.1" 200 44487
+INFO 2023-08-29 11:26:30,688 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2023-08-29 11:26:30,768 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 11:26:59,731 basehttp "GET / HTTP/1.1" 200 52413
+INFO 2023-08-29 11:26:59,762 basehttp "GET /static/js/vendor.js.css HTTP/1.1" 200 46186
+INFO 2023-08-29 11:26:59,764 basehttp "GET /static/css/style.css HTTP/1.1" 200 444027
+INFO 2023-08-29 11:26:59,782 basehttp "GET /media/person_6-min_EX3wzvD.jpg HTTP/1.1" 200 66011
+INFO 2023-08-29 11:26:59,784 basehttp "GET /media/shot_down_a_plane_hit_by_a_rocket_in_space_near_Ma.jpg HTTP/1.1" 200 173440
+INFO 2023-08-29 11:26:59,785 basehttp "GET /static/img/payment.png HTTP/1.1" 200 13454
+INFO 2023-08-29 11:26:59,791 basehttp "GET /media/img_4.jpg HTTP/1.1" 200 32286
+INFO 2023-08-29 11:26:59,791 basehttp "GET /media/hero_bg_2.jpg HTTP/1.1" 200 444234
+INFO 2023-08-29 11:26:59,793 basehttp "GET /media/hero_bg_2_pIETLgt.jpg HTTP/1.1" 200 444234
+INFO 2023-08-29 11:26:59,797 basehttp "GET /static/js/main.js HTTP/1.1" 200 1463364
+INFO 2023-08-29 11:26:59,798 basehttp "GET /static/js/vendor.js HTTP/1.1" 200 1416215
+INFO 2023-08-29 11:26:59,822 basehttp "GET /static/fonts/svgfont.ttf HTTP/1.1" 200 7616
+INFO 2023-08-29 11:26:59,826 basehttp "GET /static/fonts/Montserrat-Medium.ttf HTTP/1.1" 200 243180
+INFO 2023-08-29 11:26:59,826 basehttp "GET /static/fonts/Montserrat-Bold.ttf HTTP/1.1" 200 244468
+INFO 2023-08-29 11:26:59,827 basehttp "GET /static/fonts/Montserrat-Regular.ttf HTTP/1.1" 200 245708
+INFO 2023-08-29 11:26:59,999 basehttp "GET /vuejs-translatei18n.js HTTP/1.1" 200 2419
+INFO 2023-08-29 11:27:00,102 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-29 11:27:05,612 basehttp "GET /static/fonts/Montserrat-SemiBold.ttf HTTP/1.1" 200 243816
+INFO 2023-08-29 11:35:50,676 autoreload D:\projects\fl\unlockers\apps\booking\rest\urls.py changed, reloading.
+INFO 2023-08-29 11:35:52,316 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 11:36:18,920 basehttp "GET /api/v1/order/link/gnqGhz8Nlrfo HTTP/1.1" 301 0
+INFO 2023-08-29 11:36:19,097 basehttp "GET /api/v1/order/link/gnqGhz8Nlrfo/ HTTP/1.1" 200 11434
+INFO 2023-08-29 11:36:19,157 basehttp - Broken pipe from ('127.0.0.1', 59584)
+INFO 2023-08-29 11:36:19,158 basehttp - Broken pipe from ('127.0.0.1', 59586)
+INFO 2023-08-29 11:36:19,159 basehttp - Broken pipe from ('127.0.0.1', 59587)
+INFO 2023-08-29 11:36:19,159 basehttp - Broken pipe from ('127.0.0.1', 59588)
+INFO 2023-08-29 11:36:19,177 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2023-08-29 11:46:48,063 autoreload D:\projects\fl\unlockers\apps\booking\senders.py changed, reloading.
+INFO 2023-08-29 11:46:49,277 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 11:49:12,101 autoreload D:\projects\fl\unlockers\apps\booking\senders.py changed, reloading.
+INFO 2023-08-29 11:49:13,191 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 11:50:06,310 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2023-08-29 11:50:06,439 basehttp "GET /admin/ HTTP/1.1" 200 30599
+WARNING 2023-08-29 11:50:06,492 log Not Found: /favicon.ico
+INFO 2023-08-29 11:50:06,493 basehttp - Broken pipe from ('127.0.0.1', 59846)
+INFO 2023-08-29 11:50:09,690 basehttp "GET /admin/constance/config/ HTTP/1.1" 200 59301
+INFO 2023-08-29 11:50:09,827 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:05:17,532 autoreload D:\projects\fl\unlockers\apps\booking\senders.py changed, reloading.
+INFO 2023-08-29 12:05:18,917 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 12:10:17,956 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 12:12:46,890 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 12:13:37,925 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 160
+WARNING 2023-08-29 12:14:33,378 log Not Found: /link/Yqg1T4ikJD1E/
+WARNING 2023-08-29 12:14:33,378 basehttp "GET /link/Yqg1T4ikJD1E/ HTTP/1.1" 404 6128
+WARNING 2023-08-29 12:14:47,556 log Not Found: /link/Yqg1T4ikJD1E/
+WARNING 2023-08-29 12:14:47,556 basehttp "GET /link/Yqg1T4ikJD1E/ HTTP/1.1" 404 6128
+WARNING 2023-08-29 12:14:47,663 log Not Found: /favicon.ico
+WARNING 2023-08-29 12:14:47,663 basehttp "GET /favicon.ico HTTP/1.1" 404 7848
+WARNING 2023-08-29 12:15:17,118 log Not Found: /link/Tm9uZQ==/
+WARNING 2023-08-29 12:15:17,118 basehttp "GET /link/Tm9uZQ==/ HTTP/1.1" 404 6120
+INFO 2023-08-29 12:15:48,843 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 54338
+INFO 2023-08-29 12:15:49,007 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:15:49,109 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:15:49,204 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:15:49,270 basehttp "GET /static/admin/js/calendar.js?_=1693296949014 HTTP/1.1" 200 8466
+INFO 2023-08-29 12:15:49,270 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693296949015 HTTP/1.1" 200 19319
+INFO 2023-08-29 12:15:50,962 basehttp "GET /admin/booking/order/30/change/ HTTP/1.1" 200 44535
+INFO 2023-08-29 12:15:51,178 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:16:18,692 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 5245
+INFO 2023-08-29 12:16:26,588 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 1961
+INFO 2023-08-29 12:17:00,719 basehttp "GET /payments/1qc7zgeB05v8/ HTTP/1.1" 302 0
+WARNING 2023-08-29 12:20:30,668 log Not Found: /:8000/payments/execute/
+WARNING 2023-08-29 12:20:30,668 basehttp "GET /:8000/payments/execute/?paymentId=PAYID-MTW2TCA5LH41659BM5097215&token=EC-4J830540505598935&PayerID=H43XQUQD7DC5G HTTP/1.1" 404 7982
+INFO 2023-08-29 12:21:32,677 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 12:21:45,739 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 1961
+INFO 2023-08-29 12:21:50,198 basehttp "GET /payments/1qc7zgeB05v8/ HTTP/1.1" 302 0
+INFO 2023-08-29 12:22:05,291 basehttp "GET /payments/execute/?paymentId=PAYID-MTW2VKI5EU30868RH8086539&token=EC-63433724D21254026&PayerID=H43XQUQD7DC5G HTTP/1.1" 200 12480
+INFO 2023-08-29 12:22:05,332 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2023-08-29 12:22:05,333 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2023-08-29 12:22:05,334 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2023-08-29 12:22:05,339 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2023-08-29 12:22:05,339 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2023-08-29 12:22:05,340 basehttp "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2023-08-29 12:22:05,343 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2023-08-29 12:22:05,343 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2023-08-29 12:22:05,344 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2023-08-29 12:22:05,346 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2023-08-29 12:22:05,347 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2023-08-29 12:24:17,273 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 5245
+INFO 2023-08-29 12:24:21,123 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 5245
+INFO 2023-08-29 12:24:28,237 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 54340
+INFO 2023-08-29 12:24:28,378 basehttp "GET /static/admin/js/calendar.js?_=1693297468294 HTTP/1.1" 200 8466
+INFO 2023-08-29 12:24:28,379 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693297468295 HTTP/1.1" 200 19319
+INFO 2023-08-29 12:24:30,048 basehttp "GET /admin/booking/order/30/change/ HTTP/1.1" 200 44535
+INFO 2023-08-29 12:24:30,192 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:26:39,958 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 5245
+INFO 2023-08-29 12:26:53,301 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 1961
+INFO 2023-08-29 12:27:04,013 basehttp "GET /payments/1qc7zgeB05v8/ HTTP/1.1" 302 0
+INFO 2023-08-29 12:27:37,043 basehttp "GET /payments/execute/?paymentId=PAYID-MTW2XYY00U872176J821111A&token=EC-44X50884KX630082U&PayerID=H43XQUQD7DC5G HTTP/1.1" 200 12480
+INFO 2023-08-29 12:27:44,053 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 5245
+INFO 2023-08-29 12:27:45,842 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 5245
+INFO 2023-08-29 12:27:57,311 basehttp "GET /admin/ HTTP/1.1" 200 30599
+INFO 2023-08-29 12:28:00,165 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 54340
+INFO 2023-08-29 12:28:00,316 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:28:00,450 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:28:00,578 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:28:00,626 basehttp "GET /static/admin/js/calendar.js?_=1693297680323 HTTP/1.1" 200 8466
+INFO 2023-08-29 12:28:00,626 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693297680324 HTTP/1.1" 200 19319
+INFO 2023-08-29 12:28:02,537 basehttp "GET /admin/booking/order/30/change/ HTTP/1.1" 200 44535
+INFO 2023-08-29 12:28:02,679 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-29 12:31:03,114 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 12:32:02,376 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 12:32:06,221 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 1961
+INFO 2023-08-29 12:32:09,763 basehttp "GET /payments/1qc7zgeB05v8/ HTTP/1.1" 200 293
+INFO 2023-08-29 12:32:18,869 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 1961
+INFO 2023-08-29 12:32:22,003 basehttp "GET /payments/1qc7zgeB05v8/ HTTP/1.1" 200 293
+INFO 2023-08-29 12:33:14,448 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 12:33:17,382 basehttp "GET /payments/1qc7zgeB05v8/ HTTP/1.1" 200 293
+INFO 2023-08-29 12:33:25,820 basehttp "GET /payments/1qc7zgeB05v8/ HTTP/1.1" 200 293
+INFO 2023-08-29 12:36:40,256 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 12:36:46,992 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 1961
+INFO 2023-08-29 12:36:52,866 basehttp "GET /payments/yMje0P2xYXHW/ HTTP/1.1" 302 0
+INFO 2023-08-29 12:37:43,381 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 1961
+INFO 2023-08-29 12:38:03,113 basehttp "GET /payments/yMje0P2xYXHW/ HTTP/1.1" 302 0
+INFO 2023-08-29 12:38:23,376 basehttp "GET /payments/execute/?paymentId=PAYID-MTW245Q3NF527431F2106349&token=EC-1UG67388C7825630K&PayerID=H43XQUQD7DC5G HTTP/1.1" 200 12480
+INFO 2023-08-29 12:38:44,007 basehttp "GET /link/yMje0P2xYXHW/ HTTP/1.1" 200 1963
+INFO 2023-08-29 12:50:06,553 autoreload D:\projects\fl\unlockers\apps\booking\senders.py changed, reloading.
+INFO 2023-08-29 12:50:08,037 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 13:21:09,507 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 13:21:15,683 basehttp "GET / HTTP/1.1" 200 52947
+INFO 2023-08-29 13:21:15,749 basehttp - Broken pipe from ('127.0.0.1', 62394)
+INFO 2023-08-29 13:21:15,750 basehttp - Broken pipe from ('127.0.0.1', 62392)
+INFO 2023-08-29 13:21:15,752 basehttp - Broken pipe from ('127.0.0.1', 62398)
+INFO 2023-08-29 13:21:15,886 basehttp "GET /api/v1/cabinet/profile-info/ HTTP/1.1" 200 105
+INFO 2023-08-29 13:21:16,161 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-29 13:50:28,333 autoreload D:\projects\fl\unlockers\apps\payments\views.py changed, reloading.
+INFO 2023-08-29 13:50:30,257 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 13:52:45,795 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 13:55:52,168 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 13:57:50,436 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 15:04:38,790 autoreload Watching for file changes with StatReloader
+INFO 2023-08-29 15:04:44,336 basehttp "GET / HTTP/1.1" 200 52357
+WARNING 2023-08-29 15:04:44,397 log Not Found: /media/-
+WARNING 2023-08-29 15:04:44,397 basehttp "GET /media/- HTTP/1.1" 404 7108
+INFO 2023-08-29 15:04:44,412 basehttp "GET /media/img_4.jpg HTTP/1.1" 200 32286
+INFO 2023-08-29 15:04:44,413 basehttp "GET /static/fonts/svgfont.ttf HTTP/1.1" 200 7616
+INFO 2023-08-29 15:04:44,414 basehttp "GET /static/fonts/Montserrat-Bold.ttf HTTP/1.1" 200 244468
+INFO 2023-08-29 15:04:44,414 basehttp "GET /static/fonts/Montserrat-Medium.ttf HTTP/1.1" 200 243180
+INFO 2023-08-29 15:04:44,420 basehttp - Broken pipe from ('127.0.0.1', 53438)
+WARNING 2023-08-29 15:04:44,485 log Not Found: /media/-
+WARNING 2023-08-29 15:04:44,486 basehttp "GET /media/- HTTP/1.1" 404 7108
+INFO 2023-08-29 15:04:44,504 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-29 15:05:24,459 autoreload Watching for file changes with StatReloader

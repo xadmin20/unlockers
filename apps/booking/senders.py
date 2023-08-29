@@ -199,6 +199,53 @@ def _send_sms(phone: str, message: str) -> [int, str]:
     return response.status_code, response.content
 
 
+# Отправка смс админу
+def send_sms_admin(order=None, action=""):
+    """Отправка смс администратору"""
+    status_code: int = 0
+    try:
+        phone = config.PHONE
+        if action == "created":
+            message = (f"Создан заказ №{order.id}. Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
+            # status_code, _log = _send_sms(phone, message)
+            print(f"send_sms_admin: {phone}, {message}")
+        elif action == "partial":
+            message = (f"Поступила частичная оплата по заказу №{order.id} на сумму {order.prepayment}."
+                       f" Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
+            # status_code, _log = _send_sms(phone, message)
+            print(f"send_sms_admin: {phone}, {message}")
+        elif action == "paid":
+            message = (f"Поступила полная оплата по заказу №{order.id} на сумму {order.price}."
+                       f" Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
+            # status_code, _log = _send_sms(phone, message)
+            print(f"send_sms_admin: {phone}, {message}")
+        elif action == "confirmed":
+            message = (f"Воркер {order.partner} подтвердил заказ №{order.id}"
+                       f" на сумму {order.price}. Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
+            # status_code, _log = _send_sms(phone, message)
+            print(f"send_sms_admin: {phone}, {message}")
+        elif action == "declined":
+            message = (f"Воркер отказался от заказа №{order.id}. Назначьте другого исполнителя."
+                       f" Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
+            # status_code, _log = _send_sms(phone, message)
+        elif action == "email_error":
+            message = (f"Ошибка отправки письма {order.id}."
+                       f" Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
+            # status_code, _log = _send_sms(phone, message)
+            print(f"send_sms_admin: {phone}, {message}")
+    except Exception as e:
+        if status_code != 200:
+            send_notification_to_admin(order, "sms_error")
+            print(f"SMS ERROR {status_code}")
+        print(e)
+
+
 def generate_message(context: Dict, template_name: TEMPLATES) -> List[str]:
     template = SmsTemplate.objects.filter(template=template_name).first()
     context = Context(context)
@@ -233,7 +280,7 @@ def send_sms(template: TEMPLATES, context: Dict, phone: str):
         if len(message_texts) > 2:
             msg.message3 = message_texts[2]
 
-        print(f"send_sms: {phone} - {message_texts}")
+        print(f"send_sms: len: {len(message_texts)} {phone} - {message_texts}")
 
         for message_text in message_texts:
             try:
@@ -275,23 +322,36 @@ def request_sms(request):
     """Send sms to user after request created"""
     current_site = Site.objects.first()
     unique_path = crypt_str(request.unique_path_field)
-    context = {
-        "car_registration": request.car_registration,
-        "post_code": request.post_code,
-        "service": request.service,
-        "price": request.price,
-        "prepayment": request.prepayment,
-        "link": "{}://{}{}".format(
+
+    # Инициализация пустого контекста
+    context = {}
+
+    # Заполняем контекст только теми данными, которые доступны
+    if request.car_registration:
+        context["car_registration"] = request.car_registration
+    if request.post_code:
+        context["post_code"] = request.post_code
+    if request.service:
+        context["service"] = request.service
+    if request.price:
+        context["price"] = request.price
+    if request.prepayment:
+        context["prepayment"] = request.prepayment
+
+    try:
+        # Если у вас есть все необходимые настройки и данные для создания ссылки
+        context["link"] = "{}://{}{}".format(
             (
-                'https'
-                if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
-                else "http"
+                'https' if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
+                else 'http'
             ),
             current_site.domain,
             reverse("unique_path", kwargs={"unique_path": unique_path})
-            ),
-        }
+            )
+    except Exception as e:
+        print(f"Could not generate link: {e}")
     print("senders/request_sms", context)
+    # Отправляем SMS
     send_sms(template=REQUEST, context=context, phone=request.phone)
 
 

@@ -57,7 +57,7 @@
     {% if object.payment_status != 'PAID' %}
 <div class="payment-section">
     <p>Сумма предоплаты: {{ prepayment_amount }}</p>
-    <button type="button" class="btn btn-primary" onclick="initiatePayment('1qc7zgeB05v8')">Оплатить</button>
+    <button type="button" class="btn btn-primary" onclick="initiatePayment('{{ object.unique_path_field }}')">Оплатить</button>
 
 
 </div>
@@ -68,7 +68,7 @@
 
 <script>
     function initiatePayment(uniqueId) {
-    var url = 'http://127.0.0.1:8000/order/' + uniqueId + '/pay/';
+    var url = 'http://127.0.0.1:8000/payments/' + uniqueId + '/';
     window.location.href = url;
 }
 </script>

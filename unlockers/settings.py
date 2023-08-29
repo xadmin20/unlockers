@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'apps.partners',
     'order',
     'apps.worker',
+    'apps.payments',
 
     ]
 
@@ -159,6 +160,8 @@ DATABASES = {
 #         'PORT': '5432',
 #     }
 # }
+
+
 REDIS_HOST = 'adminton.ru'  # todo изменить на продакт редис IP-адрес сервера с Redis
 REDIS_PORT = 6379  # Порт Redis, по умолчанию 6379
 REDIS_PASSWORD = 'valenok'  # Пароль для доступа к Redis
@@ -166,11 +169,9 @@ REDIS_KEY_PREFIX = 'aiogrambot:currency'
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': f'redis://{REDIS_HOST}:{REDIS_PORT}/1',
+        'LOCATION': 'redis://127.0.0.1:6379/1',  # Указывается адрес Redis
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            'PASSWORD': REDIS_PASSWORD,
-            'KEY_PREFIX': REDIS_KEY_PREFIX,
             }
         }
     }
@@ -286,9 +287,6 @@ CKEDITOR_CONFIGS = {
 SEO_DEBUG_MODE = False
 ROBOTS_USE_SCHEME_IN_HOST = True
 
-# DATABASE_ROUTERS = ['markup.route_db.DemoRouter']
-# DATABASE_APPS_MAPPING = {'cars': 'shared_db'}
-
 STATICFILES_STORAGE = 'markup.storages.DjsManifestStaticFilesStorage'
 
 POSTIE_INSTANT_SEND = True
@@ -391,23 +389,6 @@ POSTIE_HTML_ADMIN_WIDGET = {
     "widget_module": "ckeditor.widgets",
     }
 
-# ROSETTA_SHOW_AT_ADMIN_PANEL = True
-
-# REST_FRAMEWORK = {
-#     'DEFAULT_METADATA_CLASS': 'standards.drf.metadata.FieldsetMetadata',
-#     'DEFAULT_PARSER_CLASSES': (
-#         'standards.drf.parsers.CamelCaseORJSONParser',
-#         'djangorestframework_camel_case.parser.CamelCaseFormParser',
-#         'djangorestframework_camel_case.parser.CamelCaseMultiPartParser',
-#     ),
-#     'DEFAULT_RENDERER_CLASSES': (
-#         'standards.drf.renderers.CamelCaseORJSONRenderer',
-#         'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
-#     ),
-#     'EXCEPTION_HANDLER': 'standards.drf.handlers.exception_handler',
-#
-# }
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -415,50 +396,55 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'nickolayvan@gmail.com'
 EMAIL_HOST_PASSWORD = 'sjyrxlucgounjnma'
 APPEND_SLASH = True
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'formatters': {
-#         'verbose': {
-#             'format': '{levelname} {asctime} {module} {message}',
-#             'style': '{',
-#             },
-#         'simple': {
-#             'format': '{levelname} {message}',
-#             'style': '{',
-#             },
-#         },
-#     'handlers': {
-#         'console': {
-#             'level': 'INFO',
-#             'class': 'logging.StreamHandler',
-#             'formatter': 'verbose',
-#             },
-#         'file': {
-#             'level': 'INFO',
-#             'class': 'logging.FileHandler',
-#             'filename': os.path.join(os.path.dirname(__file__), 'django.log'),
-#             'formatter': 'verbose',
-#             },
-#         },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['console', 'file'],
-#             'level': 'DEBUG',
-#             'propagate': True,
-#             },
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+            },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+            },
+        },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+            },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(os.path.dirname(__file__), 'django.log'),
+            'formatter': 'verbose',
+            },
+        },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+            'propagate': True,
+            },
+        },
+    }
+
+# Celery settings
+# CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+# CELERY_ACCEPT_CONTENT = ['json']
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
+# CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
+# CELERY_BEAT_SCHEDULE = {
+#     'check_sms_server': {
+#         'task': 'apps.booking.tasks.check_server_task',
+#         'schedule': timedelta(minutes=1),
 #         },
 #     }
 
-# Celery settings
-CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
-CELERY_BEAT_SCHEDULE = {
-    'check_sms_server': {
-        'task': 'apps.booking.tasks.check_server_task',
-        'schedule': timedelta(minutes=1),
-        },
-    }
+# PAYPAL
+PAYPAL_CLIENT_ID = 'AZJy7hCDgj4dgdyotn6ZjLQa1Y1LqguLCXoP9Aias72Mkur_EG_pcK6ygIrW'
+PAYPAL_CLIENT_SECRET = 'EKopERAVPsd7j4XzZtERxV5l-_7HTSS_UAMjBsVqtIw7jv0x1ySBk_P7TAHX'
+PAYPAL_MODE = 'sandbox'  # для тестирования; 'live' для реальных транзакций
