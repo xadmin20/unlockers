@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django_celery_beat',
     'django_celery_results',
-    'postie',
     'constance',
     'seo',
     'ckeditor',
@@ -48,7 +47,7 @@ INSTALLED_APPS = [
     'solo',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',
+    # 'rest_auth',
     'parler',
     'django_jinja',
     'rosetta',
@@ -67,7 +66,6 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.sms',
     'apps.partners',
-    'order',
     'apps.worker',
     'apps.payments',
 
@@ -162,10 +160,6 @@ DATABASES = {
 # }
 
 
-REDIS_HOST = 'adminton.ru'  # todo изменить на продакт редис IP-адрес сервера с Redis
-REDIS_PORT = 6379  # Порт Redis, по умолчанию 6379
-REDIS_PASSWORD = 'valenok'  # Пароль для доступа к Redis
-REDIS_KEY_PREFIX = 'aiogrambot:currency'
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',

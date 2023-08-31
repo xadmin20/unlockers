@@ -1,17 +1,15 @@
-import random
-import string
-
 from constance import config
-from django.conf import settings
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
+from django.core.mail import send_mail
 from django.db import models
+from django.utils.crypto import get_random_string
 from django.utils.translation import gettext_lazy as _
 from model_utils.choices import Choices
-from postie.shortcuts import send_mail
 
 from apps.booking.const import ORDER_STATUS_WORK
-from apps.booking.senders import Sender
+from apps.booking.senders import send_sms_admin
+from apps.sms.logic import send_custom_mail
 
 PAYMENT_STATUSES = Choices(
     ("paid", _("Paid")),
@@ -144,100 +142,83 @@ class Order(models.Model):
             .exists()
         )
 
-    def has_confirm_work_changed(self):
-        """Проверка изменился ли статус заказа"""
-        if self.pk:
-            orig = Order.objects.get(pk=self.pk)
-            return orig.confirm_work != self.confirm_work
-        return False
-
-    def has_partner_changed(self):
-        """Проверка изменился ли партнер заказа"""
-        if self.pk:
-            orig = Order.objects.get(pk=self.pk)
-            return orig.partner_id != self.partner_id
-        return False
-
-    def generate_unique_path(self):
-        chars = string.ascii_letters + string.digits
-        while True:
-            unique_path = ''.join(random.choice(chars) for i in range(12))
-            if not Order.objects.filter(unique_path_field=unique_path).exists():
-                return unique_path
+    def generate_unique_path_field(self):
+        unique_path = get_random_string(length=12)
+        while Order.objects.filter(unique_path_field=unique_path).exists():
+            unique_path = get_random_string(length=12)
+        return unique_path
 
     def save(self, *args, **kwargs):
-        # Если путь еще не создан, то генерируем его
+        # If the unique_path_field is empty, generate a unique value for it
         if not self.unique_path_field:
-            self.unique_path_field = self.generate_unique_path()
+            self.unique_path_field = self.generate_unique_path_field()
 
         is_new = self._state.adding
-        global template_choice
-        confirm_work_changed = self.has_confirm_work_changed()
-        partner_changed = self.has_partner_changed()
+
+        # Store the original field values
+        if not is_new:
+            orig = Order.objects.get(pk=self.pk)
+            original_fields = {field.name: getattr(orig, field.name) for field in self._meta.fields}
+
+        # Save the current object
         super(Order, self).save(*args, **kwargs)
-        # От
-        # Теперь, после сохранения, проверяем изменились ли наши интересующие поля:
-        if self.confirm_work == ORDER_STATUS_WORK.new:
-            template_choice = settings.POSTIE_TEMPLATE_CHOICES.created_request
-        else:
-            template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
 
-        if confirm_work_changed:
-            print("Confirm work changed")
-            template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
+        # Check if any changes were made
+        if not is_new:
+            changes = {}
+            for field in self._meta.fields:
+                old_value = original_fields[field.name]
+                new_value = getattr(self, field.name)
+                if old_value != new_value:
+                    changes[field.name] = {'old': old_value, 'new': new_value}
 
-        if partner_changed:
-            print("Partner changed")
-            template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
+            changes.pop('partner', None)
+            print("Changes after popping 'partner': ", changes)
 
-        self.send_notification_email()
+            # Если после этого остались другие изменения, отправляем письмо
+            if changes and not (len(changes) == 1 and 'unique_path_field' in changes):
+                print("Sending email because changes: ", changes)
+                # Передайте changes в send_custom_mail
+                send_custom_mail(
+                    order=self,
+                    from_send=f'{config.ADMIN_EMAIL}',
+                    to_send=f'{config.ADMIN_EMAIL}',
+                    template_choice='change_order',
+                    unique_path=self.unique_path_field,
+                    changes=changes
+                    )
 
-    def send_message(self):
-        Sender(self).push()
+        # If the order is new, send an email
+        elif is_new:
+            try:
+                send_sms_admin(self, action='created')
+                print("Try to send SMS message created")
+                send_custom_mail(
+                    order=self,
+                    from_send=f'{config.ADMIN_EMAIL}',
+                    to_send=f'{config.ADMIN_EMAIL}',
+                    template_choice='new_order',
+                    unique_path=self.unique_path_field
+                    )
+            except Exception as e:
+                print(f"Error occurred: {e}")
 
-    def send_message_admin(self):
-        Sender(self).push_in_admin()
-
-    def send_notification_email(self):
-        # Функция отправки сообщения
+    # send_partner
+    def send_notification_email(self, changes):
         print("Try to send message")
-        recipients = []
-        # Если config.ADMIN_EMAIL это строка
-        if isinstance(config.ADMIN_EMAIL, str):
-            recipients.append(config.ADMIN_EMAIL)
-        # Если config.ADMIN_EMAIL это список
-        else:
-            recipients.extend(config.ADMIN_EMAIL)
+        site = Site.objects.get_current()
+        subject = f"Изменения в заказе {self.id}"
+        message = "Изменения: \n"
+        for field, values in changes.items():
+            message += (f"{field} изменилось с {values['old']} на {values['new']}\n")
 
-        if self.partner:
-            recipients.append(self.partner.email)
-        current_site = Site.objects.first()
+        message += f"Ссылка на заказ: http://{site.domain}/admin/booking/order/{self.id}/change/\n" \
+                   f"или http://{site.domain}/link/{self.unique_path_field}\n"
         try:
-            send_mail(
-                template_choice,
-                recipients,
-                {
-                    "id": str(self.id),
-                    "date_at": self.date_at.strftime("%d.%m.%Y %H:%M"),
-                    "name": self.name,
-                    "contacts": self.phone,
-                    "email": self.partner.email if self.partner else None,
-                    "phone": self.phone,
-                    "car_registration": self.car_registration,
-                    "manufacture": self.car.manufacturer if self.car else None,
-                    "car_model": self.car.car_model if self.car else None,
-                    "car_year": self.car_year,
-                    "distance": self.distance,
-                    "service": self.service.title if self.service else None,
-                    "price": self.price,
-                    "post_code": self.post_code,
-                    "link": f"{current_site}/link/{self.unique_path_field}",
-                    "link_auto": f"{current_site}/link/{self.unique_path_field}"
-                    }
-                )
-            print("Message sent successfully!")
+            sent = send_mail(subject, message, "nickolayvan@gmail.com", ["xadmin@bk.ru"])
+            print(f"Number of emails sent: {sent}")
         except Exception as e:
-            print(f"Failed to send message: {e}")  # TODO: сделать отправку сообщения в СМС админу
+            print(f"Error occurred: {e}")  # TODO: сделать отправку сообщения в СМС админу
 
 
 class Employee(models.Model):

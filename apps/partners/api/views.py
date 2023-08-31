@@ -1,76 +1,76 @@
 import datetime
-from django.db.models import Sum, Count, Exists, OuterRef, Q
-from django.contrib.auth import get_user_model
-from django.conf import settings
-from django.urls import reverse
-from django.utils.translation import get_language, gettext_lazy as _
-from rest_framework.filters import OrderingFilter, SearchFilter
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.permissions import (
-    BasePermission,
-    IsAuthenticated,
-    IsAdminUser,
-)
-from postie.shortcuts import send_mail
-from constance import config
-from django_filters import rest_framework as filters
 
+from constance import config
+from django.contrib.auth import get_user_model
+from django.db.models import Count
+from django.db.models import Exists
+from django.db.models import OuterRef
+from django.db.models import Q
+from django.db.models import Sum
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
+from django_filters import rest_framework as filters
+from rest_auth.views import LoginView
+from rest_auth.views import LogoutView
+from rest_auth.views import PasswordChangeView
+from rest_auth.views import PasswordResetConfirmView
+from rest_auth.views import PasswordResetView
 from rest_framework import generics
+from rest_framework import status
+from rest_framework.filters import OrderingFilter
+from rest_framework.filters import SearchFilter
+from rest_framework.generics import CreateAPIView
+from rest_framework.generics import GenericAPIView
+from rest_framework.generics import ListAPIView
+from rest_framework.generics import RetrieveAPIView
+from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import BasePermission
+from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from apps.booking.models import Order, PAYMENT_STATUSES, Transaction, Employee
-from apps.request.models import Request
-from apps.cars.models import Car
-from apps.partners.api.filters import OrdersWeekFilter, StatisticRequestFilter
+from apps.booking.models import Employee
+from apps.booking.models import Order
+from apps.booking.models import PAYMENT_STATUSES
+from apps.booking.models import Transaction
 from apps.booking.senders import _send_sms
-from apps.partners.models import Transactions, Withdraw
+from apps.cars.models import Car
+from apps.partners.api.filters import OrdersWeekFilter
+from apps.partners.api.filters import StatisticRequestFilter
 from apps.partners.const import WITHDRAW_STATUS
-
-from rest_auth.views import (
-    LoginView,
-    LogoutView,
-    PasswordResetView,
-    PasswordResetConfirmView,
-    PasswordChangeView,
-)
-
-from rest_framework.pagination import LimitOffsetPagination, PageNumberPagination
-from rest_framework.generics import (
-    GenericAPIView,
-    ListAPIView,
-    RetrieveAPIView,
-    CreateAPIView,
-    UpdateAPIView,
-)
-
-from .serializers import (
-    PasswordResetSerializerApi,
-    ProfileInfoSerializer,
-    ProfileUpdateSerializer,
-    EmailChangeSerializer,
-    SendSMSSerializer,
-    OrdersHistorySerializer,
-    OrderDetailSerializer,
-    BalanceHistorySerializer,
-    WithdrawHistorySerializer,
-    WithdrawCreateSerializer,
-    CreateOrderSerializer,
-    CreateRequestSerializer,
-    StatisticNotFitPriceSerializer,
-    GetCarManufacturerSerializer,
-    GetCarModelSerializer,
-)
+from apps.partners.models import Transactions
+from apps.partners.models import Withdraw
+from apps.request.models import Request
+from .serializers import BalanceHistorySerializer
+from .serializers import CreateOrderSerializer
+from .serializers import CreateRequestSerializer
+from .serializers import EmailChangeSerializer
+from .serializers import GetCarManufacturerSerializer
+from .serializers import GetCarModelSerializer
+from .serializers import OrderDetailSerializer
+from .serializers import OrdersHistorySerializer
+from .serializers import PasswordResetSerializerApi
+from .serializers import ProfileInfoSerializer
+from .serializers import ProfileUpdateSerializer
+from .serializers import SendSMSSerializer
+from .serializers import StatisticNotFitPriceSerializer
+from .serializers import WithdrawCreateSerializer
+from .serializers import WithdrawHistorySerializer
 
 UserModel = get_user_model()
+
 
 # Определите новые классы пагинации
 class CustomLimitOffsetPagination(LimitOffsetPagination):
     default_limit = 10  # Измените это на то, что вы использовали ранее
     max_limit = 100  # Измените это на то, что вы использовали ранее
 
+
 class CustomPageNumberPagination(PageNumberPagination):
     page_size = 10  # Измените это на то, что вы использовали ранее
+
 
 class IsNotAuthenticated(BasePermission):
     """
@@ -83,7 +83,7 @@ class IsNotAuthenticated(BasePermission):
 
 class LoginApi(LoginView):
     permission_classes = (IsNotAuthenticated,)
-    
+
 
 class LogoutApi(LogoutView):
     permission_classes = (IsAuthenticated,)
@@ -102,9 +102,9 @@ class PasswordResetConfirmViewApi(PasswordResetConfirmView):
             {
                 "detail": _("Password reset e-mail has been sent."),
                 "redirect": reverse('login')
-            },
+                },
             status=status.HTTP_200_OK
-        )
+            )
 
 
 class PasswordChangeViewApi(PasswordChangeView):
@@ -140,22 +140,16 @@ class SendTestEmailViewApi(APIView):
     def get(self, request, *args, **kwargs):
         user = self.request.user
         if email := user.email:
-            send_mail(
-                event=settings.POSTIE_TEMPLATE_CHOICES.send_test_email,
-                recipients=[email],
-                context={},
-                language=get_language()
-            )
             response_messages = {
                 'title': _('Success'),
                 'message': _('A test letter has been sent to you')
-            }
+                }
             return Response({"message": response_messages})
-        
+
         response_messages = {
             'title': _('Failure'),
             'message': _('You do not have an email address')
-        }
+            }
         return Response({"message": response_messages})
 
 
@@ -171,7 +165,8 @@ class EmailChangeViewApi(GenericAPIView):
         serializer.save()
         # Return the success message with OK HTTP status
         return Response(
-            {"detail": _("An email has been sent to your email.")})
+            {"detail": _("An email has been sent to your email.")}
+            )
 
 
 class OrdersWeekViewApi(generics.ListAPIView):
@@ -186,28 +181,30 @@ class OrdersWeekViewApi(generics.ListAPIView):
         week = datetime.datetime.now().isocalendar()[1]
         paid = self.request.GET.get('ordering')
         query_ordering = '-created_at'
-        
+
         if paid == 'paid':
             query_ordering = 'transactions__status'
         if paid == '-paid':
             query_ordering = '-transactions__status'
-        
+
         return Order.objects.filter(
             partner=user,
             created_at__week=week,
-            ).order_by(query_ordering
+            ).order_by(
+            query_ordering
             ).annotate(
             status_paid=Exists(
                 Transaction.objects.filter(
                     order=OuterRef("pk"),
                     status=PAYMENT_STATUSES.paid
+                    )
                 )
-            )) 
+            )
 
 
 class InfoWeekViewApi(APIView):
     permission_classes = (IsAuthenticated,)
-    
+
     def get(self, request, *args, **kwargs):
         user = self.request.user
         week = datetime.datetime.now().isocalendar()[1]
@@ -215,10 +212,10 @@ class InfoWeekViewApi(APIView):
             partner=user,
             created_at__week=week,
             transactions__status=PAYMENT_STATUSES.paid
-        ).aggregate(summ=Sum('prepayment'), count=Count('prepayment'))
-        
+            ).aggregate(summ=Sum('prepayment'), count=Count('prepayment'))
+
         balance_week = str(total.get('summ')) if total.get('summ') else '0.00'
-        
+
         result = {
             'total': balance_week,
             'count': total.get('count'),
@@ -227,7 +224,7 @@ class InfoWeekViewApi(APIView):
             'contact_technician': config.CONTACT_TECHNICIAN,
             'schedule_office': config.SCHEDULE_OFFICE,
             'contact_office': config.CONTACT_OFFICE,
-        }
+            }
 
         return Response(result)
 
@@ -250,10 +247,10 @@ class SendSMSViewApi(GenericAPIView):
             message = _('Your SMS has been sent.')
         else:
             message = _('Your SMS has not been sent.')
-        
+
         result = {
             'message': message
-        }
+            }
 
         return Response(result)
 
@@ -271,22 +268,24 @@ class OrdersHistoryViewApi(ListAPIView):
         user = self.request.user
         paid = self.request.GET.get('ordering')
         query_ordering = '-created_at'
-        
+
         # if paid == 'paid':
         #     query_ordering = 'transactions__status'
         # if paid == '-paid':
         #     query_ordering = '-transactions__status'
-        
+
         return Order.objects.filter(
             partner=user,
-            ).order_by(query_ordering
+            ).order_by(
+            query_ordering
             ).annotate(
             status_paid=Exists(
                 Transaction.objects.filter(
                     order=OuterRef("pk"),
                     status=PAYMENT_STATUSES.paid
+                    )
                 )
-            ))       
+            )
 
 
 class OrderDetailViewApi(RetrieveAPIView):
@@ -296,7 +295,7 @@ class OrderDetailViewApi(RetrieveAPIView):
     def get_queryset(self):
         user = self.request.user
         return Order.objects.filter(partner=user)
-            
+
 
 class BalanceHistoryViewApi(ListAPIView):
     permission_classes = (IsAuthenticated,)
@@ -306,7 +305,7 @@ class BalanceHistoryViewApi(ListAPIView):
     ordering_fields = [
         'id', 'created_at', 'type_transactions', 'order', 'withdraw',
         'amount', 'balance',
-    ]
+        ]
 
     def get_queryset(self):
         user = self.request.user
@@ -319,9 +318,9 @@ class WithdrawHistoryViewApi(ListAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = WithdrawHistorySerializer
     filter_backends = (
-        filters.DjangoFilterBackend,OrderingFilter,
+        filters.DjangoFilterBackend, OrderingFilter,
         SearchFilter,
-    )
+        )
     pagination_class = CustomLimitOffsetPagination
     ordering_fields = ['id']
     search_fields = ['id']
@@ -351,7 +350,7 @@ class GetBalanceApi(APIView):
 
         result = {
             'balance': balance,
-        }
+            }
 
         return Response(result)
 
@@ -364,10 +363,10 @@ class GetListWithdrawStatusApi(APIView):
             {
                 'id': item[0],
                 'label': item[1]
-            }
+                }
             for item in WITHDRAW_STATUS
-        )
-        
+            )
+
         return Response(result)
 
 
@@ -379,10 +378,10 @@ class GetListOrderStatusApi(APIView):
             {
                 'id': item[0],
                 'label': item[1]
-            }
+                }
             for item in PAYMENT_STATUSES
-        )
-        
+            )
+
         return Response(result)
 
 
@@ -400,9 +399,9 @@ class CreateRequestViewApi(CreateAPIView):
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         result = serializer.data
-        
+
         if not serializer.data.get('id', False):
-            
+
             result['request'] = False
             return Response(result, status=status.HTTP_200_OK)
 
@@ -421,13 +420,17 @@ class StatisticNotFitPriceViewApi(ListAPIView):
     def get_queryset(self):
         return Request.objects.annotate(
             order_exists=Exists(Order.objects.filter(request=OuterRef("pk")))
-            ).filter(price__gt=0
-            ).filter(Q(order_exists=False) | Q(
+            ).filter(
+            price__gt=0
+            ).filter(
+            Q(order_exists=False) | Q(
                 order_exists=True,
-                order__transactions__status=PAYMENT_STATUSES.no_paid)
-            ).order_by("car__manufacturer","car__car_model","car_year"
-            ).distinct("car__manufacturer","car__car_model","car_year")
-    
+                order__transactions__status=PAYMENT_STATUSES.no_paid
+                )
+            ).order_by(
+            "car__manufacturer", "car__car_model", "car_year"
+            ).distinct("car__manufacturer", "car__car_model", "car_year")
+
 
 class GetEmployeeApi(APIView):
     permission_classes = (IsAuthenticated,)
@@ -436,26 +439,26 @@ class GetEmployeeApi(APIView):
         employee = False
         result = {
             'message': _('Not employee')
-        }
+            }
         employees = Employee.objects.all()
-        if employees: 
+        if employees:
             employee = employees.filter(default=True).first()
-            
+
         if not employee:
             employee = employees.first()
         if employee:
             result = {
                 'id': employee.id,
                 'name': employee.name
-            }
-                
+                }
+
         return Response(result)
-        
+
 
 class GetCarManufacturerApi(ListAPIView):
     permission_classes = (IsAdminUser,)
     serializer_class = GetCarManufacturerSerializer
-    
+
     def get_queryset(self):
         return Car.objects.all().order_by('manufacturer').distinct('manufacturer')
 
@@ -463,7 +466,7 @@ class GetCarManufacturerApi(ListAPIView):
 class GetCarModelApi(ListAPIView):
     permission_classes = (IsAdminUser,)
     serializer_class = GetCarModelSerializer
-    
+
     def get_queryset(self):
         manufacturer = self.kwargs.get('manufacturer')
         return Car.objects.filter(manufacturer__iexact=manufacturer).order_by('car_model')

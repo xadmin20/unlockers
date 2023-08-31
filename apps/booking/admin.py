@@ -50,7 +50,7 @@ class OrderAdmin(admin.ModelAdmin):
         responsible_new = form.cleaned_data.get('responsible')
         if responsible_old != (responsible_new.id if responsible_new else None):
             obj.confirm_work = ORDER_STATUS_WORK.new
-            obj.send_message_admin()
+            # obj.send_message_admin()
         super().save_model(request, obj, form, change)
         partner_old = form.initial.get('partner')
         partner_new = form.cleaned_data.get('partner')

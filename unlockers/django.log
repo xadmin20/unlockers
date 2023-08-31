@@ -1248,3 +1248,1806 @@ INFO 2023-08-29 21:36:24,017 basehttp - Broken pipe from ('127.0.0.1', 55991)
 INFO 2023-08-29 21:36:48,522 basehttp "GET /admin/payments/payment/ HTTP/1.1" 200 29731
 INFO 2023-08-29 21:36:48,584 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
 INFO 2023-08-29 21:36:48,654 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2023-08-30 09:29:25,379 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:30:11,421 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:30:32,241 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:31:39,524 autoreload D:\projects\fl\unlockers\unlockers\settings.py changed, reloading.
+INFO 2023-08-30 09:31:40,763 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:32:27,186 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:33:57,687 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:34:03,110 basehttp "GET / HTTP/1.1" 200 52357
+INFO 2023-08-30 09:34:03,151 basehttp - Broken pipe from ('127.0.0.1', 57137)
+INFO 2023-08-30 09:34:03,163 basehttp "GET /media/shot_down_a_plane_hit_by_a_rocket_in_space_near_Ma.jpg HTTP/1.1" 304 0
+WARNING 2023-08-30 09:34:03,169 log Not Found: /media/-
+WARNING 2023-08-30 09:34:03,169 basehttp "GET /media/- HTTP/1.1" 404 7108
+INFO 2023-08-30 09:34:03,176 basehttp "GET /static/fonts/svgfont.ttf HTTP/1.1" 200 7616
+INFO 2023-08-30 09:34:03,177 basehttp "GET /media/img_4.jpg HTTP/1.1" 200 32286
+INFO 2023-08-30 09:34:03,180 basehttp "GET /static/fonts/Montserrat-Medium.ttf HTTP/1.1" 200 243180
+INFO 2023-08-30 09:34:03,180 basehttp "GET /static/fonts/Montserrat-Regular.ttf HTTP/1.1" 200 245708
+INFO 2023-08-30 09:34:03,180 basehttp "GET /static/fonts/Montserrat-Bold.ttf HTTP/1.1" 200 244468
+WARNING 2023-08-30 09:34:03,277 log Not Found: /media/-
+WARNING 2023-08-30 09:34:03,277 basehttp "GET /media/- HTTP/1.1" 404 7108
+INFO 2023-08-30 09:34:03,294 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-30 09:34:06,942 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2023-08-30 09:34:06,982 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4181
+INFO 2023-08-30 09:34:07,046 basehttp - Broken pipe from ('127.0.0.1', 57146)
+INFO 2023-08-30 09:34:07,046 basehttp - Broken pipe from ('127.0.0.1', 57145)
+INFO 2023-08-30 09:34:07,047 basehttp - Broken pipe from ('127.0.0.1', 57143)
+INFO 2023-08-30 09:34:07,047 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 958
+INFO 2023-08-30 09:34:07,047 basehttp - Broken pipe from ('127.0.0.1', 57144)
+INFO 2023-08-30 09:34:07,047 basehttp - Broken pipe from ('127.0.0.1', 57142)
+WARNING 2023-08-30 09:34:07,063 log Not Found: /favicon.ico
+INFO 2023-08-30 09:34:07,064 basehttp - Broken pipe from ('127.0.0.1', 57149)
+INFO 2023-08-30 09:34:12,960 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2023-08-30 09:34:12,995 basehttp "GET /admin/ HTTP/1.1" 200 30599
+INFO 2023-08-30 09:34:13,041 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2023-08-30 09:34:13,041 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2023-08-30 09:34:20,300 basehttp "GET /admin/constance/config/ HTTP/1.1" 200 59184
+INFO 2023-08-30 09:34:20,345 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2023-08-30 09:34:20,353 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 09:34:20,363 basehttp - Broken pipe from ('127.0.0.1', 57151)
+WARNING 2023-08-30 09:35:21,137 log Not Found: /link/Tm9uZQ==/
+INFO 2023-08-30 09:35:21,138 basehttp - Broken pipe from ('127.0.0.1', 57227)
+INFO 2023-08-30 09:36:39,922 autoreload D:\projects\fl\unlockers\unlockers\constance.py changed, reloading.
+INFO 2023-08-30 09:36:41,492 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:36:55,178 autoreload D:\projects\fl\unlockers\unlockers\constance.py changed, reloading.
+INFO 2023-08-30 09:36:56,314 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:37:11,066 autoreload D:\projects\fl\unlockers\unlockers\constance.py changed, reloading.
+INFO 2023-08-30 09:37:12,162 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:37:54,987 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:37:57,400 basehttp "GET /admin/constance/config/ HTTP/1.1" 200 59281
+INFO 2023-08-30 09:37:57,443 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 09:37:57,445 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2023-08-30 09:39:37,622 autoreload D:\projects\fl\unlockers\unlockers\constance.py changed, reloading.
+INFO 2023-08-30 09:39:38,813 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:39:56,281 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:41:02,823 basehttp "POST /admin/constance/config/ HTTP/1.1" 302 0
+INFO 2023-08-30 09:41:02,926 basehttp "GET /admin/constance/config/ HTTP/1.1" 200 59566
+INFO 2023-08-30 09:41:02,969 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 09:41:25,855 basehttp "GET / HTTP/1.1" 200 52955
+INFO 2023-08-30 09:41:25,892 basehttp "GET /media/dream_TradingCard.jpg HTTP/1.1" 200 253943
+INFO 2023-08-30 09:41:25,984 basehttp "GET /api/v1/cabinet/profile-info/ HTTP/1.1" 200 105
+INFO 2023-08-30 09:41:26,013 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-30 09:49:31,460 autoreload D:\projects\fl\unlockers\apps\booking\models.py changed, reloading.
+INFO 2023-08-30 09:49:33,162 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:58:43,953 autoreload D:\projects\fl\unlockers\apps\booking\apps.py changed, reloading.
+INFO 2023-08-30 09:58:44,706 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 09:59:30,794 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:03:24,518 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:04:57,272 autoreload D:\projects\fl\unlockers\apps\booking\apps.py changed, reloading.
+INFO 2023-08-30 10:04:58,561 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:05:12,191 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:05:23,609 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:09:55,764 autoreload D:\projects\fl\unlockers\apps\booking\models.py changed, reloading.
+INFO 2023-08-30 10:14:12,747 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:21:24,470 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:23:19,393 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:23:31,760 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:23:42,231 basehttp "GET / HTTP/1.1" 200 52955
+INFO 2023-08-30 10:23:42,275 basehttp "GET /media/dream_TradingCard.jpg HTTP/1.1" 304 0
+INFO 2023-08-30 10:23:42,295 basehttp - Broken pipe from ('127.0.0.1', 58522)
+INFO 2023-08-30 10:23:42,359 basehttp "GET /api/v1/cabinet/profile-info/ HTTP/1.1" 200 105
+INFO 2023-08-30 10:23:42,397 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-30 10:24:34,852 basehttp "GET /static/fonts/Montserrat-SemiBold.ttf HTTP/1.1" 200 243816
+INFO 2023-08-30 10:24:37,846 basehttp "GET /admin/ HTTP/1.1" 200 30599
+INFO 2023-08-30 10:24:37,885 basehttp - Broken pipe from ('127.0.0.1', 58524)
+INFO 2023-08-30 10:24:40,248 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 54994
+INFO 2023-08-30 10:24:40,289 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2023-08-30 10:24:40,293 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:24:40,315 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2023-08-30 10:24:40,317 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:24:40,333 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:24:40,401 basehttp "GET /static/admin/js/calendar.js?_=1693376680304 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:24:40,401 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693376680305 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:24:40,415 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2023-08-30 10:24:44,927 basehttp "GET /admin/booking/order/29/change/ HTTP/1.1" 200 44679
+INFO 2023-08-30 10:24:44,974 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:24:44,975 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2023-08-30 10:24:44,978 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2023-08-30 10:24:44,979 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-08-30 10:24:44,980 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2023-08-30 10:24:44,980 basehttp "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2023-08-30 10:24:45,079 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2023-08-30 10:24:53,961 basehttp "POST /admin/booking/order/29/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:24:54,018 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55190
+INFO 2023-08-30 10:24:54,065 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:24:54,086 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:24:54,104 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:24:54,165 basehttp "GET /static/admin/js/calendar.js?_=1693376694074 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:24:54,166 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693376694075 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:26:29,153 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:27:03,076 basehttp "GET /admin/booking/order/31/change/ HTTP/1.1" 200 44679
+INFO 2023-08-30 10:27:03,130 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 10:27:03,174 log Not Found: /favicon.ico
+INFO 2023-08-30 10:27:03,174 basehttp - Broken pipe from ('127.0.0.1', 55525)
+INFO 2023-08-30 10:27:10,400 basehttp "POST /admin/booking/order/31/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:27:10,484 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55194
+INFO 2023-08-30 10:27:10,528 basehttp - Broken pipe from ('127.0.0.1', 55530)
+INFO 2023-08-30 10:27:10,528 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:27:10,549 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:27:10,564 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:27:10,625 basehttp "GET /static/admin/js/calendar.js?_=1693376830536 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:27:10,625 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693376830537 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:29:21,662 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:29:25,087 basehttp "GET /admin/payments/payment/ HTTP/1.1" 200 29731
+INFO 2023-08-30 10:29:25,142 basehttp - Broken pipe from ('127.0.0.1', 55604)
+INFO 2023-08-30 10:29:25,184 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2023-08-30 10:29:30,012 basehttp "GET /admin/booking/order/27/change/ HTTP/1.1" 200 44679
+INFO 2023-08-30 10:29:30,065 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:29:37,567 basehttp "POST /admin/booking/order/27/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:29:37,635 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55198
+INFO 2023-08-30 10:29:37,681 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:29:37,704 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:29:37,722 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:29:37,782 basehttp "GET /static/admin/js/calendar.js?_=1693376977691 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:29:37,783 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693376977692 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:30:37,904 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:30:44,646 basehttp "GET /admin/booking/order/31/change/ HTTP/1.1" 200 44679
+INFO 2023-08-30 10:30:44,703 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:30:49,897 basehttp "POST /admin/booking/order/31/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:30:49,976 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55194
+INFO 2023-08-30 10:30:50,022 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:30:50,045 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:30:50,061 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:30:50,123 basehttp "GET /static/admin/js/calendar.js?_=1693377050032 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:30:50,123 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693377050033 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:34:01,905 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:34:06,641 basehttp "GET /admin/booking/order/27/change/ HTTP/1.1" 200 44679
+INFO 2023-08-30 10:34:06,702 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:34:13,137 basehttp "POST /admin/booking/order/27/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:34:13,207 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55194
+INFO 2023-08-30 10:34:13,258 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:34:13,282 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:34:13,298 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:34:13,360 basehttp "GET /static/admin/js/calendar.js?_=1693377253270 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:34:13,365 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693377253271 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:37:19,870 autoreload D:\projects\fl\unlockers\apps\booking\models.py changed, reloading.
+INFO 2023-08-30 10:37:20,925 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:37:33,817 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:37:35,893 basehttp "GET /admin/booking/order/30/change/ HTTP/1.1" 200 44681
+INFO 2023-08-30 10:37:35,947 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2023-08-30 10:37:35,947 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2023-08-30 10:37:35,950 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 10:37:35,997 log Not Found: /favicon.ico
+INFO 2023-08-30 10:37:35,998 basehttp - Broken pipe from ('127.0.0.1', 55864)
+INFO 2023-08-30 10:37:39,919 basehttp "POST /admin/booking/order/30/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:37:39,993 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55194
+INFO 2023-08-30 10:37:40,036 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:37:40,036 basehttp - Broken pipe from ('127.0.0.1', 55863)
+INFO 2023-08-30 10:37:40,057 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:37:40,074 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:37:40,125 basehttp "GET /static/admin/js/calendar.js?_=1693377460045 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:37:40,125 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693377460046 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:45:26,175 basehttp - Broken pipe from ('127.0.0.1', 57136)
+INFO 2023-08-30 10:45:26,175 basehttp - Broken pipe from ('127.0.0.1', 57132)
+INFO 2023-08-30 10:45:26,175 basehttp - Broken pipe from ('127.0.0.1', 57131)
+INFO 2023-08-30 10:45:26,175 basehttp - Broken pipe from ('127.0.0.1', 57133)
+WARNING 2023-08-30 10:45:26,190 log Not Found: /favicon.ico
+INFO 2023-08-30 10:45:26,191 basehttp - Broken pipe from ('127.0.0.1', 57135)
+INFO 2023-08-30 10:45:26,944 basehttp - Broken pipe from ('127.0.0.1', 57137)
+INFO 2023-08-30 10:49:02,506 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:49:07,099 basehttp "GET /admin/booking/order/29/change/ HTTP/1.1" 200 44679
+INFO 2023-08-30 10:49:07,150 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:49:13,181 basehttp "POST /admin/booking/order/29/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:49:13,256 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55194
+INFO 2023-08-30 10:49:13,294 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:49:13,315 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:49:13,332 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:49:13,373 basehttp "GET /static/admin/js/calendar.js?_=1693378153304 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:49:13,378 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693378153305 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:51:14,099 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:51:51,048 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:51:53,466 basehttp "GET /admin/booking/order/28/change/ HTTP/1.1" 200 44679
+INFO 2023-08-30 10:51:53,524 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:51:58,867 basehttp "POST /admin/booking/order/28/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:51:58,938 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55194
+INFO 2023-08-30 10:51:58,981 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:51:59,002 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:51:59,020 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:51:59,086 basehttp "GET /static/admin/js/calendar.js?_=1693378318991 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:51:59,086 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693378318992 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:52:56,964 autoreload D:\projects\fl\unlockers\apps\booking\models.py changed, reloading.
+INFO 2023-08-30 10:52:58,018 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:52:58,631 basehttp "GET /admin/booking/order/27/change/ HTTP/1.1" 200 44701
+INFO 2023-08-30 10:52:58,691 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:53:20,704 basehttp "POST /admin/booking/order/27/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:53:20,788 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55196
+INFO 2023-08-30 10:53:20,837 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:53:20,861 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:53:20,877 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:53:20,942 basehttp "GET /static/admin/js/calendar.js?_=1693378400848 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:53:20,943 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693378400849 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:55:03,364 autoreload D:\projects\fl\unlockers\apps\booking\models.py changed, reloading.
+INFO 2023-08-30 10:55:04,333 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:55:29,275 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:55:36,946 basehttp "GET /admin/booking/order/9/change/ HTTP/1.1" 200 44673
+INFO 2023-08-30 10:55:37,009 basehttp - Broken pipe from ('127.0.0.1', 57382)
+INFO 2023-08-30 10:55:37,010 basehttp - Broken pipe from ('127.0.0.1', 57383)
+INFO 2023-08-30 10:55:37,012 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-08-30 10:55:48,961 log Internal Server Error: /admin/booking/order/9/change/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\options.py", line 1889, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\xx\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "D:\projects\fl\unlockers\apps\booking\admin.py", line 53, in save_model
+    obj.send_message_admin()
+AttributeError: 'Order' object has no attribute 'send_message_admin'
+ERROR 2023-08-30 10:55:48,963 basehttp "POST /admin/booking/order/9/change/ HTTP/1.1" 500 144146
+INFO 2023-08-30 10:56:50,333 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 10:56:51,195 basehttp "GET /admin/booking/order/9/change/ HTTP/1.1" 200 44673
+INFO 2023-08-30 10:57:04,170 basehttp "POST /admin/booking/order/9/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 10:57:04,243 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55204
+INFO 2023-08-30 10:57:04,295 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:57:04,296 basehttp - Broken pipe from ('127.0.0.1', 57423)
+INFO 2023-08-30 10:57:04,321 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:57:04,334 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 10:57:04,400 basehttp "GET /static/admin/js/calendar.js?_=1693378624305 HTTP/1.1" 200 8466
+INFO 2023-08-30 10:57:04,401 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693378624306 HTTP/1.1" 200 19319
+INFO 2023-08-30 10:59:25,964 basehttp "GET /admin/ HTTP/1.1" 200 30492
+INFO 2023-08-30 10:59:32,261 basehttp "GET / HTTP/1.1" 200 52955
+INFO 2023-08-30 10:59:32,299 basehttp "GET /media/dream_TradingCard.jpg HTTP/1.1" 304 0
+INFO 2023-08-30 10:59:32,325 basehttp - Broken pipe from ('127.0.0.1', 57456)
+INFO 2023-08-30 10:59:32,327 basehttp - Broken pipe from ('127.0.0.1', 57460)
+INFO 2023-08-30 10:59:32,373 basehttp "GET /api/v1/cabinet/profile-info/ HTTP/1.1" 200 105
+INFO 2023-08-30 10:59:32,413 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-30 10:59:40,745 basehttp "GET /admin/booking/order/31/change/ HTTP/1.1" 200 44679
+INFO 2023-08-30 10:59:40,797 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 11:00:20,234 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 159
+INFO 2023-08-30 11:06:56,666 autoreload D:\projects\fl\unlockers\apps\request\models.py changed, reloading.
+INFO 2023-08-30 11:06:58,167 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:07:01,330 basehttp "GET /admin/constance/config/ HTTP/1.1" 200 59425
+INFO 2023-08-30 11:07:01,383 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 11:07:01,434 log Not Found: /favicon.ico
+INFO 2023-08-30 11:07:01,434 basehttp - Broken pipe from ('127.0.0.1', 57695)
+INFO 2023-08-30 11:07:14,017 basehttp "POST /admin/constance/config/ HTTP/1.1" 302 0
+INFO 2023-08-30 11:07:14,050 basehttp "GET /admin/constance/config/ HTTP/1.1" 200 59564
+INFO 2023-08-30 11:07:14,092 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 11:16:53,788 autoreload D:\projects\fl\unlockers\apps\sms\models.py changed, reloading.
+INFO 2023-08-30 11:16:54,952 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:17:06,556 autoreload D:\projects\fl\unlockers\apps\sms\models.py changed, reloading.
+INFO 2023-08-30 11:17:07,609 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:19:13,684 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:21:51,595 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:22:52,518 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:23:30,008 autoreload D:\projects\fl\unlockers\apps\sms\models.py changed, reloading.
+INFO 2023-08-30 11:23:30,981 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:24:17,733 autoreload D:\projects\fl\unlockers\apps\sms\models.py changed, reloading.
+INFO 2023-08-30 11:24:18,705 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:24:39,622 autoreload D:\projects\fl\unlockers\apps\sms\models.py changed, reloading.
+INFO 2023-08-30 11:24:40,689 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:27:04,186 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:27:20,424 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:28:28,063 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:28:31,276 basehttp "GET /admin/ HTTP/1.1" 200 30939
+INFO 2023-08-30 11:28:37,901 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 24249
+INFO 2023-08-30 11:28:37,948 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 11:28:39,519 basehttp "GET /admin/sms/emailtemplate/add/ HTTP/1.1" 200 26676
+INFO 2023-08-30 11:28:39,566 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 11:28:39,567 basehttp - Broken pipe from ('127.0.0.1', 54883)
+INFO 2023-08-30 11:32:48,570 basehttp "POST /admin/sms/emailtemplate/add/ HTTP/1.1" 302 0
+INFO 2023-08-30 11:32:48,600 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 26093
+INFO 2023-08-30 11:32:48,654 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 11:32:53,395 basehttp "GET /admin/sms/emailtemplate/1/change/ HTTP/1.1" 200 30176
+INFO 2023-08-30 11:32:53,446 basehttp - Broken pipe from ('127.0.0.1', 54939)
+INFO 2023-08-30 11:32:53,446 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 11:34:22,964 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 11:34:24,179 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:35:20,071 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 11:35:21,160 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 11:53:52,165 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 11:53:53,244 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 12:03:32,166 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 12:03:33,430 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 12:03:39,318 basehttp "GET /admin/request/request/ HTTP/1.1" 200 62859
+INFO 2023-08-30 12:03:39,372 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:03:39,395 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 12:03:39,423 log Not Found: /favicon.ico
+INFO 2023-08-30 12:03:39,423 basehttp - Broken pipe from ('127.0.0.1', 55463)
+INFO 2023-08-30 12:03:39,468 basehttp "GET /static/admin/js/calendar.js?_=1693382619382 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:03:39,469 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693382619383 HTTP/1.1" 200 19319
+INFO 2023-08-30 12:03:41,069 basehttp "GET /admin/request/request/36/change/ HTTP/1.1" 200 36817
+INFO 2023-08-30 12:03:41,114 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:03:41,115 basehttp - Broken pipe from ('127.0.0.1', 55464)
+INFO 2023-08-30 12:07:17,323 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 12:07:18,363 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 12:09:25,144 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 12:09:26,401 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 12:09:31,502 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25880
+INFO 2023-08-30 12:09:31,550 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:11:34,244 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 12:11:40,294 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 55942
+INFO 2023-08-30 12:11:40,342 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:11:40,363 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:11:40,379 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:11:40,439 basehttp "GET /static/admin/js/calendar.js?_=1693383100351 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:11:40,440 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693383100352 HTTP/1.1" 200 19319
+INFO 2023-08-30 12:11:44,634 basehttp "GET /admin/booking/order/27/change/ HTTP/1.1" 200 45060
+INFO 2023-08-30 12:11:44,687 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 12:12:12,937 log Not Found: /link/emloUjA3WngwN3Bj/
+WARNING 2023-08-30 12:12:12,937 basehttp "GET /link/emloUjA3WngwN3Bj/ HTTP/1.1" 404 6140
+WARNING 2023-08-30 12:12:12,991 log Not Found: /favicon.ico
+INFO 2023-08-30 12:12:12,992 basehttp - Broken pipe from ('127.0.0.1', 59493)
+INFO 2023-08-30 12:12:32,563 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 160
+INFO 2023-08-30 12:14:56,421 basehttp "GET /admin/request/request/ HTTP/1.1" 200 63710
+INFO 2023-08-30 12:14:56,462 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:14:56,484 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:14:56,543 basehttp "GET /static/admin/js/calendar.js?_=1693383296472 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:14:56,544 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693383296473 HTTP/1.1" 200 19319
+INFO 2023-08-30 12:15:01,261 basehttp "GET /admin/request/request/37/change/ HTTP/1.1" 200 36889
+INFO 2023-08-30 12:15:01,302 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:16:08,459 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 56591
+INFO 2023-08-30 12:16:08,504 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:16:08,526 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:16:08,542 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:16:08,603 basehttp "GET /static/admin/js/calendar.js?_=1693383368513 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:16:08,604 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693383368514 HTTP/1.1" 200 19319
+INFO 2023-08-30 12:16:10,887 basehttp "GET /admin/booking/order/33/change/ HTTP/1.1" 200 45088
+INFO 2023-08-30 12:16:10,936 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:16:18,001 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 56591
+INFO 2023-08-30 12:16:18,126 basehttp "GET /static/admin/js/calendar.js?_=1693383378046 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:16:18,126 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693383378047 HTTP/1.1" 200 19319
+INFO 2023-08-30 12:16:23,010 basehttp "GET /admin/request/request/ HTTP/1.1" 200 63710
+INFO 2023-08-30 12:16:23,055 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:16:23,078 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:16:23,137 basehttp "GET /static/admin/js/calendar.js?_=1693383383066 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:16:23,140 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693383383067 HTTP/1.1" 200 19319
+INFO 2023-08-30 12:16:24,505 basehttp "GET /admin/request/request/37/change/ HTTP/1.1" 200 36889
+INFO 2023-08-30 12:16:24,549 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:22:08,149 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-30 12:22:40,380 log Internal Server Error: /api/v1/request/create/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: booking_order.unique_path_field
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "D:\projects\fl\unlockers\apps\request\rest\serializers.py", line 178, in create
+    request_object = create_request_for_unregistered_car(
+  File "D:\projects\fl\unlockers\apps\request\contrib.py", line 191, in create_request_for_unregistered_car
+    order = Order.objects.create(  # TODO: Удалить после тестирования
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\projects\fl\unlockers\apps\booking\models.py", line 171, in save
+    super(Order, self).save(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: booking_order.unique_path_field
+ERROR 2023-08-30 12:22:40,388 basehttp "POST /api/v1/request/create/ HTTP/1.1" 500 246332
+INFO 2023-08-30 12:44:57,197 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 57239
+INFO 2023-08-30 12:44:57,249 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:44:57,270 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:44:57,290 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 12:44:57,303 log Not Found: /favicon.ico
+INFO 2023-08-30 12:44:57,304 basehttp - Broken pipe from ('127.0.0.1', 60976)
+INFO 2023-08-30 12:44:57,349 basehttp "GET /static/admin/js/calendar.js?_=1693385097258 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:44:57,350 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693385097259 HTTP/1.1" 200 19319
+ERROR 2023-08-30 12:45:00,374 log Internal Server Error: /admin/booking/order/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\utils\decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\views\main.py", line 122, in __init__
+    self.queryset = self.get_queryset(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\views\main.py", line 529, in get_queryset
+    qs, search_may_have_duplicates = self.model_admin.get_search_results(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\contrib\admin\options.py", line 1155, in get_search_results
+    queryset = queryset.filter(models.Q.create(term_queries))
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1545, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1404, in build_filter
+    return self._add_q(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1404, in build_filter
+    return self._add_q(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1576, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1426, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1236, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'request' into field. Choices are: address, attachments, car, car_id, car_registration, car_year, comment, confirm_work, created_at, date_at, distance, id, name, order_income, partner, partner_id, payments, phone, post_code, prepayment, price, responsible, responsible_id, service, service_id, transactions, unique_path_field
+ERROR 2023-08-30 12:45:00,381 basehttp "GET /admin/booking/order/?q=sWtQMdfMZ3Yz HTTP/1.1" 500 208854
+WARNING 2023-08-30 12:45:00,442 log Not Found: /favicon.ico
+INFO 2023-08-30 12:45:00,443 basehttp - Broken pipe from ('127.0.0.1', 60977)
+INFO 2023-08-30 12:45:10,680 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 57239
+INFO 2023-08-30 12:45:10,813 basehttp "GET /static/admin/js/calendar.js?_=1693385110733 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:45:10,813 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693385110734 HTTP/1.1" 200 19319
+INFO 2023-08-30 12:45:22,377 basehttp "GET /admin/booking/order/34/change/ HTTP/1.1" 200 45135
+INFO 2023-08-30 12:45:22,424 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:47:14,946 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25880
+INFO 2023-08-30 12:47:14,991 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:47:17,553 basehttp "GET /admin/sms/emailtemplate/1/change/ HTTP/1.1" 200 30176
+INFO 2023-08-30 12:47:17,596 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:47:41,298 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 12:47:55,091 basehttp "POST /admin/sms/emailtemplate/1/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 12:47:55,162 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 26095
+INFO 2023-08-30 12:47:55,215 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:47:57,408 basehttp "GET /admin/blog/post/ HTTP/1.1" 200 23874
+INFO 2023-08-30 12:47:57,449 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:47:59,032 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 57239
+INFO 2023-08-30 12:47:59,073 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:47:59,095 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:47:59,112 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 12:47:59,172 basehttp "GET /static/admin/js/calendar.js?_=1693385279081 HTTP/1.1" 200 8466
+INFO 2023-08-30 12:47:59,174 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693385279082 HTTP/1.1" 200 19319
+INFO 2023-08-30 12:48:02,791 basehttp "GET /admin/booking/order/34/change/ HTTP/1.1" 200 45135
+INFO 2023-08-30 12:48:02,836 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2023-08-30 12:48:38,186 log Internal Server Error: /api/v1/request/create/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: booking_order.unique_path_field
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "D:\projects\fl\unlockers\apps\request\rest\serializers.py", line 178, in create
+    request_object = create_request_for_unregistered_car(
+  File "D:\projects\fl\unlockers\apps\request\contrib.py", line 191, in create_request_for_unregistered_car
+    order = Order.objects.create(  # TODO: Удалить после тестирования
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\projects\fl\unlockers\apps\booking\models.py", line 171, in save
+    super(Order, self).save(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: booking_order.unique_path_field
+ERROR 2023-08-30 12:48:38,193 basehttp "POST /api/v1/request/create/ HTTP/1.1" 500 246332
+INFO 2023-08-30 12:51:56,977 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 12:51:58,186 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 12:55:15,724 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-30 12:55:53,534 log Internal Server Error: /api/v1/request/create/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: booking_order.unique_path_field
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "D:\projects\fl\unlockers\apps\request\rest\serializers.py", line 178, in create
+    request_object = create_request_for_unregistered_car(
+  File "D:\projects\fl\unlockers\apps\request\contrib.py", line 193, in create_request_for_unregistered_car
+    order = Order.objects.create(  # TODO: Удалить после тестирования
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\projects\fl\unlockers\apps\booking\models.py", line 171, in save
+    super(Order, self).save(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: booking_order.unique_path_field
+ERROR 2023-08-30 12:55:53,541 basehttp "POST /api/v1/request/create/ HTTP/1.1" 500 246332
+INFO 2023-08-30 14:03:10,138 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 14:03:11,214 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 14:03:30,470 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-30 14:04:00,052 log Internal Server Error: /api/v1/request/create/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "D:\projects\fl\unlockers\apps\request\rest\serializers.py", line 205, in create
+    request_sms(request_object)  # TODO: раскомментировать в случае необходимости отправки смс
+  File "D:\projects\fl\unlockers\apps\booking\senders.py", line 338, in request_sms
+    if request.prepayment:
+  File "D:\projects\fl\unlockers\apps\request\models.py", line 179, in prepayment
+    return float(config.PREPAYMENT) * self.price / 100 if self.price else 0
+TypeError: unsupported operand type(s) for *: 'float' and 'decimal.Decimal'
+ERROR 2023-08-30 14:04:00,054 basehttp "POST /api/v1/request/create/ HTTP/1.1" 500 146309
+INFO 2023-08-30 14:06:10,624 autoreload D:\projects\fl\unlockers\apps\request\models.py changed, reloading.
+INFO 2023-08-30 14:06:11,648 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 14:06:35,735 autoreload Watching for file changes with StatReloader
+WARNING 2023-08-30 14:07:30,617 log Not Found: /link/blpISVhjN1VoNnkz/
+WARNING 2023-08-30 14:07:30,618 basehttp "GET /link/blpISVhjN1VoNnkz/ HTTP/1.1" 404 6140
+INFO 2023-08-30 14:07:38,247 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 159
+INFO 2023-08-30 14:09:16,607 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 61135
+INFO 2023-08-30 14:09:16,655 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:09:16,674 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:09:16,691 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 14:09:16,708 log Not Found: /favicon.ico
+INFO 2023-08-30 14:09:16,708 basehttp - Broken pipe from ('127.0.0.1', 54278)
+INFO 2023-08-30 14:09:16,759 basehttp "GET /static/admin/js/calendar.js?_=1693390156662 HTTP/1.1" 200 8466
+INFO 2023-08-30 14:09:16,759 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693390156663 HTTP/1.1" 200 19319
+INFO 2023-08-30 14:09:18,938 basehttp "GET /admin/booking/order/40/change/ HTTP/1.1" 200 45327
+INFO 2023-08-30 14:09:18,981 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:09:18,982 basehttp - Broken pipe from ('127.0.0.1', 54243)
+INFO 2023-08-30 14:09:45,423 basehttp "GET /admin/request/request/ HTTP/1.1" 200 68047
+INFO 2023-08-30 14:09:45,469 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:09:45,491 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:09:45,559 basehttp "GET /static/admin/js/calendar.js?_=1693390185478 HTTP/1.1" 200 8466
+INFO 2023-08-30 14:09:45,559 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693390185479 HTTP/1.1" 200 19319
+INFO 2023-08-30 14:09:47,216 basehttp "GET /admin/request/request/42/change/ HTTP/1.1" 200 37128
+INFO 2023-08-30 14:09:47,257 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:15:10,417 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 14:15:11,658 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 14:22:18,072 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-30 14:22:40,676 log Internal Server Error: /api/v1/request/create/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: booking_order.unique_path_field
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "D:\projects\fl\unlockers\apps\request\rest\serializers.py", line 178, in create
+    request_object = create_request_for_unregistered_car(
+  File "D:\projects\fl\unlockers\apps\request\contrib.py", line 138, in create_request_for_unregistered_car
+    order = Order.objects.create(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\projects\fl\unlockers\apps\booking\models.py", line 171, in save
+    super(Order, self).save(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 814, in save
+    self.save_base(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 877, in save_base
+    updated = self._save_table(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\models\sql\compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: booking_order.unique_path_field
+ERROR 2023-08-30 14:22:40,685 basehttp "POST /api/v1/request/create/ HTTP/1.1" 500 245991
+INFO 2023-08-30 14:25:50,742 autoreload D:\projects\fl\unlockers\apps\booking\models.py changed, reloading.
+INFO 2023-08-30 14:25:51,990 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 14:27:39,774 autoreload D:\projects\fl\unlockers\apps\request\models.py changed, reloading.
+INFO 2023-08-30 14:27:40,928 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 14:31:25,624 autoreload Watching for file changes with StatReloader
+ERROR 2023-08-30 14:32:18,376 log Internal Server Error: /api/v1/request/create/
+Traceback (most recent call last):
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\generics.py", line 190, in post
+    return self.create(request, *args, **kwargs)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "D:\projects\fl\unlockers\env\lib\site-packages\rest_framework\serializers.py", line 212, in save
+    self.instance = self.create(validated_data)
+  File "D:\projects\fl\unlockers\apps\request\rest\serializers.py", line 205, in create
+    request_sms(request_object)  # TODO: раскомментировать в случае необходимости отправки смс
+  File "D:\projects\fl\unlockers\apps\booking\senders.py", line 338, in request_sms
+    if request.prepayment:
+  File "D:\projects\fl\unlockers\apps\request\models.py", line 179, in prepayment
+    return Decimal(config.PREPAYMENT) * self.price / 100 if self.price else 0
+TypeError: unsupported operand type(s) for *: 'decimal.Decimal' and 'float'
+ERROR 2023-08-30 14:32:18,378 basehttp "POST /api/v1/request/create/ HTTP/1.1" 500 146049
+INFO 2023-08-30 14:33:41,000 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 14:35:07,559 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 159
+WARNING 2023-08-30 14:35:17,595 log Not Found: /link/Tm9uZQ==/
+WARNING 2023-08-30 14:35:17,595 basehttp "GET /link/Tm9uZQ==/ HTTP/1.1" 404 6120
+WARNING 2023-08-30 14:35:17,645 log Not Found: /favicon.ico
+INFO 2023-08-30 14:35:17,646 basehttp - Broken pipe from ('127.0.0.1', 54790)
+INFO 2023-08-30 14:35:54,923 basehttp "GET /admin/request/request/ HTTP/1.1" 200 70619
+WARNING 2023-08-30 14:35:55,005 log Not Found: /favicon.ico
+INFO 2023-08-30 14:35:55,005 basehttp - Broken pipe from ('127.0.0.1', 54759)
+INFO 2023-08-30 14:35:55,048 basehttp "GET /static/admin/js/calendar.js?_=1693391754972 HTTP/1.1" 200 8466
+INFO 2023-08-30 14:35:55,049 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693391754973 HTTP/1.1" 200 19319
+INFO 2023-08-30 14:35:57,394 basehttp "GET /admin/request/request/45/change/ HTTP/1.1" 200 37251
+INFO 2023-08-30 14:35:57,455 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:35:57,456 basehttp - Broken pipe from ('127.0.0.1', 54795)
+INFO 2023-08-30 14:40:53,700 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 14:41:42,378 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 159
+INFO 2023-08-30 14:42:26,741 basehttp "GET /admin/request/request/ HTTP/1.1" 200 71487
+INFO 2023-08-30 14:42:26,797 basehttp - Broken pipe from ('127.0.0.1', 52318)
+WARNING 2023-08-30 14:42:26,831 log Not Found: /favicon.ico
+INFO 2023-08-30 14:42:26,831 basehttp - Broken pipe from ('127.0.0.1', 52335)
+INFO 2023-08-30 14:42:26,880 basehttp "GET /static/admin/js/calendar.js?_=1693392146802 HTTP/1.1" 200 8466
+INFO 2023-08-30 14:42:26,881 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693392146803 HTTP/1.1" 200 19319
+INFO 2023-08-30 14:42:28,647 basehttp "GET /admin/request/request/46/change/ HTTP/1.1" 200 37299
+INFO 2023-08-30 14:42:28,697 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:42:31,471 basehttp "GET /admin/request/request/46/change/ HTTP/1.1" 200 37299
+INFO 2023-08-30 14:42:31,510 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:42:37,505 basehttp "GET /admin/request/request/ HTTP/1.1" 200 71487
+INFO 2023-08-30 14:42:37,636 basehttp "GET /static/admin/js/calendar.js?_=1693392157559 HTTP/1.1" 200 8466
+INFO 2023-08-30 14:42:37,637 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693392157560 HTTP/1.1" 200 19319
+INFO 2023-08-30 14:42:56,848 basehttp "POST /admin/request/request/ HTTP/1.1" 302 0
+INFO 2023-08-30 14:42:56,937 basehttp "GET /admin/request/request/ HTTP/1.1" 200 71487
+INFO 2023-08-30 14:42:56,991 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:42:57,018 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:42:57,101 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693392177006 HTTP/1.1" 200 19319
+INFO 2023-08-30 14:42:57,102 basehttp "GET /static/admin/js/calendar.js?_=1693392177005 HTTP/1.1" 200 8466
+INFO 2023-08-30 14:43:12,714 basehttp "POST /admin/request/request/ HTTP/1.1" 200 31833
+INFO 2023-08-30 14:43:12,754 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2023-08-30 14:43:21,646 basehttp "POST /admin/request/request/ HTTP/1.1" 302 0
+INFO 2023-08-30 14:43:21,677 basehttp "GET /admin/request/request/ HTTP/1.1" 200 32837
+INFO 2023-08-30 14:43:21,724 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:43:21,746 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 14:43:21,787 basehttp "GET /static/admin/js/calendar.js?_=1693392201736 HTTP/1.1" 200 8466
+INFO 2023-08-30 14:43:21,788 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693392201737 HTTP/1.1" 200 19319
+INFO 2023-08-30 14:46:46,053 autoreload D:\projects\fl\unlockers\apps\request\contrib.py changed, reloading.
+INFO 2023-08-30 14:46:47,182 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 18:51:12,165 autoreload D:\projects\fl\unlockers\apps\booking\senders.py changed, reloading.
+INFO 2023-08-30 18:51:13,588 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 18:51:16,453 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25880
+INFO 2023-08-30 18:51:16,509 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 18:51:16,547 log Not Found: /favicon.ico
+INFO 2023-08-30 18:51:16,547 basehttp - Broken pipe from ('127.0.0.1', 52661)
+INFO 2023-08-30 18:51:18,460 basehttp "GET /admin/sms/emailtemplate/1/change/ HTTP/1.1" 200 30176
+INFO 2023-08-30 18:51:18,511 basehttp - Broken pipe from ('127.0.0.1', 52671)
+INFO 2023-08-30 18:51:18,512 basehttp - Broken pipe from ('127.0.0.1', 52670)
+INFO 2023-08-30 18:51:18,512 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:51:37,860 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25880
+INFO 2023-08-30 18:51:43,237 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 63737
+INFO 2023-08-30 18:51:43,286 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:51:43,308 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:51:43,324 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:51:43,388 basehttp "GET /static/admin/js/calendar.js?_=1693407103296 HTTP/1.1" 200 8466
+INFO 2023-08-30 18:51:43,389 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693407103297 HTTP/1.1" 200 19319
+INFO 2023-08-30 18:51:45,645 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 63737
+INFO 2023-08-30 18:51:45,683 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:51:45,707 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:51:45,728 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:51:45,809 basehttp "GET /static/admin/js/calendar.js?_=1693407105693 HTTP/1.1" 200 8466
+INFO 2023-08-30 18:51:45,809 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693407105694 HTTP/1.1" 200 19319
+INFO 2023-08-30 18:51:48,748 basehttp "GET /admin/booking/order/44/change/ HTTP/1.1" 200 45519
+INFO 2023-08-30 18:51:48,795 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:56:34,699 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 18:57:37,876 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 18:57:38,512 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 63737
+INFO 2023-08-30 18:57:38,681 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693407458576 HTTP/1.1" 200 19319
+INFO 2023-08-30 18:57:38,681 basehttp "GET /static/admin/js/calendar.js?_=1693407458575 HTTP/1.1" 200 8466
+INFO 2023-08-30 18:57:50,075 basehttp "GET /admin/request/request/ HTTP/1.1" 200 32698
+INFO 2023-08-30 18:57:50,125 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:57:50,146 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 18:57:50,189 basehttp "GET /static/admin/js/calendar.js?_=1693407470135 HTTP/1.1" 200 8466
+INFO 2023-08-30 18:57:50,190 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693407470136 HTTP/1.1" 200 19319
+INFO 2023-08-30 18:58:24,407 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 159
+INFO 2023-08-30 19:00:10,838 basehttp "GET /link/GPPMgVIAvplr/ HTTP/1.1" 200 1976
+INFO 2023-08-30 19:06:48,810 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:07:39,808 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 159
+INFO 2023-08-30 19:08:19,035 basehttp "GET /link/3tDkin2XktRV/ HTTP/1.1" 200 1976
+INFO 2023-08-30 19:08:53,275 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25880
+INFO 2023-08-30 19:08:53,329 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 19:08:53,364 log Not Found: /favicon.ico
+INFO 2023-08-30 19:08:53,365 basehttp - Broken pipe from ('127.0.0.1', 51116)
+INFO 2023-08-30 19:08:54,835 basehttp "GET /admin/sms/emailtemplate/1/change/ HTTP/1.1" 200 30176
+INFO 2023-08-30 19:08:54,882 basehttp - Broken pipe from ('127.0.0.1', 51118)
+INFO 2023-08-30 19:08:54,883 basehttp - Broken pipe from ('127.0.0.1', 51117)
+INFO 2023-08-30 19:08:54,883 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:09:43,051 basehttp "POST /admin/sms/emailtemplate/1/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:09:43,077 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 26095
+INFO 2023-08-30 19:09:43,124 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:10:24,191 basehttp "GET /admin/sms/emailtemplate/1/change/ HTTP/1.1" 200 30237
+INFO 2023-08-30 19:10:24,244 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:16:31,920 autoreload D:\projects\fl\unlockers\apps\sms\logic.py changed, reloading.
+INFO 2023-08-30 19:16:33,057 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:16:51,113 autoreload D:\projects\fl\unlockers\apps\sms\logic.py changed, reloading.
+INFO 2023-08-30 19:16:52,331 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:17:24,733 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25880
+WARNING 2023-08-30 19:17:24,818 log Not Found: /favicon.ico
+INFO 2023-08-30 19:17:24,818 basehttp - Broken pipe from ('127.0.0.1', 51356)
+INFO 2023-08-30 19:20:08,513 basehttp "GET /admin/sms/emailtemplate/add/ HTTP/1.1" 200 26676
+INFO 2023-08-30 19:20:08,571 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:20:47,761 basehttp "POST /admin/sms/emailtemplate/add/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:20:47,786 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 26487
+INFO 2023-08-30 19:20:47,842 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:21:17,326 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:21:23,241 basehttp "GET /admin/ HTTP/1.1" 200 30670
+INFO 2023-08-30 19:21:23,283 basehttp - Broken pipe from ('127.0.0.1', 51449)
+INFO 2023-08-30 19:21:23,284 basehttp - Broken pipe from ('127.0.0.1', 51450)
+INFO 2023-08-30 19:21:25,170 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65033
+INFO 2023-08-30 19:21:25,221 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:21:25,222 basehttp - Broken pipe from ('127.0.0.1', 51455)
+INFO 2023-08-30 19:21:25,228 basehttp - Broken pipe from ('127.0.0.1', 51454)
+INFO 2023-08-30 19:21:25,245 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:21:25,262 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:21:25,323 basehttp "GET /static/admin/js/calendar.js?_=1693408885233 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:21:25,325 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693408885234 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:21:26,827 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 19:21:26,887 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:21:42,110 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:21:42,184 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65233
+INFO 2023-08-30 19:21:42,236 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:21:42,260 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:21:42,280 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:21:42,346 basehttp "GET /static/admin/js/calendar.js?_=1693408902247 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:21:42,346 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693408902248 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:30:48,110 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:31:05,607 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25423
+INFO 2023-08-30 19:31:05,660 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 19:31:05,692 log Not Found: /favicon.ico
+INFO 2023-08-30 19:31:05,693 basehttp - Broken pipe from ('127.0.0.1', 57015)
+INFO 2023-08-30 19:31:08,960 basehttp "GET /admin/sms/emailtemplate/2/change/ HTTP/1.1" 200 27443
+INFO 2023-08-30 19:31:09,014 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:31:12,941 basehttp "POST /admin/sms/emailtemplate/2/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:31:12,967 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25644
+INFO 2023-08-30 19:31:13,018 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:31:14,271 basehttp "GET /admin/sms/emailtemplate/add/ HTTP/1.1" 200 26009
+INFO 2023-08-30 19:31:14,319 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:34:21,019 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25423
+WARNING 2023-08-30 19:34:21,085 log Not Found: /favicon.ico
+INFO 2023-08-30 19:34:21,086 basehttp - Broken pipe from ('127.0.0.1', 57086)
+INFO 2023-08-30 19:34:22,503 basehttp "GET /admin/sms/emailtemplate/2/change/ HTTP/1.1" 200 27443
+INFO 2023-08-30 19:34:22,555 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:34:22,557 basehttp - Broken pipe from ('127.0.0.1', 57088)
+INFO 2023-08-30 19:34:22,557 basehttp - Broken pipe from ('127.0.0.1', 57089)
+INFO 2023-08-30 19:34:26,847 basehttp "POST /admin/sms/emailtemplate/2/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:34:26,871 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25644
+INFO 2023-08-30 19:34:26,924 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:34:32,453 basehttp "GET /admin/sms/emailtemplate/2/change/ HTTP/1.1" 200 27443
+INFO 2023-08-30 19:34:32,507 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:35:11,915 autoreload D:\projects\fl\unlockers\apps\sms\logic.py changed, reloading.
+INFO 2023-08-30 19:35:13,172 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:36:14,681 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:36:19,464 basehttp "POST /admin/sms/emailtemplate/2/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:36:19,528 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25644
+INFO 2023-08-30 19:36:19,587 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:36:21,780 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65037
+INFO 2023-08-30 19:36:21,828 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:36:21,851 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:36:21,870 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:36:21,939 basehttp "GET /static/admin/js/calendar.js?_=1693409781837 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:36:21,940 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693409781838 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:36:23,766 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45627
+INFO 2023-08-30 19:36:23,811 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:36:30,355 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:36:30,424 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65233
+INFO 2023-08-30 19:36:30,472 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:36:30,494 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:36:30,516 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:36:30,583 basehttp "GET /static/admin/js/calendar.js?_=1693409790483 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:36:30,584 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693409790484 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:37:42,932 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 19:37:44,281 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65037
+INFO 2023-08-30 19:37:44,418 basehttp "GET /static/admin/js/calendar.js?_=1693409864330 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:37:44,418 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693409864331 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:37:45,316 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25423
+INFO 2023-08-30 19:37:46,571 basehttp "GET /admin/sms/emailtemplate/2/change/ HTTP/1.1" 200 27443
+INFO 2023-08-30 19:37:46,617 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:40:30,813 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:40:33,345 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25423
+INFO 2023-08-30 19:40:33,407 basehttp - Broken pipe from ('127.0.0.1', 57199)
+INFO 2023-08-30 19:40:34,440 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65037
+INFO 2023-08-30 19:40:34,487 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:40:34,511 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:40:34,527 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:40:34,596 basehttp "GET /static/admin/js/calendar.js?_=1693410034498 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:40:34,597 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410034499 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:40:35,918 basehttp "GET /admin/booking/order/45/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 19:40:35,970 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:40:42,907 basehttp "POST /admin/booking/order/45/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:40:42,979 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65233
+INFO 2023-08-30 19:40:43,023 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:40:43,044 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:40:43,063 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:40:43,121 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410043034 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:40:43,122 basehttp "GET /static/admin/js/calendar.js?_=1693410043033 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:43:02,370 autoreload D:\projects\fl\unlockers\apps\sms\logic.py changed, reloading.
+INFO 2023-08-30 19:43:03,533 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:43:18,933 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:43:20,800 basehttp "GET /admin/booking/order/44/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 19:43:20,864 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:43:24,057 basehttp "POST /admin/booking/order/44/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:43:24,142 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65233
+INFO 2023-08-30 19:43:24,191 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:43:24,218 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:43:24,233 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:43:24,297 basehttp "GET /static/admin/js/calendar.js?_=1693410204204 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:43:24,297 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410204205 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:45:06,194 autoreload D:\projects\fl\unlockers\apps\sms\logic.py changed, reloading.
+INFO 2023-08-30 19:45:07,301 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:45:18,747 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25423
+INFO 2023-08-30 19:45:18,805 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:19,870 basehttp "GET /admin/sms/emailtemplate/2/change/ HTTP/1.1" 200 27443
+INFO 2023-08-30 19:45:19,918 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:35,453 basehttp "POST /admin/sms/emailtemplate/2/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:45:35,481 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25644
+INFO 2023-08-30 19:45:35,523 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:39,506 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65037
+INFO 2023-08-30 19:45:39,550 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:39,570 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:39,587 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:39,646 basehttp "GET /static/admin/js/calendar.js?_=1693410339559 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:45:39,646 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410339560 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:45:41,010 basehttp "GET /admin/booking/order/44/change/ HTTP/1.1" 200 45635
+INFO 2023-08-30 19:45:41,057 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:50,124 basehttp "POST /admin/booking/order/44/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:45:50,195 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65237
+INFO 2023-08-30 19:45:50,239 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:50,260 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:50,278 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:45:50,346 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410350250 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:45:50,347 basehttp "GET /static/admin/js/calendar.js?_=1693410350249 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:48:34,884 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:48:35,377 basehttp "GET /admin/booking/order/43/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 19:48:35,436 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:48:45,430 basehttp "POST /admin/booking/order/43/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:48:45,526 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65241
+INFO 2023-08-30 19:48:45,571 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:48:45,593 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:48:45,612 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:48:45,685 basehttp "GET /static/admin/js/calendar.js?_=1693410525581 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:48:45,685 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410525582 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:50:38,844 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:50:39,452 basehttp "GET /admin/booking/order/42/change/ HTTP/1.1" 200 45616
+INFO 2023-08-30 19:50:39,500 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:50:45,732 basehttp "POST /admin/booking/order/42/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:50:45,818 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65241
+INFO 2023-08-30 19:50:45,868 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:50:45,893 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:50:45,912 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:50:45,983 basehttp "GET /static/admin/js/calendar.js?_=1693410645880 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:50:45,983 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410645881 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:51:06,931 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 19:51:07,446 basehttp "GET /admin/booking/order/43/change/ HTTP/1.1" 200 45625
+INFO 2023-08-30 19:51:07,499 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:51:18,510 basehttp "POST /admin/booking/order/43/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:51:18,600 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65241
+INFO 2023-08-30 19:51:18,648 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:51:18,673 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:51:18,691 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:51:18,771 basehttp "GET /static/admin/js/calendar.js?_=1693410678661 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:51:18,771 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410678662 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:51:21,379 basehttp "GET /admin/booking/order/25/change/ HTTP/1.1" 200 45619
+INFO 2023-08-30 19:51:21,428 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:51:30,485 basehttp "POST /admin/booking/order/25/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:51:30,558 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 19:51:30,600 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:51:30,619 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:51:30,639 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:51:30,715 basehttp "GET /static/admin/js/calendar.js?_=1693410690609 HTTP/1.1" 200 8466
+INFO 2023-08-30 19:51:30,715 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693410690610 HTTP/1.1" 200 19319
+INFO 2023-08-30 19:54:28,304 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25423
+INFO 2023-08-30 19:54:28,357 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 19:54:28,387 log Not Found: /favicon.ico
+INFO 2023-08-30 19:54:28,387 basehttp - Broken pipe from ('127.0.0.1', 57449)
+INFO 2023-08-30 19:54:30,136 basehttp "GET /admin/sms/emailtemplate/1/change/ HTTP/1.1" 200 29480
+INFO 2023-08-30 19:54:30,186 basehttp - Broken pipe from ('127.0.0.1', 57453)
+INFO 2023-08-30 19:54:30,186 basehttp - Broken pipe from ('127.0.0.1', 57454)
+INFO 2023-08-30 19:54:30,186 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:54:33,791 basehttp "POST /admin/sms/emailtemplate/1/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:54:33,818 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25638
+INFO 2023-08-30 19:54:33,869 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:57:08,427 basehttp "GET /admin/sms/emailtemplate/add/ HTTP/1.1" 200 26009
+INFO 2023-08-30 19:57:08,481 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:57:52,051 basehttp "POST /admin/sms/emailtemplate/add/ HTTP/1.1" 302 0
+INFO 2023-08-30 19:57:52,078 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25855
+INFO 2023-08-30 19:57:52,124 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 19:58:55,291 autoreload D:\projects\fl\unlockers\apps\booking\models.py changed, reloading.
+INFO 2023-08-30 19:58:56,645 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:04:27,239 basehttp "GET /admin/sms/emailtemplate/3/change/ HTTP/1.1" 200 27844
+INFO 2023-08-30 20:04:27,291 basehttp - Broken pipe from ('127.0.0.1', 54949)
+INFO 2023-08-30 20:04:27,293 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:04:27,327 log Not Found: /favicon.ico
+INFO 2023-08-30 20:04:27,328 basehttp - Broken pipe from ('127.0.0.1', 54948)
+INFO 2023-08-30 20:09:01,802 autoreload D:\projects\fl\unlockers\apps\booking\apps.py changed, reloading.
+INFO 2023-08-30 20:09:02,344 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:09:20,039 autoreload D:\projects\fl\unlockers\apps\booking\apps.py changed, reloading.
+INFO 2023-08-30 20:09:21,032 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:09:32,570 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:09:59,470 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65049
+INFO 2023-08-30 20:09:59,525 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:09:59,548 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:09:59,565 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:09:59,586 log Not Found: /favicon.ico
+INFO 2023-08-30 20:09:59,587 basehttp - Broken pipe from ('127.0.0.1', 55037)
+INFO 2023-08-30 20:09:59,645 basehttp "GET /static/admin/js/calendar.js?_=1693411799536 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:09:59,646 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693411799537 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:10:01,103 basehttp "GET /admin/booking/order/45/change/ HTTP/1.1" 200 45627
+INFO 2023-08-30 20:10:01,152 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:10:01,154 basehttp - Broken pipe from ('127.0.0.1', 55038)
+INFO 2023-08-30 20:10:01,154 basehttp - Broken pipe from ('127.0.0.1', 55035)
+INFO 2023-08-30 20:10:07,746 basehttp "POST /admin/booking/order/45/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:10:07,818 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:10:07,862 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:10:07,884 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:10:07,903 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:10:07,971 basehttp "GET /static/admin/js/calendar.js?_=1693411807873 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:10:07,971 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693411807874 HTTP/1.1" 200 19319
+WARNING 2023-08-30 20:10:27,610 log Not Found: /favicon.ico
+WARNING 2023-08-30 20:10:27,610 basehttp "GET /favicon.ico HTTP/1.1" 404 7848
+WARNING 2023-08-30 20:10:29,287 log Not Found: /favicon.ico
+WARNING 2023-08-30 20:10:29,287 basehttp "GET /favicon.ico HTTP/1.1" 404 7848
+INFO 2023-08-30 20:12:19,079 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25639
+INFO 2023-08-30 20:12:19,134 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:12:19,164 log Not Found: /favicon.ico
+INFO 2023-08-30 20:12:19,165 basehttp - Broken pipe from ('127.0.0.1', 50816)
+INFO 2023-08-30 20:12:21,624 basehttp "GET /admin/sms/emailtemplate/2/change/ HTTP/1.1" 200 27403
+INFO 2023-08-30 20:12:21,672 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:12:21,674 basehttp - Broken pipe from ('127.0.0.1', 50817)
+INFO 2023-08-30 20:12:21,674 basehttp - Broken pipe from ('127.0.0.1', 50819)
+INFO 2023-08-30 20:12:47,843 basehttp "POST /admin/sms/emailtemplate/2/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:12:47,870 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25860
+INFO 2023-08-30 20:12:47,912 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:12:49,237 basehttp "GET /admin/sms/emailtemplate/3/change/ HTTP/1.1" 200 27844
+INFO 2023-08-30 20:12:49,282 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:13:18,129 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:13:20,585 basehttp "POST /admin/sms/emailtemplate/3/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:13:20,649 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25857
+INFO 2023-08-30 20:13:20,700 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:13:23,573 basehttp "GET /admin/booking/order/31/change/ HTTP/1.1" 200 45616
+INFO 2023-08-30 20:13:23,621 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:13:31,267 basehttp "POST /admin/booking/order/31/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:13:31,360 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:13:31,413 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:13:31,437 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:13:31,456 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:13:31,519 basehttp "GET /static/admin/js/calendar.js?_=1693412011425 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:13:31,519 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693412011426 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:15:37,191 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:15:41,620 basehttp "GET /admin/booking/order/25/change/ HTTP/1.1" 200 45619
+INFO 2023-08-30 20:15:41,674 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:15:48,437 basehttp "POST /admin/booking/order/25/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:15:48,523 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:15:48,572 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:15:48,601 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:15:48,619 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:15:48,677 basehttp "GET /static/admin/js/calendar.js?_=1693412148587 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:15:48,678 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693412148588 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:21:54,069 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:22:04,183 basehttp "GET /admin/booking/order/24/change/ HTTP/1.1" 200 45616
+INFO 2023-08-30 20:22:04,233 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2023-08-30 20:22:04,234 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:22:04,277 log Not Found: /favicon.ico
+INFO 2023-08-30 20:22:04,278 basehttp - Broken pipe from ('127.0.0.1', 51261)
+INFO 2023-08-30 20:22:12,512 basehttp "POST /admin/booking/order/24/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:22:12,611 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:22:12,656 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:22:12,657 basehttp - Broken pipe from ('127.0.0.1', 51269)
+INFO 2023-08-30 20:22:12,680 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:22:12,697 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:22:12,715 log Not Found: /favicon.ico
+INFO 2023-08-30 20:22:12,715 basehttp - Broken pipe from ('127.0.0.1', 51268)
+INFO 2023-08-30 20:22:12,769 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693412532667 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:22:12,769 basehttp "GET /static/admin/js/calendar.js?_=1693412532666 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:23:40,012 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:23:41,251 basehttp "GET /admin/booking/order/17/change/ HTTP/1.1" 200 45616
+INFO 2023-08-30 20:23:41,315 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:23:41,362 log Not Found: /favicon.ico
+INFO 2023-08-30 20:23:41,363 basehttp - Broken pipe from ('127.0.0.1', 51314)
+INFO 2023-08-30 20:23:47,858 basehttp "POST /admin/booking/order/17/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:23:47,960 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:23:48,004 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:23:48,027 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:23:48,045 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:23:48,105 basehttp "GET /static/admin/js/calendar.js?_=1693412628015 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:23:48,105 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693412628016 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:24:48,201 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:24:51,552 basehttp "GET /admin/booking/order/26/change/ HTTP/1.1" 200 45616
+INFO 2023-08-30 20:24:51,613 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:24:57,547 basehttp "POST /admin/booking/order/26/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:24:57,631 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:24:57,673 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:24:57,694 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:24:57,712 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:24:57,775 basehttp "GET /static/admin/js/calendar.js?_=1693412697682 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:24:57,775 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693412697683 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:27:23,840 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:27:31,628 basehttp "GET /admin/booking/order/37/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 20:27:31,677 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:27:38,578 basehttp "POST /admin/booking/order/37/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:27:38,674 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:27:38,715 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:27:38,736 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:27:38,755 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:27:38,814 basehttp "GET /static/admin/js/calendar.js?_=1693412858725 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:27:38,815 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693412858726 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:27:47,399 basehttp "GET /admin/booking/order/38/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 20:27:47,445 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:27:58,424 basehttp "POST /admin/booking/order/38/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:27:58,501 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:27:58,540 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:27:58,562 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:27:58,590 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:27:58,864 basehttp "GET /static/admin/js/calendar.js?_=1693412878549 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:27:58,864 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693412878550 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:29:13,989 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:31:06,366 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:31:10,802 basehttp "GET /admin/booking/order/44/change/ HTTP/1.1" 200 45635
+INFO 2023-08-30 20:31:10,850 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:31:15,710 basehttp "POST /admin/booking/order/44/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:31:15,806 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:31:15,847 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:31:15,868 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:31:15,885 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:31:15,949 basehttp "GET /static/admin/js/calendar.js?_=1693413075855 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:31:15,949 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693413075856 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:36:01,990 autoreload D:\projects\fl\unlockers\apps\booking\apps.py changed, reloading.
+INFO 2023-08-30 20:36:03,200 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:36:45,912 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:37:22,602 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:38:11,439 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:38:23,983 autoreload D:\projects\fl\unlockers\apps\booking\models.py changed, reloading.
+INFO 2023-08-30 20:38:25,116 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:38:25,823 basehttp "GET /admin/booking/order/39/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 20:38:25,875 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:38:42,547 basehttp "POST /admin/booking/order/39/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:38:42,634 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:38:42,675 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:38:42,698 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:38:42,716 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:38:42,775 basehttp "GET /static/admin/js/calendar.js?_=1693413522685 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:38:42,776 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693413522686 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:42:10,343 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:42:11,744 basehttp "GET /admin/booking/order/41/change/ HTTP/1.1" 200 45616
+INFO 2023-08-30 20:42:11,798 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:42:19,022 basehttp "POST /admin/booking/order/41/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:42:19,120 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:42:19,161 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:42:19,180 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:42:19,198 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:42:19,259 basehttp "GET /static/admin/js/calendar.js?_=1693413739167 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:42:19,260 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693413739168 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:44:09,814 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:44:10,427 basehttp "GET /admin/booking/order/37/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 20:44:10,473 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:44:15,598 basehttp "POST /admin/booking/order/37/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:44:15,683 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:44:15,728 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:44:15,748 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:44:15,766 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:44:15,830 basehttp "GET /static/admin/js/calendar.js?_=1693413855736 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:44:15,830 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693413855737 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:45:08,210 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:45:24,957 basehttp "GET /admin/booking/order/23/change/ HTTP/1.1" 200 45616
+INFO 2023-08-30 20:45:25,004 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:45:30,925 basehttp "POST /admin/booking/order/23/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:45:31,016 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:45:31,065 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:45:31,086 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:45:31,102 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:45:31,175 basehttp "GET /static/admin/js/calendar.js?_=1693413931073 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:45:31,175 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693413931074 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:45:59,670 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:46:01,098 basehttp "GET /admin/booking/order/37/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 20:46:01,142 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:46:05,797 basehttp "POST /admin/booking/order/37/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:46:05,888 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:46:05,934 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:46:05,955 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:46:05,972 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:46:06,040 basehttp "GET /static/admin/js/calendar.js?_=1693413965942 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:46:06,040 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693413965943 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:49:04,636 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:49:57,015 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:52:33,194 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:52:40,071 basehttp "GET /admin/booking/order/38/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 20:52:40,128 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:52:40,176 log Not Found: /favicon.ico
+INFO 2023-08-30 20:52:40,207 basehttp - Broken pipe from ('127.0.0.1', 51973)
+INFO 2023-08-30 20:52:48,401 basehttp "POST /admin/booking/order/38/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:52:48,493 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:52:48,540 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:52:48,540 basehttp - Broken pipe from ('127.0.0.1', 51982)
+INFO 2023-08-30 20:52:48,562 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:52:48,579 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:52:48,594 log Not Found: /favicon.ico
+INFO 2023-08-30 20:52:48,594 basehttp - Broken pipe from ('127.0.0.1', 51981)
+INFO 2023-08-30 20:52:48,612 basehttp "GET /static/admin/js/calendar.js?_=1693414368549 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:52:48,639 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414368550 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:53:32,090 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:53:32,605 basehttp "GET /admin/booking/order/40/change/ HTTP/1.1" 200 45615
+INFO 2023-08-30 20:53:32,657 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:53:32,699 log Not Found: /favicon.ico
+INFO 2023-08-30 20:53:32,700 basehttp - Broken pipe from ('127.0.0.1', 51991)
+INFO 2023-08-30 20:53:39,368 basehttp "POST /admin/booking/order/40/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:53:39,460 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:53:39,504 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:53:39,526 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:53:39,542 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:53:39,558 log Not Found: /favicon.ico
+INFO 2023-08-30 20:53:39,558 basehttp - Broken pipe from ('127.0.0.1', 52021)
+INFO 2023-08-30 20:53:39,609 basehttp "GET /static/admin/js/calendar.js?_=1693414419513 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:53:39,609 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414419514 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:54:16,242 basehttp "GET /admin/booking/order/42/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 20:54:16,302 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:54:22,942 basehttp "POST /admin/booking/order/42/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:54:23,017 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:54:23,061 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:54:23,088 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:54:23,106 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:54:23,173 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414463072 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:54:23,173 basehttp "GET /static/admin/js/calendar.js?_=1693414463071 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:55:03,276 basehttp "GET /admin/booking/order/44/change/ HTTP/1.1" 200 45635
+INFO 2023-08-30 20:55:03,330 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:55:03,374 log Not Found: /favicon.ico
+INFO 2023-08-30 20:55:03,375 basehttp - Broken pipe from ('127.0.0.1', 52088)
+INFO 2023-08-30 20:55:10,711 basehttp "POST /admin/booking/order/44/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:55:10,785 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:55:10,836 basehttp - Broken pipe from ('127.0.0.1', 52101)
+INFO 2023-08-30 20:55:10,838 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:55:10,861 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:55:10,880 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:55:10,951 basehttp "GET /static/admin/js/calendar.js?_=1693414510849 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:55:10,952 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414510850 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:55:17,209 basehttp "GET /admin/booking/order/44/change/ HTTP/1.1" 200 45635
+INFO 2023-08-30 20:55:17,267 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:55:17,309 log Not Found: /favicon.ico
+INFO 2023-08-30 20:55:17,309 basehttp - Broken pipe from ('127.0.0.1', 52102)
+INFO 2023-08-30 20:55:22,250 basehttp "POST /admin/booking/order/44/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:55:22,319 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:55:22,369 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:55:22,393 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:55:22,410 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:55:22,468 basehttp "GET /static/admin/js/calendar.js?_=1693414522380 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:55:22,468 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414522381 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:57:50,754 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:57:55,342 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 20:57:55,408 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 20:57:55,454 log Not Found: /favicon.ico
+INFO 2023-08-30 20:57:55,455 basehttp - Broken pipe from ('127.0.0.1', 52147)
+INFO 2023-08-30 20:57:59,151 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:57:59,241 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:57:59,297 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:57:59,297 basehttp - Broken pipe from ('127.0.0.1', 52151)
+INFO 2023-08-30 20:57:59,325 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:57:59,343 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:57:59,438 basehttp "GET /static/admin/js/calendar.js?_=1693414679312 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:57:59,439 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414679313 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:58:20,000 basehttp "GET /admin/sms/emailtemplate/3/change/ HTTP/1.1" 200 27856
+INFO 2023-08-30 20:58:20,054 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:20,113 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 20:59:24,268 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 20:59:24,333 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:29,764 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:59:29,886 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:59:29,932 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:29,954 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:29,975 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:30,046 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414769942 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:59:30,047 basehttp "GET /static/admin/js/calendar.js?_=1693414769941 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:59:41,312 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 20:59:41,365 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:53,804 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 20:59:53,874 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 20:59:53,918 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:53,941 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:53,962 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 20:59:54,048 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414793929 HTTP/1.1" 200 19319
+INFO 2023-08-30 20:59:54,049 basehttp "GET /static/admin/js/calendar.js?_=1693414793928 HTTP/1.1" 200 8466
+INFO 2023-08-30 20:59:57,487 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 20:59:57,534 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:00:02,601 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:00:02,676 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:00:02,718 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:00:02,739 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:00:02,759 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:00:02,824 basehttp "GET /static/admin/js/calendar.js?_=1693414802727 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:00:02,825 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693414802728 HTTP/1.1" 200 19319
+INFO 2023-08-30 21:00:53,402 autoreload D:\projects\fl\unlockers\apps\booking\signals.py changed, reloading.
+INFO 2023-08-30 21:00:54,572 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:02:45,077 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:02:52,261 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 21:02:52,337 basehttp - Broken pipe from ('127.0.0.1', 52316)
+INFO 2023-08-30 21:02:52,340 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 21:02:52,387 log Not Found: /favicon.ico
+INFO 2023-08-30 21:02:52,387 basehttp - Broken pipe from ('127.0.0.1', 52315)
+INFO 2023-08-30 21:03:35,621 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:03:35,831 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:03:35,896 basehttp - Broken pipe from ('127.0.0.1', 52324)
+INFO 2023-08-30 21:03:35,899 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:03:35,921 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:03:35,939 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:03:35,988 basehttp "GET /static/admin/js/calendar.js?_=1693415015906 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:03:35,988 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693415015907 HTTP/1.1" 200 19319
+INFO 2023-08-30 21:03:44,610 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:03:45,936 basehttp - Broken pipe from ('127.0.0.1', 52355)
+INFO 2023-08-30 21:03:45,936 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 21:03:45,999 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:08:56,178 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:10:07,857 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:10:24,691 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:10:27,758 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:10:27,834 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:10:27,862 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:10:27,875 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:10:27,946 basehttp "GET /static/admin/js/calendar.js?_=1693415427842 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:10:27,946 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693415427843 HTTP/1.1" 200 19319
+INFO 2023-08-30 21:10:30,076 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 21:10:30,134 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:11:35,613 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:11:37,396 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:11:37,515 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:11:37,570 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:11:37,599 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:11:37,615 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:11:37,684 basehttp "GET /static/admin/js/calendar.js?_=1693415497580 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:11:37,685 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693415497581 HTTP/1.1" 200 19319
+INFO 2023-08-30 21:11:39,398 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 21:11:39,450 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:11:43,505 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:11:43,576 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:11:43,620 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:11:43,640 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:11:43,659 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:11:43,718 basehttp "GET /static/admin/js/calendar.js?_=1693415503628 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:11:43,718 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693415503629 HTTP/1.1" 200 19319
+INFO 2023-08-30 21:13:55,331 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:14:01,457 basehttp "POST /admin/sms/emailtemplate/3/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:14:01,528 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25857
+INFO 2023-08-30 21:14:01,590 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 21:14:01,624 log Not Found: /favicon.ico
+INFO 2023-08-30 21:14:01,625 basehttp - Broken pipe from ('127.0.0.1', 52560)
+INFO 2023-08-30 21:14:05,793 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 21:14:05,845 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:14:05,845 basehttp - Broken pipe from ('127.0.0.1', 52562)
+INFO 2023-08-30 21:14:05,846 basehttp - Broken pipe from ('127.0.0.1', 52563)
+WARNING 2023-08-30 21:14:05,888 log Not Found: /favicon.ico
+INFO 2023-08-30 21:14:05,889 basehttp - Broken pipe from ('127.0.0.1', 52564)
+INFO 2023-08-30 21:14:10,424 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:14:10,526 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:14:10,568 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:14:10,595 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:14:10,613 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 21:14:10,627 log Not Found: /favicon.ico
+INFO 2023-08-30 21:14:10,628 basehttp - Broken pipe from ('127.0.0.1', 52566)
+INFO 2023-08-30 21:14:10,683 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693415650583 HTTP/1.1" 200 19319
+INFO 2023-08-30 21:14:10,683 basehttp "GET /static/admin/js/calendar.js?_=1693415650582 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:14:20,772 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 21:14:20,820 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-30 21:14:20,866 log Not Found: /favicon.ico
+INFO 2023-08-30 21:14:20,867 basehttp - Broken pipe from ('127.0.0.1', 52565)
+INFO 2023-08-30 21:14:25,593 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:14:25,670 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:14:25,712 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:14:25,734 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:14:25,752 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:14:25,821 basehttp "GET /static/admin/js/calendar.js?_=1693415665722 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:14:25,821 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693415665723 HTTP/1.1" 200 19319
+INFO 2023-08-30 21:15:11,645 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:15:15,318 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 21:15:15,374 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:15:20,082 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:15:20,168 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:15:20,218 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:15:20,240 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:15:20,257 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:15:20,328 basehttp "GET /static/admin/js/calendar.js?_=1693415720227 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:15:20,328 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693415720228 HTTP/1.1" 200 19319
+INFO 2023-08-30 21:18:44,786 autoreload D:\projects\fl\unlockers\apps\sms\logic.py changed, reloading.
+INFO 2023-08-30 21:18:46,033 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:18:53,420 autoreload Watching for file changes with StatReloader
+INFO 2023-08-30 21:18:55,252 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 45632
+INFO 2023-08-30 21:18:55,309 basehttp - Broken pipe from ('127.0.0.1', 52653)
+INFO 2023-08-30 21:18:55,312 basehttp - Broken pipe from ('127.0.0.1', 52654)
+INFO 2023-08-30 21:18:55,312 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:19:02,734 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-30 21:19:02,833 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65245
+INFO 2023-08-30 21:19:02,884 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:19:02,885 basehttp - Broken pipe from ('127.0.0.1', 52664)
+INFO 2023-08-30 21:19:02,906 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:19:02,925 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-30 21:19:02,992 basehttp "GET /static/admin/js/calendar.js?_=1693415942893 HTTP/1.1" 200 8466
+INFO 2023-08-30 21:19:02,993 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693415942894 HTTP/1.1" 200 19319
+INFO 2023-08-31 09:04:58,737 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:05:04,049 basehttp "GET / HTTP/1.1" 200 52955
+INFO 2023-08-31 09:05:04,100 basehttp "GET /media/dream_TradingCard.jpg HTTP/1.1" 304 0
+INFO 2023-08-31 09:05:04,105 basehttp "GET /media/person_6-min_EX3wzvD.jpg HTTP/1.1" 304 0
+INFO 2023-08-31 09:05:04,106 basehttp "GET /media/shot_down_a_plane_hit_by_a_rocket_in_space_near_Ma.jpg HTTP/1.1" 304 0
+INFO 2023-08-31 09:05:04,123 basehttp "GET /vuejs-translatei18n.js HTTP/1.1" 200 2419
+INFO 2023-08-31 09:05:04,125 basehttp - Broken pipe from ('127.0.0.1', 54401)
+INFO 2023-08-31 09:05:04,126 basehttp - Broken pipe from ('127.0.0.1', 54402)
+INFO 2023-08-31 09:05:04,128 basehttp - Broken pipe from ('127.0.0.1', 54403)
+INFO 2023-08-31 09:05:04,130 basehttp - Broken pipe from ('127.0.0.1', 54406)
+INFO 2023-08-31 09:05:04,129 basehttp - Broken pipe from ('127.0.0.1', 54405)
+INFO 2023-08-31 09:05:04,129 basehttp "GET /media/hero_bg_2_pIETLgt.jpg HTTP/1.1" 304 0
+INFO 2023-08-31 09:05:04,212 basehttp "GET /api/v1/cabinet/profile-info/ HTTP/1.1" 200 105
+INFO 2023-08-31 09:05:04,252 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+INFO 2023-08-31 09:05:10,637 basehttp "GET /admin/ HTTP/1.1" 200 30963
+INFO 2023-08-31 09:05:10,688 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2023-08-31 09:05:10,688 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+WARNING 2023-08-31 09:05:10,701 log Not Found: /favicon.ico
+INFO 2023-08-31 09:05:10,701 basehttp - Broken pipe from ('127.0.0.1', 54404)
+INFO 2023-08-31 09:08:05,121 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:10:45,382 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:12:37,294 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:13:21,334 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:13:56,058 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:14:12,776 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:15:32,436 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:15:55,695 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:17:01,811 autoreload D:\projects\fl\unlockers\apps\partners\api\serializers\cabinet.py changed, reloading.
+INFO 2023-08-31 09:17:03,026 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:21:30,574 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 24813
+INFO 2023-08-31 09:21:30,636 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 09:21:30,666 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+WARNING 2023-08-31 09:21:30,702 log Not Found: /favicon.ico
+INFO 2023-08-31 09:21:30,702 basehttp - Broken pipe from ('127.0.0.1', 59840)
+INFO 2023-08-31 09:37:04,688 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 09:37:05,667 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 64223
+INFO 2023-08-31 09:37:05,718 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+WARNING 2023-08-31 09:37:05,792 log Not Found: /favicon.ico
+INFO 2023-08-31 09:37:05,792 basehttp - Broken pipe from ('127.0.0.1', 60255)
+INFO 2023-08-31 09:37:05,847 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693460225734 HTTP/1.1" 200 19319
+INFO 2023-08-31 09:37:05,847 basehttp "GET /static/admin/js/calendar.js?_=1693460225733 HTTP/1.1" 200 8466
+INFO 2023-08-31 09:37:05,870 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2023-08-31 09:37:16,690 basehttp "GET / HTTP/1.1" 200 52955
+INFO 2023-08-31 09:37:16,750 basehttp - Broken pipe from ('127.0.0.1', 60256)
+INFO 2023-08-31 09:37:16,769 basehttp - Broken pipe from ('127.0.0.1', 60254)
+INFO 2023-08-31 09:37:16,771 basehttp - Broken pipe from ('127.0.0.1', 60265)
+INFO 2023-08-31 09:37:16,827 basehttp "GET /api/v1/cabinet/profile-info/ HTTP/1.1" 200 105
+INFO 2023-08-31 09:37:16,867 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 657
+WARNING 2023-08-31 09:37:16,877 log Not Found: /media/-
+INFO 2023-08-31 09:37:16,878 basehttp - Broken pipe from ('127.0.0.1', 60269)
+INFO 2023-08-31 09:37:21,973 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 44806
+INFO 2023-08-31 09:37:22,024 basehttp - Broken pipe from ('127.0.0.1', 60271)
+INFO 2023-08-31 09:37:22,024 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 09:37:22,027 basehttp - Broken pipe from ('127.0.0.1', 60273)
+INFO 2023-08-31 09:37:22,027 basehttp - Broken pipe from ('127.0.0.1', 60272)
+INFO 2023-08-31 09:37:22,028 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-08-31 09:37:22,028 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2023-08-31 09:37:22,087 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2023-08-31 09:38:01,819 basehttp "POST /api/v1/request/create/ HTTP/1.1" 201 160
+INFO 2023-08-31 09:42:31,333 basehttp "GET /link/sPsodlVqQ18c/ HTTP/1.1" 200 1961
+INFO 2023-08-31 09:42:37,436 basehttp "GET /payments/sPsodlVqQ18c/ HTTP/1.1" 302 0
+INFO 2023-08-31 09:43:11,254 basehttp "GET /payments/execute/?paymentId=PAYID-MTYCQUI3MP304003L933614H&token=EC-2LM97699HK490501S&PayerID=H43XQUQD7DC5G HTTP/1.1" 200 12547
+INFO 2023-08-31 09:43:11,307 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,309 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,314 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,316 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,316 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,316 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,318 basehttp "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,319 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,319 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,320 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2023-08-31 09:43:11,336 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2023-08-31 09:44:06,037 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 64874
+INFO 2023-08-31 09:44:06,081 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 09:44:06,103 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 09:44:06,119 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 09:44:06,173 basehttp "GET /static/admin/js/calendar.js?_=1693460646090 HTTP/1.1" 200 8466
+INFO 2023-08-31 09:44:06,174 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693460646091 HTTP/1.1" 200 19319
+INFO 2023-08-31 09:44:08,452 basehttp "GET /admin/booking/order/47/change/ HTTP/1.1" 200 44840
+INFO 2023-08-31 09:44:08,495 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 09:55:10,320 autoreload D:\projects\fl\unlockers\apps\sms\logic.py changed, reloading.
+INFO 2023-08-31 09:55:11,837 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 10:02:28,647 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 24813
+INFO 2023-08-31 10:02:28,701 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-31 10:02:28,736 log Not Found: /favicon.ico
+INFO 2023-08-31 10:02:28,737 basehttp - Broken pipe from ('127.0.0.1', 60691)
+INFO 2023-08-31 10:02:32,816 basehttp "GET /admin/sms/emailtemplate/2/change/ HTTP/1.1" 200 26544
+INFO 2023-08-31 10:02:32,861 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:02:40,416 basehttp "POST /admin/sms/emailtemplate/2/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:02:40,439 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25034
+INFO 2023-08-31 10:02:40,486 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:02:40,507 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2023-08-31 10:02:50,463 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 10:02:54,626 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 64874
+INFO 2023-08-31 10:02:54,672 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:02:54,695 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:02:54,711 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:02:54,764 basehttp "GET /static/admin/js/calendar.js?_=1693461774681 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:02:54,765 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693461774682 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:02:56,940 basehttp "GET /admin/booking/order/38/change/ HTTP/1.1" 200 44837
+INFO 2023-08-31 10:02:56,991 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:03:05,468 basehttp "POST /admin/booking/order/38/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:03:05,543 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65072
+INFO 2023-08-31 10:03:05,577 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:03:05,840 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:03:05,869 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:03:06,602 basehttp "GET /static/admin/js/calendar.js?_=1693461785820 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:03:06,602 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693461785821 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:06:10,232 autoreload Watching for file changes with StatReloader
+INFO 2023-08-31 10:11:48,874 basehttp "GET /admin/booking/order/47/change/ HTTP/1.1" 200 44840
+INFO 2023-08-31 10:11:48,926 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-31 10:11:48,967 log Not Found: /favicon.ico
+INFO 2023-08-31 10:11:48,968 basehttp - Broken pipe from ('127.0.0.1', 61031)
+INFO 2023-08-31 10:12:00,164 basehttp "POST /admin/booking/order/47/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:12:00,259 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65072
+INFO 2023-08-31 10:12:00,302 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:12:00,322 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:12:00,342 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:12:00,400 basehttp "GET /static/admin/js/calendar.js?_=1693462320310 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:12:00,400 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693462320311 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:12:44,866 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 24813
+INFO 2023-08-31 10:12:44,910 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:12:47,391 basehttp "GET /admin/sms/emailtemplate/3/change/ HTTP/1.1" 200 27030
+INFO 2023-08-31 10:12:47,431 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:36,201 basehttp "POST /admin/sms/emailtemplate/3/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:35:36,226 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25031
+INFO 2023-08-31 10:35:36,268 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-31 10:35:36,297 log Not Found: /favicon.ico
+INFO 2023-08-31 10:35:36,297 basehttp - Broken pipe from ('127.0.0.1', 50907)
+INFO 2023-08-31 10:35:41,780 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 64876
+INFO 2023-08-31 10:35:41,821 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:41,844 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:41,859 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-31 10:35:41,870 log Not Found: /favicon.ico
+INFO 2023-08-31 10:35:41,870 basehttp - Broken pipe from ('127.0.0.1', 50912)
+INFO 2023-08-31 10:35:41,916 basehttp "GET /static/admin/js/calendar.js?_=1693463741830 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:35:41,927 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693463741831 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:35:43,630 basehttp "GET /admin/booking/order/46/change/ HTTP/1.1" 200 44854
+INFO 2023-08-31 10:35:43,675 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:51,753 basehttp "POST /admin/booking/order/46/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:35:51,829 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65072
+INFO 2023-08-31 10:35:51,873 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:51,892 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:51,910 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:51,966 basehttp "GET /static/admin/js/calendar.js?_=1693463751882 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:35:51,969 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693463751883 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:35:53,668 basehttp "GET /admin/booking/order/47/change/ HTTP/1.1" 200 44840
+INFO 2023-08-31 10:35:53,711 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:59,621 basehttp "POST /admin/booking/order/47/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:35:59,693 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65072
+INFO 2023-08-31 10:35:59,731 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:59,752 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:59,770 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:35:59,832 basehttp "GET /static/admin/js/calendar.js?_=1693463759739 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:35:59,832 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693463759740 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:36:01,468 basehttp "GET /admin/booking/order/47/change/ HTTP/1.1" 200 44840
+INFO 2023-08-31 10:36:01,512 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:36:10,310 basehttp "POST /admin/booking/order/47/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:36:10,381 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65072
+INFO 2023-08-31 10:36:10,421 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:36:10,441 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:36:10,458 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:36:10,515 basehttp "GET /static/admin/js/calendar.js?_=1693463770430 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:36:10,515 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693463770431 HTTP/1.1" 200 19319
+WARNING 2023-08-31 10:36:16,379 log Not Found: /favicon.ico
+WARNING 2023-08-31 10:36:16,380 basehttp "GET /favicon.ico HTTP/1.1" 404 7848
+INFO 2023-08-31 10:47:56,216 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 24813
+INFO 2023-08-31 10:47:56,265 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-31 10:47:56,296 log Not Found: /favicon.ico
+INFO 2023-08-31 10:47:56,296 basehttp - Broken pipe from ('127.0.0.1', 51643)
+INFO 2023-08-31 10:47:57,802 basehttp "GET /admin/sms/emailtemplate/3/change/ HTTP/1.1" 200 27049
+INFO 2023-08-31 10:47:57,849 basehttp - Broken pipe from ('127.0.0.1', 51646)
+INFO 2023-08-31 10:47:57,849 basehttp - Broken pipe from ('127.0.0.1', 51645)
+INFO 2023-08-31 10:47:57,850 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-31 10:47:57,878 log Not Found: /favicon.ico
+INFO 2023-08-31 10:47:57,879 basehttp - Broken pipe from ('127.0.0.1', 51649)
+INFO 2023-08-31 10:51:31,535 basehttp "POST /admin/sms/emailtemplate/3/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:51:31,560 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25031
+INFO 2023-08-31 10:51:31,606 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2023-08-31 10:51:31,637 log Not Found: /favicon.ico
+INFO 2023-08-31 10:51:31,638 basehttp - Broken pipe from ('127.0.0.1', 51781)
+INFO 2023-08-31 10:51:40,713 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 64876
+INFO 2023-08-31 10:51:40,760 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:51:40,782 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:51:40,798 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:51:40,865 basehttp "GET /static/admin/js/calendar.js?_=1693464700770 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:51:40,866 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693464700771 HTTP/1.1" 200 19319
+WARNING 2023-08-31 10:51:40,877 log Not Found: /favicon.ico
+INFO 2023-08-31 10:51:40,878 basehttp - Broken pipe from ('127.0.0.1', 51788)
+INFO 2023-08-31 10:51:42,132 basehttp "GET /admin/booking/order/44/change/ HTTP/1.1" 200 44857
+INFO 2023-08-31 10:51:42,178 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:51:44,242 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 64876
+INFO 2023-08-31 10:51:44,374 basehttp "GET /static/admin/js/calendar.js?_=1693464704290 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:51:44,375 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693464704291 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:51:45,908 basehttp "GET /admin/booking/order/35/change/ HTTP/1.1" 200 44837
+INFO 2023-08-31 10:51:45,955 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:51:55,536 basehttp "POST /admin/booking/order/35/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:51:55,609 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65072
+INFO 2023-08-31 10:51:55,655 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:51:55,676 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:51:55,692 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:51:55,758 basehttp "GET /static/admin/js/calendar.js?_=1693464715663 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:51:55,758 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693464715664 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:52:32,228 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 24813
+INFO 2023-08-31 10:52:32,270 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:52:34,284 basehttp "GET /admin/sms/emailtemplate/3/change/ HTTP/1.1" 200 27407
+INFO 2023-08-31 10:52:34,326 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:15,489 basehttp "POST /admin/sms/emailtemplate/3/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:54:15,514 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25031
+INFO 2023-08-31 10:54:15,556 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:19,327 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 64876
+INFO 2023-08-31 10:54:19,368 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:19,390 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:19,408 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:19,464 basehttp "GET /static/admin/js/calendar.js?_=1693464859378 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:54:19,464 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693464859379 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:54:21,439 basehttp "GET /admin/booking/order/32/change/ HTTP/1.1" 200 44790
+INFO 2023-08-31 10:54:21,482 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:27,234 basehttp "POST /admin/booking/order/32/change/ HTTP/1.1" 200 44933
+INFO 2023-08-31 10:54:27,274 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:32,353 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 64876
+INFO 2023-08-31 10:54:32,396 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:32,423 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:32,439 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:32,499 basehttp "GET /static/admin/js/calendar.js?_=1693464872410 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:54:32,500 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693464872411 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:54:34,220 basehttp "GET /admin/booking/order/40/change/ HTTP/1.1" 200 44837
+INFO 2023-08-31 10:54:34,262 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:43,567 basehttp "POST /admin/booking/order/40/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:54:43,642 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65072
+INFO 2023-08-31 10:54:43,687 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:43,706 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:43,723 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:43,779 basehttp "GET /static/admin/js/calendar.js?_=1693464883695 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:54:43,780 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693464883696 HTTP/1.1" 200 19319
+INFO 2023-08-31 10:54:46,291 basehttp "GET /admin/booking/order/40/change/ HTTP/1.1" 200 44837
+INFO 2023-08-31 10:54:46,333 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:53,718 basehttp "POST /admin/booking/order/40/change/ HTTP/1.1" 302 0
+INFO 2023-08-31 10:54:53,789 basehttp "GET /admin/booking/order/ HTTP/1.1" 200 65072
+INFO 2023-08-31 10:54:53,826 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:53,846 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:53,863 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-08-31 10:54:53,927 basehttp "GET /static/admin/js/calendar.js?_=1693464893834 HTTP/1.1" 200 8466
+INFO 2023-08-31 10:54:53,927 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js?_=1693464893835 HTTP/1.1" 200 19319

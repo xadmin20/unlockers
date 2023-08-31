@@ -1,45 +1,47 @@
-import os
 import math
-from datetime import datetime, timedelta
-from django.db.models import Exists, OuterRef, Q, F
+import os
+from datetime import datetime
+from datetime import timedelta
+
+from django.contrib.sites.models import Site
+from django.contrib.sites.shortcuts import get_current_site
+from django.db.models import Exists
+from django.db.models import F
+from django.db.models import OuterRef
+from django.db.models import Q
 from django.urls import reverse
 from django.utils.translation import gettext as _
-from django.contrib.sites.models import Site
-from django.utils.translation import get_language
-from django.contrib.sites.shortcuts import get_current_site
-from django.conf import settings
 from rest_framework import serializers
-from standards.drf.serializers import ModelSerializer, Serializer
 from rest_framework.exceptions import ValidationError
-from postie.shortcuts import send_mail
-from constance import config
+from standards.drf.serializers import ModelSerializer
 
-from apps.booking.models import Order, PAYMENT_STATUSES, Employee
-from apps.request.models import Request, SERVICE_VARIATIONS
+from apps.booking.models import Order
+from apps.booking.models import PAYMENT_STATUSES
+from apps.cars.contrib import CarParsingException
+from apps.cars.contrib import get_car
+from apps.cars.contrib import register_car
 from apps.cars.models import Car
-from apps.request.rest.serializers import validate_phone 
-from apps.cars.contrib import (
-    get_car, Car as CarEntity, register_car
-)
-
-from apps.request.contrib import (
-    calculate_distance_price,
-    calculate_price,
-    create_request_for_unregistered_car,
-)
-from apps.partners.models import Transactions, Withdraw, Partner
 from apps.partners.const import TRANSACTIONS_STATUS
+from apps.partners.models import Partner
+from apps.partners.models import Transactions
+from apps.partners.models import Withdraw
 from apps.partners.transactions import create_transaction
+from apps.request.contrib import calculate_distance_price
+from apps.request.contrib import calculate_price
+from apps.request.contrib import create_request_for_unregistered_car
+from apps.request.models import Request
+from apps.request.models import SERVICE_VARIATIONS
+from apps.request.rest.serializers import validate_phone
 from .custom_fields import Base64FileSerializerField
 
 
-def convert_size(size_bytes): 
-    if size_bytes == 0: 
-        return "0B" 
-    size_name = ("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB") 
+def convert_size(size_bytes):
+    if size_bytes == 0:
+        return "0B"
+    size_name = ("B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB")
     i = int(math.floor(math.log(size_bytes, 1024)))
-    power = math.pow(1024, i) 
-    size = round(size_bytes / power, 2) 
+    power = math.pow(1024, i)
+    size = round(size_bytes / power, 2)
     return "{} {}".format(size, size_name[i])
 
 
@@ -54,7 +56,7 @@ class OrdersHistorySerializer(ModelSerializer):
         fields = [
             'id', 'created_at', 'date_at', 'price',
             'prepayment', 'paid', 'phone', 'link',
-        ]
+            ]
 
     def get_paid(self, obj):
         if obj.status_paid:
@@ -69,9 +71,9 @@ class OrdersHistorySerializer(ModelSerializer):
         if not obj.status_paid and link_is_active:
             current_site = Site.objects.first()
             return "https://{}{}".format(
-                current_site.domain, 
+                current_site.domain,
                 reverse("order_pay", kwargs={"uuid": obj.uuid})
-            )
+                )
         return None
 
 
@@ -89,21 +91,21 @@ class OrderDetailSerializer(ModelSerializer):
     class Meta:
         model = Order
         fields = [
-            'id', 'uuid', 'price', 
+            'id', 'uuid', 'price',
             'prepayment', 'responsible_name', 'name',
             'car_registration', 'phone', 'address',
             'post_code', 'service_name', 'is_paid',
             'booking_date', 'booking_time'
-        ]
+            ]
 
     def get_responsible_name(self, obj):
         if obj.responsible:
             return obj.responsible.name
         return
-        
+
     def get_service_name(self, obj):
         return obj.service.title
-    
+
     def get_booking_date(self, obj):
         return obj.date_at.strftime("%d/%m/%Y")
 
@@ -121,7 +123,7 @@ class BalanceHistorySerializer(ModelSerializer):
         fields = [
             'id', 'created_at', 'transactions_type',
             'withdraw', 'order', 'summ', 'balance',
-        ]
+            ]
 
     def get_transactions_type(self, obj):
         return obj.get_type_transactions_display()
@@ -138,7 +140,7 @@ class WithdrawHistorySerializer(ModelSerializer):
         fields = [
             'id', 'created_at', 'attachment_file', 'file_name',
             'withdraw_status', 'file_size',
-        ]
+            ]
 
     def get_withdraw_status(self, obj):
         return obj.get_status_display()
@@ -158,8 +160,8 @@ class WithdrawCreateSerializer(ModelSerializer):
         model = Withdraw
         fields = [
             'attachment_file', 'amount', 'comment', 'message',
-        ]
-        
+            ]
+
     def get_message(self, obj):
         return _('Withdraw request sent')
 
@@ -177,7 +179,7 @@ class WithdrawCreateSerializer(ModelSerializer):
     def create(self, validated_data):
         user = self.request.user
         amount = validated_data.get('amount')
-            
+
         validated_data['partner'] = user
         instance = super().create(validated_data)
 
@@ -185,36 +187,21 @@ class WithdrawCreateSerializer(ModelSerializer):
         user.partner.save()
         user.refresh_from_db()
         balance = user.partner.balance
-        
         data = {
             'partner': user,
             'amount': -instance.amount,
             'balance': balance,
             'type_transactions': TRANSACTIONS_STATUS.withdraw,
             'withdraw': instance
-        }
+            }
 
         # Transactions.objects.create(**data)
         create_transaction(**data)
-
         base_url = str(get_current_site(self.request))
-
         link_admin = 'https://' + base_url + reverse(
             f"admin:{instance._meta.app_label}_{instance._meta.model_name}_change",
             kwargs={"object_id": instance.id}
-        )
-        
-        email = config.ADMIN_EMAIL
-        
-        send_mail(
-            event=settings.POSTIE_TEMPLATE_CHOICES.send_withdraw_admin,
-            recipients=[email],
-            context={
-                'link_admin': link_admin
-            },
-            language=get_language()
-        )
-
+            )
         return instance
 
 
@@ -229,14 +216,14 @@ class CreateOrderSerializer(ModelSerializer):
             'id', 'date_at', 'price', 'prepayment', 'phone', 'service',
             'car_registration', 'responsible', 'link', 'post_code',
             'request',
-        ]
+            ]
 
     def get_link(self, order):
         current_site = Site.objects.first()
         return "https://{}{}".format(
-            current_site.domain, 
+            current_site.domain,
             reverse("order_pay", kwargs={"uuid": order.uuid})
-        )
+            )
 
     def create(self, validated_data):
         validated_data["partner"] = self.request.user
@@ -246,20 +233,19 @@ class CreateOrderSerializer(ModelSerializer):
 class CreateRequestSerializer(ModelSerializer):
     car_model = serializers.CharField(source="car.car_model", read_only=True)
     manufacturer = serializers.CharField(source="car.manufacturer", read_only=True)
-    # responsible = serializers.SerializerMethodField()
 
     class Meta:
         model = Request
         fields = (
-            "id", "car_registration", 
+            "id", "car_registration",
             "post_code", "service",
             "car_model", "manufacturer",
             "price", "phone", "car_year",
             # "responsible",
-        )
+            )
         read_only_fields = (
             "id", "car_model", "manufacturer", "price", "car_year",
-        )
+            )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -271,7 +257,7 @@ class CreateRequestSerializer(ModelSerializer):
         if phone:
             return validate_phone(phone)
         return
-    
+
     # def get_responsible(self, obj):
     #     if employee := Employee.objects.filter(default=True).first():
     #         return {
@@ -282,19 +268,19 @@ class CreateRequestSerializer(ModelSerializer):
 
     def validate(self, attrs):
         # _request = self.context["request"]
-        
+
         # Try to get car in riester, if car not exists or something else raise validation error
         # If phone mechanic enable, create unregistered car request
         try:
             self.car_entity = get_car(attrs.get("car_registration"))
-        except:
-            pass
+        except CarParsingException as e:
+            print("CarParsingException", e)
 
         try:
             self.distance, self.distance_price = calculate_distance_price(attrs.get("post_code"))
-        except:
-            pass
-        
+        except Exception as e:
+            print("Error calculate_distance_price", e)
+
         return attrs
 
     def create(self, validated_data):
@@ -306,7 +292,7 @@ class CreateRequestSerializer(ModelSerializer):
             car_year = register_car(self.car_entity)
         except:
             car_year = None
-        
+
         if car_year is None:
             validated_data["car"] = None
             validated_data["car_year"] = None
@@ -319,12 +305,12 @@ class CreateRequestSerializer(ModelSerializer):
             car_year=car_year,
             distance=self.distance,
             distance_price=self.distance_price,
-        )
+            )
 
         request_object = create_request_for_unregistered_car(
             self.context["request"], validated_data, is_notify=False
-        )
-        
+            )
+
         return request_object
 
 
@@ -355,20 +341,21 @@ class StatisticNotFitPriceSerializer(ModelSerializer):
             'car_model', 'manufacturer',
             'count_neg', 'count_pos', 'current_price',
             'year_period',
-        ]
+            ]
 
     def get_count_neg(self, obj):
         return Request.objects.annotate(
             order_exists=Exists(Order.objects.filter(request=OuterRef("pk")))
             ).filter(
-                car=obj.car,
-                service=obj.service,
-                car_year=obj.car_year,
-                **self.created
+            car=obj.car,
+            service=obj.service,
+            car_year=obj.car_year,
+            **self.created
             ).filter(
-                Q(order_exists=False) | Q(
-                    order_exists=True,
-                    order__transactions__status=PAYMENT_STATUSES.no_paid)
+            Q(order_exists=False) | Q(
+                order_exists=True,
+                order__transactions__status=PAYMENT_STATUSES.no_paid
+                )
             ).count()
 
     def get_count_pos(self, obj):
@@ -384,26 +371,26 @@ class StatisticNotFitPriceSerializer(ModelSerializer):
             transactions__status=PAYMENT_STATUSES.paid,
             service=obj.service,
             ).count()
-        
+
         return orders
-        
+
     def get_current_price(self, obj):
         if obj.service.variation == SERVICE_VARIATIONS.car_distance:
             car_year = obj.car.years.filter(
-                year_from__lte=obj.car_year, 
+                year_from__lte=obj.car_year,
                 year_to__gte=obj.car_year,
-            ).first()
+                ).first()
             if car_year:
                 return car_year.price
         if service_price := obj.service.price:
             return "{:.2f}".format(service_price)
-        return 
-    
+        return
+
     def get_year_period(self, obj):
         car_year = obj.car.years.filter(
-            year_from__lte=obj.car_year, 
+            year_from__lte=obj.car_year,
             year_to__gte=obj.car_year,
-        ).first()
+            ).first()
         if car_year:
             year_from = car_year.year_from
             year_to = car_year.year_to

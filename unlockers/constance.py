@@ -26,10 +26,10 @@ CONSTANCE_CONFIG = {
     "REVIEW_LINK": ("/", _("Review.io link"), str),
     "REVIEW_LOGO": ("-", _("Review.io logo "), "image_field"),
 
-    "DEFAULT_POST_CODE": ("-", _("Default post code"), str),
-    "GOOGLE_API_KEY": ("-", _("Google API key"), str),
-    "MAX_FREE_DISTANCE": (0, _("Maximal free distance"), int),
-    "MAX_FIRST_PRICE_DISTANCE": (0, _("Maximal first price distance"), int),
+    "DEFAULT_POST_CODE": ("le33dd", _("Default post code"), str),
+    "GOOGLE_API_KEY": ("AIzaSyD1nwok7HvugUTCumD_F4aNBUxnLvl1DD4", _("Google API key"), str),
+    "MAX_FREE_DISTANCE": (5, _("Maximal free distance"), int),
+    "MAX_FIRST_PRICE_DISTANCE": (70, _("Maximal first price distance"), int),
     "FIRST_DISTANCE_PRICE": (Decimal(1), _("First distance price"), "decimal"),
     "PREPAYMENT": (Decimal(20), _("Order prepayment in percent"), "decimal"),
     "SECOND_DISTANCE_PRICE": (Decimal(0), _("Second distance price"), "decimal"),
@@ -37,18 +37,18 @@ CONSTANCE_CONFIG = {
     "PAYPAL_MODE": ("sandbox", _("PayPal mode"), str),
     "PROXY_TYPE": (PROXY_TYPE_CHOICES.auto, _("Proxy type"), "choices_field"),
     "PAYPAL_SECRET": (
-        "EO422dn3gQLgDbuwqTjzrFgFtaRLRR5BdHEESmha49TM",
+        "EKopERAVPsd7j4XzZtERxV5l-_7HTSS_UAMjBsVqtIw7jv0x1ySBk_P7TAHX",
         _("PayPal client secret"), str
         ),
     "PAYPAL_CLIENT_ID": (
-        "EBWKjlELKMYqRNQ6sYvFo64FtaRLRR5BdHEESmha49TM",
+        "AZJy7hCDgj4dgdyotn6ZjLQa1Y1LqguLCXoP9Aias72Mkur_EG_pcK6ygIrW",
         _("PayPal client id"), str
         ),
 
     "TERMS_LINK": ("/", _("Terms and conditions page link"), str),
     "SITE2": ("-", _("Site2"), str),
     # "IS_PHONE_MECHANIC": (True, _("Is phone mechanic enable"), bool),
-    "SMS_ROUTE": ("http://86.2.124.80:8081/get", _("SMS send route"), str),
+    "SMS_ROUTE": ("http://82.14.13.172:8081/get", _("SMS send route"), str),
     "SMS_PASSWORD": ("Phantom", _("SMS send password"), str),
     "GEO_API_KEY": ("D05B2C5BFCE56B8BC1FBB92A0BBE73F7", _("GEO service api key"), str),
     "GEO_ID": ("864894030546775", _("GEO car id"), str),

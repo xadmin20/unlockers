@@ -1,7 +1,6 @@
 from decimal import Decimal
 from uuid import UUID
 
-from constance import config
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.http import HttpResponseRedirect
@@ -11,7 +10,6 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
-from postie.shortcuts import send_mail
 from seo.mixins.views import ModelInstanceViewSeoMixin
 
 from apps.booking.forms import ClientOrderForm
@@ -61,15 +59,6 @@ class OrderConfirmTempaliteView(TemplateView):
                 )
             order.confirm_work = status_work
             order.save()
-            send_mail(
-                settings.POSTIE_TEMPLATE_CHOICES.confirm_order,
-                config.ADMIN_EMAIL.split(","),
-                {
-                    "responsible": order.responsible.name if order.responsible else config.ADMIN_EMAIL,
-                    "link": link_order,
-                    "status_confirm": status_work,
-                    }
-                )
             kwargs["message"] = _(f"Set status on order - {status_work}")
         else:
             kwargs["message"] = _("no valid link")

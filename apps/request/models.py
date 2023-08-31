@@ -1,3 +1,4 @@
+from _decimal import Decimal
 from ckeditor.fields import RichTextField
 from constance import config
 from django.db import models
@@ -119,6 +120,8 @@ class Request(models.Model):
 
     def save(self, is_calculate_price=False, *args, **kwargs):
         """Save method"""
+        print(f"Request.save: {self.id} - {self.car_registration} sending sms to admin")  # todo: удалить после тестов
+        # и сделать отправку смс админу
         is_new_record = not self.pk
         if is_calculate_price and self.id:
             from .contrib import calculate_price, calculate_distance_price
@@ -139,6 +142,7 @@ class Request(models.Model):
         # Если это новая запись, создайте запись в Order
         if is_new_record:
             order = Order.objects.create(
+                unique_path_field=self.unique_path_field,
                 date_at=timezone.now(),
                 price=self.price,
                 prepayment=0.00,
@@ -173,7 +177,7 @@ class Request(models.Model):
 
     @property
     def prepayment(self):
-        return float(config.PREPAYMENT) * self.price / 100 if self.price else 0
+        return Decimal(config.PREPAYMENT) * Decimal(self.price) / 100 if self.price else 0
 
 
 class ServiceVariation(models.Model):

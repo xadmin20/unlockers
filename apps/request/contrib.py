@@ -4,11 +4,7 @@ from decimal import Decimal
 
 import googlemaps
 from constance import config
-from django.conf import settings
-from django.contrib.sites.models import Site
-from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-from postie.shortcuts import send_mail
 
 from apps.request.models import Quote
 from apps.request.models import Request
@@ -88,19 +84,28 @@ def calculate_price(service, car_year, distance_price, distance):
 
 def create_request_for_unregistered_car(wsgi_request, validated_data, is_session=False, is_notify=True) -> Request:
     """Create request for unregistered car"""
-    request = None
     import urllib3
     urllib3.disable_warnings()
-    unique_path = generate_short_url()
+    print(f"create_request_for_unregistered_car: {validated_data}")
+    request = None
 
+    # Check for existing Request object
     if is_session:
         request = Request.objects.filter(id=wsgi_request.session.get("request")).first()
+
+    # If Request object already exists, update it
     if request:
         for key, value in validated_data.items():
             setattr(request, key, value)
         request.save()
     else:
         request = Request.objects.create(**validated_data)
+
+    print(
+        f"create_request_for_unregistered_car: {request.id} - {request.car_registration} "
+        f"sending sms to admin {request.phone}"
+        )  # todo: удалить после тестов и добав СМС
+
     # Add relation to quote (id_quote get from session)
     id_quote = get_session(wsgi_request, 'id_quote', crypt=True)
     drop_session(wsgi_request, 'id_quote')
@@ -108,79 +113,5 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
     if obj_quote:
         obj_quote.request = request
         obj_quote.save()
-    # Send email notification to admin
-    if is_notify:
-        if request.car:
-            admin_link_car = reverse(
-                "admin:cars_car_change",
-                kwargs={"object_id": request.car.id}
-                )
-        else:
-            admin_link_car = reverse("admin:cars_car_changelist")
-
-        current_site = Site.objects.first()
-        send_mail(
-            settings.POSTIE_TEMPLATE_CHOICES.created_request,
-            config.ADMIN_EMAIL.split(","),
-            {
-                "id": str(request.id),
-                "name": request.name,
-                "contacts": request.contacts,
-                "email": request.email,
-                "phone": request.phone,
-                "car_registration": request.car_registration,
-                "manufacture": request.car.manufacturer if request.car else None,
-                "car_model": request.car.car_model if request.car else None,
-                "car_year": request.car_year,
-                "distance": request.distance,
-                "service": request.service.title if request.service else None,
-                "price": request.price,
-                "post_code": request.post_code,
-                "link": "{}://{}{}".format(
-                    (
-                        'https'
-                        if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
-                        else "http"
-                    ),
-                    current_site.domain,
-                    reverse("unique_path", kwargs={"unique_path": unique_path})
-                    ),
-                "link_auto": "{}://{}{}".format(
-                    (
-                        'https'
-                        if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
-                        else "http"
-                    ),
-                    current_site.domain,
-                    reverse("unique_path", kwargs={"unique_path": unique_path})
-                    # admin_link_car, # reverse("link_path", kwargs={"unique": unique_path})
-                    )
-                }
-            )
-        print(
-            f"Contrib.py: {request.id} - {request.car_registration}"
-            f" - {request.car.manufacturer if request.car else None}"
-            f" - {request.car.car_model if request.car else None}"
-            f" - {request.car_year}"
-            f" - {request.distance}"
-            f" - {request.service.title if request.service else None}"
-            f" - {request.price}"
-            f" - {request.post_code}"
-            f" - {unique_path}"
-            )
-        # order = Order.objects.create( # TODO: Удалить после тестирования
-        #     unique_path_field=unique_path,
-        #     date_at=request.created_at,
-        #     price=request.price,
-        #     prepayment=0.00,
-        #     car_registration=request.car_registration,
-        #     car_year=request.car_year,
-        #     car=request.car,
-        #     service=request.service,
-        #     post_code=request.post_code,
-        #     phone=request.phone,
-        #     distance=request.distance
-        #     )
-        # order.save()
 
     return request

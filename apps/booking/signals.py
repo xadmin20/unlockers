@@ -1,49 +1,56 @@
+from constance import config
+from django.db.models.signals import post_save
 from django.db.models.signals import pre_save
-from django.dispatch import Signal
 from django.dispatch import receiver
 
-from apps.booking.const import ORDER_STATUS_WORK
 from apps.booking.models import Order
-from unlockers import settings
+from apps.sms.logic import send_custom_mail
 
-# 1. Определение сигналов
-confirm_work_changed_signal = Signal()
-partner_changed_signal = Signal()
-
-print("Signal module imported!")
-
-
-# 2. Создание обработчиков для сигналов
 
 @receiver(pre_save, sender=Order)
-def check_changes(sender, instance, **kwargs):
-    if instance.pk:
-        orig = Order.objects.get(pk=instance.pk)
-
-        if orig.confirm_work != instance.confirm_work:
-            confirm_work_changed_signal.send(sender=sender, instance=instance)
-
-        if orig.partner_id != instance.partner_id:
-            partner_changed_signal.send(sender=sender, instance=instance)
-
-
-@receiver(confirm_work_changed_signal)
-def handle_confirm_work_change(sender, instance, **kwargs):
-    # Ваш код для обработки изменений confirm_work
-    if instance.confirm_work == ORDER_STATUS_WORK.new:
-        template_choice = settings.POSTIE_TEMPLATE_CHOICES.created_request
+def pre_save_order(sender, instance, **kwargs):
+    try:
+        obj = sender.objects.get(pk=instance.pk)
+    except sender.DoesNotExist:
+        pass
     else:
-        template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
+        instance._loaded_values = {}
+        for field in instance._meta.fields:
+            instance._loaded_values[field.name] = getattr(obj, field.name)
 
-    print("Confirm work changed")
-    # instance.send_notification_email_for_confirm_work()
 
+@receiver(post_save, sender=Order)
+def send_email_after_order_change(sender, instance, **kwargs):
+    print("signal send_email_after_order_change")
+    try:
+        if instance._state.adding is False:  # Это не новый объект
+            if hasattr(instance, '_loaded_values'):  # проверяем, что pre_save_order сработал
+                original_partner = instance._loaded_values['partner']
+                if original_partner != instance.partner:
+                    print("Partner changed")
+                    if instance.partner:
+                        print("Sending email to partner")
+                        print(instance, config.ADMIN_EMAIL, instance.partner.email, instance.unique_path_field)
 
-@receiver(partner_changed_signal)
-def handle_partner_change(sender, instance, **kwargs):
-    # Ваш код для обработки изменений partner
-    template_choice = settings.POSTIE_TEMPLATE_CHOICES.employee_order
-    instance.send_notification_email()
-    print("Partner changed")
-
-# В методе save теперь можно удалить проверки, так как они теперь обрабатываются
+                        try:
+                            send = send_custom_mail(
+                                order=instance,
+                                from_send=config.ADMIN_EMAIL,
+                                to_send=instance.partner.email,
+                                template_choice='send_partner',
+                                unique_path=instance.unique_path_field
+                                )
+                            print(f"Send result: {send}")
+                        except Exception as e:
+                            print(f"Error occurred: {e}")
+                    else:
+                        print("Sending email to admin")
+                        send_custom_mail(
+                            order=instance,
+                            from_send=config.ADMIN_EMAIL,
+                            to_send=config.ADMIN_EMAIL,
+                            template_choice='send_partner',
+                            unique_path=instance.unique_path_field
+                            )
+    except Exception as e:
+        print(f"Error occurred: {e}")

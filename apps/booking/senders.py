@@ -1,5 +1,4 @@
 import time
-from pathlib import Path
 from typing import *
 
 import requests
@@ -10,11 +9,11 @@ from django.core.mail import send_mail as django_send_mail
 from django.template import Context
 from django.template import Template as DjangoTemplate
 from django.urls import reverse
-from postie.shortcuts import send_mail
 
 from apps.booking.const import ORDER_STATUS_WORK
 from apps.cars.contrib import Car as CarEntity
 from apps.cars.contrib import get_car
+from apps.sms.logic import send_custom_mail
 from apps.sms.models import ORDER_PAYED
 from apps.sms.models import REQUEST
 from apps.sms.models import SmsMessage
@@ -83,9 +82,8 @@ class Sender:
                     },
                 )
             )
-        send_mail(
-            settings.POSTIE_TEMPLATE_CHOICES.employee_order_admin,
-            responsible_email,
+        send_custom_mail(
+            self,
             {
                 "date_at": self.order.date_at,
                 "price": self.order.price,
@@ -149,42 +147,6 @@ class Sender:
             admin_emails = config.ADMIN_EMAIL.split(",")
             responsible_email = list(set(admin_emails + responsible_email))
 
-        send_mail(
-            settings.POSTIE_TEMPLATE_CHOICES.employee_order,
-            responsible_email,
-            {
-                "date_at": self.order.date_at,
-                "price": self.order.price,
-                "prepayment": self.order.prepayment,
-                "comment": self.order.comment,
-                "responsible": responsible_email,
-                "name": self.order.name,
-                "car_registration": self.order.car_registration,
-                "manufacture": car_entity.manufacturer,
-                "car_model": car_entity.car_model,
-                "car_year": car_entity.manufactured,
-                "phone": self.order.phone,
-                "address": self.order.address,
-                "post_code": self.order.post_code,
-                "link": self.__generate_link(
-                    reverse("admin:booking_order_change", kwargs={"object_id": self.order.id})
-                    ),
-                "link_confirm": link_confirm,
-                "link_refused": link_refused,
-
-                },
-            **(dict(
-                attachments=[
-                    {
-                        item.file.url.split("/")[-1]: Path(
-                            f"{settings.BASE_ROOT}/{item.file.url}"
-                            ).open("rb")
-                        }
-                    for item in self.order.attachments.all()
-                    ]
-                ) if self.order.attachments.exists() else {})
-            )
-
 
 def _send_sms(phone: str, message: str) -> [int, str]:
     """Отправка СМС"""
@@ -239,6 +201,7 @@ def send_sms_admin(order=None, action=""):
                        f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
             # status_code, _log = _send_sms(phone, message)
             print(f"send_sms_admin: {phone}, {message}")
+
     except Exception as e:
         if status_code != 200:
             send_notification_to_admin(order, "sms_error")
@@ -321,7 +284,7 @@ def generate_link(path):
 def request_sms(request):
     """Send sms to user after request created"""
     current_site = Site.objects.first()
-    unique_path = crypt_str(request.unique_path_field)
+    unique_path = request.unique_path_field
 
     # Инициализация пустого контекста
     context = {}

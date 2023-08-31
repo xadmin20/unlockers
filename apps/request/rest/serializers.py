@@ -3,7 +3,6 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-from postie.shortcuts import send_mail
 from rest_framework import serializers
 
 from apps.booking.senders import request_sms
@@ -40,38 +39,6 @@ def add_quote(
         manufacturer=manufacturer,
         phone=phone,
         )
-    # Send admin mail notification
-    # if not is_phone_mechanic() and phone:
-    if phone and mailing:
-        base_link = "{}://{}".format(
-            (
-                'https'
-                if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
-                else "http"
-            ),
-            Site.objects.first().domain
-            )
-        send_mail(
-            settings.POSTIE_TEMPLATE_CHOICES.quote_created,
-            config.ADMIN_EMAIL.split(","),
-            context={
-                "car_registration": quote.car_registration,
-                "service": quote.service.title,
-                "post_code": quote.post_code,
-                "price": str(quote.price),
-                "car_model": quote.car_model,
-                "manufacturer": quote.manufacturer,
-                "request_link": (
-                    f"{base_link}/admin/request/request/{quote.request_id}/change/"
-                    if quote.request_id else None
-                ),
-                "quote_link": f"{base_link}/admin/request/quote/{quote.id}/change/",
-                "request_id": quote.request_id,
-                "phone": phone,
-                "created_at": quote.created_at,
-                "id": quote.id,
-                }
-            )
     return quote
 
 
