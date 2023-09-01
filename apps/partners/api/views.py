@@ -35,7 +35,6 @@ from apps.booking.models import Employee
 from apps.booking.models import Order
 from apps.booking.models import PAYMENT_STATUSES
 from apps.booking.models import Transaction
-from apps.booking.senders import _send_sms
 from apps.cars.models import Car
 from apps.partners.api.filters import OrdersWeekFilter
 from apps.partners.api.filters import StatisticRequestFilter
@@ -241,12 +240,12 @@ class SendSMSViewApi(GenericAPIView):
         phone = serializer.validated_data.get('phone')
         message = serializer.validated_data.get('message')
 
-        status_code, content = _send_sms(phone, message)
+        # status_code, content = _send_sms(phone, message)
 
-        if status_code == 200:
-            message = _('Your SMS has been sent.')
-        else:
-            message = _('Your SMS has not been sent.')
+        # if status_code == 200:
+        #     message = _('Your SMS has been sent.')
+        # else:
+        #     message = _('Your SMS has not been sent.')
 
         result = {
             'message': message

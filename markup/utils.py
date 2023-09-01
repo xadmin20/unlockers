@@ -13,10 +13,8 @@ def create_session(request, name, value, crypt=False):
     if crypt:
         encoded_value = crypt_str(str(value))
         request.session[name] = encoded_value
-        print(f"Set session: {name} -> {encoded_value} (original value: {value})")
     else:
         request.session[name] = value
-        print(f"Set session: {name} -> {value}")
 
 
 def get_session(request, name, crypt=False):

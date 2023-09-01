@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok-free.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '138.68.160.203']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -442,3 +442,5 @@ LOGGING = {
 PAYPAL_CLIENT_ID = 'AZJy7hCDgj4dgdyotn6ZjLQa1Y1LqguLCXoP9Aias72Mkur_EG_pcK6ygIrW'
 PAYPAL_CLIENT_SECRET = 'EKopERAVPsd7j4XzZtERxV5l-_7HTSS_UAMjBsVqtIw7jv0x1ySBk_P7TAHX'
 PAYPAL_MODE = 'sandbox'  # для тестирования; 'live' для реальных транзакций
+
+SMS_SEND_MODE = 'test'  # todo 'production' or 'test'

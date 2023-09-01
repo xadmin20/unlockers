@@ -16,7 +16,6 @@ from apps.booking.forms import ClientOrderForm
 from apps.booking.forms import OrderForm
 from apps.booking.models import Order
 from markup.utils import decrypt_str
-from .senders import send_notification_to_admin
 
 
 def validate_uuid(uuid_str):
@@ -62,7 +61,6 @@ class OrderConfirmTempaliteView(TemplateView):
             kwargs["message"] = _(f"Set status on order - {status_work}")
         else:
             kwargs["message"] = _("no valid link")
-
         return super().get_context_data(**kwargs)
 
 

@@ -21,15 +21,15 @@ def pre_save_order(sender, instance, **kwargs):
 
 @receiver(post_save, sender=Order)
 def send_email_after_order_change(sender, instance, **kwargs):
-    print("signal send_email_after_order_change")
+    print("SIGNAL: send_email_after_order_change")
     try:
         if instance._state.adding is False:  # Это не новый объект
             if hasattr(instance, '_loaded_values'):  # проверяем, что pre_save_order сработал
                 original_partner = instance._loaded_values['partner']
                 if original_partner != instance.partner:
-                    print("Partner changed")
+                    print("SIGNAL: Partner changed")
                     if instance.partner:
-                        print("Sending email to partner")
+                        print("SIGNAL: Sending email to partner")
                         print(instance, config.ADMIN_EMAIL, instance.partner.email, instance.unique_path_field)
 
                         try:
@@ -40,11 +40,11 @@ def send_email_after_order_change(sender, instance, **kwargs):
                                 template_choice='send_partner',
                                 unique_path=instance.unique_path_field
                                 )
-                            print(f"Send result: {send}")
+                            print(f"SIGNAL: Send result: {send}")
                         except Exception as e:
-                            print(f"Error occurred: {e}")
+                            print(f"SIGNAL: Error occurred: {e}")
                     else:
-                        print("Sending email to admin")
+                        print("SIGNAL: Sending email to admin")
                         send_custom_mail(
                             order=instance,
                             from_send=config.ADMIN_EMAIL,

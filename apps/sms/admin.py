@@ -1,8 +1,13 @@
 from django.contrib import admin
+from django.core.exceptions import ValidationError
+from jinja2 import Environment
+from jinja2 import TemplateSyntaxError
 from solo.admin import SingletonModelAdmin
 
 from .models import CONTEXT
 from .models import Config
+from .models import EmailTemplate
+from .models import SMSSendHistory
 from .models import SmsMessage
 from .models import SmsTemplate
 
@@ -31,33 +36,7 @@ class SmsTemplateAdmin(admin.ModelAdmin):
             )
 
 
-# @admin.register(EmailTemplate)
-# class EmailTemplateAdmin(admin.ModelAdmin):
-#     list_display = ('name', 'subject', 'preview_html_content')
-#     search_fields = ('name', 'subject')
-#     readonly_fields = ('preview_html_content',)
-#
-#     def preview_html_content(self, obj):
-#         return obj.html_content[:50] + '...' if len(obj.html_content) > 50 else obj.html_content
-#
-#     preview_html_content.short_description = "HTML Content Preview"
-#
-#     fieldsets = (
-#         ('Basic Information', {
-#             'fields': ('name', 'subject')
-#             }),
-#         ('Content', {
-#             'fields': ('html_content', 'preview_html_content')
-#             })
-#         )
-
-
 admin.site.register(Config, SingletonModelAdmin)
-
-from django.contrib import admin
-from django.core.exceptions import ValidationError
-from jinja2 import Environment, TemplateSyntaxError
-from .models import EmailTemplate
 
 
 def validate_jinja2_syntax(modeladmin, request, queryset):
@@ -75,5 +54,13 @@ validate_jinja2_syntax.short_description = "Проверить синтакси�
 class EmailTemplateAdmin(admin.ModelAdmin):
     actions = [validate_jinja2_syntax]
 
+
+class SMSSendHistoryAdmin(admin.ModelAdmin):
+    list_display = ("phone_number", "success", "sent_datetime")
+    list_filter = ("phone_number", "success", "sent_datetime")
+    search_fields = ("phone_number",)
+
+
+admin.site.register(SMSSendHistory, SMSSendHistoryAdmin)
 
 admin.site.register(EmailTemplate, EmailTemplateAdmin)

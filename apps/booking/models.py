@@ -8,8 +8,8 @@ from django.utils.translation import gettext_lazy as _
 from model_utils.choices import Choices
 
 from apps.booking.const import ORDER_STATUS_WORK
-from apps.booking.senders import send_sms_admin
 from apps.sms.logic import send_custom_mail
+from apps.sms.logic import send_sms_admin
 
 PAYMENT_STATUSES = Choices(
     ("paid", _("Paid")),
@@ -31,6 +31,7 @@ class Order(models.Model):
         verbose_name=_("Price"),
         max_digits=10,
         decimal_places=2,
+        default=0
         )
     prepayment = models.DecimalField(
         verbose_name=_("Prepayment"),
@@ -176,21 +177,24 @@ class Order(models.Model):
             print("Changes after popping 'partner': ", changes)
 
             # Если после этого остались другие изменения, отправляем письмо
-            if changes and not (len(changes) == 1 and 'unique_path_field' in changes):
-                print("Sending email because changes: ", changes)
-                # Передайте changes в send_custom_mail
-                send_custom_mail(
-                    order=self,
-                    from_send=f'{config.ADMIN_EMAIL}',
-                    to_send=f'{config.ADMIN_EMAIL}',
-                    template_choice='change_order',
-                    unique_path=self.unique_path_field,
-                    changes=changes
-                    )
+            if changes:
+                if (len(changes) == 1 and 'car_year' in changes) or 'unique_path_field' in changes:
+                    print("Changes only in 'car_year' or 'unique_path_field', not sending email")
+                else:
+                    print("Sending email because changes: ", changes)
+                    send_custom_mail(
+                        order=self,
+                        from_send=f'{config.ADMIN_EMAIL}',
+                        to_send=f'{config.ADMIN_EMAIL}',
+                        template_choice='change_order',
+                        unique_path=self.unique_path_field,
+                        changes=changes
+                        )
 
         # If the order is new, send an email
         elif is_new:
             try:
+                print("booking.models.Order.save() is_new=True")
                 send_sms_admin(self, action='created')
                 print("Try to send SMS message created")
                 send_custom_mail(

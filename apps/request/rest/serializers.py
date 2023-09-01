@@ -1,11 +1,8 @@
 from constance import config
-from django.conf import settings
 from django.contrib.sites.models import Site
-from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from rest_framework import serializers
 
-from apps.booking.senders import request_sms
 from apps.cars.contrib import Car as CarEntity
 from apps.cars.contrib import CarParsingException
 from apps.cars.contrib import get_car
@@ -17,6 +14,7 @@ from apps.request.contrib import create_request_for_unregistered_car
 from apps.request.models import Quote
 from apps.request.models import Request
 from apps.request.models import ServiceVariation
+from apps.sms.logic import _send_sms
 from apps.sms.models import is_phone_mechanic
 from markup.utils import create_session
 
@@ -72,8 +70,6 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
     def validate(self, attrs):
         _request = self.context["request"]
 
-        # Try to get car in register, if car not exists or something else raise validation error
-        # If phone mechanic enable, create unregistered car request
         try:
             self.car_entity: CarEntity = get_car(attrs.get("car_registration"))
 
@@ -84,6 +80,12 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
                 post_code=attrs.get("post_code"),
                 phone=attrs.get("phone"),
                 mailing=True,
+                )
+            print("Error: Car is not found.")
+
+            _send_sms(
+                config.PHONE, f"Error: {obj_quote.phone} car: {obj_quote.car_registration}"
+                              f" {obj_quote.service} Post:{obj_quote.post_code}"
                 )
             create_session(_request, 'id_quote', obj_quote.id, crypt=True)
 
@@ -97,8 +99,6 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
                     )
                 )
 
-        # Try to calculate distance and distance price
-        # If raise exception create quote and raise validation error that postal code is invalid
         try:
             self.distance, self.distance_price = calculate_distance_price(attrs.get("post_code"))
         except DistanceGetterException:
@@ -132,8 +132,6 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
         else:
             validated_data["car"] = car_year.car
             validated_data["car_year"] = self.car_entity.manufactured
-        # validated_data["car"] = car_year.car
-        # validated_data["car_year"] = self.car_entity.manufactured
         validated_data["distance"] = self.distance
         validated_data["price"] = calculate_price(
             service=validated_data["service"],
@@ -164,15 +162,6 @@ class RequestPreCreateSerializer(serializers.ModelSerializer):
 
         obj_quote = add_quote(**obj_quote_data)
         create_session(request, 'id_quote', obj_quote.id, crypt=True)
-
-        # Send success sms
-        if is_phone:
-            if request_object:
-                print('Request object:', request_object.__dict__)
-                request_sms(request_object)  # TODO: раскомментировать в случае необходимости отправки смс
-            else:
-                print('Request object is None.')
-
         return request_object
 
 
@@ -226,37 +215,7 @@ class RequestUpdateSerializer(serializers.ModelSerializer):
         request = super().update(instance, validated_data)
 
         current_site = Site.objects.first()
-        send_mail(
-            settings.POSTIE_TEMPLATE_CHOICES.created_request,
-            config.ADMIN_EMAIL.split(","),
-            {
-                "id": str(request.id),
-                "name": request.name,
-                "contacts": request.contacts,
-                "email": request.email,
-                "phone": request.phone,
-                "car_registration": request.car_registration,
-                "manufacture": request.car.manufacturer if request.car else None,
-                "car_model": request.car.car_model if request.car else None,
-                "car_year": request.car_year,
-                "distance": request.distance,
-                "service": request.service.title if request.service else None,
-                "price": request.price,
-                "post_code": request.post_code,
-                "link": "{}://{}{}".format(
-                    (
-                        'https'
-                        if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
-                        else "http"
-                    ),
-                    current_site.domain,
-                    reverse(
-                        "admin:request_request_change",
-                        kwargs={"object_id": request.id}
-                        ),
-                    ),
-                }
-            )
+
         return request
 
 

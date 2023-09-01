@@ -120,8 +120,6 @@ class Request(models.Model):
 
     def save(self, is_calculate_price=False, *args, **kwargs):
         """Save method"""
-        print(f"Request.save: {self.id} - {self.car_registration} sending sms to admin")  # todo: удалить после тестов
-        # и сделать отправку смс админу
         is_new_record = not self.pk
         if is_calculate_price and self.id:
             from .contrib import calculate_price, calculate_distance_price
@@ -141,19 +139,36 @@ class Request(models.Model):
 
         # Если это новая запись, создайте запись в Order
         if is_new_record:
-            order = Order.objects.create(
-                unique_path_field=self.unique_path_field,
-                date_at=timezone.now(),
-                price=self.price,
-                prepayment=0.00,
-                car_registration=self.car_registration,
-                car_year=self.car_year,
-                car=self.car,
-                service=self.service,
-                post_code=self.post_code,
-                phone=self.phone,
-                distance=self.distance
-                )
+            try:
+                order = Order.objects.create(
+                    unique_path_field=self.unique_path_field,
+                    date_at=timezone.now(),
+                    price=self.price,
+                    prepayment=0.00,
+                    car_registration=self.car_registration,
+                    car_year=self.car_year,
+                    car=self.car,
+                    service=self.service,
+                    post_code=self.post_code,
+                    phone=self.phone,
+                    distance=self.distance
+                    )
+            except Exception as e:
+                print(f"Error creating order: {e}")
+                # Если произошла ошибка при создании объекта, установите price по умолчанию 0
+                order = Order.objects.create(
+                    unique_path_field=self.unique_path_field,
+                    date_at=timezone.now(),
+                    price=0.00,  # Устанавливаем значение по умолчанию
+                    prepayment=0.00,
+                    car_registration=self.car_registration,
+                    car_year=self.car_year,
+                    car=self.car,
+                    service=self.service,
+                    post_code=self.post_code,
+                    phone=self.phone,
+                    distance=self.distance
+                    )
             # Теперь вы можете работать с объектом 'order' и делать с ним что угодно, например:
             order.save()
 

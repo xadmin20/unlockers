@@ -126,10 +126,6 @@ def get_timeout_amount():
     return config.timeout if (config := Config.objects.first()) else False
 
 
-# https://track.trackerway.com/api/api.php?api=user&ver=1.0&key=D05B2C5BFCE56B8BC1FBB92A0BBE73F7&cmd=USER_GET_OBJECTS
-# https://track.trackerway.com/api/api.php?api=user&ver=1.0&key=D05B2C5BFCE56B8BC1FBB92A0BBE73F7&cmd=OBJECT_GET_LOCATIONS,"*"
-
-
 class EmailTemplate(models.Model):
     name = models.CharField(max_length=100)
     subject = models.CharField(max_length=200)
@@ -137,3 +133,13 @@ class EmailTemplate(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class SMSSendHistory(models.Model):
+    phone_number = models.CharField(max_length=20)
+    message = models.TextField()
+    sent_datetime = models.DateTimeField(auto_now_add=True)
+    success = models.BooleanField(default=False)  # Добавленное поле
+
+    def __str__(self):
+        return f"{self.phone_number} - {self.sent_datetime}"

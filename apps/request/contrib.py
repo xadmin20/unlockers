@@ -101,12 +101,7 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
     else:
         request = Request.objects.create(**validated_data)
 
-    print(
-        f"create_request_for_unregistered_car: {request.id} - {request.car_registration} "
-        f"sending sms to admin {request.phone}"
-        )  # todo: удалить после тестов и добав СМС
-
-    # Add relation to quote (id_quote get from session)
+    # send_sms_admin(request, action="created")
     id_quote = get_session(wsgi_request, 'id_quote', crypt=True)
     drop_session(wsgi_request, 'id_quote')
     obj_quote = Quote.objects.filter(id=id_quote).first()
