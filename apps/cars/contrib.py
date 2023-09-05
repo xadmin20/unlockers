@@ -26,17 +26,13 @@ class Car:
 
 class CarGetter:
     """Get car info from car registration"""
-    MAX_REQUESTS = 5  # Максимальное количество запросов
 
     def __init__(self, registration):
         self.registration = registration
-        self.request_count = 0  # Счетчик запросов
         self._make_request()
 
     def _make_request(self):
         """Make request to car parsing site"""
-        if self.request_count >= self.MAX_REQUESTS:
-            raise CarParsingException("Exceeded maximum request count")
         response = None
         for proxy in proxy_getter.proxies():
             print("p: ", proxy)
@@ -54,7 +50,6 @@ class CarGetter:
                     )
 
                 if response and response.status_code == 200:
-                    self.request_count += 1
                     print(response.content)
                     self.page_content = response.content
                     self.soup = bs(self.page_content, 'lxml')

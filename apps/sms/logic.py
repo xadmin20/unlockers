@@ -1,13 +1,15 @@
 import time
 from typing import List
+from urllib.parse import urlencode
 
 import requests
 from constance import config
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.core.mail import send_mail
+from django.template import Context
+from django.template import Template
 from django.urls import reverse
-from jinja2 import Environment
 
 from .models import EmailTemplate
 from .models import SMSSendHistory
@@ -21,12 +23,21 @@ def generate_link(path):
         )
 
 
-def send_custom_mail(order, from_send, to_send, template_choice, unique_path, changes=None):
-    """Отправка email"""
-    print(f"send_custom_mail: {order.id} - {order.car_registration} {template_choice}")
+def send_custom_mail(
+        order,
+        recipient_type="Customer",
+        template_choice=None,
+        action=None,
+        extra_context=None,
+        changes=None
+        , from_send=None
+        ):
+    """Функция отправки письма"""
     try:
-        change_keys = list(changes.keys()) if changes is not None else []
-        print("change_keys: ", change_keys)
+        en_route_link = f"http://{Site.objects.first().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'en_route'})}"
+        arrived_link = f"http://{Site.objects.first().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'arrived'})}"
+        paid_link = f"http://{Site.objects.first().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'paid'})}"
+
         context = {
             "order": {
                 "id": str(order.id),
@@ -45,27 +56,55 @@ def send_custom_mail(order, from_send, to_send, template_choice, unique_path, ch
                 "prepayment": order.prepayment,
                 "post_code": order.post_code,
                 "link": f"http://{Site.objects.first().domain}/link/{order.unique_path_field}/",
+                "en_route_link": en_route_link,
+                "arrived_link": arrived_link,
+                "paid_link": paid_link,
                 },
-            "changes": change_keys,
+            "site": Site.objects.first().domain,
+            "recipient_type": recipient_type,
+            "changes": list(changes.keys()) if changes else [],
+            "show_links": {
+                "show_en_route": True,
+                "show_arrived": True,
+                "show_paid": True,
+                },
+            **(extra_context or {}),
             }
-        current_site = Site.objects.first()
-        email_template = EmailTemplate.objects.get(subject=f'{template_choice}')
-        jinja_env = Environment()
-        template = jinja_env.from_string(email_template.html_content)
-        print("Rendering template with context:", context)
-        rendered_template = template.render(context)
 
-        # отправка email
+        try:
+            email_template_obj = EmailTemplate.objects.get(subject=template_choice)
+        except EmailTemplate.DoesNotExist:
+            print(f"No email template found for {template_choice}")
+            return
+
+        if recipient_type == "Worker":
+            if order.partner and order.partner.email:
+                recipient_list = [order.partner.email]
+                print(f"Sending to partner email. {recipient_list}")
+            else:
+                print("No partner or partner email. Sending to default email.")
+            subject = email_template_obj.subject
+        else:
+            subject = email_template_obj.subject
+            recipient_list = [config.ADMIN_EMAIL]
+
+            # Преобразование шаблона электронной почты в объект Template
+        email_template = Template(email_template_obj.html_content)
+        print(f"email_template: {email_template}")
+        # Рендеринг шаблона
+        rendered_template = email_template.render(Context(context))
         send_mail(
-            email_template.subject,
-            'Here is the message.',  # Это поле text_content
-            f'{from_send}',
-            [f'{to_send}'],
+            subject=subject,
+            message='Here is the message.',
+            from_email=f'{config.ADMIN_EMAIL}',
+            recipient_list=[order.partner.email if order.partner else config.ADMIN_EMAIL],
             html_message=rendered_template,
+            fail_silently=False,
             )
+
     except Exception as e:
         print(f"Error occurred: {e}")
-        # TODO: сделать отправку сообщения в СМС админу
+        _send_sms(phone=config.PHONE, message=f"Error Email: {e}")
 
 
 def split_sms(content: str) -> List[str]:
@@ -101,10 +140,14 @@ def _send_sms(phone: str, message: str) -> [int, str]:
         if response.status_code == 200:
             # Если SMS успешно отправлено, создайте запись в базе данных с успешным статусом
             SMSSendHistory.objects.create(phone_number=phone, message=message, success=True)
-
+        else:
+            # Если SMS не отправлено, создайте запись в базе данных с неудачным статусом
+            SMSSendHistory.objects.create(phone_number=phone, message=message, success=False)
         return response.status_code, response.content
     else:
         print(f"SMS not sent in test mode: {phone}, {message}")
+        message = f"SMS not sent in test mode: {phone}, {message}"
+        SMSSendHistory.objects.create(phone_number=phone, message=message, success=False)
         return 200, "SMS not sent in test mode"
 
 
@@ -119,26 +162,25 @@ def send_sms_admin(order, action=""):
         phone = config.PHONE
         if action == "created":
             message = (f"Created №{order.id}."
-                       f"http://{site}/link/{order.unique_path_field})")
+                       f"http://{site}/link/{order.unique_path_field}")
         elif action == "partial":
             message = (f"Partial payment №{order.id} sum {order.prepayment}."
-                       f"http://{site}/link/{order.unique_path_field})")
+                       f"http://{site}/link/{order.unique_path_field}")
         elif action == "paid":
             message = (f"The full payment №{order.id} sum {order.price}."
-                       f"http://{site}/link/{order.unique_path_field})")
+                       f"http://{site}/link/{order.unique_path_field}")
         elif action == "confirmed":
             message = (f"Worker {order.partner} confirmed the order №{order.id}"
                        f" sum {order.price}."
-                       f"http://{site}/link/{order.unique_path_field})")
+                       f"http://{site}/link/{order.unique_path_field}")
         elif action == "declined":
             message = (f"Worker refused the order №{order.id}. Assign another performer."
-                       f"http://{site}/link/{order.unique_path_field})")
+                       f"http://{site}/link/{order.unique_path_field}")
         elif action == "email_error":
             message = (f"Error sending email {order.id}."
-                       f"http://{site}/link/{order.unique_path_field})")
+                       f"http://{site}/link/{order.unique_path_field}")
         time.sleep(get_timeout_amount())
-        print("sms\logic")
-        status_code, _log = _send_sms(phone, message)
+        status_code, _log = _send_sms(phone, message)  # todo: исправить после отладки
         print(f"send_sms_admin: {phone}, {message}")
 
     except Exception as e:

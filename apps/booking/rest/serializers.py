@@ -139,5 +139,11 @@ class OrderSerializer(serializers.ModelSerializer):
             'unique_path_field', 'date_at', 'price', 'prepayment', 'comment',
             'responsible', 'confirm_work', 'confirm_work_display', 'name',
             'car_registration', 'car_year', 'car', 'service', 'service_title',
-            'phone', 'address', 'post_code', 'distance', 'created_at', 'partner_name'
+            'phone', 'address', 'post_code', 'distance', 'created_at', 'partner_name', 'status'
             ]
+
+
+class OrderChangeStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Order
+        fields = '__all__'

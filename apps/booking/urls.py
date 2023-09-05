@@ -2,6 +2,7 @@ from django.urls import path
 from django.urls import re_path
 
 from . import views
+from .rest.views import update_order_status
 from .views import OrderDetailView
 
 # app_name = "order"
@@ -13,4 +14,6 @@ urlpatterns = [
     path('link/<str:unique_path>/', OrderDetailView.as_view(), name='unique_path'),
     path('order_yes/<int:order_id>/', views.confirm_order, name='confirm_order_'),  # TODO: rename
     path('order_no/<int:order_id>/', views.decline_order, name='decline_order'),
+    path('order/update_status/<str:unique_path>/', update_order_status, name='update_order_status'),
+
     ]

@@ -26,6 +26,7 @@ urlpatterns = [
                  path("create-pay/", views.TransCrtAPIView.as_view(), name="create_pay"),
                  path("check-pay/", views.TransUptAPIView.as_view(), name="check_pay"),
                  path('link/<str:unique_path>/', OrderApiView.as_view(), name='order-detail-api'),
+
                  ), "order")
             )
         ),

@@ -1,4 +1,3 @@
-from constance import config
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.core.mail import send_mail
@@ -9,7 +8,6 @@ from model_utils.choices import Choices
 
 from apps.booking.const import ORDER_STATUS_WORK
 from apps.sms.logic import send_custom_mail
-from apps.sms.logic import send_sms_admin
 
 PAYMENT_STATUSES = Choices(
     ("paid", _("Paid")),
@@ -17,13 +15,27 @@ PAYMENT_STATUSES = Choices(
     ("part payment", _("Part payment")),
     )
 
+STATUS_CHOICES = (
+    ('new', 'New'),
+    ('accepted', 'Accepted'),
+    ('en_route', 'En Route'),
+    ('arrived', 'Arrived'),
+    ('completed', 'Completed'),
+    ('paid', 'Paid'),
+    )
 template_choice = ''
 
 
 class Order(models.Model):
     """Модель заказа"""
     unique_path_field = models.CharField(max_length=12, unique=True)  # Изменяем поле
-
+    status = models.CharField(
+        max_length=20,
+        choices=STATUS_CHOICES,
+        default='new',
+        null=True,
+        blank=True
+        )
     date_at = models.DateTimeField(
         verbose_name=_("Date at")
         )
@@ -184,10 +196,7 @@ class Order(models.Model):
                     print("Sending email because changes: ", changes)
                     send_custom_mail(
                         order=self,
-                        from_send=f'{config.ADMIN_EMAIL}',
-                        to_send=f'{config.ADMIN_EMAIL}',
                         template_choice='change_order',
-                        unique_path=self.unique_path_field,
                         changes=changes
                         )
 
@@ -195,15 +204,25 @@ class Order(models.Model):
         elif is_new:
             try:
                 print("booking.models.Order.save() is_new=True")
-                send_sms_admin(self, action='created')
-                print("Try to send SMS message created")
-                send_custom_mail(
-                    order=self,
-                    from_send=f'{config.ADMIN_EMAIL}',
-                    to_send=f'{config.ADMIN_EMAIL}',
-                    template_choice='new_order',
-                    unique_path=self.unique_path_field
-                    )
+                # Проверка наличия партнера у нового ордера
+                if self.partner:
+                    print("New Order with a partner, sending email to partner")
+                    send_custom_mail(
+                        order=self,
+                        template_choice='send_worker_new',  # Выберите подходящий шаблон
+                        recipient_type='Worker',  # или другой тип получателя, если нужно
+                        action="new_order",  # или конкретное действие, если нужно
+                        )
+                else:
+                    print("New Order without a partner, sending email to admin")
+                    # Отправляем письмо админу, потому что у ордера нет партнера
+                    send_custom_mail(
+                        order=self,
+                        template_choice='new_order',
+                        recipient_type='Customer',
+                        action='send_worker_new',
+                        )
+
             except Exception as e:
                 print(f"Error occurred: {e}")
 

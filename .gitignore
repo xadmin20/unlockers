@@ -2,5 +2,8 @@
 /env/
 /templates/
 unlockers/settings.py
+unlockers/django.log
+file.log
+
 
 

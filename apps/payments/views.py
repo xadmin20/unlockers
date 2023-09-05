@@ -11,7 +11,6 @@ from rest_framework.response import Response
 
 from apps.booking.models import Order
 from apps.payments.models import Payment
-from apps.sms.logic import send_sms_admin
 
 # Настройка PayPal
 paypalrestsdk.configure(
@@ -72,9 +71,6 @@ class ExecutePaymentView(views.APIView):
                 order.save()
                 print(order.unique_path_field + " " + status)
                 # Здесь можно добавить функцию отправки СМС
-                print("payment executed successfully")
-                send_sms_admin(order, action=status)
-
                 return Response({"status": "Payment executed successfully"}, status=rest_framework.status.HTTP_200_OK)
             else:
                 return Response(
@@ -137,8 +133,3 @@ def initiate_payment(request, unique_path_field):
         return HttpResponseRedirect(redirect_url)
     else:
         return JsonResponse({"error": payment.error})
-
-
-def send_sms(order):
-    print("SMS sent")
-    # код для отправки СМС

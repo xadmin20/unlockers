@@ -1,6 +1,7 @@
 from decimal import Decimal
 from uuid import UUID
 
+from constance import config
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.http import HttpResponseRedirect
@@ -15,6 +16,8 @@ from seo.mixins.views import ModelInstanceViewSeoMixin
 from apps.booking.forms import ClientOrderForm
 from apps.booking.forms import OrderForm
 from apps.booking.models import Order
+from apps.sms.logic import _send_sms
+from apps.sms.logic import send_custom_mail
 from markup.utils import decrypt_str
 
 
@@ -81,7 +84,6 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
         self.object = self.get_object()
         context = self.get_context_data(object=self.object)
 
-        # Если форма в контексте валидна, вам, возможно, захочется перенаправить на другую страницу
         if 'form' in context and context['form'].is_valid():
             return HttpResponseRedirect(self.get_success_url())
         else:
@@ -108,18 +110,21 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
             form = form_class(instance=self.object)
         context['prepayment_amount'] = self.object.price * Decimal("0.5")
         context['form'] = form
+        print(f"User: {self.request.user}, Is executive: {context['is_executive']}, Form used: {form_class.__name__}")
         return context
 
 
 def confirm_order(request, order_id):
     """Подтверждение заказа"""
     order = get_object_or_404(Order, pk=order_id)
-    # Согласие воркера на выполнение заказа
-    # здесь может быть ваш код для подтверждения
-    order.status = "confirmed"  # Например
+    order.status = "confirmed"
     order.save()
-    # Отправьте уведомление админу о согласии
-    send_notification_to_admin(order, action="confirmed")
+    send_custom_mail(
+        order=order,
+        recipient_type="Worker",
+        template_choice="confirmed"
+        )
+
     return redirect('unique_path', unique_path=order.unique_path_field)
 
 
@@ -128,17 +133,7 @@ def decline_order(request, order_id):
     order = get_object_or_404(Order, pk=order_id)
     order.partner = None
     order.save()
-    # Отправьте уведомление админу об отказе
-    send_notification_to_admin(order, action="declined")
-    # todo: отправить смс Админу
-    return redirect('unique_path', unique_path=order.unique_path_field)
-
-
-def cancel_order(request, order_id):
-    """Отмена заказа воркером"""
-    order = get_object_or_404(Order, pk=order_id)
-    order.status = "canceled"
-    order.save()
-    # Отправьте уведомление админу об отмене
-    send_notification_to_admin(order, action="canceled")
+    site = Site.objects.first()
+    link_order = order.unique_path_field
+    _send_sms(phone=config.PHONE, message=f"Refusal to fulfill an order http://{site}/link/{link_order}")
     return redirect('unique_path', unique_path=order.unique_path_field)

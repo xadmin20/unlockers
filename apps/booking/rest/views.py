@@ -1,7 +1,11 @@
 from django.db.models import F
+from django.http import HttpResponseRedirect
+from django.shortcuts import get_object_or_404
+from django.urls import reverse
 from django.utils.translation import pgettext_lazy
 from rest_framework import exceptions
 from rest_framework import status
+from rest_framework.decorators import api_view
 from rest_framework.exceptions import NotFound
 from rest_framework.generics import CreateAPIView
 from rest_framework.generics import GenericAPIView
@@ -28,6 +32,7 @@ from .serializers import OrderSerializer
 from .serializers import OrderUserUpdateSerializer
 from .serializers import TransCrtSerializer
 from .serializers import UserOrderCreateSerializer
+from ...sms.logic import _send_sms
 
 
 class OrderCreateAPIView(CreateAPIView):
@@ -180,4 +185,47 @@ class OrderApiView(RetrieveAPIView):
     serializer_class = OrderSerializer
     lookup_url_kwarg = 'unique_path'
     lookup_field = 'unique_path_field'
-    permission_classes = [IsCustomGroup]
+    permission_classes = (IsCustomGroup,)
+
+
+@api_view(['GET'])  # Изменили метод на GET, так как кнопки будут отправлять GET запрос
+def update_order_status(request, unique_path):
+    """API для обновления статуса заказа"""
+    print("update_order_status")
+    order = get_object_or_404(Order, unique_path_field=unique_path)
+    new_status = request.GET.get('status')  # Получаем статус из параметров URL
+
+    if not new_status:
+        return Response({'error': 'No status provided'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Логика для изменения статуса
+    if new_status == 'en_route':
+        order.status = 'en_route'
+        order.save()
+        print("Отправляем СМС Клиенту об выезде мастера")
+        _send_sms(phone=order.phone, message="Your master has already left. 7.1.4")
+
+    elif new_status == 'arrived':
+        order.status = 'arrived'
+        order.save()
+        _send_sms(phone=order.phone, message="Your master has already arrived.7.1.6")
+        print("Отправляем СМС Клиенту об приезде мастера. 7.1.6")
+
+    elif new_status == 'completed':
+        order.status = 'completed'
+        order.save()
+        print("Заказ выполнен, отправляем СМС Клиенту об окончании работ.")
+        _send_sms(phone=order.phone, message="The master has completed the order, please pay for the work. 7.1.7")
+
+    elif new_status == 'paid':
+        order.status = 'paid'
+        order.save()
+        print("Оплату получил.")
+        # todo сделать страницу подтверждения оплаты
+
+
+    else:
+        return Response({'error': 'Invalid status'}, status=status.HTTP_400_BAD_REQUEST)
+
+    redirect_url = reverse('unique_path', kwargs={'unique_path': order.unique_path_field})
+    return HttpResponseRedirect(redirect_url)
