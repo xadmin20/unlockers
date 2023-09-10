@@ -128,6 +128,7 @@ class ServiceVariationSerializer(serializers.ModelSerializer):
 
 
 class OrderSerializer(serializers.ModelSerializer):
+    """Сериализатор для заказа"""
     partner_name = serializers.CharField(source='partner.username', read_only=True)
     confirm_work_display = serializers.CharField(source='get_confirm_work_display', read_only=True)
     service_title = serializers.CharField(source='service.title', read_only=True)
@@ -144,6 +145,8 @@ class OrderSerializer(serializers.ModelSerializer):
 
 
 class OrderChangeStatusSerializer(serializers.ModelSerializer):
+    """Сериализатор для изменения статуса заказа"""
+
     class Meta:
         model = Order
         fields = '__all__'

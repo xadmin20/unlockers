@@ -31,8 +31,6 @@ urlpatterns = [
                   path(r'', include("apps.booking.rest.urls")),
                   path(r'', include("apps.booking.urls")),
                   path(r'', include("apps.blog.urls")),
-                  # path(r'api/v1/cabinet/', include('apps.partners.api.urls')),
-
                   path('vuejs-translate', include('vuejs_translate.urls')),
                   ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

@@ -35,6 +35,7 @@ class OrderConfirmTempaliteView(TemplateView):
     template_name = "payment_message_success.jinja"
 
     def get_context_data(self, **kwargs):
+
         u_str = validate_uuid(decrypt_str(self.kwargs.get("unique_path_field")))
         empl_id = decrypt_str(self.kwargs.get("empl_id"))
         status_work = decrypt_str(self.kwargs.get("status"))
@@ -95,6 +96,12 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
             self.object = self.get_object()
 
         context = super().get_context_data(**kwargs)
+        payment_status = self.request.GET.get('payment_status', None)
+        context['is_paid'] = self.object.is_paid()
+        if payment_status == 'success':
+            context['payment_message'] = 'Payment was successful.'
+        elif payment_status == 'failure':
+            context['payment_message'] = 'Payment failed.'
         if self.request.user.groups.filter(name='Worker').exists() or self.request.user.is_staff:
             context['is_executive'] = True
             form_class = OrderForm
@@ -111,6 +118,18 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
         context['prepayment_amount'] = self.object.price * Decimal("0.5")
         context['form'] = form
         print(f"User: {self.request.user}, Is executive: {context['is_executive']}, Form used: {form_class.__name__}")
+
+        # Проверяем, больше ли цена нуля и не оплачен ли заказ
+        if self.object.price > Decimal("0.0"):
+            context['show_payment_button'] = True
+        else:
+            context['show_payment_button'] = False
+
+        # Проверяем, оплачен ли заказ полностью (в зависимости от вашей логики)
+        if self.object.prepayment >= self.object.price:
+            context['show_payment_button'] = False
+
+        context["site"] = Site.objects.last()
         return context
 
 
@@ -123,6 +142,10 @@ def confirm_order(request, order_id):
         order=order,
         recipient_type="Worker",
         template_choice="confirmed"
+        )
+    _send_sms(
+        phone=order.phone,
+        message=f"The worker is appointed, wait for a call from him"
         )
 
     return redirect('unique_path', unique_path=order.unique_path_field)

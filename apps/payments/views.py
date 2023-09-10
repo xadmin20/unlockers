@@ -1,16 +1,24 @@
+import time
+from pprint import pprint
+
 import paypalrestsdk
 import rest_framework
 from constance import config
+from django.contrib import messages
 from django.contrib.sites.models import Site
 from django.db.models import Sum
 from django.http import HttpResponseRedirect
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render
 from rest_framework import status
 from rest_framework import views
 from rest_framework.response import Response
 
 from apps.booking.models import Order
 from apps.payments.models import Payment
+from apps.sms.logic import _send_sms
+from apps.sms.logic import send_custom_mail
 
 # Настройка PayPal
 paypalrestsdk.configure(
@@ -62,8 +70,9 @@ class ExecutePaymentView(views.APIView):
                     order_id=order,
                     payment_id=payment_id,
                     payer_id=payer_id,
-                    amount=payment.transactions[0].amount.total,  # предположим, что у модели Payment есть поле amount
-                    status=status
+                    amount=payment.transactions[0].amount.total,
+                    status=status,
+                    description=payment.transactions[0].description
                     )
 
                 # Обновляем поле prepayment в модели Order
@@ -71,12 +80,27 @@ class ExecutePaymentView(views.APIView):
                 order.save()
                 print(order.unique_path_field + " " + status)
                 # Здесь можно добавить функцию отправки СМС
-                return Response({"status": "Payment executed successfully"}, status=rest_framework.status.HTTP_200_OK)
+                _send_sms(
+                    phone=order.phone, message=f"Your order {order.unique_path_field}"
+                                               f" paid sum {order.prepayment}"
+                    )
+                # Здесь можно добавить функцию отправки почты
+                # Делаем проверку, есть ли у Order partner
+                if order.partner:
+                    send_custom_mail(order=order, recipient_type='Worker', template_choice='send_worker_new')
+                    time.sleep(3)
+                send_custom_mail(order=order, recipient_type='Customer', template_choice='add_pay')
+                site = Site.objects.last()
+
+                return HttpResponseRedirect(
+                    f'//{site}/link/{order.unique_path_field}/?payment_status=success'
+                    )
             else:
                 return Response(
                     {"error": "Payment could not be executed"},
                     status=rest_framework.status.HTTP_400_BAD_REQUEST
                     )
+
         except Exception as e:
             print(e)
             return Response(
@@ -87,7 +111,9 @@ class ExecutePaymentView(views.APIView):
 
 def initiate_payment(request, unique_path_field):
     # Получите объект заказа из модели Order по unique_path_field
-    order = Order.objects.get(unique_path_field=unique_path_field)
+    print(f"Trying to find an order with unique_path_field: {unique_path_field}")
+
+    order = get_object_or_404(Order, unique_path_field=unique_path_field)
     site = Site.objects.get_current().domain
     # Вычисляем сумму оплаты, либо предоплата, либо полная цена
     if order.prepayment == 0:
@@ -133,3 +159,18 @@ def initiate_payment(request, unique_path_field):
         return HttpResponseRedirect(redirect_url)
     else:
         return JsonResponse({"error": payment.error})
+
+
+def payment_status(request):
+    """Страница для отображения статуса платежа"""
+    print("payment_status")
+    pprint(request.GET)
+    status = request.GET.get('status')
+    unique_path_field = request.GET.get('unique_path_field')
+
+    if status == 'success':
+        messages.success(request, 'Платеж успешно прошел!')
+    else:
+        messages.error(request, 'Платеж не прошел.')
+
+    return render(request, 'payment_status.html')

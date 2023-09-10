@@ -1,74 +1,103 @@
+{% load static %}
 
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Details</title>
+    <!-- Подключаем Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
 
 {% block content %}
-{% if is_executive %}
-<!-- Форма для исполнителей -->
-<form method="post">
-    {% csrf_token %}
+    <div class="container mt-4">
 
-    {{ form.as_p }}
-    <button type="submit">Save changes</button>
-</form>
-{% else %}
-<div class="order-detail">
-    <h2>Order Details for #{{ object.id }} markup/t</h2>
-    <!-- Форма для клиентов -->
-    <form method="post">
-    {% csrf_token %}
-    {{ form.date.label_tag }} {{ form.date }}
-    {{ form.time.label_tag }} {{ form.time }}
-    {{ form.address.label_tag }} {{ form.address }}
-    <button type="submit">Save changes</button>
-</form>
+        <div class="row">
+            <div class="col-md-12">
+<center><h2 class="mb-4">Order Details for #{{ object.id }}</h2>
+{% if payment_message %}
+    <div class="alert alert-info">
+        {{ payment_message }}
+    </div>
+{% endif %}
+</center>
 
-<div class="order-detail">
+                {% if is_executive %}
+                <!-- Форма для исполнителей -->
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
+                {% else %}
+                <form method="post" class="mb-4">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.date.label_tag }} {{ form.date }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.time.label_tag }} {{ form.time }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.address.label_tag }} {{ form.address }}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </form>
 
-    <p><strong>Date:</strong> {{ object.date_at }}</p>
-    <p><strong>Price:</strong> {{ object.price }}</p>
-    <p><strong>Prepayment:</strong> {{ object.prepayment }}</p>
-    <p><strong>Comment:</strong> {{ object.comment }}</p>
-    <p><strong>Responsible:</strong> {{ object.responsible }}</p>
-    <p><strong>Confirmation Status:</strong> {{ object.get_confirm_work_display }}</p>
-    <p><strong>Name:</strong> {{ object.name }}</p>
-    <p><strong>Car Registration:</strong> {{ object.car_registration }}</p>
-    <p><strong>Car Year:</strong> {{ object.car_year }}</p>
-    <p><strong>Car:</strong> {{ object.car }}</p>
-    <p><strong>Service:</strong> {{ object.service }}</p>
-    <p><strong>Phone:</strong> {{ object.phone }}</p>
-    <p><strong>Address:</strong> {{ object.address }}</p>
-    <p><strong>Post Code:</strong> {{ object.post_code }}</p>
-    <p><strong>Distance:</strong> {{ object.distance }}</p>
-    <p><strong>Creation Date:</strong> {{ object.created_at }}</p>
-    <p><strong>Partner:</strong> {{ object.partner }}</p>
-
-    <h3>Payment Status</h3>
-    {% if object.is_paid %}markup/templates/order.html
-    <span class="paid-status">Paid</span>
-    {% else %}
-    <span class="not-paid-status">Not Paid</span>
-    {% endif %}
-
-    {% if is_executive %}
-    <!-- Код для исполнителя или администратора, например, форма редактирования -->
-    <h3>Edit Order Detailsmakrup</h3>
-    <!-- Тут можете добавить форму редактирования -->
-    {% endif %}
-    {% if object.payment_status != 'PAID' %}
-<div class="payment-section">
-    <p>Сумма предоплаты: {{ prepayment_amount }}</p>
-    <button type="button" class="btn btn-primary" onclick="initiatePayment('{{ object.unique_path_field }}')">Оплатить</button>
-
-
+                <div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Order Details</h5>
+        <p class="card-text">
+            <strong>Unique Path:</strong> {{ object.unique_path_field }} <br>
+            <strong>Status:</strong> {{ object.get_status_display }} <br>
+            <strong>Date:</strong> {{ object.date_at }} <br>
+            <strong>Price:</strong> {{ object.price }} <br>
+            <strong>Prepayment:</strong> {{ object.prepayment }} <br>
+            <strong>Comment:</strong> {{ object.comment }} <br>
+            <strong>Responsible:</strong> {{ object.responsible }} <br>
+            <strong>Confirmation Status:</strong> {{ object.get_confirm_work_display }} <br>
+            <strong>Name:</strong> {{ object.name }} <br>
+            <strong>Car Registration:</strong> {{ object.car_registration }} <br>
+            <strong>Car Year:</strong> {{ object.car_year }} <br>
+            <strong>Car:</strong> {{ object.car }} <br>
+            <strong>Service:</strong> {{ object.service }} <br>
+            <strong>Phone:</strong> {{ object.phone }} <br>
+            <strong>Address:</strong> {{ object.address }} <br>
+            <strong>Post Code:</strong> {{ object.post_code }} <br>
+            <strong>Distance:</strong> {{ object.distance }} <br>
+            <strong>Creation Date:</strong> {{ object.created_at }} <br>
+            <strong>Partner:</strong> {{ object.partner }} <br>
+        </p>
+    </div>
 </div>
+
+                    {% if object.status == 'paid' %}
+    <div class="payment-section mt-4">
+        <p>Сумма предоплаты: {{ prepayment_amount }}</p>
+        <p>Статус оплаты: Оплачено</p>
+    </div>
+{% else %}
+    {% if show_payment_button %}
+        <div class="payment-section">
+          <p>Сумма предоплаты: {{ prepayment_amount }}</p>
+          <button type="button" class="btn btn-primary" onclick="initiatePayment('{{ object.unique_path_field }}')">Оплатить</button>
+        </div>
+    {% endif %}
 {% endif %}
-</div></div>
-{% endif %}
+
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+<br><br>
 {% endblock %}
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function initiatePayment(uniqueId) {
-    var url = 'http://127.0.0.1/payments/' + uniqueId + '/';
-    window.location.href = url;
-}
+        var url = 'http://127.0.0.1/payments/' + uniqueId + '/';
+        window.location.href = url;
+    }
 </script>
+</body>
+</html>

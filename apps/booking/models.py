@@ -1,12 +1,12 @@
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
-from django.core.mail import send_mail
 from django.db import models
 from django.utils.crypto import get_random_string
 from django.utils.translation import gettext_lazy as _
 from model_utils.choices import Choices
 
 from apps.booking.const import ORDER_STATUS_WORK
+from apps.sms.logic import _send_sms
 from apps.sms.logic import send_custom_mail
 
 PAYMENT_STATUSES = Choices(
@@ -148,12 +148,7 @@ class Order(models.Model):
         return str(self.id)
 
     def is_paid(self):
-        return (
-            self.transactions
-            .all()
-            .filter(status=PAYMENT_STATUSES.paid)
-            .exists()
-        )
+        return self.transactions.all().filter(status=PAYMENT_STATUSES.paid).exists()
 
     def generate_unique_path_field(self):
         unique_path = get_random_string(length=12)
@@ -188,6 +183,10 @@ class Order(models.Model):
             changes.pop('partner', None)
             print("Changes after popping 'partner': ", changes)
 
+            recipient_type = 'Customer'  # default recipient
+            if self.partner:
+                recipient_type = 'Partner'  # change recipient if partner exists
+
             # Если после этого остались другие изменения, отправляем письмо
             if changes:
                 if (len(changes) == 1 and 'car_year' in changes) or 'unique_path_field' in changes:
@@ -196,6 +195,7 @@ class Order(models.Model):
                     print("Sending email because changes: ", changes)
                     send_custom_mail(
                         order=self,
+                        recipient_type=recipient_type,
                         template_choice='change_order',
                         changes=changes
                         )
@@ -214,34 +214,22 @@ class Order(models.Model):
                         action="new_order",  # или конкретное действие, если нужно
                         )
                 else:
-                    print("New Order without a partner, sending email to admin")
                     # Отправляем письмо админу, потому что у ордера нет партнера
+                    print("New Order without a partner, sending email to admin")
                     send_custom_mail(
                         order=self,
                         template_choice='new_order',
                         recipient_type='Customer',
                         action='send_worker_new',
                         )
+                site = Site.objects.last()
+                _send_sms(
+                    phone=self.phone,
+                    message=f"Create new order http://{site}/link/{self.unique_path_field}"
+                    )
 
             except Exception as e:
                 print(f"Error occurred: {e}")
-
-    # send_partner
-    def send_notification_email(self, changes):
-        print("Try to send message")
-        site = Site.objects.get_current()
-        subject = f"Изменения в заказе {self.id}"
-        message = "Изменения: \n"
-        for field, values in changes.items():
-            message += (f"{field} изменилось с {values['old']} на {values['new']}\n")
-
-        message += f"Ссылка на заказ: http://{site.domain}/admin/booking/order/{self.id}/change/\n" \
-                   f"или http://{site.domain}/link/{self.unique_path_field}\n"
-        try:
-            sent = send_mail(subject, message, "nickolayvan@gmail.com", ["xadmin@bk.ru"])
-            print(f"Number of emails sent: {sent}")
-        except Exception as e:
-            print(f"Error occurred: {e}")  # TODO: сделать отправку сообщения в СМС админу
 
 
 class Employee(models.Model):

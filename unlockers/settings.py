@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django_celery_beat',
     'django_celery_results',
+    
     'constance',
     'seo',
     'ckeditor',
@@ -424,19 +425,6 @@ LOGGING = {
             },
         },
     }
-
-# Celery settings
-# CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
-# CELERY_ACCEPT_CONTENT = ['json']
-# CELERY_TASK_SERIALIZER = 'json'
-# CELERY_RESULT_SERIALIZER = 'json'
-# CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers.DatabaseScheduler'
-# CELERY_BEAT_SCHEDULE = {
-#     'check_sms_server': {
-#         'task': 'apps.booking.tasks.check_server_task',
-#         'schedule': timedelta(minutes=1),
-#         },
-#     }
 
 # PAYPAL
 PAYPAL_CLIENT_ID = 'AZJy7hCDgj4dgdyotn6ZjLQa1Y1LqguLCXoP9Aias72Mkur_EG_pcK6ygIrW'

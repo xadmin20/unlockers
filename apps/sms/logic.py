@@ -29,8 +29,8 @@ def send_custom_mail(
         template_choice=None,
         action=None,
         extra_context=None,
-        changes=None
-        , from_send=None
+        changes=None,
+        from_send=None
         ):
     """Функция отправки письма"""
     try:
@@ -62,7 +62,7 @@ def send_custom_mail(
                 },
             "site": Site.objects.first().domain,
             "recipient_type": recipient_type,
-            "changes": list(changes.keys()) if changes else [],
+            "changes": changes if changes else {},
             "show_links": {
                 "show_en_route": True,
                 "show_arrived": True,

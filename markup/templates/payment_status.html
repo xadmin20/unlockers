@@ -1,0 +1,20 @@
+<!-- payment_status.html -->
+<html>
+<head>
+<script>
+    // Установите Django переменную в JavaScript переменную
+    var unique_path_field = "{{ unique_path_field }}";
+    var site = "{{ site }}";
+
+    setTimeout(function() {
+        // Используйте JavaScript переменную для перенаправления
+        window.location.href = 'http://' + '{{ site }}' + '/link' + encodeURIComponent(unique_path_field);
+    }, 5000);
+</script>
+
+</head>
+<body>
+    <h1>{{ message }}</h1>
+    <p>You will be redirected in 5 seconds.</p>
+</body>
+</html>
