@@ -6966,3 +6966,47 @@ INFO 2023-09-08 20:19:41,279 basehttp - Broken pipe from ('127.0.0.1', 58412)
 INFO 2023-09-08 20:20:21,365 autoreload Watching for file changes with StatReloader
 INFO 2023-09-08 20:31:56,426 autoreload D:\projects\fl\unlockers\apps\booking\rest\serializers.py changed, reloading.
 INFO 2023-09-08 20:31:57,918 autoreload Watching for file changes with StatReloader
+INFO 2023-09-10 08:56:34,353 autoreload Watching for file changes with StatReloader
+INFO 2023-09-10 08:57:22,411 autoreload Watching for file changes with StatReloader
+INFO 2023-09-10 08:57:37,476 basehttp "GET / HTTP/1.1" 200 51911
+INFO 2023-09-10 08:57:37,526 basehttp "GET /media/dream_TradingCard.jpg HTTP/1.1" 304 0
+INFO 2023-09-10 08:57:37,529 basehttp "GET /media/shot_down_a_plane_hit_by_a_rocket_in_space_near_Ma.jpg HTTP/1.1" 304 0
+INFO 2023-09-10 08:57:37,542 basehttp "GET /vuejs-translatei18n.js HTTP/1.1" 200 2419
+INFO 2023-09-10 08:57:37,553 basehttp - Broken pipe from ('127.0.0.1', 65002)
+INFO 2023-09-10 08:57:37,553 basehttp - Broken pipe from ('127.0.0.1', 65000)
+INFO 2023-09-10 08:57:37,554 basehttp - Broken pipe from ('127.0.0.1', 65001)
+INFO 2023-09-10 08:57:37,555 basehttp - Broken pipe from ('127.0.0.1', 65004)
+INFO 2023-09-10 08:57:37,556 basehttp - Broken pipe from ('127.0.0.1', 65003)
+INFO 2023-09-10 08:57:37,636 basehttp "GET /api/v1/request/services/ HTTP/1.1" 200 647
+WARNING 2023-09-10 08:57:37,652 log Not Found: /media/-
+INFO 2023-09-10 08:57:37,652 basehttp - Broken pipe from ('127.0.0.1', 65005)
+INFO 2023-09-10 08:57:45,523 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2023-09-10 08:57:45,559 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4181
+INFO 2023-09-10 08:57:45,619 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 958
+WARNING 2023-09-10 08:57:45,636 log Not Found: /favicon.ico
+INFO 2023-09-10 08:57:45,636 basehttp - Broken pipe from ('127.0.0.1', 65006)
+INFO 2023-09-10 08:57:51,725 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2023-09-10 08:57:51,762 basehttp "GET /admin/ HTTP/1.1" 200 30415
+INFO 2023-09-10 08:57:51,796 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2023-09-10 08:57:51,810 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2023-09-10 08:57:51,810 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2023-09-10 08:57:51,810 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2023-09-10 08:57:59,596 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25789
+INFO 2023-09-10 08:57:59,648 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-10 08:57:59,666 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2023-09-10 08:58:03,001 basehttp "GET /admin/sms/emailtemplate/6/change/ HTTP/1.1" 200 25741
+INFO 2023-09-10 08:58:03,048 basehttp - Broken pipe from ('127.0.0.1', 65010)
+INFO 2023-09-10 08:58:03,051 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2023-09-10 08:58:03,051 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-10 08:58:03,052 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2023-09-10 08:58:03,061 basehttp - Broken pipe from ('127.0.0.1', 65008)
+INFO 2023-09-10 08:58:31,315 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25789
+INFO 2023-09-10 08:58:33,018 basehttp "GET /admin/sms/emailtemplate/5/change/ HTTP/1.1" 200 25813
+INFO 2023-09-10 08:58:33,063 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-10 08:58:47,466 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25789
+INFO 2023-09-10 12:55:06,161 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 302 0
+INFO 2023-09-10 12:55:06,173 basehttp "GET /admin/login/?next=/admin/sms/emailtemplate/ HTTP/1.1" 200 4217
+INFO 2023-09-10 12:55:13,620 basehttp "POST /admin/login/?next=/admin/sms/emailtemplate/ HTTP/1.1" 302 0
+INFO 2023-09-10 12:55:13,647 basehttp "GET /admin/sms/emailtemplate/ HTTP/1.1" 200 25789
+INFO 2023-09-10 12:55:13,696 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2023-09-14 12:52:48,813 autoreload Watching for file changes with StatReloader

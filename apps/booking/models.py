@@ -233,6 +233,7 @@ class Order(models.Model):
 
 
 class Employee(models.Model):
+    """Модель сотрудника"""
     name = models.CharField(
         verbose_name=_("Name"),
         max_length=255,
