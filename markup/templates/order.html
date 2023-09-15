@@ -27,7 +27,10 @@
                 <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    {% if show_save_button %}
+  <!-- Код кнопки сохранения изменений -->
+  <button type="submit">Save</button>
+{% endif %}
                 </form>
                 {% else %}
                 <form method="post" class="mb-4">
@@ -41,7 +44,10 @@
                     <div class="mb-3">
                         {{ form.address.label_tag }} {{ form.address }}
                     </div>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                   {% if show_save_button %}
+  <!-- Код кнопки сохранения изменений -->
+  <button type="submit">Save</button>
+{% endif %}
                 </form>
 
                 <div class="card">
@@ -73,7 +79,7 @@
 
                     {% if object.status == 'paid' %}
     <div class="payment-section mt-4">
-        <p>Сумма предоплаты: {{ prepayment_amount }}</p>
+
         <p>Статус оплаты: Оплачено</p>
     </div>
 {% else %}
@@ -95,7 +101,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function initiatePayment(uniqueId) {
-        var url = 'http://127.0.0.1/payments/' + uniqueId + '/';
+        var url = 'http://carkeysstudio.co.uk/payments/' + uniqueId + '/';
         window.location.href = url;
     }
 </script>

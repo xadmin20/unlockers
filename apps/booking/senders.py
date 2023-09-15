@@ -28,7 +28,7 @@ class Sender:
 
     def __generate_link(self, path):
         if not hasattr(self, "_current_site") or not getattr(self, "_current_site"):
-            self._current_site = Site.objects.first()
+            self._current_site = Site.objects.last()
         return "{}://{}{}".format(
             ('https' if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL") else "http"),
             self._current_site.domain, path
@@ -195,7 +195,7 @@ def send_sms(template: TEMPLATES, context: Dict, phone: str):
 
 def request_sms(request):
     """Send sms to user after request created"""
-    current_site = Site.objects.first()
+    current_site = Site.objects.last()
     unique_path = request.unique_path_field
 
     # Инициализация пустого контекста

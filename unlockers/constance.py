@@ -25,6 +25,7 @@ CONSTANCE_CONFIG = {
     "FAVICON": ("-", _("Favicon"), "file_field"),
     "REVIEW_LINK": ("/", _("Review.io link"), str),
     "REVIEW_LOGO": ("-", _("Review.io logo "), "image_field"),
+    'MAIN_WORKER_ID': (1, 'ID of the main worker'),
 
     "DEFAULT_POST_CODE": ("le33dd", _("Default post code"), str),
     "GOOGLE_API_KEY": ("AIzaSyD1nwok7HvugUTCumD_F4aNBUxnLvl1DD4", _("Google API key"), str),
@@ -72,6 +73,7 @@ CONSTANCE_CONFIG_FIELDSETS = OrderedDict(
             "FAVICON",
             "REVIEW_LINK",
             "REVIEW_LOGO",
+            "MAIN_WORKER_ID",
             )),
         ("Synchronization", (
             "SITE",

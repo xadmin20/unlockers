@@ -31,10 +31,13 @@ class IndexPageView(ModelInstanceViewSeoMixin, TemplateView):
     template_name = "index.jinja"
 
     def get_context_data(self, **kwargs):
-        self.object = kwargs["page"] = MainPage.objects.first()
-        kwargs["services"] = ServiceVariation.objects.filter(is_display=True)
-        kwargs["reviews"] = Review.objects.all()
+        main_page = MainPage.objects.first()
+        if main_page:
+            self.object = kwargs["page"] = main_page
+            kwargs["services"] = ServiceVariation.objects.filter(is_display=True)
+            kwargs["reviews"] = Review.objects.all()
         return super().get_context_data(**kwargs)
+
 
 
 class TypicalPageView(ModelInstanceViewSeoMixin, DetailView):

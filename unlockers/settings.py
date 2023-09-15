@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '138.68.160.203']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '138.68.160.203', 'carkeysstudio.co.uk']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django_celery_beat',
     'django_celery_results',
-    
+
     'constance',
     'seo',
     'ckeditor',
@@ -143,10 +143,21 @@ WSGI_APPLICATION = 'unlockers.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+#
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ublockers',
+        'USER': 'clinic_user_db',
+        'PASSWORD': 'ublockers_pass',
+        'HOST': '138.68.160.203',  # Может потребоваться изменить, если база данных находится на другом сервере
+        'PORT': '',  # По умолчанию используется порт PostgreSQL (5432)
         }
     }
 # DATABASES = {
@@ -432,3 +443,14 @@ PAYPAL_CLIENT_SECRET = 'EKopERAVPsd7j4XzZtERxV5l-_7HTSS_UAMjBsVqtIw7jv0x1ySBk_P7
 PAYPAL_MODE = 'sandbox'  # для тестирования; 'live' для реальных транзакций
 
 SMS_SEND_MODE = 'test'  # todo 'production' or 'test'
+
+# settings.py
+
+# Включите поддержку асинхронных задач
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Замените на адрес вашего брокера (Redis, RabbitMQ, и т.д.)
+
+# Настройки Celery
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Замените на адрес вашего брокера
+
+# Настройки Celery (по желанию)
+CELERY_TIMEZONE = 'UTC'

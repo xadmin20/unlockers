@@ -204,7 +204,6 @@ class UnregisteredCarRequestSerializer(serializers.ModelSerializer):
 
 
 class RequestUpdateSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Request
         fields = (
@@ -213,9 +212,6 @@ class RequestUpdateSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         request = super().update(instance, validated_data)
-
-        current_site = Site.objects.first()
-
         return request
 
 

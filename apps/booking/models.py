@@ -1,3 +1,5 @@
+from constance import config
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site
 from django.db import models
@@ -6,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 from model_utils.choices import Choices
 
 from apps.booking.const import ORDER_STATUS_WORK
-from apps.sms.logic import _send_sms
+from apps.sms.logic import _send_sms, send_notification_to_admin
 from apps.sms.logic import send_custom_mail
 
 PAYMENT_STATUSES = Choices(
@@ -185,13 +187,20 @@ class Order(models.Model):
 
             recipient_type = 'Customer'  # default recipient
             if self.partner:
-                recipient_type = 'Partner'  # change recipient if partner exists
+                recipient_type = 'Worker'  # change recipient if partner exists
 
             # Если после этого остались другие изменения, отправляем письмо
             if changes:
                 if (len(changes) == 1 and 'car_year' in changes) or 'unique_path_field' in changes:
                     print("Changes only in 'car_year' or 'unique_path_field', not sending email")
-                else:
+                elif 'partner' in changes:
+                    if self.status == 'completed':
+                        send_custom_mail(
+                            order=self,
+                            recipient_type='Customer',
+                            template_choice='completed',
+                            changes=changes)
+                        print("Sending email to Customer because changes: ", changes)
                     print("Sending email because changes: ", changes)
                     send_custom_mail(
                         order=self,
@@ -199,21 +208,28 @@ class Order(models.Model):
                         template_choice='change_order',
                         changes=changes
                         )
+                    print("Sending email to Worker because changes: ", changes)
+                elif self.status == 'paid':
+                    _send_sms(
+                        phone=config.ADMIN_PHONE,
+                        message=f"Order {self.id} is paid "
+                                f"http://{Site.objects.last()}/link/{self.unique_path_field}"
+                    )
 
         # If the order is new, send an email
         elif is_new:
+            UserModel = get_user_model()
             try:
-                print("booking.models.Order.save() is_new=True")
-                # Проверка наличия партнера у нового ордера
-                if self.partner:
-                    print("New Order with a partner, sending email to partner")
-                    send_custom_mail(
-                        order=self,
-                        template_choice='send_worker_new',  # Выберите подходящий шаблон
-                        recipient_type='Worker',  # или другой тип получателя, если нужно
-                        action="new_order",  # или конкретное действие, если нужно
-                        )
-                else:
+                self.partner = UserModel.objects.get(pk=config.MAIN_WORKER_ID)
+                print("New Order with a partner, sending email to partner")
+
+                send_custom_mail(
+                    order=self,
+                    template_choice='send_worker_new',
+                    recipient_type='Worker',
+                    action="new_order",
+                    )
+            except UserModel.DoesNotExist:
                     # Отправляем письмо админу, потому что у ордера нет партнера
                     print("New Order without a partner, sending email to admin")
                     send_custom_mail(
@@ -222,14 +238,13 @@ class Order(models.Model):
                         recipient_type='Customer',
                         action='send_worker_new',
                         )
-                site = Site.objects.last()
-                _send_sms(
-                    phone=self.phone,
-                    message=f"Create new order http://{site}/link/{self.unique_path_field}"
-                    )
-
-            except Exception as e:
-                print(f"Error occurred: {e}")
+                    site = Site.objects.last()
+                    _send_sms(
+                        phone=self.phone,
+                        message=f"New Order without a partner, "
+                                f"sending email to admin http://{site}/link/{self.unique_path_field}"
+                        )
+        super(Order, self).save(*args, **kwargs)
 
 
 class Employee(models.Model):
@@ -262,6 +277,7 @@ class Employee(models.Model):
 
 
 class OrderAttachments(models.Model):
+    """Модель вложения к заказу"""
     file = models.FileField(
         verbose_name=_("File"),
         )

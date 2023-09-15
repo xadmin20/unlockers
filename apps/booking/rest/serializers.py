@@ -36,7 +36,7 @@ class OrderCreateSerializer(serializers.ModelSerializer):
         return None
 
     def get_link(self, order):
-        current_site = Site.objects.first()
+        current_site = Site.objects.last()
         return "https://{}{}".format(
             current_site.domain,
             reverse("order_pay", kwargs={"unique_path": order.unique_path_field})
@@ -59,7 +59,7 @@ class UserOrderCreateSerializer(serializers.ModelSerializer):
         super().__init__(*args, **kwargs)
 
     def get_link(self, order):
-        current_site = Site.objects.first()
+        current_site = Site.objects.last()
         return "https://{}{}".format(
             current_site.domain,
             reverse("order_pay", kwargs={"uuid": order.uuid})

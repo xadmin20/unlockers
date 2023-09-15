@@ -140,7 +140,7 @@ class Request(models.Model):
         # Если это новая запись, создайте запись в Order
         if is_new_record:
             try:
-                order = Order.objects.create(
+                Order.objects.create(
                     unique_path_field=self.unique_path_field,
                     date_at=timezone.now(),
                     price=self.price,
@@ -156,7 +156,7 @@ class Request(models.Model):
             except Exception as e:
                 print(f"Error creating order: {e}")
                 # Если произошла ошибка при создании объекта, установите price по умолчанию 0
-                order = Order.objects.create(
+                Order.objects.create(
                     unique_path_field=self.unique_path_field,
                     date_at=timezone.now(),
                     price=0.00,  # Устанавливаем значение по умолчанию
@@ -169,8 +169,8 @@ class Request(models.Model):
                     phone=self.phone,
                     distance=self.distance
                     )
-            # Теперь вы можете работать с объектом 'order' и делать с ним что угодно, например:
-            order.save()
+            # todo закоментировал чтобы не создавался заказ
+            # order.save()
 
     @property
     def car_model(self):

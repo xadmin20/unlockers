@@ -14,6 +14,7 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework import views
 from rest_framework.response import Response
+from constance import config
 
 from apps.booking.models import Order
 from apps.payments.models import Payment
@@ -110,14 +111,16 @@ class ExecutePaymentView(views.APIView):
 
 
 def initiate_payment(request, unique_path_field):
+    """Представление для инициализации платежа"""
     # Получите объект заказа из модели Order по unique_path_field
     print(f"Trying to find an order with unique_path_field: {unique_path_field}")
 
     order = get_object_or_404(Order, unique_path_field=unique_path_field)
     site = Site.objects.get_current().domain
     # Вычисляем сумму оплаты, либо предоплата, либо полная цена
+    prepayment_rate = config.PREPAYMENT / 100  #  todo проценты предоплаты
     if order.prepayment == 0:
-        amount_to_pay = order.price / 2
+        amount_to_pay = order.price * prepayment_rate  # 20% предоплаты, если PREPAYMENT = 20
     else:
         amount_to_pay = order.price - order.prepayment
 

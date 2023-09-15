@@ -1,9 +1,10 @@
+from django.contrib.sites.models import Site
 from django.db.models.signals import post_save
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 from apps.booking.models import Order
-from apps.sms.logic import send_custom_mail
+from apps.sms.logic import send_custom_mail, _send_sms
 
 
 @receiver(pre_save, sender=Order)
@@ -23,6 +24,7 @@ def send_email_after_order_change(sender, instance, **kwargs):
     """Отправка письма при изменении ордера"""
     print("SIGNAL: send_email_after_order_change")
     try:
+        site = Site.objects.last()
         if not instance._state.adding:  # Это не новый объект
             if hasattr(instance, '_loaded_values'):  # Проверяем, что pre_save_order сработал
 
@@ -42,6 +44,7 @@ def send_email_after_order_change(sender, instance, **kwargs):
                         template_choice=template_choice,
                         action='send_worker_new',
                         )
+
 
                 # Проверка на изменение поля status
                 if original_status != instance.status:
@@ -67,6 +70,9 @@ def send_email_after_order_change(sender, instance, **kwargs):
                             template_choice=template_choice_for_status,
                             )
                         instance._email_sent_for_status_change = True  # Установите флаг
-
+        _send_sms(
+            phone=instance.phone,
+            message=f"Your order has been changed https://{site}/link/{instance.unique_path_field}"
+        )
     except Exception as e:
         print(f"!!!Error occurred: {e}")

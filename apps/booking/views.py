@@ -54,7 +54,7 @@ class OrderConfirmTempaliteView(TemplateView):
                     if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL")
                     else "http"
                 ),
-                Site.objects.first().domain,
+                Site.objects.last().domain,
                 reverse(
                     "admin:booking_order_change",
                     kwargs={"object_id": order.id}
@@ -102,35 +102,38 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
             context['payment_message'] = 'Payment was successful.'
         elif payment_status == 'failure':
             context['payment_message'] = 'Payment failed.'
-        if self.request.user.groups.filter(name='Worker').exists() or self.request.user.is_staff:
-            context['is_executive'] = True
-            form_class = OrderForm
+
+        if self.object.status != 'paid':
+            if self.request.user.groups.filter(name='Worker').exists() or self.request.user.is_staff:
+                context['is_executive'] = True
+                form_class = OrderForm
+            else:
+                context['is_executive'] = False
+                form_class = ClientOrderForm
+
+            if self.request.method == "POST" and (context['is_executive'] or not context['is_executive']):
+                form = form_class(self.request.POST, instance=self.object)
+                if form.is_valid():
+                    form.save()
+            else:
+                form = form_class(instance=self.object)
+            context['prepayment_amount'] = self.object.price * Decimal("0.5")
+            context['form'] = form
+            print(
+                f"User: {self.request.user}, Is executive: {context['is_executive']}, Form used: {form_class.__name__}"
+                )
+
+            # Проверяем, больше ли цена нуля и не оплачен ли заказ
+            if self.object.price > Decimal("0.0") and self.object.prepayment < self.object.price:
+                context['show_save_button'] = True
+            else:
+                context['show_save_button'] = False
+
+            context["site"] = Site.objects.last()
+            return context
         else:
-            context['is_executive'] = False
-            form_class = ClientOrderForm
-
-        if self.request.method == "POST" and (context['is_executive'] or not context['is_executive']):
-            form = form_class(self.request.POST, instance=self.object)
-            if form.is_valid():
-                form.save()
-        else:
-            form = form_class(instance=self.object)
-        context['prepayment_amount'] = self.object.price * Decimal("0.5")
-        context['form'] = form
-        print(f"User: {self.request.user}, Is executive: {context['is_executive']}, Form used: {form_class.__name__}")
-
-        # Проверяем, больше ли цена нуля и не оплачен ли заказ
-        if self.object.price > Decimal("0.0"):
-            context['show_payment_button'] = True
-        else:
-            context['show_payment_button'] = False
-
-        # Проверяем, оплачен ли заказ полностью (в зависимости от вашей логики)
-        if self.object.prepayment >= self.object.price:
-            context['show_payment_button'] = False
-
-        context["site"] = Site.objects.last()
-        return context
+            context['show_save_button'] = False
+            return context
 
 
 def confirm_order(request, order_id):
@@ -156,7 +159,7 @@ def decline_order(request, order_id):
     order = get_object_or_404(Order, pk=order_id)
     order.partner = None
     order.save()
-    site = Site.objects.first()
+    site = Site.objects.last()
     link_order = order.unique_path_field
     _send_sms(phone=config.PHONE, message=f"Refusal to fulfill an order http://{site}/link/{link_order}")
     return redirect('unique_path', unique_path=order.unique_path_field)

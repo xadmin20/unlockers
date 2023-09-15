@@ -69,7 +69,7 @@ class OrdersHistorySerializer(ModelSerializer):
         actual = now - limit
         link_is_active = datetime.timestamp(actual) <= datetime.timestamp(obj.created_at)
         if not obj.status_paid and link_is_active:
-            current_site = Site.objects.first()
+            current_site = Site.objects.last()
             return "https://{}{}".format(
                 current_site.domain,
                 reverse("order_pay", kwargs={"uuid": obj.uuid})
@@ -219,7 +219,7 @@ class CreateOrderSerializer(ModelSerializer):
             ]
 
     def get_link(self, order):
-        current_site = Site.objects.first()
+        current_site = Site.objects.last()
         return "https://{}{}".format(
             current_site.domain,
             reverse("order_pay", kwargs={"uuid": order.uuid})

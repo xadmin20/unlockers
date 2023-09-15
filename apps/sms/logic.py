@@ -19,7 +19,7 @@ from .models import get_timeout_amount
 def generate_link(path):
     return "{}://{}{}".format(
         ('https' if hasattr(settings, "IS_SSL") and getattr(settings, "IS_SSL") else "http"),
-        Site.objects.first().domain, path
+        Site.objects.last().domain, path
         )
 
 
@@ -34,9 +34,9 @@ def send_custom_mail(
         ):
     """Функция отправки письма"""
     try:
-        en_route_link = f"http://{Site.objects.first().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'en_route'})}"
-        arrived_link = f"http://{Site.objects.first().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'arrived'})}"
-        paid_link = f"http://{Site.objects.first().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'paid'})}"
+        en_route_link = f"http://{Site.objects.last().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'en_route'})}"
+        arrived_link = f"http://{Site.objects.last().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'arrived'})}"
+        paid_link = f"http://{Site.objects.last().domain}/order/update_status/{order.unique_path_field}?{urlencode({'status': 'paid'})}"
 
         context = {
             "order": {
@@ -55,12 +55,12 @@ def send_custom_mail(
                 "price": order.price,
                 "prepayment": order.prepayment,
                 "post_code": order.post_code,
-                "link": f"http://{Site.objects.first().domain}/link/{order.unique_path_field}/",
+                "link": f"http://{Site.objects.last().domain}/link/{order.unique_path_field}/",
                 "en_route_link": en_route_link,
                 "arrived_link": arrived_link,
                 "paid_link": paid_link,
                 },
-            "site": Site.objects.first().domain,
+            "site": Site.objects.last().domain,
             "recipient_type": recipient_type,
             "changes": changes if changes else {},
             "show_links": {
@@ -157,7 +157,7 @@ def send_sms_admin(order, action=""):
     print(f"func sms/logic send_sms_admin")
     status_code: int = 0
     message: str = ""
-    site = Site.objects.first()
+    site = Site.objects.last()
     try:
         phone = config.PHONE
         if action == "created":
@@ -193,7 +193,7 @@ def send_sms_admin(order, action=""):
 def send_notification_to_admin(order=None, action=""):
     """Функция отправки уведомления админу подтверждение или отказ от заказа"""
     try:
-        site = Site.objects.first()
+        site = Site.objects.last()
         print("send_notification_to_admin", order, action)
         if action == "confirmed":
             subject = "Воркер подтвердил заказ"
@@ -223,6 +223,11 @@ def send_notification_to_admin(order=None, action=""):
             message = (f"Ошибка создания заказа. {order.car_registration}."
                        f" Перейдите по ссылке, чтобы просмотреть заказ."
                        f"Позвоните клиенту и уточните детали заказа. {order.to_phone}")
+        elif action == "completed":
+            subject = "Заказ выполнен"
+            message = (f"Заказ №{order.id} выполнен."
+                       f" Перейдите по ссылке, чтобы просмотреть заказ."
+                       f" {generate_link(reverse('unique_path', kwargs={'unique_path': order.unique_path_field}))}")
         else:
             return
         send_mail(

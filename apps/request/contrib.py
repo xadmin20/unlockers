@@ -101,7 +101,6 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
     else:
         request = Request.objects.create(**validated_data)
 
-    # send_sms_admin(request, action="created")
     id_quote = get_session(wsgi_request, 'id_quote', crypt=True)
     drop_session(wsgi_request, 'id_quote')
     obj_quote = Quote.objects.filter(id=id_quote).first()
