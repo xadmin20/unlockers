@@ -143,6 +143,9 @@ class Order(models.Model):
         )
 
     class Meta:
+
+
+
         verbose_name = _("Order")
         verbose_name_plural = _("Orders")
 
@@ -171,7 +174,7 @@ class Order(models.Model):
             original_fields = {field.name: getattr(orig, field.name) for field in self._meta.fields}
 
         # Save the current object
-        super(Order, self).save(*args, **kwargs)
+        # super(Order, self).save(*args, **kwargs) # todo models save
 
         # Check if any changes were made
         if not is_new:

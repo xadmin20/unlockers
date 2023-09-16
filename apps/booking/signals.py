@@ -4,7 +4,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 from apps.booking.models import Order
-from apps.sms.logic import send_custom_mail, _send_sms
+from apps.sms.logic import send_custom_mail, _send_sms, send_notification_to_admin
 
 
 @receiver(pre_save, sender=Order)
@@ -30,9 +30,11 @@ def send_email_after_order_change(sender, instance, **kwargs):
 
                 original_status = instance._loaded_values['status']
                 original_partner = instance._loaded_values['partner']
+                original_confirm_work = instance._loaded_values['status']
 
                 # Проверка на изменение поля partner
                 if original_partner != instance.partner:
+                    """Отправка письма при изменении партнера"""
                     print("SIGNAL: Partner changed")
                     recipient_type = "Worker" if instance.partner else "Customer"
                     template_choice = 'send_worker_new'
@@ -44,10 +46,16 @@ def send_email_after_order_change(sender, instance, **kwargs):
                         template_choice=template_choice,
                         action='send_worker_new',
                         )
-
-
+                if original_confirm_work != instance.confirm_work:
+                    """Отправка письма при изменении статуса подтверждения работ"""
+                    if instance.confirm_work == 'accepted':
+                        send_notification_to_admin(
+                            order=instance,
+                            action='confirmed'
+                        )
                 # Проверка на изменение поля status
                 if original_status != instance.status:
+                    """Отправка письма при изменении статуса заказа"""
                     print(f"SIGNAL: Status changed to {instance.status}")
 
                     # Находим соответствующий шаблон для нового статуса
@@ -70,6 +78,8 @@ def send_email_after_order_change(sender, instance, **kwargs):
                             template_choice=template_choice_for_status,
                             )
                         instance._email_sent_for_status_change = True  # Установите флаг
+                        instance.save()  # Сохраните объект, чтобы флаг не сбросился
+
         _send_sms(
             phone=instance.phone,
             message=f"Your order has been changed https://{site}/link/{instance.unique_path_field}"

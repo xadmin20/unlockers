@@ -138,7 +138,7 @@ def initiate_payment(request, unique_path_field):
             "transactions": [{
                 "item_list": {
                     "items": [{
-                        "name": "Order",
+                        "name": "Deposit",
                         "sku": str(order.unique_path_field),
                         "price": str(amount_to_pay),
                         "currency": "GBP",

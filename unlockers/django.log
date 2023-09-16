@@ -7828,3 +7828,4 @@ INFO 2023-09-15 17:47:58,923 basehttp "GET /static/admin/img/icon-deletelink.svg
 INFO 2023-09-15 17:47:59,010 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
 INFO 2023-09-15 17:55:10,956 autoreload /home/x/Рабочий стол/unlockers/apps/booking/models.py changed, reloading.
 INFO 2023-09-15 17:55:12,025 autoreload Watching for file changes with StatReloader
+INFO 2023-09-16 10:40:26,502 autoreload Watching for file changes with StatReloader
