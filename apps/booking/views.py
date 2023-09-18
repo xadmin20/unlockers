@@ -1,3 +1,4 @@
+import logging
 from decimal import Decimal
 from uuid import UUID
 
@@ -19,6 +20,8 @@ from apps.booking.models import Order
 from apps.sms.logic import _send_sms
 from apps.sms.logic import send_custom_mail
 from markup.utils import decrypt_str
+
+logger = logging.getLogger(__name__)
 
 
 def validate_uuid(uuid_str):
@@ -58,8 +61,8 @@ class OrderConfirmTempaliteView(TemplateView):
                 reverse(
                     "admin:booking_order_change",
                     kwargs={"object_id": order.id}
-                    ),
-                )
+                ),
+            )
             order.confirm_work = status_work
             order.save()
             kwargs["message"] = _(f"Set status on order - {status_work}")
@@ -79,7 +82,10 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
 
     def get_object(self, queryset=None):
         unique_link = self.kwargs.get('unique_path')
-        return get_object_or_404(Order, unique_path_field=unique_link)
+        logger.debug(f"Trying to get Order with unique_path_field: {unique_link}")
+        obj = get_object_or_404(Order, unique_path_field=unique_link)
+        logger.debug(f"Found Order: {obj}")
+        return obj
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
@@ -92,6 +98,7 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
 
     def get_context_data(self, **kwargs):
         # Этот код гарантирует, что self.object установлен перед вызовом родительского метода
+        logger.debug(f"Entering get_context_data for OrderDetailView")
         if not hasattr(self, 'object'):
             self.object = self.get_object()
 
@@ -117,11 +124,17 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
                     form.save()
             else:
                 form = form_class(instance=self.object)
-            context['prepayment_amount'] = self.object.price * Decimal("0.5")
+            prepayment_rate = config.PREPAYMENT / 100  # todo проценты предоплаты
+            if self.object.prepayment == 0:
+                amount_to_pay = self.object.price * prepayment_rate  # 20% предоплаты, если PREPAYMENT = 20
+            else:
+                amount_to_pay = self.object.price - self.object.prepayment
+            amount_to_pay = round(amount_to_pay, 2)
+            context['prepayment_amount'] = amount_to_pay
             context['form'] = form
             print(
                 f"User: {self.request.user}, Is executive: {context['is_executive']}, Form used: {form_class.__name__}"
-                )
+            )
 
             # Проверяем, больше ли цена нуля и не оплачен ли заказ
             if self.object.price > Decimal("0.0") and self.object.prepayment < self.object.price:
@@ -129,6 +142,10 @@ class OrderDetailView(ModelInstanceViewSeoMixin, DetailView, TemplateView):
             else:
                 context['show_save_button'] = False
 
+            if self.object.status != 'paid':
+                context['show_payment_button'] = True  # Set your own conditions
+            else:
+                context['show_payment_button'] = False
             context["site"] = Site.objects.last()
             return context
         else:
@@ -145,11 +162,11 @@ def confirm_order(request, order_id):
         order=order,
         recipient_type="Worker",
         template_choice="confirmed"
-        )
+    )
     _send_sms(
         phone=order.phone,
         message=f"The worker is appointed, wait for a call from him"
-        )
+    )
 
     return redirect('unique_path', unique_path=order.unique_path_field)
 

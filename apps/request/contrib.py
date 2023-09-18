@@ -33,8 +33,8 @@ def calculate_distance_price(post_code):
             'mode': 'driving',
             'origins': [config.DEFAULT_POST_CODE],
             'destinations': [post_code],
-            }
-        )
+        }
+    )
     if response.get('status', 'failed') != 'OK':
         raise DistanceGetterException(_('Invalid google distance matrix request.'))
 
@@ -45,9 +45,9 @@ def calculate_distance_price(post_code):
                     Decimal(element.get('distance').get('value') / 1000) / Decimal(1.6)  # convert to miles
                     for row in response.get('rows')
                     for element in row.get('elements')
-                    ]
-                )
+                ]
             )
+        )
     except Exception:
         raise DistanceGetterException(_('Invalid postal code.'))
 
@@ -64,6 +64,7 @@ def calculate_distance_price(post_code):
 
 def calculate_price(service, car_year, distance_price, distance):
     """Calculate price by service variation"""
+    print(f"calculate_price: {service}, {car_year}, {distance_price}, {distance}")
     distance_price = distance_price or 0
     if car_year is None:
         car_year_price = 0
@@ -92,14 +93,17 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
     # Check for existing Request object
     if is_session:
         request = Request.objects.filter(id=wsgi_request.session.get("request")).first()
+        print(f"request: {request}")
 
     # If Request object already exists, update it
     if request:
         for key, value in validated_data.items():
             setattr(request, key, value)
+        print(f"if request: {request}")
         request.save()
     else:
         request = Request.objects.create(**validated_data)
+        print(f"else request: {request}")
 
     id_quote = get_session(wsgi_request, 'id_quote', crypt=True)
     drop_session(wsgi_request, 'id_quote')
@@ -107,5 +111,5 @@ def create_request_for_unregistered_car(wsgi_request, validated_data, is_session
     if obj_quote:
         obj_quote.request = request
         obj_quote.save()
-
+    print(f"obj_quote: {obj_quote}")
     return request

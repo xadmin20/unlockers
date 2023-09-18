@@ -70,7 +70,7 @@ INSTALLED_APPS = [
     'apps.worker',
     'apps.payments',
 
-    ]
+]
 
 # Application definition
 
@@ -83,7 +83,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    ]
+]
 
 ROOT_URLCONF = 'unlockers.urls'
 
@@ -111,15 +111,15 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
                 'constance.context_processors.config',
-                ],
+            ],
             'extensions': DEFAULT_EXTENSIONS,
             "bytecode_cache": {
                 "name": "default",
                 "backend": "django_jinja.cache.BytecodeCache",
                 "enabled": True,
-                },
             },
         },
+    },
     {
         'DIRS': ['markup/templates'],
         'APP_DIRS': True,
@@ -132,34 +132,34 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
                 'django.contrib.auth.context_processors.auth',
-                ],
-            },
+            ],
         },
+    },
 
-    ]
+]
 
 WSGI_APPLICATION = 'unlockers.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#         }
-#     }
-#
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ublockers',
-        'USER': 'clinic_user_db',
-        'PASSWORD': 'ublockers_pass',
-        'HOST': '138.68.160.203',  # Может потребоваться изменить, если база данных находится на другом сервере
-        'PORT': '',  # По умолчанию используется порт PostgreSQL (5432)
-        }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'ublockers',
+#         'USER': 'clinic_user_db',
+#         'PASSWORD': 'ublockers_pass',
+#         'HOST': '138.68.160.203',  # Может потребоваться изменить, если база данных находится на другом сервере
+#         'PORT': '',  # По умолчанию используется порт PostgreSQL (5432)
+#     }
+# }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -178,9 +178,9 @@ CACHES = {
         'LOCATION': 'redis://127.0.0.1:6379/1',  # Указывается адрес Redis
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            }
         }
     }
+}
 
 # Если вы хотите использовать Redis для хранения сессий:
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
@@ -192,17 +192,17 @@ SESSION_CACHE_ALIAS = 'default'
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-        },
+    },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-        },
+    },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-        },
+    },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-        },
-    ]
+    },
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -222,7 +222,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'markup/static')
-    ]
+]
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -230,38 +230,38 @@ customColorPalette = [
     {
         'color': 'hsl(4, 90%, 58%)',
         'label': 'Red'
-        },
+    },
     {
         'color': 'hsl(340, 82%, 52%)',
         'label': 'Pink'
-        },
+    },
     {
         'color': 'hsl(291, 64%, 42%)',
         'label': 'Purple'
-        },
+    },
     {
         'color': 'hsl(262, 52%, 47%)',
         'label': 'Deep Purple'
-        },
+    },
     {
         'color': 'hsl(231, 48%, 48%)',
         'label': 'Indigo'
-        },
+    },
     {
         'color': 'hsl(207, 90%, 54%)',
         'label': 'Blue'
-        },
-    ]
+    },
+]
 
 SEO_MODELS = [
     'pages.mainPage',
     'pages.typical',
     'blog.post',
-    ]
+]
 
 SEO_VIEWS_CHOICES = (
     ('blog', 'Blog page'),
-    )
+)
 
 THUMBNAIL_HIGH_RESOLUTION = True
 
@@ -280,15 +280,15 @@ CKEDITOR_CONFIGS = {
                 "SpellChecker",
                 "Undo",
                 "Redo",
-                ],
+            ],
             ["Link", "Unlink", "Anchor"],
             ["Blockquote", "Image", "Flash", "Table", "HorizontalRule"],
             ["TextColor", "BGColor"],
             ["Smiley", "SpecialChar"],
             ["Source"],
-            ]
-        },
-    }
+        ]
+    },
+}
 
 SEO_DEBUG_MODE = False
 ROBOTS_USE_SCHEME_IN_HOST = True
@@ -306,7 +306,7 @@ POSTIE_TEMPLATE_CHOICES = Choices(
     ("send_test_email", _("Message to test email")),
     ("change_email", _("Message to change email")),
     ("send_withdraw_admin", _("Message to admin on withdraw")),
-    )
+)
 
 POSTIE_TEMPLATE_CONTEXTS = {
     "created_request": {
@@ -325,7 +325,7 @@ POSTIE_TEMPLATE_CONTEXTS = {
         "service": _("Service"),
         "price": _("Price"),
         "link_auto": _("Link to auto"),
-        },
+    },
     "employee_order": {
         "date_at": _("Date at"),
         "price": _("Price"),
@@ -344,7 +344,7 @@ POSTIE_TEMPLATE_CONTEXTS = {
 
         "link_confirm": _("Link for confirm order"),
         "link_refused": _("Link for refused order"),
-        },
+    },
     "employee_order_admin": {
         "date_at": _("Date at"),
         "price": _("Price"),
@@ -359,12 +359,12 @@ POSTIE_TEMPLATE_CONTEXTS = {
         "link": _("Link to request"),
         "link_confirm": _("Link for confirm order"),
         "link_refused": _("Link for refused order"),
-        },
+    },
     "confirm_order": {
         "responsible": _("Responsible"),
         "link": _("Link to order"),
         "status_confirm": _("Status confirm order in work"),
-        },
+    },
     "quote_created": {
         "car_registration": _("Car registration code"),
         "service": _("Service name"),
@@ -378,22 +378,22 @@ POSTIE_TEMPLATE_CONTEXTS = {
         "created_at": _("Created at"),
         "id": _("Quote id"),
         "request_id": _("Request id"),
-        },
+    },
     'password_recovery_user': {
         'var_url_recovery': _("URL Recovery"),
-        },
+    },
     'change_email': {
         'var_url_recovery': _("URL Change email"),
-        },
+    },
     'send_withdraw_admin': {
         'link_admin': _("Link to admin"),
-        },
-    }
+    },
+}
 
 POSTIE_HTML_ADMIN_WIDGET = {
     "widget": "CKEditorWidget",
     "widget_module": "ckeditor.widgets",
-    }
+}
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -401,41 +401,50 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'nickolayvan@gmail.com'
 EMAIL_HOST_PASSWORD = 'sjyrxlucgounjnma'
+
 APPEND_SLASH = True
+
+LOGGING_DIR = os.path.join(BASE_DIR, 'logs')  # Путь, где будут храниться лог-файлы
+
+if not os.path.exists(LOGGING_DIR):
+    os.makedirs(LOGGING_DIR)
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': '{levelname} {asctime} {module} {message}',
+            'format': '{asctime} {levelname} {module} {message}',
             'style': '{',
-            },
-        'simple': {
-            'format': '{levelname} {message}',
-            'style': '{',
-            },
         },
+        'simple': {
+            'format': '{asctime} {levelname} {message}',
+            'style': '{',
+        },
+    },
     'handlers': {
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
             'formatter': 'verbose',
-            },
+        },
         'file': {
             'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(os.path.dirname(__file__), 'django.log'),
-            'formatter': 'verbose',
-            },
+            'class': 'logging.handlers.TimedRotatingFileHandler',
+            'filename': os.path.join(LOGGING_DIR, 'debug.log'),
+            'when': 'midnight',  # Создать новый файл лога каждую полночь
+            'interval': 1,  # Интервал в днях
+            'backupCount': 30,  # Сколько файлов логов сохранять
+            'formatter': 'verbose',  # Используйте verbose форматтер
         },
+    },
     'loggers': {
         'django': {
             'handlers': ['console', 'file'],
             'level': 'DEBUG',
             'propagate': True,
-            },
         },
-    }
+    },
+}
 
 # PAYPAL
 PAYPAL_CLIENT_ID = 'AZJy7hCDgj4dgdyotn6ZjLQa1Y1LqguLCXoP9Aias72Mkur_EG_pcK6ygIrW'
@@ -447,10 +456,10 @@ SMS_SEND_MODE = 'test'  # todo 'production' or 'test'
 # settings.py
 
 # Включите поддержку асинхронных задач
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Замените на адрес вашего брокера (Redis, RabbitMQ, и т.д.)
-
-# Настройки Celery
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Замените на адрес вашего брокера
-
-# Настройки Celery (по желанию)
-CELERY_TIMEZONE = 'UTC'
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Замените на адрес вашего брокера (Redis, RabbitMQ, и т.д.)
+#
+# # Настройки Celery
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Замените на адрес вашего брокера
+#
+# # Настройки Celery (по желанию)
+# CELERY_TIMEZONE = 'UTC'

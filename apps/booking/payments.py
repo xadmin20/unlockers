@@ -1,15 +1,14 @@
 from dataclasses import dataclass
 
-from django.urls import reverse
-from django.contrib.sites.models import Site
-from django.utils.translation import gettext_lazy as _
-
 import paypalrestsdk
 from constance import config
+from django.contrib.sites.models import Site
+from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 from apps.sms.models import is_phone_mechanic
-from .senders import order_after_pay_sms
 from .models import Order, Transaction, PAYMENT_STATUSES
+from .senders import order_after_pay_sms
 
 
 class PaymentGenerationException(Exception):
@@ -40,8 +39,8 @@ def generate_payment(order: Order) -> Payment:
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": f'http://{domain}{reverse("paypal_confirm")}',
-            "cancel_url": f'http://{domain}{reverse("paypal_cancel")}',
+            "return_url": f'https://{domain}{reverse("paypal_confirm")}',
+            "cancel_url": f'https://{domain}{reverse("paypal_cancel")}',
         },
         "transactions": [{
             "item_list": {
@@ -61,7 +60,7 @@ def generate_payment(order: Order) -> Payment:
         }]
     }
     payment = paypalrestsdk.Payment(request_data)
-    
+
     is_valid = False
     approval_url = None
 

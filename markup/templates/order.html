@@ -83,7 +83,7 @@
         <p>Статус оплаты: Оплачено</p>
     </div>
 {% else %}
-    {% if show_payment_button %}
+   {% if show_payment_button %}
     <div class="payment-section">
       <p>Сумма предоплаты: {{ prepayment_amount }}</p>
       <button type="button" class="btn btn-primary" onclick="initiatePayment('{{ object.unique_path_field }}')">Оплатить</button>

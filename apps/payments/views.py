@@ -116,14 +116,14 @@ def initiate_payment(request, unique_path_field):
     print(f"Trying to find an order with unique_path_field: {unique_path_field}")
 
     order = get_object_or_404(Order, unique_path_field=unique_path_field)
-    site = Site.objects.get_current().domain
+    site = Site.objects.last()
     # Вычисляем сумму оплаты, либо предоплата, либо полная цена
     prepayment_rate = config.PREPAYMENT / 100  #  todo проценты предоплаты
     if order.prepayment == 0:
         amount_to_pay = order.price * prepayment_rate  # 20% предоплаты, если PREPAYMENT = 20
     else:
         amount_to_pay = order.price - order.prepayment
-
+    amount_to_pay = round(amount_to_pay, 2)
     # Создание объекта платежа в PayPal
     payment = paypalrestsdk.Payment(
         {
